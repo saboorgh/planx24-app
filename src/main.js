@@ -158,6 +158,8 @@ function build() {
   map.on('load', async () => {
     // Beschriftungen der Hintergrundkarte nur bei kleinen Maßstäben, danach übernimmt das ALKIS
     map.getStyle().layers.filter(l => l.type === 'symbol').forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
+    if (map.getLayer('label_other')) map.setLayoutProperty('label_other', 'visibility', 'none'); // Stadtteile, Ortsteile
+    outsideMask();
     addLayers(); renderPop(); renderTabs();
     map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
     loadView();
@@ -165,7 +167,9 @@ function build() {
     if (!state.selIds.length) selectAt([10.003879, 53.585055], true);
   });
 }
-function parcelAt(ll) { return F.fl.features.find(f => !/^Strassenverkehr|Gewaesser/.test(f.properties.tn) && ll[0] >= f.bb[0] && ll[0] <= f.bb[2] && ll[1] >= f.bb[1] && ll[1] <= f.bb[3] && inPoly(ll, f.geometry.coordinates)); }
+// Straßen, Wege, Plätze, Bahn und Wasser sind nicht anklickbar
+const NOCLICK = /Strassenverkehr|Gewaesser|Hafenbecken|Bahnverkehr|^Weg|^Platz/;
+function parcelAt(ll) { return F.fl.features.find(f => !NOCLICK.test(f.properties.tn) && ll[0] >= f.bb[0] && ll[0] <= f.bb[2] && ll[1] >= f.bb[1] && ll[1] <= f.bb[3] && inPoly(ll, f.geometry.coordinates)); }
 function selectAt(ll, initial) { const f = parcelAt(ll); if (f) { if (state.add) toggleSel(f.id); else select(f.id, initial); } return f; }
 
 function addLayers() {
@@ -177,7 +181,7 @@ function addLayers() {
   map.addLayer({ id: 'brw', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'brw', layout: off, paint: { 'fill-color': ['interpolate', ['linear'], ['get', 'max'], 1000, '#EEE8F7', 8000, '#8F6CCB'], 'fill-opacity': 0.55, 'fill-outline-color': '#7A5BB5' } });
   map.addLayer({ id: 'bp', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'bg', layout: off, paint: { 'fill-color': ['case', ['in', 'Kern', ['get', 'art']], '#D49A96', ['in', 'Wohn', ['get', 'art']], '#F2BDB7', ['in', 'Gewerbe', ['get', 'art']], '#C9C3E3', ['in', 'Misch', ['get', 'art']], '#E7C49A', '#E9D2AE'], 'fill-opacity': 0.42 } });
   map.addLayer({ id: 'bp-line', minzoom: MIN_LOAD_ZOOM, type: 'line', source: 'bg', layout: off, paint: { 'line-color': '#C0574F', 'line-width': 1, 'line-opacity': 0.6 } });
-  map.addLayer({ id: 'fl-fill', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'fl', paint: { 'fill-color': '#E5484D', 'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.07, 0] } });
+  map.addLayer({ id: 'fl-fill', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'fl', filter: ['!', ['any', ['in', 'Strassenverkehr', ['get', 'tn']], ['in', 'Gewaesser', ['get', 'tn']], ['in', 'Hafenbecken', ['get', 'tn']], ['in', 'Bahnverkehr', ['get', 'tn']], ['==', ['slice', ['get', 'tn'], 0, 3], 'Weg'], ['==', ['slice', ['get', 'tn'], 0, 5], 'Platz']]], paint: { 'fill-color': '#E5484D', 'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.07, 0] } });
   map.addLayer({ id: 'fl', minzoom: MIN_LOAD_ZOOM, type: 'line', source: 'fl', paint: { 'line-color': '#7E848C', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.25, 17, 0.6, 19, 1.1], 'line-opacity': ['interpolate', ['linear'], ['zoom'], 15, 0.5, 17, 0.9] } });
   map.addLayer({ id: 'sel-fill', type: 'fill', source: 'sel', paint: { 'fill-color': '#E5484D', 'fill-opacity': 0.1 } });
   map.addLayer({ id: 'gb', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'fill-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#B6BAC1', '#D3D6DA'] } });
@@ -193,6 +197,18 @@ function addLayers() {
   map.on('mousemove', 'fl-fill', e => { const id = e.features[0].id; if (state.hover !== id) { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = id; map.setFeatureState({ source: 'fl', id }, { hover: true }); } map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'fl-fill', () => { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = null; map.getCanvas().style.cursor = ''; });
   map.on('click', 'fl-fill', e => { const id = e.features[0].id, oe = e.originalEvent; if (state.add || oe.shiftKey || oe.metaKey || oe.ctrlKey) toggleSel(id); else select(id, false); });
+}
+
+/* Außerhalb Hamburgs weiß abdecken, damit Hamburg nach vorne kommt (Landesgrenze einmal von der Stadt laden) */
+function outsideMask() {
+  map.addSource('mask', { type: 'geojson', data: fcol() });
+  map.addLayer({ id: 'mask', type: 'fill', source: 'mask', paint: { 'fill-color': '#FFFFFF', 'fill-opacity': 0.6 } }, map.getStyle().layers.find(l => l.type === 'symbol')?.id);
+  map.addLayer({ id: 'mask-line', type: 'line', source: 'mask', paint: { 'line-color': '#9AA0A8', 'line-width': 1, 'line-opacity': 0.6 } });
+  fetch(`${API}verwaltungsgrenzen/collections/landesgrenze/items?f=json&limit=10`).then(r => r.json()).then(j => {
+    const holes = [];
+    j.features.forEach(f => { const g = f.geometry; (g.type === 'Polygon' ? [g.coordinates] : g.coordinates).forEach(p => holes.push(p[0])); });
+    map.getSource('mask').setData({ type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [[[-30, 30], [40, 30], [40, 75], [-30, 75], [-30, 30]], ...holes] } });
+  }).catch(() => {});
 }
 
 /* Gescannter Bebauungsplan: ein Bild je Ansicht aus dem Hamburger Kartendienst (nur EPSG:25832) */
@@ -226,8 +242,7 @@ const LBL = { 'lbl-fl': fcol(), 'lbl-gb': fcol(), 'lbl-hnr': fcol(), 'lbl-str': 
 const pt = (c, props) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: c }, properties: props });
 function labelsAdd(fls, gbs, adrs) {
   fls.forEach(f => { if (/Strassenverkehr|Gewaesser|^Weg|^Platz|Bahn/.test(f.properties.tn)) return; const own = F.gb.features.filter(g => g.properties.keep && g.bb[0] < f.bb[2] && g.bb[2] > f.bb[0] && g.bb[1] < f.bb[3] && g.bb[3] > f.bb[1]); LBL['lbl-fl'].features.push(pt(insidePt(f, own), { t: f.properties.nr, a: f.properties.a })); });
-  // Gebäude: Geschosse in römischen Zahlen wie im ALKIS; Bauteile mit eigener Geschosszahl (z. B. geringergeschossiger Gebäudeteil) kleiner
-  gbs.forEach(g => { const p = g.properties, gs = p.gs; if (!gs || g.area < 12 || /Unter der Erd/.test(p.fn)) return; const main = p.keep === 1; if (!main && p.typ !== 'Bauteil') return; if (main && g.area < 25) return; const c = inPoly(g.c, g.geometry.coordinates) ? g.c : insidePt(g); LBL['lbl-gb'].features.push(pt(c, { t: ROM[gs] || String(gs), a: g.area, m: main ? 1 : 0 })); });
+  gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 30 || !inPoly(g.c, g.geometry.coordinates)) return; LBL['lbl-gb'].features.push(pt(g.c, { t: ROM[gs] || String(gs), a: g.area })); });
   adrs.forEach(a => { if (a.properties.h) LBL['lbl-hnr'].features.push(pt(a.geometry.coordinates, { t: a.properties.h })); });
 }
 function streetLabels() {
@@ -237,15 +252,12 @@ function streetLabels() {
 }
 function addLabelLayers() {
   Object.keys(LBL).forEach(k => map.addSource(k, { type: 'geojson', data: LBL[k] }));
-  // Schriften nur aus dem Bestand des Kartenservers (OpenFreeMap): Noto Sans Regular, Bold, Italic
-  const halo = { 'text-halo-color': 'rgba(255,255,255,0.95)', 'text-halo-width': 1.3 };
-  const size = (z0, s0, z1, s1) => ['interpolate', ['linear'], ['zoom'], z0, s0, z1, s1];
-  // Reihenfolge = Vorrang: die zuletzt hinzugefügte Ebene wird zuerst platziert
-  map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': size(17, 10, 20, 14), 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#6B7079', ...halo } });
-  map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': size(17.5, 10, 20, 13), 'text-padding': 1 }, paint: { 'text-color': '#4E545C', ...halo } });
-  map.addLayer({ id: 'l-gbt', type: 'symbol', source: 'lbl-gb', minzoom: 17.5, filter: ['==', ['get', 'm'], 0], layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': size(17.5, 10, 20, 14), 'text-padding': 1, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#4A4F57', ...halo } });
-  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16, filter: ['==', ['get', 'm'], 1], layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': size(16, 11, 20, 18), 'text-padding': 1, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#1F2328', ...halo } });
-  map.addLayer({ id: 'l-str', type: 'symbol', source: 'lbl-str', minzoom: 15, layout: { 'text-field': ['get', 't'], 'text-font': ['case', ['==', ['get', 'w'], 1], ['literal', ['Noto Sans Italic']], ['literal', ['Noto Sans Bold']]], 'text-size': size(15, 10, 19, 14), 'text-letter-spacing': 0.03, 'text-padding': 6, 'text-max-width': 12 }, paint: { 'text-color': ['case', ['==', ['get', 'w'], 1], '#3D6F92', '#5A5F66'], ...halo } });
+  const halo = { 'text-halo-color': 'rgba(255,255,255,0.95)', 'text-halo-width': 1.4 };
+  // Reihenfolge = Vorrang: die zuletzt hinzugefügte Ebene gewinnt bei Platzmangel
+  map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17, 9.5, 19, 12], 'text-padding': 3, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#7A8089', ...halo } });
+  map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17.5, 9.5, 19, 11.5], 'text-padding': 2 }, paint: { 'text-color': '#4E545C', ...halo } });
+  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 16.5, 9, 19, 12.5], 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
+  map.addLayer({ id: 'l-str', type: 'symbol', source: 'lbl-str', minzoom: 15, layout: { 'text-field': ['get', 't'], 'text-font': ['case', ['==', ['get', 'w'], 1], ['literal', ['Noto Sans Italic']], ['literal', ['Noto Sans Regular']]], 'text-size': ['interpolate', ['linear'], ['zoom'], 15, 10, 18, 13], 'text-padding': 6, 'text-max-width': 12 }, paint: { 'text-color': ['case', ['==', ['get', 'w'], 1], '#3D6F92', '#5A5F66'], ...halo } });
 }
 
 /* Ebenen */
