@@ -160,7 +160,11 @@ function build() {
   { const at = document.querySelector('.attr'); if (at) at.innerHTML = '© <a href="https://www.govdata.de/dl-de/by-2-0" target="_blank" rel="noopener">FHH, LGV</a> · © <a href="https://basemap.de" target="_blank" rel="noopener">basemap.de / BKG</a>'; }
   map.on('load', async () => {
     // Hintergrundkarte ruhig halten: keine Symbole, Hausnummern, Höhen, Nummern; keine eigenen Gebäude (wir zeigen die ALKIS-Gebäude)
-    map.getStyle().layers.forEach(l => { if ((l.type === 'symbol' && /^Symbol_|^Hauskoordinate|^Quadrate|Hoehe|Relief|Kilometerstein|Haltepunkt|Bahnhof|Bauwerk|Gebaeude|Nummer_/.test(l.id)) || /^Gebaeude/.test(l.id)) map.setLayoutProperty(l.id, 'visibility', 'none'); });
+    map.getStyle().layers.forEach(l => { if ((l.type === 'symbol' && /^Symbol_|^Hauskoordinate|^Quadrate|Hoehe|Relief|Kilometerstein|Haltepunkt|Bahnhof|Bauwerk|Gebaeude|Nummer_/.test(l.id)) ) map.setLayoutProperty(l.id, 'visibility', 'none'); });
+    // Gebäude der Hintergrundkarte in unserem Grau (statt schwarz); 3D-Gebäude aus, die zeigen wir selbst
+    map.getStyle().layers.forEach(l => { if (!/^Gebaeude/.test(l.id)) return; if (l.type === 'fill') { map.setPaintProperty(l.id, 'fill-color', '#D3D6DA'); map.setPaintProperty(l.id, 'fill-outline-color', '#9AA0A8'); } else if (l.type === 'line') map.setPaintProperty(l.id, 'line-color', '#9AA0A8'); else if (l.type === 'fill-extrusion') map.setLayoutProperty(l.id, 'visibility', 'none'); });
+    // Straßennamen größer und nie winzig
+    map.getStyle().layers.forEach(l => { if (l.type === 'symbol' && /^Name_.*(str|Fusswege|Platz)/i.test(l.id) && !/^Name_Bahn/.test(l.id)) map.setLayoutProperty(l.id, 'text-size', ['interpolate', ['linear'], ['zoom'], 12, 12, 15, 14, 18, 16]); });
     outsideMask();
     const baseSym = map.getStyle().layers.filter(l => l.type === 'symbol').map(l => l.id);
     addLayers(); renderPop(); renderTabs();
@@ -257,7 +261,8 @@ const LBL = { 'lbl-fl': fcol(), 'lbl-gb': fcol(), 'lbl-hnr': fcol(), 'lbl-str': 
 const pt = (c, props) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: c }, properties: props });
 function labelsAdd(fls, gbs, adrs) {
   fls.forEach(f => { if (/Strassenverkehr|Gewaesser|^Weg|^Platz|Bahn/.test(f.properties.tn)) return; const own = F.gb.features.filter(g => g.properties.keep && g.bb[0] < f.bb[2] && g.bb[2] > f.bb[0] && g.bb[1] < f.bb[3] && g.bb[3] > f.bb[1]); LBL['lbl-fl'].features.push(pt(freePt(f, own), { t: f.properties.nr, a: f.properties.a })); });
-  gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 30 || !inPoly(g.c, g.geometry.coordinates)) return; LBL['lbl-gb'].features.push(pt(g.c, { t: ROM[gs] || String(gs), a: g.area })); });
+  // Geschosse: jedes Gebäude mit Geschosszahl, immer mitten im Baukörper (Stelle mit dem größten Abstand zum Rand)
+  gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 8) return; LBL['lbl-gb'].features.push(pt(freePt(g, []), { t: ROM[gs] || String(gs), a: g.area })); });
   adrs.forEach(a => { if (a.properties.h) LBL['lbl-hnr'].features.push(pt(a.geometry.coordinates, { t: a.properties.h })); });
 }
 function streetLabels() {
@@ -273,7 +278,8 @@ function addLabelLayers() {
   // Geschosse stehen immer; Flurstücks- und Hausnummern weichen aus, damit nichts übereinander liegt
   map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': 10.5, 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#6B7079', ...halo } });
   map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': 9.5, 'text-padding': 1 }, paint: { 'text-color': '#4E545C', ...halo } });
-  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': 12, 'text-allow-overlap': true, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
+  map.addLayer({ id: 'l-gb2', type: 'symbol', source: 'lbl-gb', minzoom: 17.5, filter: ['<', ['get', 'a'], 120], layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': 12, 'text-allow-overlap': true }, paint: { 'text-color': '#2E3238', 'text-halo-color': 'rgba(255,255,255,0.95)', 'text-halo-width': 1.4 } });
+  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, filter: ['>=', ['get', 'a'], 120], layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': 12, 'text-allow-overlap': true, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
   // Straßennamen kommen aus der Hintergrundkarte (entlang der Straße)
 }
 
