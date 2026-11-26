@@ -17,21 +17,20 @@ Credits/Bezahlung erst ganz am Ende.
 - Vite + MapLibre GL 4.7.1 + proj4, Vercel (`api/chat.js` für den KI-Chat).
 - Daten live im Browser von `https://api.hamburg.de/datasets/v1/` (CORS erlaubt), je Zelle 0,008° × 0,005° nachgeladen ab Zoom 15:
   `alkis_vereinfacht` (Flurstueck, GebaeudeBauwerk, Nutzung), `xplan` (bp_baugebietsteilflaeche, bp_baugrenze), `bplaene` (hh_hh_festgestellt), `uek_normierte_bodenrichtwerte` (lgv_brw_uek_mfh – Fläche steckt in `properties.geom`, geometry ist nur ein Punkt), `gages_vereinfacht` (hauskoordinaten, für die Suche).
-- Beschriftung als Vektor (MapLibre-Symbole) aus den schon geladenen ALKIS-Daten: Geschosse (römisch, `anzahlgs`, ab Zoom 16,5), Flurstücksnummern (kursiv, ab 17), Hausnummern (`gages_vereinfacht`, ab 17,5), Straßennamen. Größen und Zoomstufen wie in Commit 516757b – **so lassen**: Ein Versuch mit größeren Geschossen, Beschriftung schon ab Zoom 16 und Bauteil-Geschossen (6d138fc) war dem User zu voll („alles übereinander“) und wurde zurückgenommen.
-- Außerhalb Hamburgs liegt eine weiße Abdeckung (60 %) mit grauer Landesgrenze; die Grenze wird einmal geladen aus `verwaltungsgrenzen/landesgrenze`. Straßen- und Gewässernamen kommen aus der Hintergrundkarte (laufen entlang der Straße, bleiben bei jedem Zoom); eigene waagerechte Straßennamen (`l-str`) sind aus, weil sie „gerade“ lagen. Orts-/Stadtteilnamen der Hintergrundkarte nur bis Zoom 16.
-- **Testversion über `?test`** (https://planx24-app.vercel.app/?test, seit 26.11.2026): Hintergrund basemap.de Vektor grau (`bm_web_gry.json`, Kacheln bis Zoom 15, Schriften Noto Sans vorhanden), Symbole/Hausnummern/Höhen usw. der Hintergrundkarte aus; Beschriftung mit festem Maßstab wie ALKIS (Schriftgröße verdoppelt sich je Zoomstufe, `text-allow-overlap`/`text-ignore-placement`, Geschosse ab 17,3, Flurstücke ab 17,6, Hausnummern ab 17,8). Ohne `?test` alles wie bisher. Entfernen: alle `TEST`-Stellen in `src/main.js`. Der User entscheidet, ob das Standard wird.
-- Straßen- und Gewässernamen der Hintergrundkarte werden nach dem Laden über unsere Flächen gelegt (`moveLayer` vor `l-fl`), sonst verdeckt die Nutzung sie.
-- Wasser nicht anklickbar auch über die Nutzung (`onWater`, F.nu), weil Wasser-Flurstücke gemischt sein können.
-- CARTO-Kartenhintergrund (wie bei swzpln.de) nicht genommen: freie Nutzung nur eingeschränkt, für eine kommerzielle App unsicher.
-- Alte Versionen als Branches gesichert: `version-vektor` (516757b, erste Vektor-Beschriftung, Hintergrund basemap.de grau) und `version-bild` (51ddc5a, Beschriftung als WMS-Bild mit DPI).
-- Nicht anklickbar: Straßen, Wege, Plätze, Bahn, Wasser (Filter auf `fl-fill` und `NOCLICK` in `parcelAt`). **Keine Bilder (WMS) für die Beschriftung** – der User will Tempo; der WMS-Versuch (`HH_WMS_ALKIS_Basiskarte`, ArcGIS, versteht `DPI=192`) war zu langsam und wurde am 26.11.2026 wieder entfernt.
-- Schriften nur, die OpenFreeMap hat: `Noto Sans Regular`, `Noto Sans Bold`, `Noto Sans Italic` (`Noto Sans Medium` gibt es dort nicht → Beschriftung fehlt dann).
+- **Hintergrund: basemap.de Vektor grau** (`bm_web_gry.json`, BKG, amtlich, kostenlos auch kommerziell mit Quellenangabe; Kacheln bis Zoom 15). Seit 26.11.2026 Standard (vorher OpenFreeMap Positron). Ausgeblendet: Gebäude der Hintergrundkarte (wir zeigen ALKIS-Gebäude), Symbole, Hausnummern, Höhen, Straßennummern. Straßen- und Gewässernamen der Hintergrundkarte werden über unsere Flächen gelegt (`moveLayer` vor `l-fl`) und laufen entlang der Straße.
+- Beschriftung als Vektor aus den geladenen ALKIS-Daten, **feste Schriftgröße** (wird beim Zoomen weder kleiner noch größer): Geschosse 12 px ab Zoom 16,5 (`text-allow-overlap`, stehen immer), Flurstücksnummern 10,5 px kursiv ab 17, Hausnummern 9,5 px ab 17,5 (beide weichen aus, nichts übereinander). Flurstücksnummer an der freiesten Stelle (`freePt`: größter Abstand zu Grenze und Gebäuden, z. B. hinten im Garten).
+- Die echten ALKIS-Beschriftungspunkte (Präsentationsobjekte) gibt es nicht in der freien API (`alkis_vereinfacht`); nur im WMS-Bild. Daher eigene Platzierung.
+- Keine Bilder (WMS) für die Beschriftung – Tempo. WMS-Versuch (`HH_WMS_ALKIS_Basiskarte`, ArcGIS, `DPI=192`) wurde wieder entfernt. Nur **eine** Version pflegen, keine Test-Schalter (Wunsch des Users).
+- Schriften: `Noto Sans Regular/Bold/Italic` (gibt es bei basemap.de und OpenFreeMap; `Noto Sans Medium` nicht bei OpenFreeMap).
+- Start: ganz Hamburg (Zoom 11), nichts vorausgewählt.
+- Außerhalb Hamburgs weiße Abdeckung (60 %) mit grauer Landesgrenze aus `verwaltungsgrenzen/landesgrenze`.
+- Nicht anklickbar: Straßen, Wege, Plätze, Bahn, Wasser (Filter auf `fl-fill`, `NOCLICK`, zusätzlich `onWater` über die Nutzung).
+- Alte Versionen als Branches gesichert: `version-vektor` (516757b) und `version-bild` (51ddc5a).
 - Tempo ist Pflicht: Neue Ebenen möglichst als Vektor aus `api.hamburg.de`, keine Bild-Dienste je Ansicht, außer es geht nicht anders (gescannter B-Plan).
 - Gescannter B-Plan: WMS `HH_WMS_Cache_Rasterplan`, Ebene `bp_raster`, nur EPSG:25832, ein Bild je Ansicht.
-- Hintergrund: OpenFreeMap Positron (OSM, frei, auch kommerziell).
 - Projekte nur im Browser (localStorage). Später Supabase mit Login.
 - Darstellung: Grau-Töne, Auswahl rot (#E5484D), Logo = fünf blaue Kästchen als X (#336AEA), dunkle Knöpfe #1C2B35. Rahmen um die Karte fast weiß (#FBFBFC), aktiver Tab und aktiver Knopf links grau (#ECEDEF).
-- Quellenangabe unten kurz: „© FHH, LGV · © OpenStreetMap“ (verlinkt auf dl-de/by-2-0 und OSM-Copyright).
+- Quellenangabe unten kurz: „© FHH, LGV · © basemap.de / BKG“ (verlinkt).
 - Idee des Users (offen): Hintergrundkarte in Farben wie ein Schwarzplan.
 
 ## Betrieb
