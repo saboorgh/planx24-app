@@ -223,7 +223,7 @@ function insidePt(f, avoid) {
 const LBL = { items: [], raf: 0 };
 function labelsInit() {
   const host = $('#lbls');
-  const upd = () => { LBL.raf = 0; const show = map.getZoom() >= 17 && !state.layers.d3; host.style.display = show ? '' : 'none'; if (!show) return; const b = map.getBounds(), w = b.getWest(), e = b.getEast(), s = b.getSouth(), n = b.getNorth(); for (const it of LBL.items) { const [x, y] = it.ll; if (x < w || x > e || y < s || y > n) { if (it.on) { it.el.style.display = 'none'; it.on = false; } continue; } const p = map.project(it.ll); if (!it.on) { it.el.style.display = ''; it.on = true; } it.el.style.transform = `translate(${p.x.toFixed(1)}px,${p.y.toFixed(1)}px) translate(-50%,-50%)`; } };
+  const upd = () => { LBL.raf = 0; document.body.classList.toggle('lowz', map.getZoom() < 15.5); const show = map.getZoom() >= 17 && !state.layers.d3; host.style.display = show ? '' : 'none'; if (!show) return; const b = map.getBounds(), w = b.getWest(), e = b.getEast(), s = b.getSouth(), n = b.getNorth(); for (const it of LBL.items) { const [x, y] = it.ll; if (x < w || x > e || y < s || y > n) { if (it.on) { it.el.style.display = 'none'; it.on = false; } continue; } const p = map.project(it.ll); if (!it.on) { it.el.style.display = ''; it.on = true; } it.el.style.transform = `translate(${p.x.toFixed(1)}px,${p.y.toFixed(1)}px) translate(-50%,-50%)`; } };
   state.updLabels = () => { if (!LBL.raf) LBL.raf = requestAnimationFrame(upd); };
   map.on('move', state.updLabels); map.on('resize', state.updLabels);
 }
