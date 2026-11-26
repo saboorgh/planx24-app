@@ -165,7 +165,10 @@ function build() {
     if (TEST) map.getStyle().layers.filter(l => l.type === 'symbol' && /^Symbol_|^Hauskoordinate|^Quadrate|Hoehe|Relief|Kilometerstein|Haltepunkt|Bahnhof|Bauwerk|Gebaeude|Nummer_/.test(l.id)).forEach(l => map.setLayoutProperty(l.id, 'visibility', 'none'));
     else map.getStyle().layers.filter(l => l.type === 'symbol' && !/^highway-name|water/.test(l.id)).forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
     outsideMask();
+    const baseSym = map.getStyle().layers.filter(l => l.type === 'symbol').map(l => l.id);
     addLayers(); renderPop(); renderTabs();
+    // Straßen- und Gewässernamen der Hintergrundkarte über unsere Flächen legen (sonst verdeckt), aber unter unsere Beschriftung
+    baseSym.filter(id => TEST ? /str|Gewaesser|Platz|Fusswege/i.test(id) && !/^Nummer_/.test(id) : /^highway-name|water/.test(id)).forEach(id => map.moveLayer(id, 'l-fl'));
     map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
     loadView();
     await ensureLoaded([10.0016, 53.5836, 10.0056, 53.5856]);
