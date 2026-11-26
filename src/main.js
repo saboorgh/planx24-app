@@ -155,7 +155,7 @@ function build() {
     center: [10.0, 53.56], zoom: 11, minZoom: 10, maxBounds: [[9.55, 53.30], [10.45, 53.80]],
     style: BASE_STYLE
   });
-  map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
+  map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
   // Nordpfeil: dreht sich mit der Karte, Klick richtet nach Norden aus
   const north = document.createElement('button'); north.type = 'button'; north.className = 'north'; north.setAttribute('aria-label', 'Nach Norden ausrichten');
