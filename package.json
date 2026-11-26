@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/adressen.mjs && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,5 +15,7 @@
   "devDependencies": {
     "vite": "^6.0.0"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

@@ -731,32 +731,97 @@ function renderChat(host, fs, r, o) {
   }
 }
 
-/* Suche */
+/* Suche: eigenes Straßen- und Adressverzeichnis (beim Deploy gebaut, scripts/adressen.mjs), Tippfehler erlaubt.
+   Fehlt das Verzeichnis, sucht sie wie früher über die Schnittstelle. */
 const q = $('#q'), res = $('#res');
-let hits = [], cur = 0;
-let sTimer = 0, sSeq = 0;
+let hits = [], cur = 0, sTimer = 0, sSeq = 0;
+const IDX = { s: null, o: [], n: [], w: [], a: null };
+const norm = t => t.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/strasse\b|str\.?(?=\s|$)/g, 'str').replace(/[^a-z0-9]/g, '');
+fetch('/data/strassen.json').then(r => r.ok ? r.json() : null).then(d => {
+  if (!d || !d.s || !d.s.length) return;
+  IDX.s = d.s; IDX.o = d.o; IDX.n = d.s.map(x => norm(x[0])); IDX.w = d.s.map(x => x[0].split(/[\s-]+/).map(norm).filter(Boolean));
+  // Hausnummern im Hintergrund nachladen, damit die Suche danach ohne Wartezeit antwortet
+  setTimeout(() => fetch('/data/adressen.json').then(r => r.ok ? r.json() : null).then(a => { if (a && a.s) IDX.a = a.s; }).catch(() => {}), 1200);
+}).catch(() => {});
+// Abstand zweier Wörter (Vertauschen zählt als ein Fehler), bricht ab, sobald es zu viele Fehler werden
+function dist(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let p2 = null, p = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const c = [i]; let low = i;
+    for (let j = 1; j <= b.length; j++) {
+      let v = Math.min(p[j] + 1, c[j - 1] + 1, p[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (p2 && i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, p2[j - 2] + 1);
+      c.push(v); if (v < low) low = v;
+    }
+    if (low > max) return max + 1;
+    p2 = p; p = c;
+  }
+  return p[b.length];
+}
+function findStreets(t) {
+  const qn = norm(t); if (qn.length < 2) return [];
+  const max = qn.length <= 3 ? 0 : qn.length <= 5 ? 1 : qn.length <= 9 ? 2 : 3, out = [];
+  for (let i = 0; i < IDX.n.length; i++) {
+    const n = IDX.n[i]; let sc;
+    if (n.startsWith(qn)) sc = 0;
+    else if (IDX.w[i].some(w => w.startsWith(qn))) sc = 1;
+    else if (qn.length >= 4 && n.includes(qn)) sc = 2;
+    else if (max) { const d = Math.min(dist(qn, n.slice(0, qn.length), max), dist(qn, n.slice(0, qn.length + 1), max), dist(qn, n.slice(0, Math.max(1, qn.length - 1)), max)); if (d <= max) sc = 3 + d; }
+    if (sc !== undefined) out.push([sc, i]);
+  }
+  out.sort((a, b) => a[0] - b[0] || IDX.s[b[1]][5] - IDX.s[a[1]][5]);
+  return out.slice(0, 8).map(o => o[1]);
+}
+const utm = (x, y) => proj4('EPSG:25832', 'EPSG:4326', [x, y]);
+const ortOf = s => s[1].slice(0, 2).map(k => IDX.o[k].replace(/^Hamburg-/, '')).join(', ');
+function streetHits(t, nr) {
+  const idx = findStreets(t), out = [];
+  for (const i of idx) {
+    const s = IDX.s[i];
+    if (nr && IDX.a) {
+      const [hs, xs, ys] = IDX.a[i], H = hs.split('|'), want = nr.toLowerCase();
+      H.forEach((h, k) => { const hl = h.toLowerCase(); if (hl === want || (hl.startsWith(want) && !/^\d/.test(hl.slice(want.length)))) out.push({ label: `${s[0]} ${h}`, sub: `${s[2].split(',')[0]} ${ortOf(s)}`, ll: utm(s[3] + xs[k], s[4] + ys[k]), exact: hl === want }); });
+    } else if (!nr) out.push({ label: s[0], sub: `${ortOf(s)} · ${s[5]} Adressen`, ll: utm(s[3], s[4]), street: true });
+    if (out.length >= 8) break;
+  }
+  return nr ? out.sort((a, b) => b.exact - a.exact).slice(0, 8) : out;
+}
+function render() {
+  res.innerHTML = hits.length ? hits.map((h, i) => `<button type="button" role="option" data-i="${i}" class="${i === 0 ? 'on' : ''}"><span>${esc(h.label)}</span><small>${esc(h.sub)}</small></button>`).join('') : '<p style="margin:8px 10px;color:#5A5C63">Keine Hamburger Adresse gefunden.</p>';
+  res.classList.add('open');
+  res.querySelectorAll('button').forEach(b => b.addEventListener('click', () => go(+b.dataset.i)));
+}
+async function apiSearch(street, nr, my) {
+  const url = `${API}gages_vereinfacht/collections/hauskoordinaten/items?f=json&limit=8&strassenname=${encodeURIComponent(street + (nr ? '' : '*'))}` + (nr ? `&hausnummer=${encodeURIComponent(nr + '*')}` : '');
+  let feats = []; try { feats = (await (await fetch(url)).json()).features || []; } catch (e) {}
+  if (my !== sSeq) return;
+  hits = feats.map(f => ({ label: `${f.properties.strassenname} ${f.properties.hausnummer || ''}`.trim(), sub: `${f.properties.postleitzahl || ''} ${f.properties.postOrtsteil || ''}`.trim(), ll: f.geometry.coordinates })); cur = 0; render();
+}
 function search() {
-  const t = q.value.trim(); clearTimeout(sTimer);
-  if (t.length < 3) { res.classList.remove('open'); return; }
-  sTimer = setTimeout(async () => {
-    const my = ++sSeq, m = t.match(/^(.*?)[\s,]+(\d+\s*[a-zA-Z]?)\s*$/);
-    // Groß-/Kleinschreibung egal: Wörter wie im Straßenverzeichnis schreiben (görlitzer str → Görlitzer Straße)
-    const small = new Set(['der', 'die', 'das', 'dem', 'den', 'des', 'und', 'von', 'vom', 'zum', 'zur', 'bei', 'auf', 'in', 'im', 'an', 'am', 'unter', 'über', 'vor', 'hinter']);
-    const street = (m ? m[1] : t).replace(/str\.?$/i, 'straße').replace(/strasse\b/i, 'straße').trim().toLowerCase()
-      .split(' ').map((w, i) => i > 0 && small.has(w) ? w : w.split('-').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('-')).join(' ')
-      .replace(/(\S)straße\b/, '$1straße'), nr = m ? m[2].replace(/\s/g, '').toLowerCase() : '';
-    const url = `${API}gages_vereinfacht/collections/hauskoordinaten/items?f=json&limit=8&strassenname=${encodeURIComponent(street + '*')}` + (nr ? `&hausnummer=${encodeURIComponent(nr + '*')}` : '');
-    let feats = []; try { feats = (await (await fetch(url)).json()).features || []; } catch (e) {}
-    if (my !== sSeq) return;
-    hits = feats.map(f => ({ label: `${f.properties.strassenname} ${f.properties.hausnummer || ''}`.trim(), sub: `${f.properties.postleitzahl || ''} ${f.properties.postOrtsteil || ''}`.trim(), ll: f.geometry.coordinates })); cur = 0;
-    res.innerHTML = hits.length ? hits.map((h, i) => `<button type="button" role="option" data-i="${i}" class="${i === 0 ? 'on' : ''}"><span>${esc(h.label)}</span><small>${esc(h.sub)}</small></button>`).join('') : '<p style="margin:8px 10px;color:#5A5C63">Keine Hamburger Adresse gefunden.</p>';
-    res.classList.add('open');
-    res.querySelectorAll('button').forEach(b => b.addEventListener('click', () => go(+b.dataset.i)));
-  }, 120);
+  const t = q.value.trim(); clearTimeout(sTimer); const my = ++sSeq;
+  if (t.length < 2) { res.classList.remove('open'); return; }
+  const m = t.match(/^(.*?)[\s,]+(\d+\s*[a-zA-Z]?)\s*$/), streetTxt = (m ? m[1] : t).trim(), nr = m ? m[2].replace(/\s/g, '') : '';
+  if (IDX.s) {
+    if (!nr || IDX.a) { hits = streetHits(streetTxt, nr); cur = 0; render(); return; }
+    // Hausnummern noch nicht geladen: Straße aus dem Verzeichnis, Nummer über die Schnittstelle
+    const best = findStreets(streetTxt)[0]; if (best === undefined) { hits = []; render(); return; }
+    sTimer = setTimeout(() => apiSearch(IDX.s[best][0], nr, my), 80); return;
+  }
+  // Ohne Verzeichnis: wie bisher, Schreibweise wie im Straßenverzeichnis
+  const small = new Set(['der', 'die', 'das', 'dem', 'den', 'des', 'und', 'von', 'vom', 'zum', 'zur', 'bei', 'auf', 'in', 'im', 'an', 'am', 'unter', 'über', 'vor', 'hinter']);
+  const street = streetTxt.replace(/str\.?$/i, 'straße').replace(/strasse\b/i, 'straße').toLowerCase().split(' ').map((w, i) => i > 0 && small.has(w) ? w : w.split('-').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('-')).join(' ');
+  if (t.length < 3) return;
+  sTimer = setTimeout(() => apiSearch(street, nr.toLowerCase(), my), 120);
 }
 async function go(i) {
-  const h = hits[i]; if (!h) return; res.classList.remove('open'); q.value = h.label;
+  const h = hits[i]; if (!h) return;
   if (state.active !== 'map') { state.base = 'map'; show('map'); }
+  if (h.street) { // Straße gewählt: hinfliegen, Hausnummer kann direkt weitergetippt werden
+    q.value = h.label + ' '; q.focus(); res.classList.remove('open');
+    map.flyTo({ center: h.ll, zoom: Math.max(map.getZoom(), 16.3), speed: 2.2 }); return;
+  }
+  res.classList.remove('open'); q.value = h.label;
   map.jumpTo({ center: h.ll, zoom: Math.max(map.getZoom(), 17.2) });
   await ensureLoaded([h.ll[0] - 0.002, h.ll[1] - 0.0012, h.ll[0] + 0.002, h.ll[1] + 0.0012]);
   if (!selectAt(h.ll, false)) toast('Zu dieser Adresse wurde kein Flurstück gefunden.');
