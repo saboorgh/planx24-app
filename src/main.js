@@ -785,7 +785,8 @@ function streetHits(t, nr) {
     } else if (!nr) out.push({ label: s[0], sub: `${ortOf(s)} · ${s[5]} Adressen`, ll: utm(s[3], s[4]), street: true });
     if (out.length >= 8) break;
   }
-  return nr ? out.sort((a, b) => b.exact - a.exact).slice(0, 8) : out;
+  const seenL = new Set(); // doppelte Adressen in den Stadtdaten nur einmal zeigen
+  return (nr ? out.sort((a, b) => b.exact - a.exact) : out).filter(h => !seenL.has(h.label) && seenL.add(h.label)).slice(0, 8);
 }
 function render() {
   res.innerHTML = hits.length ? hits.map((h, i) => `<button type="button" role="option" data-i="${i}" class="${i === 0 ? 'on' : ''}"><span>${esc(h.label)}</span><small>${esc(h.sub)}</small></button>`).join('') : '<p style="margin:8px 10px;color:#5A5C63">Keine Hamburger Adresse gefunden.</p>';
