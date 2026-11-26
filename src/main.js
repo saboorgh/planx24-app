@@ -147,18 +147,23 @@ function scheduleRefresh() {
   }, 60);
 }
 
+// Testversion: Link mit ?test → Hintergrund basemap.de (Vektor, grau) und Beschriftung mit festem Maßstab wie im ALKIS.
+// Ohne ?test bleibt alles wie bisher. Zum Entfernen: TEST-Zweige löschen.
+const TEST = new URLSearchParams(location.search).has('test');
 function build() {
   map = new maplibregl.Map({
     container: 'map', attributionControl: false, maxPitch: 65,
     center: [10.0036, 53.5846], zoom: 17, minZoom: 10, maxBounds: [[9.55, 53.30], [10.45, 53.80]],
-    style: 'https://tiles.openfreemap.org/styles/positron'
+    style: TEST ? 'https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_gry.json' : 'https://tiles.openfreemap.org/styles/positron'
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
+  if (TEST) { const at = document.querySelector('.attr'); if (at) at.innerHTML = '© <a href="https://www.govdata.de/dl-de/by-2-0" target="_blank" rel="noopener">FHH, LGV</a> · © <a href="https://basemap.de" target="_blank" rel="noopener">basemap.de / BKG</a>'; }
   map.on('load', async () => {
     // Beschriftungen der Hintergrundkarte nur bei kleinen Maßstäben, danach übernimmt das ALKIS
     // Orts- und Stadtteilnamen nur bis Zoom 16; Straßen- und Gewässernamen der Hintergrundkarte bleiben (laufen entlang der Straße)
-    map.getStyle().layers.filter(l => l.type === 'symbol' && !/^highway-name|water/.test(l.id)).forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
+    if (TEST) map.getStyle().layers.filter(l => l.type === 'symbol' && /^Symbol_|^Hauskoordinate|^Quadrate|Hoehe|Relief|Kilometerstein|Haltepunkt|Bahnhof|Bauwerk|Gebaeude|Nummer_/.test(l.id)).forEach(l => map.setLayoutProperty(l.id, 'visibility', 'none'));
+    else map.getStyle().layers.filter(l => l.type === 'symbol' && !/^highway-name|water/.test(l.id)).forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
     outsideMask();
     addLayers(); renderPop(); renderTabs();
     map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
@@ -169,7 +174,9 @@ function build() {
 }
 // Straßen, Wege, Plätze, Bahn und Wasser sind nicht anklickbar
 const NOCLICK = /Strassenverkehr|Gewaesser|Hafenbecken|Bahnverkehr|^Weg|^Platz/;
-function parcelAt(ll) { return F.fl.features.find(f => !NOCLICK.test(f.properties.tn) && ll[0] >= f.bb[0] && ll[0] <= f.bb[2] && ll[1] >= f.bb[1] && ll[1] <= f.bb[3] && inPoly(ll, f.geometry.coordinates)); }
+// Zusätzlich: Klick auf Wasser laut tatsächlicher Nutzung (Flurstück kann gemischt sein)
+function onWater(ll) { return F.nu.features.some(f => /Gewaesser|Hafenbecken|Meer/.test(f.properties.n) && ll[0] >= f.bb[0] && ll[0] <= f.bb[2] && ll[1] >= f.bb[1] && ll[1] <= f.bb[3] && inPoly(ll, f.geometry.coordinates)); }
+function parcelAt(ll) { if (onWater(ll)) return null; return F.fl.features.find(f => !NOCLICK.test(f.properties.tn) && ll[0] >= f.bb[0] && ll[0] <= f.bb[2] && ll[1] >= f.bb[1] && ll[1] <= f.bb[3] && inPoly(ll, f.geometry.coordinates)); }
 function selectAt(ll, initial) { const f = parcelAt(ll); if (f) { if (state.add) toggleSel(f.id); else select(f.id, initial); } return f; }
 
 function addLayers() {
@@ -196,7 +203,7 @@ function addLayers() {
 
   map.on('mousemove', 'fl-fill', e => { const id = e.features[0].id; if (state.hover !== id) { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = id; map.setFeatureState({ source: 'fl', id }, { hover: true }); } map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'fl-fill', () => { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = null; map.getCanvas().style.cursor = ''; });
-  map.on('click', 'fl-fill', e => { const id = e.features[0].id, oe = e.originalEvent; if (state.add || oe.shiftKey || oe.metaKey || oe.ctrlKey) toggleSel(id); else select(id, false); });
+  map.on('click', 'fl-fill', e => { if (onWater([e.lngLat.lng, e.lngLat.lat])) return; const id = e.features[0].id, oe = e.originalEvent; if (state.add || oe.shiftKey || oe.metaKey || oe.ctrlKey) toggleSel(id); else select(id, false); });
 }
 
 /* Außerhalb Hamburgs weiß abdecken, damit Hamburg nach vorne kommt (Landesgrenze einmal von der Stadt laden) */
@@ -258,6 +265,11 @@ function addLabelLayers() {
   map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17.5, 9.5, 19, 11.5], 'text-padding': 2 }, paint: { 'text-color': '#4E545C', ...halo } });
   map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 16.5, 9, 19, 12.5], 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
   // Straßennamen kommen aus der Hintergrundkarte (entlang der Straße), nicht mehr als eigene waagerechte Beschriftung
+  if (TEST) {
+    // Wie ALKIS: Schrift wächst mit dem Maßstab (verdoppelt sich je Zoomstufe), steht fest an ihrem Platz, nichts springt weg
+    const fix = (id, mz, s18) => { map.setLayerZoomRange(id, mz, 24); map.setLayoutProperty(id, 'text-size', ['interpolate', ['exponential', 2], ['zoom'], 17, s18 / 2, 18, s18, 19, s18 * 2, 20, s18 * 2.6]); map.setLayoutProperty(id, 'text-allow-overlap', true); map.setLayoutProperty(id, 'text-ignore-placement', true); };
+    fix('l-gb', 17.3, 12); fix('l-fl', 17.6, 9.5); fix('l-hnr', 17.8, 8.5);
+  }
 }
 
 /* Ebenen */
