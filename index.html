@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlanX24 – Grundstücke Hamburg</title>
+<meta name="description" content="Grundstück in Hamburg anklicken und fragen, was man dort bauen darf. Mit Bebauungsplan, Kataster und Bodenrichtwert.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+<div class="app">
+  <nav class="rail" aria-label="Hauptnavigation">
+    <div class="logo" title="PlanX24" role="img" aria-label="PlanX24"><svg width="24" height="24" viewBox="0 0 3 3" aria-hidden="true"><g fill="#336AEA"><rect x="0" y="0" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/></g></svg></div>
+    <button data-nav="map" aria-current="page" aria-label="Karte" title="Karte"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5l6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg></button>
+    <button data-nav="list" aria-label="Projekte" title="Projekte"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 6.5a1.5 1.5 0 011.5-1.5h4.5l2 2.5H19a1.5 1.5 0 011.5 1.5v9a1.5 1.5 0 01-1.5 1.5H5a1.5 1.5 0 01-1.5-1.5z"/></svg></button>
+    <div class="spacer"></div>
+    <button aria-label="Konto" title="Konto" data-soon><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="10" r="3.2"/><path d="M6.2 18.4c1.3-2.3 3.4-3.4 5.8-3.4s4.5 1.1 5.8 3.4"/></svg></button>
+  </nav>
+
+  <div class="main">
+    <div class="tabs" id="tabs" role="tablist" aria-label="Geöffnete Ansichten"></div>
+    <main class="stage">
+      <section class="view" id="v-map">
+        <div id="map" role="application" aria-label="Karte Hamburg-Winterhude mit Flurstücken"></div>
+        <div class="lbls" id="lbls" aria-hidden="true"></div>
+        <div class="search">
+          <label>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5A5C63" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <span class="sr">Adresse oder Flurstück suchen</span>
+            <input id="q" type="search" autocomplete="off" placeholder="Adresse oder Flurstück">
+          </label>
+          <div class="results" id="res" role="listbox" aria-label="Suchergebnisse"></div>
+        </div>
+        <div class="layers">
+          <button type="button" id="lb" aria-expanded="false" aria-controls="pop"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>Ebenen</button>
+          <div class="pop" id="pop" hidden></div>
+        </div>
+        <aside class="panel hidden" id="panel" aria-label="Flurstück" aria-live="polite"></aside>
+        <div class="attr">Daten: © Freie und Hansestadt Hamburg, LGV (dl-de/by-2-0) · Hintergrund: © basemap.de / BKG</div>
+        <div class="mapnote" id="busy" hidden>Lade Hamburger Daten …</div>
+        <div class="mapnote" id="hint" hidden>Zum Anzeigen der Flurstücke näher heranzoomen</div>
+      </section>
+      <section class="view" id="v-list" hidden></section>
+      <section class="view" id="v-proj" hidden></section>
+      <div class="toast" id="toast" role="status"></div>
+    </main>
+  </div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
