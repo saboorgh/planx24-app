@@ -67,7 +67,7 @@ function fcol() { return { type: 'FeatureCollection', features: [] }; }
 const API = 'https://api.hamburg.de/datasets/v1/';
 const LAYERS = {
   fl: ['alkis_vereinfacht', 'Flurstueck'], gb: ['alkis_vereinfacht', 'GebaeudeBauwerk'], nu: ['alkis_vereinfacht', 'Nutzung'],
-  bg: ['xplan', 'bp_baugebietsteilflaeche'], bgr: ['xplan', 'bp_baugrenze'], bpl: ['bplaene', 'hh_hh_festgestellt'], brw: ['uek_normierte_bodenrichtwerte', 'lgv_brw_uek_mfh'], adr: ['gages_vereinfacht', 'hauskoordinaten']
+  bg: ['xplan', 'bp_baugebietsteilflaeche'], bgr: ['xplan', 'bp_baugrenze'], bpl: ['bplaene', 'hh_hh_festgestellt'], brw: ['uek_normierte_bodenrichtwerte', 'lgv_brw_uek_mfh']
 };
 const MIN_LOAD_ZOOM = 15;
 proj4.defs('EPSG:25832', '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs');
@@ -151,18 +151,16 @@ function build() {
   map = new maplibregl.Map({
     container: 'map', attributionControl: false, maxPitch: 65,
     center: [10.0036, 53.5846], zoom: 17, minZoom: 10, maxBounds: [[9.55, 53.30], [10.45, 53.80]],
-    style: {
-      version: 8,
-      glyphs: 'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf',
-      sources: { base: { type: 'raster', tiles: ['https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_grau/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png'], tileSize: 256, maxzoom: 18 } },
-      layers: [{ id: 'bg0', type: 'background', paint: { 'background-color': '#FBFBFC' } }, { id: 'base', type: 'raster', source: 'base', paint: { 'raster-opacity': 0.9, 'raster-saturation': -1 } }]
-    }
+    style: 'https://tiles.openfreemap.org/styles/positron'
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
   map.on('load', async () => {
+    // Beschriftungen der Hintergrundkarte nur bei kleinen Maßstäben, danach übernimmt das ALKIS
+    map.getStyle().layers.filter(l => l.type === 'symbol').forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
     addLayers(); renderPop(); renderTabs();
-    map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
+    map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); alkisLabels(); });
+    alkisLabels();
     loadView();
     await ensureLoaded([10.0016, 53.5836, 10.0056, 53.5856]);
     if (!state.selIds.length) selectAt([10.003879, 53.585055], true);
@@ -176,26 +174,41 @@ function addLayers() {
   src('nu', F.nu); src('brw', F.brw); src('bg', F.bg); src('bgr', F.bgr); src('fl', F.fl); src('gb', F.gb);
   src('sel', fcol()); src('selo', fcol()); src('mass', fcol());
   const off = { visibility: 'none' };
-  map.addLayer({ id: 'nu', type: 'fill', source: 'nu', paint: { 'fill-color': ['match', ['get', 'n'], 'Strassenverkehr', '#E6E8EB', 'Weg', '#ECEEF0', 'Platz', '#ECEEF0', 'Bahnverkehr', '#E1E3E6', 'Fliessgewaesser', '#CFE0EC', 'Stehendes Gewaesser', '#CFE0EC', 'Hafenbecken', '#CFE0EC', 'Sport Freizeit Und Erholungsflaeche', '#E4ECDF', 'Wald', '#DCE7D6', 'Gehoelz', '#E4ECDF', 'Friedhof', '#E4ECDF', 'Landwirtschaft', '#F1F3EA', '#FBFBFC'] } });
-  map.addLayer({ id: 'brw', type: 'fill', source: 'brw', layout: off, paint: { 'fill-color': ['interpolate', ['linear'], ['get', 'max'], 1000, '#EEE8F7', 8000, '#8F6CCB'], 'fill-opacity': 0.55, 'fill-outline-color': '#7A5BB5' } });
-  map.addLayer({ id: 'bp', type: 'fill', source: 'bg', layout: off, paint: { 'fill-color': ['case', ['in', 'Kern', ['get', 'art']], '#D49A96', ['in', 'Wohn', ['get', 'art']], '#F2BDB7', ['in', 'Gewerbe', ['get', 'art']], '#C9C3E3', ['in', 'Misch', ['get', 'art']], '#E7C49A', '#E9D2AE'], 'fill-opacity': 0.42 } });
-  map.addLayer({ id: 'bp-line', type: 'line', source: 'bg', layout: off, paint: { 'line-color': '#C0574F', 'line-width': 1, 'line-opacity': 0.6 } });
-  map.addLayer({ id: 'fl-fill', type: 'fill', source: 'fl', paint: { 'fill-color': '#E5484D', 'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.07, 0] } });
-  map.addLayer({ id: 'fl', type: 'line', source: 'fl', paint: { 'line-color': '#7E848C', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.25, 17, 0.6, 19, 1.1], 'line-opacity': ['interpolate', ['linear'], ['zoom'], 15, 0.5, 17, 0.9] } });
+  map.addLayer({ id: 'nu', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'nu', paint: { 'fill-color': ['match', ['get', 'n'], 'Strassenverkehr', '#E6E8EB', 'Weg', '#ECEEF0', 'Platz', '#ECEEF0', 'Bahnverkehr', '#E1E3E6', 'Fliessgewaesser', '#CFE0EC', 'Stehendes Gewaesser', '#CFE0EC', 'Hafenbecken', '#CFE0EC', 'Sport Freizeit Und Erholungsflaeche', '#E4ECDF', 'Wald', '#DCE7D6', 'Gehoelz', '#E4ECDF', 'Friedhof', '#E4ECDF', 'Landwirtschaft', '#F1F3EA', '#FBFBFC'] } });
+  map.addLayer({ id: 'brw', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'brw', layout: off, paint: { 'fill-color': ['interpolate', ['linear'], ['get', 'max'], 1000, '#EEE8F7', 8000, '#8F6CCB'], 'fill-opacity': 0.55, 'fill-outline-color': '#7A5BB5' } });
+  map.addLayer({ id: 'bp', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'bg', layout: off, paint: { 'fill-color': ['case', ['in', 'Kern', ['get', 'art']], '#D49A96', ['in', 'Wohn', ['get', 'art']], '#F2BDB7', ['in', 'Gewerbe', ['get', 'art']], '#C9C3E3', ['in', 'Misch', ['get', 'art']], '#E7C49A', '#E9D2AE'], 'fill-opacity': 0.42 } });
+  map.addLayer({ id: 'bp-line', minzoom: MIN_LOAD_ZOOM, type: 'line', source: 'bg', layout: off, paint: { 'line-color': '#C0574F', 'line-width': 1, 'line-opacity': 0.6 } });
+  map.addLayer({ id: 'fl-fill', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'fl', paint: { 'fill-color': '#E5484D', 'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.07, 0] } });
+  map.addLayer({ id: 'fl', minzoom: MIN_LOAD_ZOOM, type: 'line', source: 'fl', paint: { 'line-color': '#7E848C', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.25, 17, 0.6, 19, 1.1], 'line-opacity': ['interpolate', ['linear'], ['zoom'], 15, 0.5, 17, 0.9] } });
   map.addLayer({ id: 'sel-fill', type: 'fill', source: 'sel', paint: { 'fill-color': '#E5484D', 'fill-opacity': 0.1 } });
-  map.addLayer({ id: 'gb', type: 'fill', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'fill-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#B6BAC1', '#D3D6DA'] } });
-  map.addLayer({ id: 'gb-line', type: 'line', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'line-color': '#6F757D', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.3, 18, 0.9] } });
-  map.addLayer({ id: 'bgr', type: 'line', source: 'bgr', layout: off, paint: { 'line-color': '#2F5EB8', 'line-width': 1.6, 'line-dasharray': [3, 1.6] } });
+  map.addLayer({ id: 'gb', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'fill-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#B6BAC1', '#D3D6DA'] } });
+  map.addLayer({ id: 'gb-line', minzoom: MIN_LOAD_ZOOM, type: 'line', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'line-color': '#6F757D', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.3, 18, 0.9] } });
+  map.addLayer({ id: 'bgr', minzoom: MIN_LOAD_ZOOM, type: 'line', source: 'bgr', layout: off, paint: { 'line-color': '#2F5EB8', 'line-width': 1.6, 'line-dasharray': [3, 1.6] } });
   map.addLayer({ id: 'gb3d', type: 'fill-extrusion', source: 'gb', filter: ['==', ['get', 'keep'], 1], layout: off, paint: { 'fill-extrusion-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#EE8F92', '#E2E4E7'], 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.95 } });
   map.addLayer({ id: 'sel-inner', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'i'], paint: { 'line-color': '#E5484D', 'line-width': 1.5, 'line-opacity': 0.75, 'line-dasharray': [3, 3] } });
   map.addLayer({ id: 'sel-halo', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#FFFFFF', 'line-width': 7, 'line-opacity': 0.9 } });
   map.addLayer({ id: 'sel-line', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#E5484D', 'line-width': 3 } });
   map.addLayer({ id: 'mass', type: 'fill-extrusion', source: 'mass', layout: off, paint: { 'fill-extrusion-color': '#E5484D', 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.45 } });
-  addLabelLayers();
 
   map.on('mousemove', 'fl-fill', e => { const id = e.features[0].id; if (state.hover !== id) { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = id; map.setFeatureState({ source: 'fl', id }, { hover: true }); } map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'fl-fill', () => { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = null; map.getCanvas().style.cursor = ''; });
   map.on('click', 'fl-fill', e => { const id = e.features[0].id, oe = e.originalEvent; if (state.add || oe.shiftKey || oe.metaKey || oe.ctrlKey) toggleSel(id); else select(id, false); });
+}
+
+/* Beschriftung wie im ALKIS/BORIS: Geschosse, Flurstücksnummern, Hausnummern, Straßennamen aus dem Hamburger Kartendienst */
+function alkisLabels() {
+  const on = map.getZoom() >= 16.5 && !state.layers.d3;
+  if (map.getLayer('alkis-lbl')) vis('alkis-lbl', on);
+  if (!on) return;
+  const c = map.getCanvas(), b = map.getBounds();
+  const m = (lon, lat) => [lon * 20037508.34 / 180, Math.log(Math.tan((90 + lat) * Math.PI / 360)) * 20037508.34 / Math.PI];
+  const a0 = m(b.getWest(), b.getSouth()), a1 = m(b.getEast(), b.getNorth());
+  const W = Math.min(2048, Math.round(c.clientWidth)), H = Math.min(2048, Math.round(W * (a1[1] - a0[1]) / (a1[0] - a0[0])));
+  const url = `https://geodienste.hamburg.de/HH_WMS_ALKIS_Basiskarte?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=22,23,25,27,29&STYLES=&SRS=EPSG:3857&BBOX=${a0[0].toFixed(2)},${a0[1].toFixed(2)},${a1[0].toFixed(2)},${a1[1].toFixed(2)}&WIDTH=${W}&HEIGHT=${H}&FORMAT=image/png&TRANSPARENT=true`;
+  const coordinates = [[b.getWest(), b.getNorth()], [b.getEast(), b.getNorth()], [b.getEast(), b.getSouth()], [b.getWest(), b.getSouth()]];
+  const s = map.getSource('alkis-lbl');
+  if (s) s.updateImage({ url, coordinates });
+  else { map.addSource('alkis-lbl', { type: 'image', url, coordinates }); map.addLayer({ id: 'alkis-lbl', type: 'raster', source: 'alkis-lbl', paint: { 'raster-opacity': 0.85, 'raster-fade-duration': 0 } }); }
 }
 
 /* Gescannter Bebauungsplan: ein Bild je Ansicht aus dem Hamburger Kartendienst (nur EPSG:25832) */
@@ -261,7 +274,7 @@ function setLayer(k) {
   if (k === 'bp') ['bp', 'bp-line', 'bgr'].forEach(l => vis(l, on));
   if (k === 'brw') vis('brw', on);
   if (k === 'scan') { if (on) scanUpdate(); if (map.getLayer('scan')) vis('scan', on); map.setPaintProperty('gb', 'fill-opacity', on ? 0.25 : 1); }
-  if (k === 'd3') { vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('mass', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
+  if (k === 'd3') { alkisLabels(); vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('mass', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
   renderPop();
 }
 $('#pop').addEventListener('click', e => e.stopPropagation());
