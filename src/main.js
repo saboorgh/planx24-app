@@ -90,7 +90,8 @@ const seen = new Set();
 function addFeatures(k, feats) {
   const arr = F[k].features, added = [];
   for (const f of feats) {
-    let g = f.geometry || (f.properties && f.properties.geom); if (!g) continue;
+    // Bodenrichtwerte: geometry ist nur ein Punkt, die Fläche steckt in properties.geom
+    let g = (k === 'brw' && f.properties && f.properties.geom) || f.geometry || (f.properties && f.properties.geom); if (!g) continue;
     const sid = k + '|' + (f.id ?? (f.properties && f.properties.oid) ?? JSON.stringify(g.coordinates).slice(0, 120));
     if (seen.has(sid)) continue; seen.add(sid);
     if (g.type === 'Polygon') g = { type: 'MultiPolygon', coordinates: [g.coordinates] };

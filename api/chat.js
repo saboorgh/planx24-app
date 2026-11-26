@@ -112,7 +112,7 @@ function clean(messages) {
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') { res.status(405).end(); return; }
-  if (!process.env.ANTHROPIC_API_KEY) { res.status(500).json({ error: 'ANTHROPIC_API_KEY fehlt in Vercel.' }); return; }
+  if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'Der KI-Chat ist noch nicht eingeschaltet.' }); return; }
   const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '?').split(',')[0].trim();
   if (!allowed(ip)) { res.status(429).json({ error: `Tageslimit erreicht (${DAILY_LIMIT} Fragen). Morgen geht es weiter.` }); return; }
 
