@@ -31,7 +31,9 @@ Credits/Bezahlung erst ganz am Ende.
 - Projekte nur im Browser (localStorage). Später Supabase mit Login.
 - Darstellung: Grau-Töne, Auswahl rot (#E5484D), Logo = fünf blaue Kästchen als X (#336AEA), dunkle Knöpfe #1C2B35. Rahmen um die Karte fast weiß (#FBFBFC), aktiver Tab und aktiver Knopf links grau (#ECEDEF).
 - Quellenangabe unten kurz: „© FHH, LGV · © basemap.de / BKG“ (verlinkt).
-- Idee des Users (offen): Hintergrundkarte in Farben wie ein Schwarzplan.
+- Idee des Users (offen): Hintergrundkarte in Farben wie ein Schwarzplan. basemap.de-Stil ist voll anpassbar (jede Ebene: Farben, Linien, Schrift, an/aus).
+- Suche: Groß-/Kleinschreibung egal (Wörter werden wie im Straßenverzeichnis geschrieben, „str“/„strasse“ → „straße“), Wartezeit 120 ms. Tippfehler findet sie noch nicht (dafür eigenes Straßenverzeichnis mit unscharfer Suche nötig).
+- Ebenen-Liste: nur „Bebauungsplan (Scan)“ und „3D-Ansicht“. Festsetzungen (`bp`) und Bodenrichtwerte (`brw`) vorerst raus (Wunsch des Users), Code bleibt – später über einen kleinen Filter oben in „Ebenen“ zuschaltbar.
 
 ## Betrieb
 - Live: https://planx24-app.vercel.app – jeder Push auf `main` geht automatisch online.
@@ -40,6 +42,11 @@ Credits/Bezahlung erst ganz am Ende.
 - KI-Chat ist noch aus: In Vercel fehlen `ANTHROPIC_API_KEY` und `KB_URL` (der User trägt Schlüssel selbst ein, nie in den Chat). Für `KB_URL` einen frischen Zugang der Stufe `oeffentlich` anlegen (README).
 
 ## Offen / nächste Schritte
+- Ideen des Users vom 26.11.2026 (besprochen, noch nicht gebaut):
+  - Luftbilder: Hamburg-DOP frei als WMS (`geodienste.hamburg.de/wms_dop_zeitreihe_unbelaubt` bzw. `_belaubt`, dl-de/by-2-0). Schrägluftbilder gibt es im Geoportal, ob als offener Dienst einbindbar: prüfen.
+  - Denkmalschutz: `api.hamburg.de/datasets/v1/denkmalschutz` (u. a. `gebaeude`, `ensembles`, `flaechen_gartendenkmale`). Soziale Erhaltungsverordnungen: `soz_erh_vo` (`sozerhvo_inkraft`, `sozerhvo_inaufstellung`). Städtebauliche Erhaltungsverordnungen: WMS/GML vorhanden, OGC-API-Name noch suchen.
+  - KI soll immer auch den gescannten Plan nutzen, wenn kein/fehlerhaftes XPlan vorliegt.
+  - Textliche Festsetzungen aller Hamburger B-Pläne/Baustufenpläne (PDF aus `bplaene`) in die Wissensbasis übernehmen, damit die KI beim Klick den passenden Text findet.
 - User prüft gerade Adressen auf Richtigkeit (Grenzen, Festsetzungen, Baustufenpläne) und meldet Auffälligkeiten.
 - Danach: Chat einschalten und fachlich schärfen, allgemeiner Chat oben bei der Karte (Idee), Bildschirm Bauvoranfrage, Erhaltungsverordnung/Denkmal anbinden, Supabase-Login und Projekte speichern, eigener Daten-Zwischenspeicher für Tempo.
 - Rechtliches vor bezahlter Bauvoranfrage klären (Bauvorlageberechtigung, Haftpflicht, RDG).

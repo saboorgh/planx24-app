@@ -284,7 +284,8 @@ function addLabelLayers() {
 }
 
 /* Ebenen */
-const LAY = [['scan', 'Bebauungsplan (Scan)', 'Originalplan, lagerichtig'], ['bp', 'Festsetzungen', 'Baugebiete und Baugrenzen, digital'], ['brw', 'Bodenrichtwerte', '€/m² je Baublock'], ['d3', '3D-Ansicht', 'Gebäude und zulässiges Volumen']];
+// Festsetzungen (bp) und Bodenrichtwerte (brw) vorerst nicht in der Liste (Wunsch des Users); Ebenen-Code bleibt, später über einen Filter zuschaltbar
+const LAY = [['scan', 'Bebauungsplan (Scan)', 'Originalplan, lagerichtig'], ['d3', '3D-Ansicht', 'Gebäude und zulässiges Volumen']];
 function vis(l, on) { map.setLayoutProperty(l, 'visibility', on ? 'visible' : 'none'); }
 function renderPop() {
   const L = state.layers;
@@ -739,7 +740,11 @@ function search() {
   if (t.length < 3) { res.classList.remove('open'); return; }
   sTimer = setTimeout(async () => {
     const my = ++sSeq, m = t.match(/^(.*?)[\s,]+(\d+\s*[a-zA-Z]?)\s*$/);
-    const street = (m ? m[1] : t).replace(/str\.?$/i, 'straße').trim(), nr = m ? m[2].replace(/\s/g, '') : '';
+    // Groß-/Kleinschreibung egal: Wörter wie im Straßenverzeichnis schreiben (görlitzer str → Görlitzer Straße)
+    const small = new Set(['der', 'die', 'das', 'dem', 'den', 'des', 'und', 'von', 'vom', 'zum', 'zur', 'bei', 'auf', 'in', 'im', 'an', 'am', 'unter', 'über', 'vor', 'hinter']);
+    const street = (m ? m[1] : t).replace(/str\.?$/i, 'straße').replace(/strasse\b/i, 'straße').trim().toLowerCase()
+      .split(' ').map((w, i) => i > 0 && small.has(w) ? w : w.split('-').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('-')).join(' ')
+      .replace(/(\S)straße\b/, '$1straße'), nr = m ? m[2].replace(/\s/g, '').toLowerCase() : '';
     const url = `${API}gages_vereinfacht/collections/hauskoordinaten/items?f=json&limit=8&strassenname=${encodeURIComponent(street + '*')}` + (nr ? `&hausnummer=${encodeURIComponent(nr + '*')}` : '');
     let feats = []; try { feats = (await (await fetch(url)).json()).features || []; } catch (e) {}
     if (my !== sSeq) return;
@@ -747,7 +752,7 @@ function search() {
     res.innerHTML = hits.length ? hits.map((h, i) => `<button type="button" role="option" data-i="${i}" class="${i === 0 ? 'on' : ''}"><span>${esc(h.label)}</span><small>${esc(h.sub)}</small></button>`).join('') : '<p style="margin:8px 10px;color:#5A5C63">Keine Hamburger Adresse gefunden.</p>';
     res.classList.add('open');
     res.querySelectorAll('button').forEach(b => b.addEventListener('click', () => go(+b.dataset.i)));
-  }, 250);
+  }, 120);
 }
 async function go(i) {
   const h = hits[i]; if (!h) return; res.classList.remove('open'); q.value = h.label;
