@@ -17,7 +17,7 @@ Credits/Bezahlung erst ganz am Ende.
 - Vite + MapLibre GL 4.7.1 + proj4, Vercel (`api/chat.js` für den KI-Chat).
 - Daten live im Browser von `https://api.hamburg.de/datasets/v1/` (CORS erlaubt), je Zelle 0,008° × 0,005° nachgeladen ab Zoom 15:
   `alkis_vereinfacht` (Flurstueck, GebaeudeBauwerk, Nutzung), `xplan` (bp_baugebietsteilflaeche, bp_baugrenze), `bplaene` (hh_hh_festgestellt), `uek_normierte_bodenrichtwerte` (lgv_brw_uek_mfh – Fläche steckt in `properties.geom`, geometry ist nur ein Punkt), `gages_vereinfacht` (hauskoordinaten, für die Suche).
-- Beschriftung wie BORIS: WMS `HH_WMS_ALKIS_Basiskarte`, Ebenen 22,23,25,27,29, EPSG:3857, ein Bild je Ansicht ab Zoom 16,5.
+- Beschriftung wie BORIS: WMS `HH_WMS_ALKIS_Basiskarte`, Ebenen 22,23,25,27,29, EPSG:3857, ein Bild je Ansicht ab Zoom 16,5. Der Dienst ist ArcGIS und richtet sich nach `DPI`: Das Bild wird mit doppelter Pixelzahl und `DPI=192` geladen, damit es auf Retina scharf ist und die Schrift gleich groß bleibt (ohne DPI wird die Schrift klein, und es erscheinen andere Beschriftungen, weil der Dienst den Maßstab neu berechnet). Beim Zoomen wird das Bild ausgeblendet und erst wieder gezeigt, wenn das neue geladen ist; vorher wurde die Schrift beim Zoomen mitgestreckt.
 - Gescannter B-Plan: WMS `HH_WMS_Cache_Rasterplan`, Ebene `bp_raster`, nur EPSG:25832, ein Bild je Ansicht.
 - Hintergrund: OpenFreeMap Positron (OSM, frei, auch kommerziell).
 - Projekte nur im Browser (localStorage). Später Supabase mit Login.

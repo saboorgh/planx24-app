@@ -159,6 +159,7 @@ function build() {
     // Beschriftungen der Hintergrundkarte nur bei kleinen Maßstäben, danach übernimmt das ALKIS
     map.getStyle().layers.filter(l => l.type === 'symbol').forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
     addLayers(); renderPop(); renderTabs();
+    map.on('zoomstart', () => { alkisReq++; alkisHide(); });
     map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); alkisLabels(); });
     alkisLabels();
     loadView();
@@ -196,19 +197,29 @@ function addLayers() {
 }
 
 /* Beschriftung wie im ALKIS/BORIS: Geschosse, Flurstücksnummern, Hausnummern, Straßennamen aus dem Hamburger Kartendienst */
+// Scharf auf Retina: doppelte Pixelzahl + DPI-Angabe, damit der Dienst die Schrift gleich groß lässt.
+// Beim Zoomen wird das Bild ausgeblendet (sonst wird die Schrift mitgestreckt) und erst nach dem Laden des neuen Bildes wieder gezeigt.
+let alkisReq = 0, alkisBlob = null;
+function alkisHide() { if (map.getLayer('alkis-lbl')) map.setPaintProperty('alkis-lbl', 'raster-opacity', 0); }
 function alkisLabels() {
   const on = map.getZoom() >= 16.5 && !state.layers.d3;
   if (map.getLayer('alkis-lbl')) vis('alkis-lbl', on);
   if (!on) return;
-  const c = map.getCanvas(), b = map.getBounds();
+  const c = map.getCanvas(), b = map.getBounds(), r = Math.min(2, window.devicePixelRatio || 1);
   const m = (lon, lat) => [lon * 20037508.34 / 180, Math.log(Math.tan((90 + lat) * Math.PI / 360)) * 20037508.34 / Math.PI];
   const a0 = m(b.getWest(), b.getSouth()), a1 = m(b.getEast(), b.getNorth());
-  const W = Math.min(2048, Math.round(c.clientWidth)), H = Math.min(2048, Math.round(W * (a1[1] - a0[1]) / (a1[0] - a0[0])));
-  const url = `https://geodienste.hamburg.de/HH_WMS_ALKIS_Basiskarte?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=22,23,25,27,29&STYLES=&SRS=EPSG:3857&BBOX=${a0[0].toFixed(2)},${a0[1].toFixed(2)},${a1[0].toFixed(2)},${a1[1].toFixed(2)}&WIDTH=${W}&HEIGHT=${H}&FORMAT=image/png&TRANSPARENT=true`;
+  const W = Math.min(4096, Math.round(c.clientWidth * r)), H = Math.min(4096, Math.round(W * (a1[1] - a0[1]) / (a1[0] - a0[0])));
+  const url = `https://geodienste.hamburg.de/HH_WMS_ALKIS_Basiskarte?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=22,23,25,27,29&STYLES=&SRS=EPSG:3857&BBOX=${a0[0].toFixed(2)},${a0[1].toFixed(2)},${a1[0].toFixed(2)},${a1[1].toFixed(2)}&WIDTH=${W}&HEIGHT=${H}&DPI=${Math.round(96 * W / c.clientWidth)}&FORMAT=image/png&TRANSPARENT=true`;
   const coordinates = [[b.getWest(), b.getNorth()], [b.getEast(), b.getNorth()], [b.getEast(), b.getSouth()], [b.getWest(), b.getSouth()]];
-  const s = map.getSource('alkis-lbl');
-  if (s) s.updateImage({ url, coordinates });
-  else { map.addSource('alkis-lbl', { type: 'image', url, coordinates }); map.addLayer({ id: 'alkis-lbl', type: 'raster', source: 'alkis-lbl', paint: { 'raster-opacity': 0.85, 'raster-fade-duration': 0 } }); }
+  const id = ++alkisReq;
+  fetch(url).then(res => res.ok ? res.blob() : Promise.reject(res.status)).then(blob => {
+    if (id !== alkisReq) return; // inzwischen neue Ansicht
+    const old = alkisBlob; alkisBlob = URL.createObjectURL(blob);
+    const s = map.getSource('alkis-lbl');
+    if (s) s.updateImage({ url: alkisBlob, coordinates });
+    else { map.addSource('alkis-lbl', { type: 'image', url: alkisBlob, coordinates }); map.addLayer({ id: 'alkis-lbl', type: 'raster', source: 'alkis-lbl', paint: { 'raster-opacity': 0.85, 'raster-fade-duration': 0 } }); }
+    map.once('idle', () => { if (id === alkisReq && map.getLayer('alkis-lbl')) map.setPaintProperty('alkis-lbl', 'raster-opacity', 0.85); if (old) URL.revokeObjectURL(old); });
+  }).catch(() => {});
 }
 
 /* Gescannter Bebauungsplan: ein Bild je Ansicht aus dem Hamburger Kartendienst (nur EPSG:25832) */
