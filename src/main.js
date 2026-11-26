@@ -43,7 +43,7 @@ function nice(s) { return String(s || '').replace(/([a-zäöü])([A-Z])/g, '$1 $
 function planName(p) {
   if (!p) return '';
   let m;
-  if ((m = p.match(/^BS(\w+?)(\((\d+)Aend\))?$/))) return 'Baustufenplan ' + m[1] + (m[3] ? ', ' + m[3] + '. Änderung' : '');
+  if ((m = p.match(/^BS([\wÄÖÜäöüß-]+?)(\((\d+)Aend\))?$/))) return 'Baustufenplan ' + m[1] + (m[3] ? ', ' + m[3] + '. Änderung' : '');
   if ((m = p.match(/^TB(\d+)$/))) return 'Teilbebauungsplan ' + m[1];
   if ((m = p.match(/^([A-Za-zäöüß-]+)(\d+)$/))) return 'Bebauungsplan ' + m[1] + ' ' + m[2];
   return p;
