@@ -17,11 +17,15 @@ Credits/Bezahlung erst ganz am Ende.
 - Vite + MapLibre GL 4.7.1 + proj4, Vercel (`api/chat.js` für den KI-Chat).
 - Daten live im Browser von `https://api.hamburg.de/datasets/v1/` (CORS erlaubt), je Zelle 0,008° × 0,005° nachgeladen ab Zoom 15:
   `alkis_vereinfacht` (Flurstueck, GebaeudeBauwerk, Nutzung), `xplan` (bp_baugebietsteilflaeche, bp_baugrenze), `bplaene` (hh_hh_festgestellt), `uek_normierte_bodenrichtwerte` (lgv_brw_uek_mfh – Fläche steckt in `properties.geom`, geometry ist nur ein Punkt), `gages_vereinfacht` (hauskoordinaten, für die Suche).
-- Beschriftung wie BORIS: WMS `HH_WMS_ALKIS_Basiskarte`, Ebenen 22,23,25,27,29, EPSG:3857, ein Bild je Ansicht ab Zoom 16,5. Der Dienst ist ArcGIS und richtet sich nach `DPI`: Das Bild wird mit doppelter Pixelzahl und `DPI=192` geladen, damit es auf Retina scharf ist und die Schrift gleich groß bleibt (ohne DPI wird die Schrift klein, und es erscheinen andere Beschriftungen, weil der Dienst den Maßstab neu berechnet). Beim Zoomen wird das Bild ausgeblendet und erst wieder gezeigt, wenn das neue geladen ist; vorher wurde die Schrift beim Zoomen mitgestreckt.
+- Beschriftung als Vektor (MapLibre-Symbole) aus den schon geladenen ALKIS-Daten: Geschosse (römisch, `anzahlgs`, auch Bauteile mit eigener Geschosszahl kleiner), Flurstücksnummern (kursiv), Hausnummern (`gages_vereinfacht`), Straßennamen. **Keine Bilder (WMS) für die Beschriftung** – der User will Tempo; der WMS-Versuch (`HH_WMS_ALKIS_Basiskarte`, ArcGIS, versteht `DPI=192`) war zu langsam und wurde am 26.11.2026 wieder entfernt.
+- Schriften nur, die OpenFreeMap hat: `Noto Sans Regular`, `Noto Sans Bold`, `Noto Sans Italic` (`Noto Sans Medium` gibt es dort nicht → Beschriftung fehlt dann).
+- Tempo ist Pflicht: Neue Ebenen möglichst als Vektor aus `api.hamburg.de`, keine Bild-Dienste je Ansicht, außer es geht nicht anders (gescannter B-Plan).
 - Gescannter B-Plan: WMS `HH_WMS_Cache_Rasterplan`, Ebene `bp_raster`, nur EPSG:25832, ein Bild je Ansicht.
 - Hintergrund: OpenFreeMap Positron (OSM, frei, auch kommerziell).
 - Projekte nur im Browser (localStorage). Später Supabase mit Login.
-- Darstellung: Grau-Töne, Auswahl rot (#E5484D), Logo = fünf blaue Kästchen als X (#336AEA), dunkle Knöpfe #1C2B35.
+- Darstellung: Grau-Töne, Auswahl rot (#E5484D), Logo = fünf blaue Kästchen als X (#336AEA), dunkle Knöpfe #1C2B35. Rahmen um die Karte fast weiß (#FBFBFC), aktiver Tab und aktiver Knopf links grau (#ECEDEF).
+- Quellenangabe unten kurz: „© FHH, LGV · © OpenStreetMap“ (verlinkt auf dl-de/by-2-0 und OSM-Copyright).
+- Idee des Users (offen): Hintergrundkarte in Farben wie ein Schwarzplan.
 
 ## Betrieb
 - Live: https://planx24-app.vercel.app – jeder Push auf `main` geht automatisch online.

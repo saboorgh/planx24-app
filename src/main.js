@@ -67,7 +67,7 @@ function fcol() { return { type: 'FeatureCollection', features: [] }; }
 const API = 'https://api.hamburg.de/datasets/v1/';
 const LAYERS = {
   fl: ['alkis_vereinfacht', 'Flurstueck'], gb: ['alkis_vereinfacht', 'GebaeudeBauwerk'], nu: ['alkis_vereinfacht', 'Nutzung'],
-  bg: ['xplan', 'bp_baugebietsteilflaeche'], bgr: ['xplan', 'bp_baugrenze'], bpl: ['bplaene', 'hh_hh_festgestellt'], brw: ['uek_normierte_bodenrichtwerte', 'lgv_brw_uek_mfh']
+  bg: ['xplan', 'bp_baugebietsteilflaeche'], bgr: ['xplan', 'bp_baugrenze'], bpl: ['bplaene', 'hh_hh_festgestellt'], brw: ['uek_normierte_bodenrichtwerte', 'lgv_brw_uek_mfh'], adr: ['gages_vereinfacht', 'hauskoordinaten']
 };
 const MIN_LOAD_ZOOM = 15;
 proj4.defs('EPSG:25832', '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs');
@@ -159,9 +159,7 @@ function build() {
     // Beschriftungen der Hintergrundkarte nur bei kleinen Maßstäben, danach übernimmt das ALKIS
     map.getStyle().layers.filter(l => l.type === 'symbol').forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
     addLayers(); renderPop(); renderTabs();
-    map.on('zoomstart', () => { alkisReq++; alkisHide(); });
-    map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); alkisLabels(); });
-    alkisLabels();
+    map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
     loadView();
     await ensureLoaded([10.0016, 53.5836, 10.0056, 53.5856]);
     if (!state.selIds.length) selectAt([10.003879, 53.585055], true);
@@ -190,36 +188,11 @@ function addLayers() {
   map.addLayer({ id: 'sel-halo', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#FFFFFF', 'line-width': 7, 'line-opacity': 0.9 } });
   map.addLayer({ id: 'sel-line', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#E5484D', 'line-width': 3 } });
   map.addLayer({ id: 'mass', type: 'fill-extrusion', source: 'mass', layout: off, paint: { 'fill-extrusion-color': '#E5484D', 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.45 } });
+  addLabelLayers();
 
   map.on('mousemove', 'fl-fill', e => { const id = e.features[0].id; if (state.hover !== id) { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = id; map.setFeatureState({ source: 'fl', id }, { hover: true }); } map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'fl-fill', () => { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = null; map.getCanvas().style.cursor = ''; });
   map.on('click', 'fl-fill', e => { const id = e.features[0].id, oe = e.originalEvent; if (state.add || oe.shiftKey || oe.metaKey || oe.ctrlKey) toggleSel(id); else select(id, false); });
-}
-
-/* Beschriftung wie im ALKIS/BORIS: Geschosse, Flurstücksnummern, Hausnummern, Straßennamen aus dem Hamburger Kartendienst */
-// Scharf auf Retina: doppelte Pixelzahl + DPI-Angabe, damit der Dienst die Schrift gleich groß lässt.
-// Beim Zoomen wird das Bild ausgeblendet (sonst wird die Schrift mitgestreckt) und erst nach dem Laden des neuen Bildes wieder gezeigt.
-let alkisReq = 0, alkisBlob = null;
-function alkisHide() { if (map.getLayer('alkis-lbl')) map.setPaintProperty('alkis-lbl', 'raster-opacity', 0); }
-function alkisLabels() {
-  const on = map.getZoom() >= 16.5 && !state.layers.d3;
-  if (map.getLayer('alkis-lbl')) vis('alkis-lbl', on);
-  if (!on) return;
-  const c = map.getCanvas(), b = map.getBounds(), r = Math.min(2, window.devicePixelRatio || 1);
-  const m = (lon, lat) => [lon * 20037508.34 / 180, Math.log(Math.tan((90 + lat) * Math.PI / 360)) * 20037508.34 / Math.PI];
-  const a0 = m(b.getWest(), b.getSouth()), a1 = m(b.getEast(), b.getNorth());
-  const W = Math.min(4096, Math.round(c.clientWidth * r)), H = Math.min(4096, Math.round(W * (a1[1] - a0[1]) / (a1[0] - a0[0])));
-  const url = `https://geodienste.hamburg.de/HH_WMS_ALKIS_Basiskarte?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=22,23,25,27,29&STYLES=&SRS=EPSG:3857&BBOX=${a0[0].toFixed(2)},${a0[1].toFixed(2)},${a1[0].toFixed(2)},${a1[1].toFixed(2)}&WIDTH=${W}&HEIGHT=${H}&DPI=${Math.round(96 * W / c.clientWidth)}&FORMAT=image/png&TRANSPARENT=true`;
-  const coordinates = [[b.getWest(), b.getNorth()], [b.getEast(), b.getNorth()], [b.getEast(), b.getSouth()], [b.getWest(), b.getSouth()]];
-  const id = ++alkisReq;
-  fetch(url).then(res => res.ok ? res.blob() : Promise.reject(res.status)).then(blob => {
-    if (id !== alkisReq) return; // inzwischen neue Ansicht
-    const old = alkisBlob; alkisBlob = URL.createObjectURL(blob);
-    const s = map.getSource('alkis-lbl');
-    if (s) s.updateImage({ url: alkisBlob, coordinates });
-    else { map.addSource('alkis-lbl', { type: 'image', url: alkisBlob, coordinates }); map.addLayer({ id: 'alkis-lbl', type: 'raster', source: 'alkis-lbl', paint: { 'raster-opacity': 0.85, 'raster-fade-duration': 0 } }); }
-    map.once('idle', () => { if (id === alkisReq && map.getLayer('alkis-lbl')) map.setPaintProperty('alkis-lbl', 'raster-opacity', 0.85); if (old) URL.revokeObjectURL(old); });
-  }).catch(() => {});
 }
 
 /* Gescannter Bebauungsplan: ein Bild je Ansicht aus dem Hamburger Kartendienst (nur EPSG:25832) */
@@ -253,7 +226,8 @@ const LBL = { 'lbl-fl': fcol(), 'lbl-gb': fcol(), 'lbl-hnr': fcol(), 'lbl-str': 
 const pt = (c, props) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: c }, properties: props });
 function labelsAdd(fls, gbs, adrs) {
   fls.forEach(f => { if (/Strassenverkehr|Gewaesser|^Weg|^Platz|Bahn/.test(f.properties.tn)) return; const own = F.gb.features.filter(g => g.properties.keep && g.bb[0] < f.bb[2] && g.bb[2] > f.bb[0] && g.bb[1] < f.bb[3] && g.bb[3] > f.bb[1]); LBL['lbl-fl'].features.push(pt(insidePt(f, own), { t: f.properties.nr, a: f.properties.a })); });
-  gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 30 || !inPoly(g.c, g.geometry.coordinates)) return; LBL['lbl-gb'].features.push(pt(g.c, { t: ROM[gs] || String(gs), a: g.area })); });
+  // Gebäude: Geschosse in römischen Zahlen wie im ALKIS; Bauteile mit eigener Geschosszahl (z. B. geringergeschossiger Gebäudeteil) kleiner
+  gbs.forEach(g => { const p = g.properties, gs = p.gs; if (!gs || g.area < 12 || /Unter der Erd/.test(p.fn)) return; const main = p.keep === 1; if (!main && p.typ !== 'Bauteil') return; if (main && g.area < 25) return; const c = inPoly(g.c, g.geometry.coordinates) ? g.c : insidePt(g); LBL['lbl-gb'].features.push(pt(c, { t: ROM[gs] || String(gs), a: g.area, m: main ? 1 : 0 })); });
   adrs.forEach(a => { if (a.properties.h) LBL['lbl-hnr'].features.push(pt(a.geometry.coordinates, { t: a.properties.h })); });
 }
 function streetLabels() {
@@ -263,12 +237,15 @@ function streetLabels() {
 }
 function addLabelLayers() {
   Object.keys(LBL).forEach(k => map.addSource(k, { type: 'geojson', data: LBL[k] }));
-  const halo = { 'text-halo-color': 'rgba(255,255,255,0.95)', 'text-halo-width': 1.4 };
-  // Reihenfolge = Vorrang: die zuletzt hinzugefügte Ebene gewinnt bei Platzmangel
-  map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17, 9.5, 19, 12], 'text-padding': 3, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#7A8089', ...halo } });
-  map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17.5, 9.5, 19, 11.5], 'text-padding': 2 }, paint: { 'text-color': '#4E545C', ...halo } });
-  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Medium'], 'text-size': ['interpolate', ['linear'], ['zoom'], 16.5, 9, 19, 12.5], 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
-  map.addLayer({ id: 'l-str', type: 'symbol', source: 'lbl-str', minzoom: 15, layout: { 'text-field': ['get', 't'], 'text-font': ['case', ['==', ['get', 'w'], 1], ['literal', ['Noto Sans Italic']], ['literal', ['Noto Sans Medium']]], 'text-size': ['interpolate', ['linear'], ['zoom'], 15, 10, 18, 13], 'text-padding': 6, 'text-max-width': 12 }, paint: { 'text-color': ['case', ['==', ['get', 'w'], 1], '#3D6F92', '#5A5F66'], ...halo } });
+  // Schriften nur aus dem Bestand des Kartenservers (OpenFreeMap): Noto Sans Regular, Bold, Italic
+  const halo = { 'text-halo-color': 'rgba(255,255,255,0.95)', 'text-halo-width': 1.3 };
+  const size = (z0, s0, z1, s1) => ['interpolate', ['linear'], ['zoom'], z0, s0, z1, s1];
+  // Reihenfolge = Vorrang: die zuletzt hinzugefügte Ebene wird zuerst platziert
+  map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': size(17, 10, 20, 14), 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#6B7079', ...halo } });
+  map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': size(17.5, 10, 20, 13), 'text-padding': 1 }, paint: { 'text-color': '#4E545C', ...halo } });
+  map.addLayer({ id: 'l-gbt', type: 'symbol', source: 'lbl-gb', minzoom: 17.5, filter: ['==', ['get', 'm'], 0], layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': size(17.5, 10, 20, 14), 'text-padding': 1, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#4A4F57', ...halo } });
+  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16, filter: ['==', ['get', 'm'], 1], layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': size(16, 11, 20, 18), 'text-padding': 1, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#1F2328', ...halo } });
+  map.addLayer({ id: 'l-str', type: 'symbol', source: 'lbl-str', minzoom: 15, layout: { 'text-field': ['get', 't'], 'text-font': ['case', ['==', ['get', 'w'], 1], ['literal', ['Noto Sans Italic']], ['literal', ['Noto Sans Bold']]], 'text-size': size(15, 10, 19, 14), 'text-letter-spacing': 0.03, 'text-padding': 6, 'text-max-width': 12 }, paint: { 'text-color': ['case', ['==', ['get', 'w'], 1], '#3D6F92', '#5A5F66'], ...halo } });
 }
 
 /* Ebenen */
@@ -285,7 +262,7 @@ function setLayer(k) {
   if (k === 'bp') ['bp', 'bp-line', 'bgr'].forEach(l => vis(l, on));
   if (k === 'brw') vis('brw', on);
   if (k === 'scan') { if (on) scanUpdate(); if (map.getLayer('scan')) vis('scan', on); map.setPaintProperty('gb', 'fill-opacity', on ? 0.25 : 1); }
-  if (k === 'd3') { alkisLabels(); vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('mass', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
+  if (k === 'd3') { vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('mass', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
   renderPop();
 }
 $('#pop').addEventListener('click', e => e.stopPropagation());
