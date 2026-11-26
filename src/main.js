@@ -157,8 +157,8 @@ function build() {
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
   map.on('load', async () => {
     // Beschriftungen der Hintergrundkarte nur bei kleinen Maßstäben, danach übernimmt das ALKIS
-    map.getStyle().layers.filter(l => l.type === 'symbol').forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
-    if (map.getLayer('label_other')) map.setLayoutProperty('label_other', 'visibility', 'none'); // Stadtteile, Ortsteile
+    // Orts- und Stadtteilnamen nur bis Zoom 16; Straßen- und Gewässernamen der Hintergrundkarte bleiben (laufen entlang der Straße)
+    map.getStyle().layers.filter(l => l.type === 'symbol' && !/^highway-name|water/.test(l.id)).forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
     outsideMask();
     addLayers(); renderPop(); renderTabs();
     map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
@@ -257,7 +257,7 @@ function addLabelLayers() {
   map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17, 9.5, 19, 12], 'text-padding': 3, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#7A8089', ...halo } });
   map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17.5, 9.5, 19, 11.5], 'text-padding': 2 }, paint: { 'text-color': '#4E545C', ...halo } });
   map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 16.5, 9, 19, 12.5], 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
-  map.addLayer({ id: 'l-str', type: 'symbol', source: 'lbl-str', minzoom: 15, layout: { 'text-field': ['get', 't'], 'text-font': ['case', ['==', ['get', 'w'], 1], ['literal', ['Noto Sans Italic']], ['literal', ['Noto Sans Regular']]], 'text-size': ['interpolate', ['linear'], ['zoom'], 15, 10, 18, 13], 'text-padding': 6, 'text-max-width': 12 }, paint: { 'text-color': ['case', ['==', ['get', 'w'], 1], '#3D6F92', '#5A5F66'], ...halo } });
+  // Straßennamen kommen aus der Hintergrundkarte (entlang der Straße), nicht mehr als eigene waagerechte Beschriftung
 }
 
 /* Ebenen */
