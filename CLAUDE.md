@@ -55,10 +55,16 @@ Credits/Bezahlung erst ganz am Ende.
   - 3D-Auswahl sieht unruhig aus (Grenze am Boden verdeckt, Nachbarhaus rot). Skizzen gezeigt: A Grenze hinter Häusern gestrichelt, B Grundstück als rote Glasbox (Empfehlung), C Nachbarn blass, Auswahl kräftig. Entscheidung des Users offen. Idee: Export als Bild/Exposé für Makler (Luftbild + Markierung).
   - KI soll immer auch den gescannten Plan nutzen, wenn kein/fehlerhaftes XPlan vorliegt.
   - Textliche Festsetzungen aller Hamburger B-Pläne/Baustufenpläne (PDF aus `bplaene`) in die Wissensbasis übernehmen, damit die KI beim Klick den passenden Text findet.
-- **Eigener Datenspeicher (Backup, freigegeben am 26.11.2026):** GitHub-Action holt wöchentlich/monatlich alle Hamburger Daten (Flurstücke, Gebäude, Nutzung, XPlan, Bodenrichtwerte, Denkmal, Erhaltung), baut daraus Vektorkacheln (PMTiles) und legt sie bei Cloudflare R2 ab; App lädt von dort, Stadt nur noch als Ausweich. Anlass: `api.hamburg.de` fiel am 26.11.2026 abends stundenlang aus (500 nach 30 s), die Karte war leer.
+- **Eigener Datenspeicher (Backup, freigegeben am 26.11.2026):** GitHub-Action holt wöchentlich/monatlich alle Hamburger Daten (Flurstücke, Gebäude, Nutzung, XPlan, Bodenrichtwerte, Denkmal, Erhaltung), baut daraus Vektorkacheln (PMTiles) und legt sie bei Cloudflare R2 ab; App lädt von dort, Stadt nur noch als Ausweich. **Stand:** Cloudflare R2 ist im Konto noch nicht aktiviert (API-Fehler 10042 „Please enable R2 through the Cloudflare Dashboard“) – der User muss R2 einmal im Dashboard einschalten (Zahlungsmittel nötig, kleiner Umfang kostenlos), dann Bucket `planx24-daten` anlegen. Anlass: `api.hamburg.de` fiel am 26.11.2026 abends stundenlang aus (500 nach 30 s), die Karte war leer.
 - User prüft gerade Adressen auf Richtigkeit (Grenzen, Festsetzungen, Baustufenpläne) und meldet Auffälligkeiten.
 - Danach: Chat einschalten und fachlich schärfen, allgemeiner Chat oben bei der Karte (Idee), Bildschirm Bauvoranfrage, Erhaltungsverordnung/Denkmal anbinden, Supabase-Login und Projekte speichern, eigener Daten-Zwischenspeicher für Tempo.
 - Rechtliches vor bezahlter Bauvoranfrage klären (Bauvorlageberechtigung, Haftpflicht, RDG).
+
+## Kosten / Upgrades (Hinweise an den User, Preise nicht nachgeprüft)
+- Vercel Hobby ist nur für nicht-kommerzielle Nutzung → vor dem ersten zahlenden Kunden bzw. öffentlichem Start auf Pro.
+- Cloudflare R2: jetzt aktivieren; kleiner Umfang kostenlos.
+- Supabase Free pausiert Projekte bei Inaktivität → Pro, sobald Login/Projekte für Nutzer live sind.
+- Anthropic-API: Abrechnung nach Verbrauch, sobald der Chat an ist; Limit im Konto setzen.
 
 ## Commits
 Deutsche Commit-Nachrichten, kleine Schritte, nach jeder Änderung kurz im Browser prüfen.
