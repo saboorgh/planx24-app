@@ -4,7 +4,7 @@
 //   strassen.json – Straßennamen mit Ortsteilen, PLZ und Mittelpunkt (klein, wird sofort geladen)
 //   adressen.json – alle Hausnummern mit Lage je Straße (wird im Hintergrund nachgeladen)
 // Schlägt das Laden fehl, bricht der Build nicht ab: Die App sucht dann wie bisher über die Schnittstelle.
-import { mkdir, writeFile, access } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 
 const OUT = new URL('../public/data/', import.meta.url);
 const BASE = 'https://api.hamburg.de/datasets/v1/gages_vereinfacht/collections/hauskoordinaten/items?f=json&limit=10000&properties=strassenname,hausnummer,postleitzahl,postOrtsteil,rechtswert_utm,hochwert_utm';
@@ -55,11 +55,24 @@ async function main() {
   const stand = new Date().toISOString().slice(0, 10);
   await writeFile(new URL('strassen.json', OUT), JSON.stringify({ stand, o: ots, s: streets }));
   await writeFile(new URL('adressen.json', OUT), JSON.stringify({ stand, s: addrs }));
+  // Landesgrenze für die Abdeckung außerhalb Hamburgs (damit sie auch bei Störungen der Stadt da ist)
+  try { const lg = await fetch('https://api.hamburg.de/datasets/v1/verwaltungsgrenzen/collections/landesgrenze/items?f=json&limit=10').then(r => r.json()); if (lg.features && lg.features.length) await writeFile(new URL('landesgrenze.json', OUT), JSON.stringify(lg)); } catch (e) { console.warn('Landesgrenze nicht geladen'); }
   console.log(`Adressverzeichnis: ${streets.length} Straßen, ${feats.length} Adressen, ${((Date.now() - t0) / 1000).toFixed(1)} s`);
 }
 
+// Fällt die Stadt aus, die Daten der laufenden Version übernehmen (sonst wäre die Suche nach dem Deploy leer)
+async function fromLive() {
+  const host = process.env.VERCEL_PROJECT_PRODUCTION_URL || 'planx24-app.vercel.app';
+  await mkdir(OUT, { recursive: true });
+  let n = 0;
+  for (const f of ['strassen.json', 'adressen.json', 'landesgrenze.json']) {
+    try { const r = await fetch(`https://${host}/data/${f}`); if (r.ok) { await writeFile(new URL(f, OUT), Buffer.from(await r.arrayBuffer())); n++; } } catch (e) { /* weiter */ }
+  }
+  console.warn(`Daten aus der laufenden Version übernommen: ${n} Dateien`);
+}
+
 main().catch(async e => {
-  console.warn('Adressverzeichnis nicht erstellt (Suche nutzt dann die Schnittstelle):', e.message);
-  try { await access(new URL('strassen.json', OUT)); } catch { await mkdir(OUT, { recursive: true }); }
+  console.warn('Adressverzeichnis nicht neu erstellt:', e.message);
+  try { await fromLive(); } catch (e2) { console.warn('Auch die laufende Version war nicht erreichbar – Suche nutzt dann die Schnittstelle.'); }
   process.exit(0);
 });

@@ -157,6 +157,12 @@ function build() {
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
+  // Nordpfeil: dreht sich mit der Karte, Klick richtet nach Norden aus
+  const north = document.createElement('button'); north.type = 'button'; north.className = 'north'; north.setAttribute('aria-label', 'Nach Norden ausrichten');
+  north.innerHTML = '<svg viewBox="0 0 24 32" width="18" height="24" aria-hidden="true"><path d="M12 2 L19 22 L12 18 L5 22 Z" fill="#1C2B35"/><path d="M12 2 L12 18 L5 22 Z" fill="#5A5F66"/><text x="12" y="31" text-anchor="middle" font-size="8" font-weight="600" fill="#1C2B35">N</text></svg>';
+  north.addEventListener('click', () => map.easeTo({ bearing: 0, pitch: state.layers.d3 ? map.getPitch() : 0 }));
+  document.getElementById('map').appendChild(north);
+  map.on('rotate', () => { north.firstChild.style.transform = `rotate(${-map.getBearing()}deg)`; });
   { const at = document.querySelector('.attr'); if (at) at.innerHTML = '© <a href="https://www.govdata.de/dl-de/by-2-0" target="_blank" rel="noopener">FHH, LGV</a> · © <a href="https://basemap.de" target="_blank" rel="noopener">basemap.de / BKG</a>'; }
   map.on('load', async () => {
     // Hintergrundkarte ruhig halten: keine Symbole, Hausnummern, Höhen, Nummern; keine eigenen Gebäude (wir zeigen die ALKIS-Gebäude)
@@ -165,6 +171,7 @@ function build() {
     map.getStyle().layers.forEach(l => { if (!/^Gebaeude/.test(l.id)) return; if (l.type === 'fill') { map.setPaintProperty(l.id, 'fill-color', '#D3D6DA'); map.setPaintProperty(l.id, 'fill-outline-color', '#9AA0A8'); } else if (l.type === 'line') map.setPaintProperty(l.id, 'line-color', '#9AA0A8'); else if (l.type === 'fill-extrusion') map.setLayoutProperty(l.id, 'visibility', 'none'); });
     // Straßennamen größer und nie winzig
     map.getStyle().layers.forEach(l => { if (l.type === 'symbol' && /^Name_.*(str|Fusswege|Platz)/i.test(l.id) && !/^Name_Bahn/.test(l.id)) map.setLayoutProperty(l.id, 'text-size', ['interpolate', ['linear'], ['zoom'], 12, 12, 15, 14, 18, 16]); });
+    calmBase();
     outsideMask();
     const baseSym = map.getStyle().layers.filter(l => l.type === 'symbol').map(l => l.id);
     addLayers(); renderPop(); renderTabs();
@@ -212,12 +219,27 @@ function addLayers() {
   map.on('click', 'fl-fill', e => { if (onWater([e.lngLat.lng, e.lngLat.lat])) return; const id = e.features[0].id, oe = e.originalEvent; if (state.add || oe.shiftKey || oe.metaKey || oe.ctrlKey) toggleSel(id); else select(id, false); });
 }
 
+/* Hintergrundkarte ruhig und minimalistisch: weniger Kontrast, Details weg, Wasser leicht blau, Grün kaum sichtbar */
+function calmBase() {
+  const soft = c => { const m = /rgba?\((\d+),\s*(\d+),\s*(\d+)/.exec(c); if (!m) return c; const f = v => Math.round(255 - (255 - v) * 0.42); return `rgb(${f(+m[1])},${f(+m[2])},${f(+m[3])})`; };
+  const walk = v => typeof v === 'string' ? soft(v) : Array.isArray(v) ? v.map(walk) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, walk(x)])) : v;
+  map.getStyle().layers.forEach(l => {
+    if (l.type === 'symbol' || /^Gebaeude/.test(l.id)) return;
+    if (/^(Mittellinie|Barriere|Historisch|Freileitung|VersorgungsL|GrenzeF|GrenzeL|Relief|Staumauer|ImBau|AusserBetrieb|Geb_unter)/.test(l.id) || /Gleis/.test(l.id)) { map.setLayoutProperty(l.id, 'visibility', 'none'); return; }
+    ['fill-color', 'line-color', 'background-color', 'fill-outline-color'].forEach(p => { const v = l.paint && l.paint[p]; if (v !== undefined) map.setPaintProperty(l.id, p, walk(v)); });
+    if (/^Gewaesser/.test(l.id)) map.setPaintProperty(l.id, l.type === 'fill' ? 'fill-color' : 'line-color', l.type === 'fill' ? '#DDE6ED' : '#CCD8E2');
+    if (/^VegetationsF/.test(l.id) && l.type === 'fill') map.setPaintProperty(l.id, 'fill-color', '#F1F3EF');
+    if (/^Bahnstrecke/.test(l.id) && l.type === 'line') { map.setPaintProperty(l.id, 'line-color', '#C4C8CD'); map.setPaintProperty(l.id, 'line-opacity', 0.8); }
+  });
+  if (map.getLayer('Hintergrund')) map.setPaintProperty('Hintergrund', 'background-color', '#FAFAFA');
+}
+
 /* Außerhalb Hamburgs weiß abdecken, damit Hamburg nach vorne kommt (Landesgrenze einmal von der Stadt laden) */
 function outsideMask() {
   map.addSource('mask', { type: 'geojson', data: fcol() });
-  map.addLayer({ id: 'mask', type: 'fill', source: 'mask', paint: { 'fill-color': '#FFFFFF', 'fill-opacity': 0.6 } }, map.getStyle().layers.find(l => l.type === 'symbol')?.id);
+  map.addLayer({ id: 'mask', type: 'fill', source: 'mask', paint: { 'fill-color': '#FFFFFF', 'fill-opacity': 0.7 } }, map.getStyle().layers.find(l => l.type === 'symbol')?.id);
   map.addLayer({ id: 'mask-line', type: 'line', source: 'mask', paint: { 'line-color': '#9AA0A8', 'line-width': 1, 'line-opacity': 0.6 } });
-  fetch(`${API}verwaltungsgrenzen/collections/landesgrenze/items?f=json&limit=10`).then(r => r.json()).then(j => {
+  fetch('/data/landesgrenze.json').then(r => r.ok ? r.json() : Promise.reject()).catch(() => fetch(`${API}verwaltungsgrenzen/collections/landesgrenze/items?f=json&limit=10`).then(r => r.json())).then(j => {
     const holes = [];
     j.features.forEach(f => { const g = f.geometry; (g.type === 'Polygon' ? [g.coordinates] : g.coordinates).forEach(p => holes.push(p[0])); });
     map.getSource('mask').setData({ type: 'Feature', properties: {}, geometry: { type: 'Polygon', coordinates: [[[-30, 30], [40, 30], [40, 75], [-30, 75], [-30, 30]], ...holes] } });
