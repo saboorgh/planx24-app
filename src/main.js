@@ -62,12 +62,12 @@ function save() { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e
 
 const state = { base: 'map', tabs: [], active: 'map', selIds: [], add: false, hover: null, selB: [], layers: { scan: false, bp: false, brw: false, d3: false }, scanOp: 0.85, mode: 'info', chats: {}, busy: false, sub: {} };
 let map = null, byNr = {};
-const F = { fl: fcol(), gb: fcol(), nu: fcol(), bg: fcol(), bgr: fcol(), bpl: fcol(), brw: fcol() };
+const F = { fl: fcol(), gb: fcol(), nu: fcol(), bg: fcol(), bgr: fcol(), bpl: fcol(), brw: fcol(), adr: fcol() };
 function fcol() { return { type: 'FeatureCollection', features: [] }; }
 const API = 'https://api.hamburg.de/datasets/v1/';
 const LAYERS = {
   fl: ['alkis_vereinfacht', 'Flurstueck'], gb: ['alkis_vereinfacht', 'GebaeudeBauwerk'], nu: ['alkis_vereinfacht', 'Nutzung'],
-  bg: ['xplan', 'bp_baugebietsteilflaeche'], bgr: ['xplan', 'bp_baugrenze'], bpl: ['bplaene', 'hh_hh_festgestellt'], brw: ['uek_normierte_bodenrichtwerte', 'lgv_brw_uek_mfh']
+  bg: ['xplan', 'bp_baugebietsteilflaeche'], bgr: ['xplan', 'bp_baugrenze'], bpl: ['bplaene', 'hh_hh_festgestellt'], brw: ['uek_normierte_bodenrichtwerte', 'lgv_brw_uek_mfh'], adr: ['gages_vereinfacht', 'hauskoordinaten']
 };
 const MIN_LOAD_ZOOM = 15;
 proj4.defs('EPSG:25832', '+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs');
@@ -82,6 +82,7 @@ function mapProps(k, p) {
     case 'bg': return { plan: p.xpPlanName || '', d: p.xpPlanDate || '', Z: Number(p.Z) || null, GRZ: Number(p.GRZ) || null, GFZ: Number(p.GFZ) || null, GF: Number(p.GF) || null, art: p.besondereArtDerBaulNutzungWert || p.allgArtDerBaulNutzungWert || p.detaillierteArtDerBaulNutzungWert || '', bw: p.bauweiseWert || '', txt: Array.isArray(p.refTextInhalt) ? p.refTextInhalt.join(' ') : (p.refTextInhalt || '') };
     case 'bgr': return { plan: p.xpPlanName || '' };
     case 'bpl': return { plan: p.geltendes_planrecht || '', d: p.feststellungsdatum || '', pdf: p.planrecht || '' };
+    case 'adr': return { h: String(p.hausnummer || '') + String(p.hausnummernzusatz || '') };
     case 'brw': return { min: Number(p.minimaler_normierter_brw) || 0, max: Number(p.maximaler_normierter_brw) || 0, st: p.stichtag || '', bb: p.baublock || '' };
   }
   return {};
@@ -98,6 +99,7 @@ function addFeatures(k, feats) {
     const nf = { type: 'Feature', id: arr.length, geometry: g, properties: mapProps(k, f.properties || {}) };
     if (g.type === 'MultiPolygon') { nf.bb = bbox(g.coordinates); nf.c = centroid(g.coordinates); }
     else if (g.type === 'LineString' || g.type === 'MultiLineString') nf.bb = bboxPts(lines(g).flat());
+    else if (g.type === 'Point' && k === 'adr') nf.bb = [g.coordinates[0], g.coordinates[1], g.coordinates[0], g.coordinates[1]];
     else continue;
     if (k === 'gb') nf.area = polyArea(g.coordinates);
     if (k === 'fl') { nf.k = nf.properties.uid || ('fl' + nf.id); byNr[nf.k] = nf; }
@@ -123,7 +125,7 @@ function loadCell(key) {
   let failed = false;
   setBusy(1);
   const pr = Promise.all(Object.keys(LAYERS).map(k => fetchLayer(k, bb).then(fs => [k, addFeatures(k, fs)]).catch(() => { failed = true; return [k, []]; })))
-    .then(res => { const add = Object.fromEntries(res); labelsAdd(add.fl || [], add.gb || []); scheduleRefresh(); if (failed) { cells.delete(key); toast('Ein Teil der Hamburger Daten konnte nicht geladen werden.'); } })
+    .then(res => { const add = Object.fromEntries(res); labelsAdd(add.fl || [], add.gb || [], add.adr || []); scheduleRefresh(); if (failed) { cells.delete(key); toast('Ein Teil der Hamburger Daten konnte nicht geladen werden.'); } })
     .finally(() => setBusy(-1));
   cells.set(key, pr);
   return pr;
@@ -140,7 +142,7 @@ function scheduleRefresh() {
   clearTimeout(refreshT);
   refreshT = setTimeout(() => {
     ['nu', 'brw', 'bg', 'bgr', 'fl', 'gb'].forEach(k => { const s = map.getSource(k); if (s) s.setData(F[k]); });
-    streetLabels();
+    streetLabels(); ['lbl-fl', 'lbl-gb', 'lbl-hnr', 'lbl-str'].forEach(k => { const s = map.getSource(k); if (s) s.setData(LBL[k]); });
     if (state.selIds.length && state.mode === 'info') refreshSel(false, true);
   }, 60);
 }
@@ -151,14 +153,15 @@ function build() {
     center: [10.0036, 53.5846], zoom: 17, minZoom: 10, maxBounds: [[9.55, 53.30], [10.45, 53.80]],
     style: {
       version: 8,
+      glyphs: 'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf',
       sources: { base: { type: 'raster', tiles: ['https://sgx.geodatenzentrum.de/wmts_basemapde/tile/1.0.0/de_basemapde_web_raster_grau/default/GLOBAL_WEBMERCATOR/{z}/{y}/{x}.png'], tileSize: 256, maxzoom: 18 } },
-      layers: [{ id: 'bg0', type: 'background', paint: { 'background-color': '#F3F4F5' } }, { id: 'base', type: 'raster', source: 'base', paint: { 'raster-opacity': 0.9, 'raster-saturation': -1 } }]
+      layers: [{ id: 'bg0', type: 'background', paint: { 'background-color': '#FBFBFC' } }, { id: 'base', type: 'raster', source: 'base', paint: { 'raster-opacity': 0.9, 'raster-saturation': -1 } }]
     }
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
   map.on('load', async () => {
-    addLayers(); labelsInit(); renderPop(); renderTabs();
+    addLayers(); renderPop(); renderTabs();
     map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
     loadView();
     await ensureLoaded([10.0016, 53.5836, 10.0056, 53.5856]);
@@ -173,21 +176,22 @@ function addLayers() {
   src('nu', F.nu); src('brw', F.brw); src('bg', F.bg); src('bgr', F.bgr); src('fl', F.fl); src('gb', F.gb);
   src('sel', fcol()); src('selo', fcol()); src('mass', fcol());
   const off = { visibility: 'none' };
-  map.addLayer({ id: 'nu', type: 'fill', source: 'nu', paint: { 'fill-color': ['match', ['get', 'n'], 'Strassenverkehr', '#FFFFFF', 'Fliessgewaesser', '#C9DCE8', 'Stehendes Gewaesser', '#C9DCE8', 'Sport Freizeit Und Erholungsflaeche', '#DCE5D8', 'Wald', '#D6E2D0', 'Gehoelz', '#DCE5D8', 'Friedhof', '#DCE5D8', '#F3F4F5'] } });
+  map.addLayer({ id: 'nu', type: 'fill', source: 'nu', paint: { 'fill-color': ['match', ['get', 'n'], 'Strassenverkehr', '#E6E8EB', 'Weg', '#ECEEF0', 'Platz', '#ECEEF0', 'Bahnverkehr', '#E1E3E6', 'Fliessgewaesser', '#CFE0EC', 'Stehendes Gewaesser', '#CFE0EC', 'Hafenbecken', '#CFE0EC', 'Sport Freizeit Und Erholungsflaeche', '#E4ECDF', 'Wald', '#DCE7D6', 'Gehoelz', '#E4ECDF', 'Friedhof', '#E4ECDF', 'Landwirtschaft', '#F1F3EA', '#FBFBFC'] } });
   map.addLayer({ id: 'brw', type: 'fill', source: 'brw', layout: off, paint: { 'fill-color': ['interpolate', ['linear'], ['get', 'max'], 1000, '#EEE8F7', 8000, '#8F6CCB'], 'fill-opacity': 0.55, 'fill-outline-color': '#7A5BB5' } });
   map.addLayer({ id: 'bp', type: 'fill', source: 'bg', layout: off, paint: { 'fill-color': ['case', ['in', 'Kern', ['get', 'art']], '#D49A96', ['in', 'Wohn', ['get', 'art']], '#F2BDB7', ['in', 'Gewerbe', ['get', 'art']], '#C9C3E3', ['in', 'Misch', ['get', 'art']], '#E7C49A', '#E9D2AE'], 'fill-opacity': 0.42 } });
   map.addLayer({ id: 'bp-line', type: 'line', source: 'bg', layout: off, paint: { 'line-color': '#C0574F', 'line-width': 1, 'line-opacity': 0.6 } });
   map.addLayer({ id: 'fl-fill', type: 'fill', source: 'fl', paint: { 'fill-color': '#E5484D', 'fill-opacity': ['case', ['boolean', ['feature-state', 'hover'], false], 0.07, 0] } });
-  map.addLayer({ id: 'fl', type: 'line', source: 'fl', paint: { 'line-color': '#A3A7AD', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.3, 18, 1], 'line-opacity': 0.7 } });
+  map.addLayer({ id: 'fl', type: 'line', source: 'fl', paint: { 'line-color': '#7E848C', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.25, 17, 0.6, 19, 1.1], 'line-opacity': ['interpolate', ['linear'], ['zoom'], 15, 0.5, 17, 0.9] } });
   map.addLayer({ id: 'sel-fill', type: 'fill', source: 'sel', paint: { 'fill-color': '#E5484D', 'fill-opacity': 0.1 } });
-  map.addLayer({ id: 'gb', type: 'fill', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'fill-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#B9BDC3', '#D5D7DA'] } });
-  map.addLayer({ id: 'gb-line', type: 'line', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'line-color': '#8F9399', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.4, 18, 1] } });
+  map.addLayer({ id: 'gb', type: 'fill', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'fill-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#B6BAC1', '#D3D6DA'] } });
+  map.addLayer({ id: 'gb-line', type: 'line', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'line-color': '#6F757D', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.3, 18, 0.9] } });
   map.addLayer({ id: 'bgr', type: 'line', source: 'bgr', layout: off, paint: { 'line-color': '#2F5EB8', 'line-width': 1.6, 'line-dasharray': [3, 1.6] } });
   map.addLayer({ id: 'gb3d', type: 'fill-extrusion', source: 'gb', filter: ['==', ['get', 'keep'], 1], layout: off, paint: { 'fill-extrusion-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#EE8F92', '#E2E4E7'], 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.95 } });
   map.addLayer({ id: 'sel-inner', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'i'], paint: { 'line-color': '#E5484D', 'line-width': 1.5, 'line-opacity': 0.75, 'line-dasharray': [3, 3] } });
   map.addLayer({ id: 'sel-halo', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#FFFFFF', 'line-width': 7, 'line-opacity': 0.9 } });
   map.addLayer({ id: 'sel-line', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#E5484D', 'line-width': 3 } });
   map.addLayer({ id: 'mass', type: 'fill-extrusion', source: 'mass', layout: off, paint: { 'fill-extrusion-color': '#E5484D', 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.45 } });
+  addLabelLayers();
 
   map.on('mousemove', 'fl-fill', e => { const id = e.features[0].id; if (state.hover !== id) { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = id; map.setFeatureState({ source: 'fl', id }, { hover: true }); } map.getCanvas().style.cursor = 'pointer'; });
   map.on('mouseleave', 'fl-fill', () => { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = null; map.getCanvas().style.cursor = ''; });
@@ -220,25 +224,27 @@ function insidePt(f, avoid) {
   let pick = null, d = Infinity; cand.forEach(pt => { const dd = (pt[0] - f.c[0]) ** 2 + (pt[1] - f.c[1]) ** 2; if (dd < d) { d = dd; pick = pt; } });
   return pick || f.c;
 }
-const LBL = { items: [], raf: 0 };
-function labelsInit() {
-  const host = $('#lbls');
-  const upd = () => { LBL.raf = 0; document.body.classList.toggle('lowz', map.getZoom() < 15.5); const show = map.getZoom() >= 17 && !state.layers.d3; host.style.display = show ? '' : 'none'; if (!show) return; const b = map.getBounds(), w = b.getWest(), e = b.getEast(), s = b.getSouth(), n = b.getNorth(); for (const it of LBL.items) { const [x, y] = it.ll; if (x < w || x > e || y < s || y > n) { if (it.on) { it.el.style.display = 'none'; it.on = false; } continue; } const p = map.project(it.ll); if (!it.on) { it.el.style.display = ''; it.on = true; } it.el.style.transform = `translate(${p.x.toFixed(1)}px,${p.y.toFixed(1)}px) translate(-50%,-50%)`; } };
-  state.updLabels = () => { if (!LBL.raf) LBL.raf = requestAnimationFrame(upd); };
-  map.on('move', state.updLabels); map.on('resize', state.updLabels);
+// Beschriftungen als Kartensymbole: Die Karte prüft selbst, welche Schrift Platz hat (keine Überlappung)
+const LBL = { 'lbl-fl': fcol(), 'lbl-gb': fcol(), 'lbl-hnr': fcol(), 'lbl-str': fcol() };
+const pt = (c, props) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: c }, properties: props });
+function labelsAdd(fls, gbs, adrs) {
+  fls.forEach(f => { if (/Strassenverkehr|Gewaesser|^Weg|^Platz|Bahn/.test(f.properties.tn)) return; const own = F.gb.features.filter(g => g.properties.keep && g.bb[0] < f.bb[2] && g.bb[2] > f.bb[0] && g.bb[1] < f.bb[3] && g.bb[3] > f.bb[1]); LBL['lbl-fl'].features.push(pt(insidePt(f, own), { t: f.properties.nr, a: f.properties.a })); });
+  gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 30 || !inPoly(g.c, g.geometry.coordinates)) return; LBL['lbl-gb'].features.push(pt(g.c, { t: ROM[gs] || String(gs), a: g.area })); });
+  adrs.forEach(a => { if (a.properties.h) LBL['lbl-hnr'].features.push(pt(a.geometry.coordinates, { t: a.properties.h })); });
 }
-function labelsAdd(fls, gbs) {
-  const host = $('#lbls');
-  fls.forEach(f => { if (/Strassenverkehr|Gewaesser/.test(f.properties.tn)) return; const own = F.gb.features.filter(g => g.properties.keep && g.bb[0] < f.bb[2] && g.bb[2] > f.bb[0] && g.bb[1] < f.bb[3] && g.bb[3] > f.bb[1]); const el = document.createElement('span'); el.textContent = f.properties.nr; el.style.display = 'none'; host.appendChild(el); LBL.items.push({ el, ll: insidePt(f, own), on: false }); });
-  gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 35 || !inPoly(g.c, g.geometry.coordinates)) return; const el = document.createElement('span'); el.className = 'g'; el.textContent = ROM[gs] || gs; el.style.display = 'none'; host.appendChild(el); LBL.items.push({ el, ll: g.c, on: false }); });
-  if (state.updLabels) state.updLabels();
-}
-let streetMarkers = [];
 function streetLabels() {
-  streetMarkers.forEach(m => m.remove()); streetMarkers = [];
   const best = {};
-  F.fl.features.forEach(f => { const p = f.properties; if (!/^Strassenverkehr|Gewaesser/.test(p.tn)) return; const name = p.lage.split(';')[0].trim(); if (!name || /\d/.test(name)) return; if (!best[name] || best[name].a < p.a) best[name] = { a: p.a, f, water: /Gewaesser/.test(p.tn) }; });
-  Object.entries(best).forEach(([name, v]) => { const el = document.createElement('div'); el.className = 'lbl' + (v.water ? ' w' : ''); el.textContent = name; streetMarkers.push(new maplibregl.Marker({ element: el }).setLngLat(insidePt(v.f)).addTo(map)); });
+  F.fl.features.forEach(f => { const p = f.properties; if (!/^Strassenverkehr|Gewaesser|^Weg|^Platz/.test(p.tn)) return; const name = p.lage.split(';')[0].trim(); if (!name || /\d/.test(name)) return; if (!best[name] || best[name].a < p.a) best[name] = { a: p.a, f, water: /Gewaesser/.test(p.tn) }; });
+  LBL['lbl-str'] = { type: 'FeatureCollection', features: Object.entries(best).map(([name, v]) => pt(insidePt(v.f), { t: name, w: v.water ? 1 : 0 })) };
+}
+function addLabelLayers() {
+  Object.keys(LBL).forEach(k => map.addSource(k, { type: 'geojson', data: LBL[k] }));
+  const halo = { 'text-halo-color': 'rgba(255,255,255,0.95)', 'text-halo-width': 1.4 };
+  // Reihenfolge = Vorrang: die zuletzt hinzugefügte Ebene gewinnt bei Platzmangel
+  map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17, 9.5, 19, 12], 'text-padding': 3, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#7A8089', ...halo } });
+  map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17.5, 9.5, 19, 11.5], 'text-padding': 2 }, paint: { 'text-color': '#4E545C', ...halo } });
+  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Medium'], 'text-size': ['interpolate', ['linear'], ['zoom'], 16.5, 9, 19, 12.5], 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
+  map.addLayer({ id: 'l-str', type: 'symbol', source: 'lbl-str', minzoom: 15, layout: { 'text-field': ['get', 't'], 'text-font': ['case', ['==', ['get', 'w'], 1], ['literal', ['Noto Sans Italic']], ['literal', ['Noto Sans Medium']]], 'text-size': ['interpolate', ['linear'], ['zoom'], 15, 10, 18, 13], 'text-padding': 6, 'text-max-width': 12 }, paint: { 'text-color': ['case', ['==', ['get', 'w'], 1], '#3D6F92', '#5A5F66'], ...halo } });
 }
 
 /* Ebenen */
@@ -255,7 +261,7 @@ function setLayer(k) {
   if (k === 'bp') ['bp', 'bp-line', 'bgr'].forEach(l => vis(l, on));
   if (k === 'brw') vis('brw', on);
   if (k === 'scan') { if (on) scanUpdate(); if (map.getLayer('scan')) vis('scan', on); map.setPaintProperty('gb', 'fill-opacity', on ? 0.25 : 1); }
-  if (k === 'd3') { vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('mass', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); if (state.updLabels) state.updLabels(); }
+  if (k === 'd3') { vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('mass', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
   renderPop();
 }
 $('#pop').addEventListener('click', e => e.stopPropagation());
