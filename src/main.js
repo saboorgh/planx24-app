@@ -60,7 +60,7 @@ try { P = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { P =
 Object.entries(P).forEach(([k, p]) => { p.id = k; if (!p.nrs) p.nrs = [p.nr]; const m = { entwurf: 'neu', pruefung: 'arbeit', voranfrage: 'arbeit', eingereicht: 'erledigt', abgelegt: 'erledigt' }; if (m[p.status]) p.status = m[p.status]; });
 function save() { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} }
 
-const state = { base: 'map', tabs: [], active: 'map', selIds: [], add: false, hover: null, selB: [], layers: { scan: false, bp: false, brw: false, d3: false }, scanOp: 0.85, mode: 'info', chats: {}, busy: false, sub: {} };
+const state = { base: 'map', tabs: [], active: 'map', selIds: [], add: false, hover: null, selB: [], layers: { scan: false, bp: false, brw: false, d3: false, dop: false }, scanOp: 0.85, dopOp: 1, opts: false, show: { gs: true, fl: true, hnr: true, selB: true, mass: false }, mode: 'info', chats: {}, busy: false, sub: {} };
 let map = null, byNr = {};
 const F = { fl: fcol(), gb: fcol(), nu: fcol(), bg: fcol(), bgr: fcol(), bpl: fcol(), brw: fcol(), adr: fcol() };
 function fcol() { return { type: 'FeatureCollection', features: [] }; }
@@ -196,11 +196,15 @@ function addLayers() {
   map.addLayer({ id: 'gb', minzoom: MIN_LOAD_ZOOM, type: 'fill', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'fill-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#B6BAC1', '#D3D6DA'] } });
   map.addLayer({ id: 'gb-line', minzoom: MIN_LOAD_ZOOM, type: 'line', source: 'gb', filter: ['==', ['get', 'keep'], 1], paint: { 'line-color': '#6F757D', 'line-width': ['interpolate', ['linear'], ['zoom'], 15, 0.3, 18, 0.9] } });
   map.addLayer({ id: 'bgr', minzoom: MIN_LOAD_ZOOM, type: 'line', source: 'bgr', layout: off, paint: { 'line-color': '#2F5EB8', 'line-width': 1.6, 'line-dasharray': [3, 1.6] } });
-  map.addLayer({ id: 'gb3d', type: 'fill-extrusion', source: 'gb', filter: ['==', ['get', 'keep'], 1], layout: off, paint: { 'fill-extrusion-color': ['case', ['boolean', ['feature-state', 'sel'], false], '#EE8F92', '#E2E4E7'], 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.95 } });
   map.addLayer({ id: 'sel-inner', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'i'], paint: { 'line-color': '#E5484D', 'line-width': 1.5, 'line-opacity': 0.75, 'line-dasharray': [3, 3] } });
   map.addLayer({ id: 'sel-halo', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#FFFFFF', 'line-width': 7, 'line-opacity': 0.9 } });
   map.addLayer({ id: 'sel-line', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#E5484D', 'line-width': 3 } });
+  map.addLayer({ id: 'gb3d', type: 'fill-extrusion', source: 'gb', filter: ['==', ['get', 'keep'], 1], layout: off, paint: { 'fill-extrusion-color': ['case', ['all', ['boolean', ['feature-state', 'sel'], false], ['==', ['get', 'keep'], 1]], '#EE8F92', '#E2E4E7'], 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.95 } });
+  // In 3D: gestrichelte Grenze über den Gebäuden, damit sie auch hinter Häusern sichtbar bleibt
+  map.addLayer({ id: 'sel-dash', type: 'line', source: 'selo', filter: ['==', ['get', 'k'], 'o'], layout: off, paint: { 'line-color': '#E5484D', 'line-width': 1.6, 'line-dasharray': [2, 2], 'line-opacity': 0.9 } });
   map.addLayer({ id: 'mass', type: 'fill-extrusion', source: 'mass', layout: off, paint: { 'fill-extrusion-color': '#E5484D', 'fill-extrusion-height': ['get', 'h'], 'fill-extrusion-opacity': 0.45 } });
+  map.addSource('dop', { type: 'raster', tileSize: 256, tiles: ['https://geodienste.hamburg.de/wms_dop_zeitreihe_unbelaubt?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=dop_zeitreihe_unbelaubt&STYLES=&CRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=256&HEIGHT=256&FORMAT=image/jpeg'], attribution: '© FHH, LGV' });
+  map.addLayer({ id: 'dop', type: 'raster', source: 'dop', layout: off, paint: { 'raster-opacity': 1, 'raster-fade-duration': 150 } }, 'nu');
   addLabelLayers();
 
   map.on('mousemove', 'fl-fill', e => { const id = e.features[0].id; if (state.hover !== id) { if (state.hover !== null) map.setFeatureState({ source: 'fl', id: state.hover }, { hover: false }); state.hover = id; map.setFeatureState({ source: 'fl', id }, { hover: true }); } map.getCanvas().style.cursor = 'pointer'; });
@@ -285,21 +289,35 @@ function addLabelLayers() {
 
 /* Ebenen */
 // Festsetzungen (bp) und Bodenrichtwerte (brw) vorerst nicht in der Liste (Wunsch des Users); Ebenen-Code bleibt, später über einen Filter zuschaltbar
-const LAY = [['scan', 'Bebauungsplan (Scan)', 'Originalplan, lagerichtig'], ['d3', '3D-Ansicht', 'Gebäude und zulässiges Volumen']];
-function vis(l, on) { map.setLayoutProperty(l, 'visibility', on ? 'visible' : 'none'); }
+const LAY = [['dop', 'Luftbild', 'Hamburg, aktuelles Jahr'], ['scan', 'Bebauungsplan (Scan)', 'Originalplan, lagerichtig'], ['d3', '3D-Ansicht', 'Gebäude räumlich']];
+const OPTS = [['gs', 'Geschosse'], ['fl', 'Flurstücksnummern'], ['hnr', 'Hausnummern'], ['selB', 'Gebäude der Auswahl rot'], ['mass', 'Zulässiges Volumen (3D)']];
+function vis(l, on) { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', on ? 'visible' : 'none'); }
 function renderPop() {
-  const L = state.layers;
-  $('#pop').innerHTML = LAY.map(([k, t, s]) => `<button type="button" class="sw" role="switch" aria-checked="${L[k]}" data-k="${k}"><span>${t}<small>${s}</small></span><i></i></button>` + (k === 'bp' && L.bp ? `<div class="leg"><span><b style="background:#F2BDB7;border:1px solid #C0574F"></b>Wohngebiet</span><span><b style="background:#D49A96;border:1px solid #9E4A44"></b>Kerngebiet</span><span><b style="height:0;border-top:2px dashed #2F5EB8"></b>Baugrenze</span></div>` : '') + (k === 'scan' && L.scan ? `<label class="rng">Deckkraft<input type="range" id="scanop" min="20" max="100" value="${Math.round(state.scanOp * 100)}"></label>` : '')).join('');
+  const L = state.layers, S = state.show;
+  const rng = (id, v) => `<label class="rng">Deckkraft<input type="range" id="${id}" min="20" max="100" value="${Math.round(v * 100)}"></label>`;
+  $('#pop').innerHTML = LAY.map(([k, t, s]) => `<button type="button" class="sw" role="switch" aria-checked="${L[k]}" data-k="${k}"><span>${t}<small>${s}</small></span><i></i></button>` + (k === 'scan' && L.scan ? rng('scanop', state.scanOp) : '') + (k === 'dop' && L.dop ? rng('dopop', state.dopOp) : '')).join('')
+    + `<button type="button" class="optbtn" aria-expanded="${state.opts}">Anzeige anpassen<span>${state.opts ? '–' : '+'}</span></button>`
+    + (state.opts ? `<div class="opts">${OPTS.map(([k, t]) => `<label><input type="checkbox" data-o="${k}"${S[k] ? ' checked' : ''}>${t}</label>`).join('')}</div>` : '');
   const so = $('#scanop'); if (so) so.addEventListener('input', e => { state.scanOp = e.target.value / 100; if (map.getLayer('scan')) map.setPaintProperty('scan', 'raster-opacity', state.scanOp); });
+  const dp = $('#dopop'); if (dp) dp.addEventListener('input', e => { state.dopOp = e.target.value / 100; map.setPaintProperty('dop', 'raster-opacity', state.dopOp); });
   $('#pop').querySelectorAll('.sw').forEach(b => b.addEventListener('click', () => setLayer(b.dataset.k)));
+  $('#pop').querySelector('.optbtn').addEventListener('click', () => { state.opts = !state.opts; renderPop(); });
+  $('#pop').querySelectorAll('[data-o]').forEach(c => c.addEventListener('change', () => { state.show[c.dataset.o] = c.checked; applyShow(); }));
+}
+// Anzeige-Einstellungen (Beschriftung, Auswahl, Volumen) – später je Nutzer speicherbar
+function applyShow() {
+  const S = state.show; vis('l-gb', S.gs); vis('l-gb2', S.gs); vis('l-fl', S.fl); vis('l-hnr', S.hnr); vis('mass', S.mass && state.layers.d3);
+  state.selB.forEach(i => map.setFeatureState({ source: 'gb', id: i }, { sel: S.selB }));
 }
 function setLayer(k) {
   const on = state.layers[k] = !state.layers[k];
   if (k === 'bp') ['bp', 'bp-line', 'bgr'].forEach(l => vis(l, on));
   if (k === 'brw') vis('brw', on);
-  if (k === 'scan') { if (on) scanUpdate(); if (map.getLayer('scan')) vis('scan', on); map.setPaintProperty('gb', 'fill-opacity', on ? 0.25 : 1); }
-  if (k === 'd3') { vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('mass', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
-  renderPop();
+  if (k === 'scan') { if (on) scanUpdate(); if (map.getLayer('scan')) vis('scan', on); }
+  if (k === 'dop') { vis('dop', on); vis('nu', !on); }
+  if (k === 'scan' || k === 'dop') { const t = state.layers.scan || state.layers.dop; map.setPaintProperty('gb', 'fill-opacity', t ? 0.25 : 1); }
+  if (k === 'd3') { vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('sel-dash', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
+  applyShow(); renderPop();
 }
 $('#pop').addEventListener('click', e => e.stopPropagation());
 $('#lb').addEventListener('click', e => { e.stopPropagation(); const p = $('#pop'); p.hidden = !p.hidden; $('#lb').setAttribute('aria-expanded', String(!p.hidden)); });
@@ -377,7 +395,7 @@ function refreshSel(initial, keepView) {
   map.getSource('sel').setData({ type: 'FeatureCollection', features: fs }); map.getSource('selo').setData(outlineFC(fs));
   const r = analyse(fs);
   state.selB.forEach(i => map.setFeatureState({ source: 'gb', id: i }, { sel: false }));
-  state.selB = r.bld.map(b => b.id); state.selB.forEach(i => map.setFeatureState({ source: 'gb', id: i }, { sel: true }));
+  state.selB = r.bld.map(b => b.id); state.selB.forEach(i => map.setFeatureState({ source: 'gb', id: i }, { sel: state.show.selB }));
   map.getSource('mass').setData(massing(fs, r));
   renderPanel(fs, r);
   if (keepView) return;

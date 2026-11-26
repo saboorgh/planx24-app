@@ -230,3 +230,6 @@ td.t{font-weight:600}
 @media (max-width:760px){.mapnote{top:64px}}
 
 .lowz .lbl{display:none}
+/* Anzeige anpassen */
+.optbtn{display:flex;align-items:center;gap:8px;width:100%;padding:10px;margin-top:4px;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;font-size:13px;color:var(--ink2);text-align:left}.optbtn:hover{color:var(--ink)}.optbtn span{margin-left:auto;font-size:16px}
+.opts{display:grid;gap:2px;padding:0 10px 8px}.opts label{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:13px;color:var(--ink)}.opts input{accent-color:var(--ink)}
