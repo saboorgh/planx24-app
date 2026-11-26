@@ -147,32 +147,27 @@ function scheduleRefresh() {
   }, 60);
 }
 
-// Testversion: Link mit ?test → Hintergrund basemap.de (Vektor, grau) und Beschriftung mit festem Maßstab wie im ALKIS.
-// Ohne ?test bleibt alles wie bisher. Zum Entfernen: TEST-Zweige löschen.
-const TEST = new URLSearchParams(location.search).has('test');
+// Hintergrund: basemap.de Vektor grau (amtlich, BKG). Eigene Gebäude/Flurstücke kommen aus ALKIS, daher Gebäude der Hintergrundkarte aus.
+const BASE_STYLE = 'https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_gry.json';
 function build() {
   map = new maplibregl.Map({
     container: 'map', attributionControl: false, maxPitch: 65,
-    center: [10.0036, 53.5846], zoom: 17, minZoom: 10, maxBounds: [[9.55, 53.30], [10.45, 53.80]],
-    style: TEST ? 'https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_gry.json' : 'https://tiles.openfreemap.org/styles/positron'
+    center: [10.0, 53.56], zoom: 11, minZoom: 10, maxBounds: [[9.55, 53.30], [10.45, 53.80]],
+    style: BASE_STYLE
   });
   map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'bottom-right');
   map.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-right');
-  if (TEST) { const at = document.querySelector('.attr'); if (at) at.innerHTML = '© <a href="https://www.govdata.de/dl-de/by-2-0" target="_blank" rel="noopener">FHH, LGV</a> · © <a href="https://basemap.de" target="_blank" rel="noopener">basemap.de / BKG</a>'; }
+  { const at = document.querySelector('.attr'); if (at) at.innerHTML = '© <a href="https://www.govdata.de/dl-de/by-2-0" target="_blank" rel="noopener">FHH, LGV</a> · © <a href="https://basemap.de" target="_blank" rel="noopener">basemap.de / BKG</a>'; }
   map.on('load', async () => {
-    // Beschriftungen der Hintergrundkarte nur bei kleinen Maßstäben, danach übernimmt das ALKIS
-    // Orts- und Stadtteilnamen nur bis Zoom 16; Straßen- und Gewässernamen der Hintergrundkarte bleiben (laufen entlang der Straße)
-    if (TEST) map.getStyle().layers.filter(l => l.type === 'symbol' && /^Symbol_|^Hauskoordinate|^Quadrate|Hoehe|Relief|Kilometerstein|Haltepunkt|Bahnhof|Bauwerk|Gebaeude|Nummer_/.test(l.id)).forEach(l => map.setLayoutProperty(l.id, 'visibility', 'none'));
-    else map.getStyle().layers.filter(l => l.type === 'symbol' && !/^highway-name|water/.test(l.id)).forEach(l => map.setLayerZoomRange(l.id, l.minzoom || 0, 16));
+    // Hintergrundkarte ruhig halten: keine Symbole, Hausnummern, Höhen, Nummern; keine eigenen Gebäude (wir zeigen die ALKIS-Gebäude)
+    map.getStyle().layers.forEach(l => { if ((l.type === 'symbol' && /^Symbol_|^Hauskoordinate|^Quadrate|Hoehe|Relief|Kilometerstein|Haltepunkt|Bahnhof|Bauwerk|Gebaeude|Nummer_/.test(l.id)) || /^Gebaeude/.test(l.id)) map.setLayoutProperty(l.id, 'visibility', 'none'); });
     outsideMask();
     const baseSym = map.getStyle().layers.filter(l => l.type === 'symbol').map(l => l.id);
     addLayers(); renderPop(); renderTabs();
     // Straßen- und Gewässernamen der Hintergrundkarte über unsere Flächen legen (sonst verdeckt), aber unter unsere Beschriftung
-    baseSym.filter(id => TEST ? /str|Gewaesser|Platz|Fusswege/i.test(id) && !/^Nummer_/.test(id) : /^highway-name|water/.test(id)).forEach(id => map.moveLayer(id, 'l-fl'));
+    baseSym.filter(id => /str|Gewaesser|Platz|Fusswege/i.test(id) && !/^Nummer_/.test(id)).forEach(id => map.moveLayer(id, 'l-fl'));
     map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
-    loadView();
-    await ensureLoaded([10.0016, 53.5836, 10.0056, 53.5856]);
-    if (!state.selIds.length) selectAt([10.003879, 53.585055], true);
+    loadView(); // Start: ganz Hamburg, nichts vorausgewählt
   });
 }
 // Straßen, Wege, Plätze, Bahn und Wasser sind nicht anklickbar
@@ -240,6 +235,16 @@ function scanUpdate() {
 }
 
 /* Beschriftungen: Flurstücksnummern und Geschosse */
+// Freieste Stelle im Flurstück: größter Abstand zu Grenze und Gebäuden (so sitzt die Nummer z. B. hinten im Garten statt am Haus)
+function freePt(f, avoid) {
+  const k = Math.cos(f.c[1] * Math.PI / 180), segs = [];
+  const addRings = mp => mp.forEach(poly => poly.forEach(r => { for (let i = 1; i < r.length; i++) segs.push([r[i - 1], r[i]]); }));
+  addRings(f.geometry.coordinates); avoid.forEach(a => addRings(a.geometry.coordinates));
+  const dist = p => { let m = Infinity; for (const [a, b] of segs) { const ax = (a[0] - p[0]) * k, ay = a[1] - p[1], bx = (b[0] - p[0]) * k, by = b[1] - p[1], dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy; let t = L ? -(ax * dx + ay * dy) / L : 0; t = Math.max(0, Math.min(1, t)); const d = Math.hypot(ax + t * dx, ay + t * dy); if (d < m) m = d; } return m; };
+  const b = f.bb, N = 12; let best = null, bd = -1;
+  for (let i = 1; i < N; i++) for (let j = 1; j < N; j++) { const p = [b[0] + (b[2] - b[0]) * i / N, b[1] + (b[3] - b[1]) * j / N]; if (!inPoly(p, f.geometry.coordinates) || avoid.some(a => inPoly(p, a.geometry.coordinates))) continue; const d = dist(p); if (d > bd) { bd = d; best = p; } }
+  return best || insidePt(f, avoid);
+}
 function insidePt(f, avoid) {
   const mp = f.geometry.coordinates, b = f.bb, cand = [];
   for (let i = 1; i < 14; i++) for (let j = 1; j < 14; j++) { const pt = [b[0] + (b[2] - b[0]) * i / 14, b[1] + (b[3] - b[1]) * j / 14]; if (inPoly(pt, mp) && !(avoid || []).some(a => inPoly(pt, a.geometry.coordinates))) cand.push(pt); }
@@ -251,7 +256,7 @@ function insidePt(f, avoid) {
 const LBL = { 'lbl-fl': fcol(), 'lbl-gb': fcol(), 'lbl-hnr': fcol(), 'lbl-str': fcol() };
 const pt = (c, props) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: c }, properties: props });
 function labelsAdd(fls, gbs, adrs) {
-  fls.forEach(f => { if (/Strassenverkehr|Gewaesser|^Weg|^Platz|Bahn/.test(f.properties.tn)) return; const own = F.gb.features.filter(g => g.properties.keep && g.bb[0] < f.bb[2] && g.bb[2] > f.bb[0] && g.bb[1] < f.bb[3] && g.bb[3] > f.bb[1]); LBL['lbl-fl'].features.push(pt(insidePt(f, own), { t: f.properties.nr, a: f.properties.a })); });
+  fls.forEach(f => { if (/Strassenverkehr|Gewaesser|^Weg|^Platz|Bahn/.test(f.properties.tn)) return; const own = F.gb.features.filter(g => g.properties.keep && g.bb[0] < f.bb[2] && g.bb[2] > f.bb[0] && g.bb[1] < f.bb[3] && g.bb[3] > f.bb[1]); LBL['lbl-fl'].features.push(pt(freePt(f, own), { t: f.properties.nr, a: f.properties.a })); });
   gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 30 || !inPoly(g.c, g.geometry.coordinates)) return; LBL['lbl-gb'].features.push(pt(g.c, { t: ROM[gs] || String(gs), a: g.area })); });
   adrs.forEach(a => { if (a.properties.h) LBL['lbl-hnr'].features.push(pt(a.geometry.coordinates, { t: a.properties.h })); });
 }
@@ -264,15 +269,12 @@ function addLabelLayers() {
   Object.keys(LBL).forEach(k => map.addSource(k, { type: 'geojson', data: LBL[k] }));
   const halo = { 'text-halo-color': 'rgba(255,255,255,0.95)', 'text-halo-width': 1.4 };
   // Reihenfolge = Vorrang: die zuletzt hinzugefügte Ebene gewinnt bei Platzmangel
-  map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17, 9.5, 19, 12], 'text-padding': 3, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#7A8089', ...halo } });
-  map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 17.5, 9.5, 19, 11.5], 'text-padding': 2 }, paint: { 'text-color': '#4E545C', ...halo } });
-  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': ['interpolate', ['linear'], ['zoom'], 16.5, 9, 19, 12.5], 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
-  // Straßennamen kommen aus der Hintergrundkarte (entlang der Straße), nicht mehr als eigene waagerechte Beschriftung
-  if (TEST) {
-    // Wie ALKIS: Schrift wächst mit dem Maßstab (verdoppelt sich je Zoomstufe), steht fest an ihrem Platz, nichts springt weg
-    const fix = (id, mz, s18) => { map.setLayerZoomRange(id, mz, 24); map.setLayoutProperty(id, 'text-size', ['interpolate', ['exponential', 2], ['zoom'], 17, s18 / 2, 18, s18, 19, s18 * 2, 20, s18 * 2.6]); map.setLayoutProperty(id, 'text-allow-overlap', true); map.setLayoutProperty(id, 'text-ignore-placement', true); };
-    fix('l-gb', 17.3, 12); fix('l-fl', 17.6, 9.5); fix('l-hnr', 17.8, 8.5);
-  }
+  // Feste Schriftgrößen: ab der Zoomstufe sichtbar, dann immer gleich groß (wird beim Zoomen weder kleiner noch größer)
+  // Geschosse stehen immer; Flurstücks- und Hausnummern weichen aus, damit nichts übereinander liegt
+  map.addLayer({ id: 'l-fl', type: 'symbol', source: 'lbl-fl', minzoom: 17, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Italic'], 'text-size': 10.5, 'text-padding': 2, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#6B7079', ...halo } });
+  map.addLayer({ id: 'l-hnr', type: 'symbol', source: 'lbl-hnr', minzoom: 17.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': 9.5, 'text-padding': 1 }, paint: { 'text-color': '#4E545C', ...halo } });
+  map.addLayer({ id: 'l-gb', type: 'symbol', source: 'lbl-gb', minzoom: 16.5, layout: { 'text-field': ['get', 't'], 'text-font': ['Noto Sans Regular'], 'text-size': 12, 'text-allow-overlap': true, 'symbol-sort-key': ['-', 0, ['get', 'a']] }, paint: { 'text-color': '#2E3238', ...halo } });
+  // Straßennamen kommen aus der Hintergrundkarte (entlang der Straße)
 }
 
 /* Ebenen */
