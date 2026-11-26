@@ -45,6 +45,7 @@ Credits/Bezahlung erst ganz am Ende.
 - Ideen des Users vom 26.11.2026 (besprochen, noch nicht gebaut):
   - Luftbilder: Hamburg-DOP frei als WMS (`geodienste.hamburg.de/wms_dop_zeitreihe_unbelaubt` bzw. `_belaubt`, dl-de/by-2-0). Schrägluftbilder gibt es im Geoportal, ob als offener Dienst einbindbar: prüfen.
   - Denkmalschutz: `api.hamburg.de/datasets/v1/denkmalschutz` (u. a. `gebaeude`, `ensembles`, `flaechen_gartendenkmale`). Soziale Erhaltungsverordnungen: `soz_erh_vo` (`sozerhvo_inkraft`, `sozerhvo_inaufstellung`). Städtebauliche Erhaltungsverordnungen: WMS/GML vorhanden, OGC-API-Name noch suchen.
+  - 3D-Auswahl sieht unruhig aus (Grenze am Boden verdeckt, Nachbarhaus rot). Skizzen gezeigt: A Grenze hinter Häusern gestrichelt, B Grundstück als rote Glasbox (Empfehlung), C Nachbarn blass, Auswahl kräftig. Entscheidung des Users offen. Idee: Export als Bild/Exposé für Makler (Luftbild + Markierung).
   - KI soll immer auch den gescannten Plan nutzen, wenn kein/fehlerhaftes XPlan vorliegt.
   - Textliche Festsetzungen aller Hamburger B-Pläne/Baustufenpläne (PDF aus `bplaene`) in die Wissensbasis übernehmen, damit die KI beim Klick den passenden Text findet.
 - User prüft gerade Adressen auf Richtigkeit (Grenzen, Festsetzungen, Baustufenpläne) und meldet Auffälligkeiten.
