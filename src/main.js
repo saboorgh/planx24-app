@@ -322,15 +322,24 @@ function addLabelLayers() {
 /* Ebenen */
 // Festsetzungen (bp) und Bodenrichtwerte (brw) vorerst nicht in der Liste (Wunsch des Users); Ebenen-Code bleibt, später über einen Filter zuschaltbar
 const LAY = [['dop', 'Luftbild', 'Hamburg, aktuelles Jahr'], ['scan', 'Bebauungsplan (Scan)', 'Originalplan, lagerichtig'], ['d3', '3D-Ansicht', 'Gebäude räumlich']];
+// TESTVERSION echte Dächer: nur mit ?lod2 im Link (src/lod2.js, wird erst dann geladen)
+const LOD2 = new URLSearchParams(location.search).has('lod2'); let lod2Mod = null;
+function lod2Show(on) {
+  if (!LOD2) return;
+  const go = m => { lod2Mod = m; m.setup(map, err => { if (err) toast('3D-Test: ' + String(err).slice(0, 120)); }); m.show(on); vis('gb3d', !on && state.layers.d3); };
+  if (lod2Mod) go(lod2Mod); else if (on) import('./lod2.js').then(go).catch(e => toast('3D-Test lädt nicht: ' + e.message));
+}
 const OPTS = [['gs', 'Geschosse'], ['fl', 'Flurstücksnummern'], ['hnr', 'Hausnummern'], ['selB', 'Gebäude der Auswahl rot'], ['mass', 'Zulässiges Volumen (3D)']];
 function vis(l, on) { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', on ? 'visible' : 'none'); }
 function renderPop() {
   const L = state.layers, S = state.show;
   const rng = (id, v) => `<label class="rng">Deckkraft<input type="range" id="${id}" min="20" max="100" value="${Math.round(v * 100)}"></label>`;
   $('#pop').innerHTML = LAY.map(([k, t, s]) => `<button type="button" class="sw" role="switch" aria-checked="${L[k]}" data-k="${k}"><span>${t}<small>${s}</small></span><i></i></button>` + (k === 'scan' && L.scan ? rng('scanop', state.scanOp) : '') + (k === 'dop' && L.dop ? rng('dopop', state.dopOp) : '')).join('')
+    + (LOD2 && L.d3 ? `<label class="rng">Test Dächer: Höhe<input type="range" id="lodz" min="-80" max="20" step="1" value="${lod2Mod ? lod2Mod.getOffset() : -40}"><b id="lodzv">${lod2Mod ? lod2Mod.getOffset() : -40} m</b></label>` : '')
     + `<button type="button" class="optbtn" aria-expanded="${state.opts}">Anzeige anpassen<span>${state.opts ? '–' : '+'}</span></button>`
     + (state.opts ? `<div class="opts">${OPTS.map(([k, t]) => `<label><input type="checkbox" data-o="${k}"${S[k] ? ' checked' : ''}>${t}</label>`).join('')}</div>` : '');
   const so = $('#scanop'); if (so) so.addEventListener('input', e => { state.scanOp = e.target.value / 100; if (map.getLayer('scan')) map.setPaintProperty('scan', 'raster-opacity', state.scanOp); });
+  const lz = $('#lodz'); if (lz) lz.addEventListener('input', e => { const v = +e.target.value; $('#lodzv').textContent = v + ' m'; if (lod2Mod) lod2Mod.setOffset(v); });
   const dp = $('#dopop'); if (dp) dp.addEventListener('input', e => { state.dopOp = e.target.value / 100; map.setPaintProperty('dop', 'raster-opacity', state.dopOp); });
   $('#pop').querySelectorAll('.sw').forEach(b => b.addEventListener('click', () => setLayer(b.dataset.k)));
   $('#pop').querySelector('.optbtn').addEventListener('click', () => { state.opts = !state.opts; renderPop(); });
@@ -348,7 +357,7 @@ function setLayer(k) {
   if (k === 'scan') { if (on) scanUpdate(); if (map.getLayer('scan')) vis('scan', on); }
   if (k === 'dop') { vis('dop', on); vis('nu', !on); }
   if (k === 'scan' || k === 'dop') { const t = state.layers.scan || state.layers.dop; map.setPaintProperty('gb', 'fill-opacity', t ? 0.25 : 1); }
-  if (k === 'd3') { vis('gb3d', on); vis('gb', !on); vis('gb-line', !on); vis('sel-dash', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
+  if (k === 'd3') { lod2Show(on); vis('gb3d', on && !LOD2); vis('gb', !on); vis('gb-line', !on); vis('sel-dash', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
   applyShow(); renderPop();
 }
 $('#pop').addEventListener('click', e => e.stopPropagation());
