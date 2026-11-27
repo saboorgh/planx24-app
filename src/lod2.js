@@ -27,8 +27,15 @@ function layer() {
 export function setup(map, errCb) {
   if (errCb) onErr = errCb;
   if (overlay) return;
-  overlay = new MapboxOverlay({ interleaved: true, layers: [layer()] });
-  map.addControl(overlay);
+  // Prüfung 1: Ist das Stadtmodell vom Gerät aus erreichbar?
+  fetch(URL3D).then(r => r.ok ? r.json() : Promise.reject(new Error('Stadt antwortet ' + r.status)))
+    .then(j => onErr('Stadtmodell erreichbar (Version ' + ((j.asset && j.asset.version) || '?') + ')'))
+    .catch(e => onErr('Stadtmodell nicht erreichbar: ' + e.message));
+  try {
+    // Prüfung 2: Fehler beim Zeichnen melden
+    overlay = new MapboxOverlay({ interleaved: true, layers: [layer()], onError: e => onErr('Zeichenfehler: ' + (e && e.message || e)) });
+    map.addControl(overlay);
+  } catch (e) { onErr('3D-Programm startet nicht: ' + e.message); }
 }
 export function show(on) { visible = on; if (overlay) overlay.setProps({ layers: [layer()] }); }
 export function setOffset(v) { offset = v; if (overlay) overlay.setProps({ layers: [layer()] }); }
