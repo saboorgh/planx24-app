@@ -236,3 +236,14 @@ td.t{font-weight:600}
 /* Nordpfeil */
 .north{position:absolute;right:12px;bottom:150px;z-index:2;width:34px;height:42px;border:0;border-radius:8px;background:rgba(255,255,255,.92);box-shadow:0 1px 2px rgba(0,0,0,.08);display:grid;place-items:center;padding:0}.north svg{transition:transform .2s}
 @media (max-width:760px){.north{top:60px;bottom:auto;right:10px}}
+/* Handy: Menü (drei Striche) blendet die linke Leiste mit Logo, Karte, Projekte, Konto ein */
+.topbar{display:flex;align-items:center;min-width:0}.topbar .tabs{flex:1;min-width:0}
+.menubtn{display:none;width:44px;height:44px;flex:0 0 auto;border:0;border-radius:10px;background:transparent;color:var(--ink);place-items:center;margin-left:4px}
+.scrim{position:fixed;inset:0;z-index:40;background:rgba(28,43,53,.25)}
+@media (max-width:760px){
+ .menubtn{display:grid}
+ .tabs{padding-left:2px}
+ .rail{display:flex;position:fixed;left:0;top:0;bottom:0;width:76px;z-index:41;background:#FBFBFC;box-shadow:2px 0 16px rgba(0,0,0,.12);transform:translateX(-105%);transition:transform .2s ease}
+ .app.menu .rail{transform:none}
+}
+@media (prefers-reduced-motion:reduce){.rail{transition:none}}

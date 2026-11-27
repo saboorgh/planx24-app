@@ -887,3 +887,13 @@ q.addEventListener('keydown', e => {
 });
 document.addEventListener('keydown', e => { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); if (state.active !== 'map') { state.base = 'map'; show('map'); } q.focus(); q.select(); } });
 build();
+
+/* Handy-Menü: drei Striche oben links öffnen die linke Leiste */
+(() => {
+  const app = document.querySelector('.app'), btn = $('#menubtn'), scrim = $('#scrim');
+  const set = on => { app.classList.toggle('menu', on); scrim.hidden = !on; btn.setAttribute('aria-expanded', String(on)); btn.setAttribute('aria-label', on ? 'Menü schließen' : 'Menü öffnen'); };
+  btn.addEventListener('click', () => set(!app.classList.contains('menu')));
+  scrim.addEventListener('click', () => set(false));
+  document.querySelectorAll('.rail button').forEach(b => b.addEventListener('click', () => set(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
+})();

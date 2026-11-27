@@ -20,7 +20,11 @@
   </nav>
 
   <div class="main">
-    <div class="tabs" id="tabs" role="tablist" aria-label="Geöffnete Ansichten"></div>
+    <div class="topbar">
+      <button type="button" class="menubtn" id="menubtn" aria-label="Menü öffnen" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Geöffnete Ansichten"></div>
+    </div>
+    <div class="scrim" id="scrim" hidden></div>
     <main class="stage">
       <section class="view" id="v-map">
         <div id="map" role="application" aria-label="Karte Hamburg-Winterhude mit Flurstücken"></div>
