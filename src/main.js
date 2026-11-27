@@ -165,20 +165,28 @@ function build() {
   map.on('rotate', () => { north.firstChild.style.transform = `rotate(${-map.getBearing()}deg)`; });
   { const at = document.querySelector('.attr'); if (at) at.innerHTML = '© <a href="https://www.govdata.de/dl-de/by-2-0" target="_blank" rel="noopener">FHH, LGV</a> · © <a href="https://basemap.de" target="_blank" rel="noopener">basemap.de / BKG</a>'; }
   map.on('load', async () => {
-    // Hintergrundkarte ruhig halten: keine Symbole, Hausnummern, Höhen, Nummern; keine eigenen Gebäude (wir zeigen die ALKIS-Gebäude)
-    map.getStyle().layers.forEach(l => { if ((l.type === 'symbol' && /^Symbol_|^Hauskoordinate|^Quadrate|Hoehe|Relief|Kilometerstein|Haltepunkt|Bahnhof|Bauwerk|Gebaeude|Nummer_/.test(l.id)) ) map.setLayoutProperty(l.id, 'visibility', 'none'); });
-    // Gebäude der Hintergrundkarte in unserem Grau (statt schwarz); 3D-Gebäude aus, die zeigen wir selbst
-    map.getStyle().layers.forEach(l => { if (!/^Gebaeude/.test(l.id)) return; if (l.type === 'fill') { map.setPaintProperty(l.id, 'fill-color', '#D3D6DA'); map.setPaintProperty(l.id, 'fill-outline-color', '#9AA0A8'); } else if (l.type === 'line') map.setPaintProperty(l.id, 'line-color', '#9AA0A8'); else if (l.type === 'fill-extrusion') map.setLayoutProperty(l.id, 'visibility', 'none'); });
-    // Straßennamen größer und nie winzig
-    map.getStyle().layers.forEach(l => { if (l.type === 'symbol' && /^Name_.*(str|Fusswege|Platz)/i.test(l.id) && !/^Name_Bahn/.test(l.id)) map.setLayoutProperty(l.id, 'text-size', ['interpolate', ['linear'], ['zoom'], 12, 12, 15, 14, 18, 16]); });
-    calmBase();
-    outsideMask();
+    // Jeder Schritt einzeln abgesichert: Scheitert die Verschönerung der Hintergrundkarte, laufen Flurstücke, Menü und Suche trotzdem
+    const step = (name, fn) => { try { fn(); } catch (e) { console.error(name, e); STARTERR.push(name + ': ' + (e && e.message)); } };
+    const STARTERR = [];
+    step('Hintergrund', () => {
+      // Hintergrundkarte ruhig halten: keine Symbole, Hausnummern, Höhen, Nummern
+      map.getStyle().layers.forEach(l => { if (l.type === 'symbol' && /^Symbol_|^Hauskoordinate|^Quadrate|Hoehe|Relief|Kilometerstein|Haltepunkt|Bahnhof|Bauwerk|Gebaeude|Nummer_/.test(l.id)) map.setLayoutProperty(l.id, 'visibility', 'none'); });
+      // Gebäude der Hintergrundkarte in unserem Grau (statt schwarz); 3D-Gebäude aus, die zeigen wir selbst
+      map.getStyle().layers.forEach(l => { if (!/^Gebaeude/.test(l.id)) return; if (l.type === 'fill') { map.setPaintProperty(l.id, 'fill-color', '#D3D6DA'); map.setPaintProperty(l.id, 'fill-outline-color', '#9AA0A8'); } else if (l.type === 'line') map.setPaintProperty(l.id, 'line-color', '#9AA0A8'); else if (l.type === 'fill-extrusion') map.setLayoutProperty(l.id, 'visibility', 'none'); });
+      // Straßennamen größer und nie winzig
+      map.getStyle().layers.forEach(l => { if (l.type === 'symbol' && /^Name_.*(str|Fusswege)/i.test(l.id) && !/^Name_Bahn/.test(l.id)) map.setLayoutProperty(l.id, 'text-size', ['interpolate', ['linear'], ['zoom'], 12, 12, 15, 14, 18, 16]); });
+    });
+    step('Farben', calmBase);
+    step('Abdeckung', outsideMask);
     const baseSym = map.getStyle().layers.filter(l => l.type === 'symbol').map(l => l.id);
-    addLayers(); renderPop(); renderTabs();
+    step('Ebenen', addLayers);
+    step('Menü', renderPop);
+    step('Tabs', renderTabs);
     // Straßen- und Gewässernamen der Hintergrundkarte über unsere Flächen legen (sonst verdeckt), aber unter unsere Beschriftung
-    baseSym.filter(id => /str|Gewaesser|Platz|Fusswege/i.test(id) && !/^Nummer_/.test(id)).forEach(id => map.moveLayer(id, 'l-fl'));
+    step('Namen', () => { if (map.getLayer('l-fl')) baseSym.filter(id => /str|Gewaesser|Fusswege/i.test(id) && !/^Nummer_|Platz/.test(id)).forEach(id => map.moveLayer(id, 'l-fl')); });
     map.on('moveend', () => { loadView(); if (state.layers.scan) scanUpdate(); });
     loadView(); // Start: ganz Hamburg, nichts vorausgewählt
+    if (STARTERR.length) { toast('Startfehler – bitte Screenshot an Claude: ' + STARTERR.join(' · ').slice(0, 180)); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 15000); }
   });
 }
 // Straßen, Wege, Plätze, Bahn und Wasser sind nicht anklickbar
@@ -223,14 +231,14 @@ function addLayers() {
 function calmBase() {
   const soft = c => { const m = /rgba?\((\d+),\s*(\d+),\s*(\d+)/.exec(c); if (!m) return c; const f = v => Math.round(255 - (255 - v) * 0.42); return `rgb(${f(+m[1])},${f(+m[2])},${f(+m[3])})`; };
   const walk = v => typeof v === 'string' ? soft(v) : Array.isArray(v) ? v.map(walk) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, walk(x)])) : v;
-  map.getStyle().layers.forEach(l => {
+  map.getStyle().layers.forEach(l => { try {
     if (l.type === 'symbol' || /^Gebaeude/.test(l.id)) return;
     if (/^(Mittellinie|Barriere|Historisch|Freileitung|VersorgungsL|GrenzeF|GrenzeL|Relief|Staumauer|ImBau|AusserBetrieb|Geb_unter)/.test(l.id) || /Gleis/.test(l.id)) { map.setLayoutProperty(l.id, 'visibility', 'none'); return; }
     ['fill-color', 'line-color', 'background-color', 'fill-outline-color'].forEach(p => { const v = l.paint && l.paint[p]; if (v !== undefined) map.setPaintProperty(l.id, p, walk(v)); });
     if (/^Gewaesser/.test(l.id)) map.setPaintProperty(l.id, l.type === 'fill' ? 'fill-color' : 'line-color', l.type === 'fill' ? '#DDE6ED' : '#CCD8E2');
     if (/^VegetationsF/.test(l.id) && l.type === 'fill') map.setPaintProperty(l.id, 'fill-color', '#F1F3EF');
     if (/^Bahnstrecke/.test(l.id) && l.type === 'line') { map.setPaintProperty(l.id, 'line-color', '#C4C8CD'); map.setPaintProperty(l.id, 'line-opacity', 0.8); }
-  });
+  } catch (e) { console.warn('Farbe', l.id, e); } });
   if (map.getLayer('Hintergrund')) map.setPaintProperty('Hintergrund', 'background-color', '#FAFAFA');
 }
 
