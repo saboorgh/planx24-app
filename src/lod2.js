@@ -6,7 +6,7 @@ import { Tile3DLayer } from '@deck.gl/geo-layers';
 import { Tiles3DLoader } from '@loaders.gl/3d-tiles';
 
 const URL3D = 'https://api.hamburg.de/datasets/v1/lod2_hamburg/collections/building/3dtiles?f=json';
-let overlay = null, offset = -40, visible = false, onErr = () => {};
+let overlay = null, offset = 0, visible = false, onErr = () => {}, tiles = 0, said = false;
 
 function layer() {
   return new Tile3DLayer({
@@ -17,8 +17,10 @@ function layer() {
     // Höhenausgleich: Die Kacheln liegen auf echter Geländehöhe, unsere Karte ist flach (Höhe 0)
     modelMatrix: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, offset, 1],
     opacity: 1,
-    onTileError: e => onErr('Kachel: ' + (e && e.message || e)),
-    onTilesetLoad: () => onErr(null)
+    onTileError: e => onErr('Kachel-Fehler: ' + (e && e.message || e)),
+    onTilesetLoad: () => onErr('Stadtmodell verbunden, lade Dächer …'),
+    // Rückmeldung, sobald Häuser da sind (zum Testen)
+    onTileLoad: () => { tiles++; if (!said) { said = true; onErr('Dächer geladen – mit dem Höhen-Regler auf den Boden stellen'); } }
   });
 }
 

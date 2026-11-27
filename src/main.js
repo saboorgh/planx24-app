@@ -326,7 +326,8 @@ const LAY = [['dop', 'Luftbild', 'Hamburg, aktuelles Jahr'], ['scan', 'Bebauungs
 const LOD2 = new URLSearchParams(location.search).has('lod2'); let lod2Mod = null;
 function lod2Show(on) {
   if (!LOD2) return;
-  const go = m => { lod2Mod = m; m.setup(map, err => { if (err) toast('3D-Test: ' + String(err).slice(0, 120)); }); m.show(on); vis('gb3d', !on && state.layers.d3); };
+  toast('3D-Test: lade 3D-Programm …');
+  const go = m => { lod2Mod = m; m.setup(map, msg => { if (msg) { toast('3D-Test: ' + String(msg).slice(0, 120)); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 6000); } }); m.show(on); vis('gb3d', !on && state.layers.d3); };
   if (lod2Mod) go(lod2Mod); else if (on) import('./lod2.js').then(go).catch(e => toast('3D-Test lädt nicht: ' + e.message));
 }
 const OPTS = [['gs', 'Geschosse'], ['fl', 'Flurstücksnummern'], ['hnr', 'Hausnummern'], ['selB', 'Gebäude der Auswahl rot'], ['mass', 'Zulässiges Volumen (3D)']];
@@ -335,7 +336,7 @@ function renderPop() {
   const L = state.layers, S = state.show;
   const rng = (id, v) => `<label class="rng">Deckkraft<input type="range" id="${id}" min="20" max="100" value="${Math.round(v * 100)}"></label>`;
   $('#pop').innerHTML = LAY.map(([k, t, s]) => `<button type="button" class="sw" role="switch" aria-checked="${L[k]}" data-k="${k}"><span>${t}<small>${s}</small></span><i></i></button>` + (k === 'scan' && L.scan ? rng('scanop', state.scanOp) : '') + (k === 'dop' && L.dop ? rng('dopop', state.dopOp) : '')).join('')
-    + (LOD2 && L.d3 ? `<label class="rng">Test Dächer: Höhe<input type="range" id="lodz" min="-80" max="20" step="1" value="${lod2Mod ? lod2Mod.getOffset() : -40}"><b id="lodzv">${lod2Mod ? lod2Mod.getOffset() : -40} m</b></label>` : '')
+    + (LOD2 && L.d3 ? `<label class="rng">Test Dächer: Höhe<input type="range" id="lodz" min="-80" max="60" step="1" value="${lod2Mod ? lod2Mod.getOffset() : 0}"><b id="lodzv">${lod2Mod ? lod2Mod.getOffset() : 0} m</b></label>` : '')
     + `<button type="button" class="optbtn" aria-expanded="${state.opts}">Anzeige anpassen<span>${state.opts ? '–' : '+'}</span></button>`
     + (state.opts ? `<div class="opts">${OPTS.map(([k, t]) => `<label><input type="checkbox" data-o="${k}"${S[k] ? ' checked' : ''}>${t}</label>`).join('')}</div>` : '');
   const so = $('#scanop'); if (so) so.addEventListener('input', e => { state.scanOp = e.target.value / 100; if (map.getLayer('scan')) map.setPaintProperty('scan', 'raster-opacity', state.scanOp); });
