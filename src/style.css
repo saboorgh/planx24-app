@@ -235,3 +235,4 @@ td.t{font-weight:600}
 .opts{display:grid;gap:2px;padding:0 10px 8px}.opts label{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:13px;color:var(--ink)}.opts input{accent-color:var(--ink)}
 /* Nordpfeil */
 .north{position:absolute;right:12px;bottom:150px;z-index:2;width:34px;height:42px;border:0;border-radius:8px;background:rgba(255,255,255,.92);box-shadow:0 1px 2px rgba(0,0,0,.08);display:grid;place-items:center;padding:0}.north svg{transition:transform .2s}
+@media (max-width:760px){.north{top:60px;bottom:auto;right:10px}}

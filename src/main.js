@@ -266,12 +266,13 @@ function scanUpdate() {
 
 /* Beschriftungen: Flurstücksnummern und Geschosse */
 // Freieste Stelle im Flurstück: größter Abstand zu Grenze und Gebäuden (so sitzt die Nummer z. B. hinten im Garten statt am Haus)
+const LIGHT = window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 760; // Handy/Tablet: weniger rechnen
 function freePt(f, avoid) {
   const k = Math.cos(f.c[1] * Math.PI / 180), segs = [];
   const addRings = mp => mp.forEach(poly => poly.forEach(r => { for (let i = 1; i < r.length; i++) segs.push([r[i - 1], r[i]]); }));
   addRings(f.geometry.coordinates); avoid.forEach(a => addRings(a.geometry.coordinates));
   const dist = p => { let m = Infinity; for (const [a, b] of segs) { const ax = (a[0] - p[0]) * k, ay = a[1] - p[1], bx = (b[0] - p[0]) * k, by = b[1] - p[1], dx = bx - ax, dy = by - ay, L = dx * dx + dy * dy; let t = L ? -(ax * dx + ay * dy) / L : 0; t = Math.max(0, Math.min(1, t)); const d = Math.hypot(ax + t * dx, ay + t * dy); if (d < m) m = d; } return m; };
-  const b = f.bb, N = 12; let best = null, bd = -1;
+  const b = f.bb, N = LIGHT ? 7 : 12; let best = null, bd = -1;
   for (let i = 1; i < N; i++) for (let j = 1; j < N; j++) { const p = [b[0] + (b[2] - b[0]) * i / N, b[1] + (b[3] - b[1]) * j / N]; if (!inPoly(p, f.geometry.coordinates) || avoid.some(a => inPoly(p, a.geometry.coordinates))) continue; const d = dist(p); if (d > bd) { bd = d; best = p; } }
   return best || insidePt(f, avoid);
 }
@@ -288,7 +289,7 @@ const pt = (c, props) => ({ type: 'Feature', geometry: { type: 'Point', coordina
 function labelsAdd(fls, gbs, adrs) {
   fls.forEach(f => { if (/Strassenverkehr|Gewaesser|^Weg|^Platz|Bahn/.test(f.properties.tn)) return; const own = F.gb.features.filter(g => g.properties.keep && g.bb[0] < f.bb[2] && g.bb[2] > f.bb[0] && g.bb[1] < f.bb[3] && g.bb[3] > f.bb[1]); LBL['lbl-fl'].features.push(pt(freePt(f, own), { t: f.properties.nr, a: f.properties.a })); });
   // Geschosse: jedes Gebäude mit Geschosszahl, immer mitten im Baukörper (Stelle mit dem größten Abstand zum Rand)
-  gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 8) return; LBL['lbl-gb'].features.push(pt(freePt(g, []), { t: ROM[gs] || String(gs), a: g.area })); });
+  gbs.forEach(g => { const gs = g.properties.gs; if (!g.properties.keep || !gs || g.area < 8) return; LBL['lbl-gb'].features.push(pt(LIGHT && inPoly(g.c, g.geometry.coordinates) ? g.c : freePt(g, []), { t: ROM[gs] || String(gs), a: g.area })); });
   adrs.forEach(a => { if (a.properties.h) LBL['lbl-hnr'].features.push(pt(a.geometry.coordinates, { t: a.properties.h })); });
 }
 function streetLabels() {
@@ -781,7 +782,9 @@ fetch('/data/strassen.json').then(r => r.ok ? r.json() : null).then(d => {
   if (!d || !d.s || !d.s.length) return;
   IDX.s = d.s; IDX.o = d.o; IDX.n = d.s.map(x => norm(x[0])); IDX.w = d.s.map(x => x[0].split(/[\s-]+/).map(norm).filter(Boolean));
   // Hausnummern im Hintergrund nachladen, damit die Suche danach ohne Wartezeit antwortet
-  setTimeout(() => fetch('/data/adressen.json').then(r => r.ok ? r.json() : null).then(a => { if (a && a.s) IDX.a = a.s; }).catch(() => {}), 1200);
+  // Hausnummern (~3 MB) erst laden, wenn die Suche benutzt wird – schont Handys
+  const loadA = () => { if (IDX.aLoading) return; IDX.aLoading = true; fetch('/data/adressen.json').then(r => r.ok ? r.json() : null).then(a => { if (a && a.s) { IDX.a = a.s; if (q.value.trim()) search(); } }).catch(() => { IDX.aLoading = false; }); };
+  q.addEventListener('focus', loadA); if (!LIGHT) setTimeout(loadA, 2500);
 }).catch(() => {});
 // Abstand zweier Wörter (Vertauschen zählt als ein Fehler), bricht ab, sobald es zu viele Fehler werden
 function dist(a, b, max) {
