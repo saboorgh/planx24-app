@@ -13,6 +13,8 @@ function layer() {
     id: 'lod2',
     data: URL3D,
     loader: Tiles3DLoader,
+    // Die Adresse der Stadt endet auf „?f=json“ statt „.json“ – ausdrücklich als Übersichtsdatei (Tileset) lesen
+    loadOptions: { '3d-tiles': { isTileset: true } },
     visible,
     // Höhenausgleich: Die Kacheln liegen auf echter Geländehöhe, unsere Karte ist flach (Höhe 0)
     modelMatrix: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, offset, 1],
