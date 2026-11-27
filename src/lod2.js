@@ -23,7 +23,7 @@ function layer() {
     // Höhenausgleich: Die Kacheln liegen auf echter Geländehöhe, unsere Karte ist flach (Höhe 0)
     modelMatrix: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, offset, 1],
     opacity: 1,
-    onTileError: e => onErr('Kachel-Fehler: ' + (e && e.message || e)),
+    onTileError: (tile, url, message) => { console.warn('LOD2 Kachel-Fehler', url, message, tile); onErr('Kachel-Fehler: ' + String(message || '').slice(0, 80) + ' · ' + String(url || (tile && tile.contentUrl) || '').slice(-40)); },
     onTilesetLoad: () => onErr('Stadtmodell verbunden, lade Dächer …'),
     // Rückmeldung, sobald Häuser da sind (zum Testen)
     onTileLoad: () => { tiles++; if (!said) { said = true; onErr('Dächer geladen – mit dem Höhen-Regler auf den Boden stellen'); } }
