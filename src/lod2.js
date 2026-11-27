@@ -15,7 +15,9 @@ function layer() {
     data: URL3D,
     loader: Tiles3DLoader,
     // Die Adresse der Stadt endet auf „?f=json“ statt „.json“ – ausdrücklich als Übersichtsdatei (Tileset) lesen
-    loadOptions: { '3d-tiles': { isTileset: true } },
+    // Das 3D-Programm hängt die (schon vollständigen) Kachel-Adressen der Stadt an die Basisadresse an
+    // („…/building/https://api.hamburg.de/…“) – vor dem Abruf auf die letzte vollständige Adresse kürzen
+    loadOptions: { fetch: (url, init) => { const u = String(url); const i = u.lastIndexOf('https://'); return fetch(i > 0 ? u.slice(i) : u, init); } },
     visible,
     // Höhenausgleich: Die Kacheln liegen auf echter Geländehöhe, unsere Karte ist flach (Höhe 0)
     modelMatrix: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, offset, 1],
