@@ -18,7 +18,7 @@ function layer() {
     // Das 3D-Programm hängt die (schon vollständigen) Kachel-Adressen der Stadt an die Basisadresse an
     // („…/building/https://api.hamburg.de/…“) – vor dem Abruf auf die letzte vollständige Adresse kürzen
     // Antwort behält die Adresse mit „#tileset.json“, damit die Übersichtsdatei weiter erkannt wird
-    loadOptions: { fetch: async (url, init) => { const u = String(url); const i = u.lastIndexOf('https://'); let fixed = i > 0 ? u.slice(i) : u; if (/\.(glb|subtree)\?/.test(fixed)) fixed = fixed.split('?')[0]; // Zusatz der Übersichtsadresse nicht an Kacheln hängen const r = await fetch(fixed, init); try { Object.defineProperty(r, 'url', { value: fixed }); } catch (e) { /* egal */ } return r; } },
+    loadOptions: { fetch: async (url, init) => { const u = String(url); const i = u.lastIndexOf('https://'); let fixed = i > 0 ? u.slice(i) : u; if (/\.(glb|subtree)\?/.test(fixed)) fixed = fixed.split('?')[0]; /* Zusatz der Übersichtsadresse nicht an Kacheln hängen */ const r = await fetch(fixed, init); try { Object.defineProperty(r, 'url', { value: fixed }); } catch (e) { /* egal */ } return r; } },
     visible,
     // Höhenausgleich: Die Kacheln liegen auf echter Geländehöhe, unsere Karte ist flach (Höhe 0)
     modelMatrix: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, offset, 1],
