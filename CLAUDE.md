@@ -54,6 +54,14 @@ Credits/Bezahlung erst ganz am Ende.
 - Supabase-Projekt „Baurecht RAG“ (yenkuxudqczaumeaoigr), Tabelle `zugang`: Zugang `planx24-app` mit Stufe `oeffentlich` ist angelegt.
 - KI-Chat ist noch aus: In Vercel fehlen `ANTHROPIC_API_KEY` und `KB_URL` (der User trägt Schlüssel selbst ein, nie in den Chat). Für `KB_URL` einen frischen Zugang der Stufe `oeffentlich` anlegen (README).
 
+## Wettbewerb syte (Videos angesehen am 27.11.2026)
+- Aufbau syte: Reiter 01 Explore · 02 Entwurf · 03 Sanierungsplaner · 04 Projektrechner · 05 Report. Dunkle Karte, Flurstücke mit Nummern, Kennzahlen links (BGF, GFZ, GRZ, Geschosse), Karte färbbar nach GRZ.
+- 3D-Look: Umgebung als **hellgraue, halbdurchsichtige LoD2-Häuser mit Dächern** (ganze Umgebung, nicht nur Baublock), eigener Entwurf holzfarben.
+- syte Draft (Volumenstudie): „Flurstücke hinzufügen“, „Gebäude übernehmen“, „Entwurf importieren“; Werkzeuge Freies Zeichnen, Rechteck, Parkplätze, Bewegen, Drehen, Extrudieren, Vorlagen, KI-Visual; Leiste mit Etage +/−; Kennzahlen live; Abstandsflächen, Dachform, Stellplätze werden mitgeplant. KI-Bilder (Holzfassade, Gründach, Straßenblick).
+- syte Explore B-Plan-Suche: KI-Agent sucht den Plan (bis 60 min, 100 Suchen/Monat), Ergebnis als Bericht: Pläne+PDF-Quellen, entwurfsrelevante Festsetzungen (Art, GRZ, GFZ, Geschosse, Höhe) mit Seitenangabe, planweite Festsetzungen; ohne Plan: Rechercheweg, Begründung, Hinweise zur Aussagekraft.
+- Weitere: Portfolio bis 2.000 Objekte, Sanierung/Residualwert, Vergleich Halten/Aufstocken/Neubau, Grundstückssuche mit Filtern.
+- **Unser Vorteil in Hamburg:** XPlan, Scan und Textteil liegen sofort vor (kein 60-min-Suchlauf), Fachwissen Bauprüfung + Wissensbasis (z. B. Abstandsflächen exakt nach § 6 HBauO).
+
 ## Offen / nächste Schritte
 - Ideen des Users vom 26.11.2026 (besprochen, noch nicht gebaut):
   - Luftbilder: Hamburg-DOP frei als WMS (`geodienste.hamburg.de/wms_dop_zeitreihe_unbelaubt` bzw. `_belaubt`, dl-de/by-2-0). Schrägluftbilder gibt es im Geoportal, ob als offener Dienst einbindbar: prüfen.
