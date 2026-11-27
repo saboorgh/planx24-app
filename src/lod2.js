@@ -5,8 +5,8 @@ import { MapboxOverlay } from '@deck.gl/mapbox';
 import { Tile3DLayer } from '@deck.gl/geo-layers';
 import { Tiles3DLoader } from '@loaders.gl/3d-tiles';
 
-// „&_=.json“ am Ende: das 3D-Programm erkennt die Übersichtsdatei an „.json“ in der Adresse
-const URL3D = 'https://api.hamburg.de/datasets/v1/lod2_hamburg/collections/building/3dtiles?f=json&_=tileset.json';
+// „#tileset.json“: wird nicht an die Stadt geschickt, aber das 3D-Programm erkennt daran die Übersichtsdatei
+const URL3D = 'https://api.hamburg.de/datasets/v1/lod2_hamburg/collections/building/3dtiles?f=json#tileset.json';
 let overlay = null, offset = 0, visible = false, onErr = () => {}, tiles = 0, said = false;
 
 function layer() {
