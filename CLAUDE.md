@@ -62,6 +62,13 @@ Credits/Bezahlung erst ganz am Ende.
 - Weitere: Portfolio bis 2.000 Objekte, Sanierung/Residualwert, Vergleich Halten/Aufstocken/Neubau, Grundstückssuche mit Filtern.
 - **Unser Vorteil in Hamburg:** XPlan, Scan und Textteil liegen sofort vor (kein 60-min-Suchlauf), Fachwissen Bauprüfung + Wissensbasis (z. B. Abstandsflächen exakt nach § 6 HBauO).
 
+## Strategie und Architektur (beschlossen 27.11.2026)
+- Ausführlich im Dokument „PlanX24 – Pitch- und Skalierungsstrategie“: https://claude.ai/artifact/EqDT4PD5r89jrgjarc2rPM (Lehren aus syte, Technischer Aufbau mit Zeichnung, B-Plan-System, 3D/Export/MCP, Expansion, Fahrplan).
+- Grundsatz: von Anfang an für ganz Deutschland bauen, Land für Land füllen. Vorab rechnen, beim Klick nur nachschlagen; Stadt-API nur als Ausweich.
+- Bausteine: Rohdaten in R2 (`raw/<land>/<datensatz>/<datum>/`) → Kerndaten als GeoParquet (DuckDB, GDAL, EPSG:25832) → Produkte: PMTiles (2D, Beschriftung vorab), eigene 3D Tiles aus LoD2, Berichte je Flurstück/B-Plan, Supabase PostGIS (Suche, Nutzer, Prüfstatus) → Nutzung: App, Export (DXF, IFC, PDF), API, MCP-Server (ArchiCAD). Pipelines als Skripte im Repo, im Docker-Container, erst GitHub Actions, später eigener Server.
+- B-Plan-System: Datenmodell `plan`, `festsetzung` (Herkunft/Seite/Sicherheit/Prüfstatus je Wert), `textliche_festsetzung`, `ueberlagerung`. Prüf-Agent Hamburg: liest B-Plan-PDFs ohne XPlan, vergleicht Feld für Feld mit XPlan, Trefferquote je Feld, Korrekturen des Users als Beispiele; Start mit 20 Plänen.
+- Reihenfolge: Phase 0 Karte (PMTiles + eigene 3D Tiles auf R2) → Phase 1 B-Plan-System Hamburg → Phase 2 Produkt live → Phase 3 Volumenstudie/Export/API/MCP → Phase 4 SH/NI (Hamburger Rand zuerst) → Phase 5 B2B → Phase 6 nach Süden bis München.
+
 ## Offen / nächste Schritte
 - Ideen des Users vom 26.11.2026 (besprochen, noch nicht gebaut):
   - Luftbilder: Hamburg-DOP frei als WMS (`geodienste.hamburg.de/wms_dop_zeitreihe_unbelaubt` bzw. `_belaubt`, dl-de/by-2-0). Schrägluftbilder gibt es im Geoportal, ob als offener Dienst einbindbar: prüfen.
