@@ -327,6 +327,10 @@ const LOD2 = new URLSearchParams(location.search).has('lod2'); let lod2Mod = nul
 function lod2Show(on) {
   if (!LOD2) return;
   toast('3D-Test: lade 3D-Programm …');
+  // Testmodus: auch versteckte Fehler (z. B. beim Lesen der 3D-Kacheln) anzeigen
+  if (!window.__lodErr) { window.__lodErr = true; const show = t => { toast('3D-Test Fehler: ' + String(t).slice(0, 140)); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 12000); };
+    window.addEventListener('unhandledrejection', e => show(e.reason && (e.reason.message || e.reason)));
+    window.addEventListener('error', e => show(e.message)); const ce = console.error; console.error = (...a) => { show(a.map(x => x && x.message || x).join(' ')); ce.apply(console, a); }; }
   const go = m => { lod2Mod = m; m.setup(map, msg => { if (msg) { toast('3D-Test: ' + String(msg).slice(0, 120)); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 6000); } }); m.show(on); vis('gb3d', !on && state.layers.d3); };
   if (lod2Mod) go(lod2Mod); else if (on) import('./lod2.js').then(go).catch(e => toast('3D-Test lädt nicht: ' + e.message));
 }
