@@ -12,7 +12,9 @@ button{cursor:pointer}
 [hidden]{display:none!important}
 .app{display:grid;grid-template-columns:64px minmax(0,1fr);height:100dvh}
 .rail{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 0}
-.logo{width:36px;height:36px;display:grid;place-items:center;color:var(--ink);margin-bottom:12px}
+.logo{width:40px;height:40px;display:grid;place-items:center;color:var(--ink);margin-bottom:12px;border-radius:10px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.logo:hover,.logo:focus-visible{transform:scale(1.12);background:#fff;box-shadow:0 4px 14px rgba(51,106,234,.22)}
+.logo:active{transform:scale(1.04)}
 .rail button{width:44px;height:44px;border:0;border-radius:12px;background:transparent;display:grid;place-items:center;color:var(--ink2)}
 .rail button:hover{background:#F1F2F4;color:var(--ink)}
 .rail button[aria-current=page]{background:#ECEDEF;color:var(--ink)}
@@ -245,9 +247,9 @@ td.t{font-weight:600}
  .app.menu .menubtn{background:#ECEDEF}
  .tabs{padding-left:2px}
  .rail{display:flex;position:fixed;left:0;top:48px;bottom:0;width:64px;z-index:5;padding-top:8px;background:#FBFBFC;border-right:1px solid #ECEDEF;transform:translateX(-100%);transition:transform .22s ease}
- .rail .logo{display:none}
  .app.menu .rail{transform:none}
  .stage{transition:margin-left .22s ease}
  .app.menu .stage{margin-left:64px}
 }
 @media (prefers-reduced-motion:reduce){.rail,.stage{transition:none}}
+@media (prefers-reduced-motion:reduce){.logo{transition:none}.logo:hover{transform:none}}
