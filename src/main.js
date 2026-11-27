@@ -437,6 +437,7 @@ function select(id, initial) { state.selIds = [id]; state.mode = 'info'; refresh
 function selectMany(ids) { state.selIds = ids.slice(); refreshSel(false, false); }
 function toggleSel(id) { const i = state.selIds.indexOf(id); if (i >= 0) state.selIds.splice(i, 1); else state.selIds.push(id); if (!state.selIds.length) { clearSel(); return; } refreshSel(false, true); }
 function refreshSel(initial, keepView) {
+  if (!map.getSource('sel')) return; // Karte noch nicht fertig
   const fs = state.selIds.map(i => F.fl.features[i]);
   map.getSource('sel').setData({ type: 'FeatureCollection', features: fs }); map.getSource('selo').setData(outlineFC(fs));
   const r = analyse(fs);
@@ -881,8 +882,10 @@ function search() {
   if (t.length < 3) return;
   sTimer = setTimeout(() => apiSearch(street, nr.toLowerCase(), my), 120);
 }
+let mapReady = null; const whenReady = () => mapReady || (mapReady = new Promise(res => { const ok = () => map.getSource('fl') ? res() : setTimeout(ok, 100); ok(); }));
 async function go(i) {
   const h = hits[i]; if (!h) return;
+  await whenReady(); // erst suchen lassen, wenn die Karte mit allen Ebenen bereit ist
   if (state.active !== 'map') { state.base = 'map'; show('map'); }
   if (h.street) { // Straße gewählt: hinfliegen, Hausnummer kann direkt weitergetippt werden
     q.value = h.label + ' '; q.focus(); res.classList.remove('open');
