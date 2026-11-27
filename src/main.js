@@ -239,7 +239,8 @@ function calmBase() {
     if (/^VegetationsF/.test(l.id) && l.type === 'fill') map.setPaintProperty(l.id, 'fill-color', '#F1F3EF');
     if (/^Bahnstrecke/.test(l.id) && l.type === 'line') { map.setPaintProperty(l.id, 'line-color', '#C4C8CD'); map.setPaintProperty(l.id, 'line-opacity', 0.8); }
   } catch (e) { console.warn('Farbe', l.id, e); } });
-  if (map.getLayer('Hintergrund')) map.setPaintProperty('Hintergrund', 'background-color', '#FAFAFA');
+  // „Hintergrund“ ist bei basemap.de eine Fläche (fill), keine Hintergrund-Ebene – Eigenschaft passend zum Typ setzen
+  const bg = map.getLayer('Hintergrund'); if (bg) try { map.setPaintProperty('Hintergrund', bg.type === 'background' ? 'background-color' : 'fill-color', '#FAFAFA'); } catch (e) { console.warn('Hintergrund', e); }
 }
 
 /* Außerhalb Hamburgs weiß abdecken, damit Hamburg nach vorne kommt (Landesgrenze einmal von der Stadt laden) */
