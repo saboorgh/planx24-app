@@ -60,7 +60,7 @@ try { P = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { P =
 Object.entries(P).forEach(([k, p]) => { p.id = k; if (!p.nrs) p.nrs = [p.nr]; const m = { entwurf: 'neu', pruefung: 'arbeit', voranfrage: 'arbeit', eingereicht: 'erledigt', abgelegt: 'erledigt' }; if (m[p.status]) p.status = m[p.status]; });
 function save() { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} }
 
-const state = { base: 'map', tabs: [], active: 'map', selIds: [], add: false, hover: null, selB: [], layers: { scan: false, bp: false, brw: false, d3: false, dop: false }, scanOp: 0.85, dopOp: 1, opts: false, show: { gs: true, fl: true, hnr: true, selB: true, mass: false }, mode: 'info', chats: {}, busy: false, sub: {} };
+const state = { base: 'map', tabs: [], active: 'map', selIds: [], add: false, hover: null, selB: [], layers: { scan: false, bp: false, brw: false, d3: false, dop: false, lod2: false }, scanOp: 0.85, dopOp: 1, opts: false, show: { gs: true, fl: true, hnr: true, selB: true, mass: false }, mode: 'info', chats: {}, busy: false, sub: {} };
 let map = null, byNr = {};
 const F = { fl: fcol(), gb: fcol(), nu: fcol(), bg: fcol(), bgr: fcol(), bpl: fcol(), brw: fcol(), adr: fcol() };
 function fcol() { return { type: 'FeatureCollection', features: [] }; }
@@ -322,25 +322,33 @@ function addLabelLayers() {
 /* Ebenen */
 // Festsetzungen (bp) und Bodenrichtwerte (brw) vorerst nicht in der Liste (Wunsch des Users); Ebenen-Code bleibt, später über einen Filter zuschaltbar
 const LAY = [['dop', 'Luftbild', 'Hamburg, aktuelles Jahr'], ['scan', 'Bebauungsplan (Scan)', 'Originalplan, lagerichtig'], ['d3', '3D-Ansicht', 'Gebäude räumlich']];
-// TESTVERSION echte Dächer: nur mit ?lod2 im Link (src/lod2.js, wird erst dann geladen)
-const LOD2 = new URLSearchParams(location.search).has('lod2'); let lod2Mod = null;
+// Echte Dächer (LoD2): Schalter unter „3D-Ansicht“ (src/lod2.js wird erst beim Einschalten geladen, langsam – am besten am Computer).
+// Mit ?lod2 im Link zusätzlich Testhilfen: Höhen-Regler und alle Meldungen/Fehler als Hinweis.
+const LOD2TEST = new URLSearchParams(location.search).has('lod2'); let lod2Mod = null;
 function lod2Show(on) {
-  if (!LOD2) return;
-  toast('3D-Test: lade 3D-Programm …');
-  // Testmodus: auch versteckte Fehler (z. B. beim Lesen der 3D-Kacheln) anzeigen
-  if (!window.__lodErr) { window.__lodErr = true; const show = t => { toast('3D-Test Fehler: ' + String(t).slice(0, 140)); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 12000); };
+  vis('gb3d', state.layers.d3 && !on);
+  if (!on) { if (lod2Mod) lod2Mod.show(false); return; }
+  if (LOD2TEST && !window.__lodErr) { window.__lodErr = true; const show = t => { toast('3D-Test Fehler: ' + String(t).slice(0, 140)); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 12000); };
     window.addEventListener('unhandledrejection', e => show(e.reason && (e.reason.message || e.reason)));
     window.addEventListener('error', e => show(e.message)); const ce = console.error; console.error = (...a) => { show(a.map(x => x && x.message || x).join(' ')); ce.apply(console, a); }; }
-  const go = m => { lod2Mod = m; m.setup(map, msg => { if (msg) { toast('3D-Test: ' + String(msg).slice(0, 120)); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 6000); } }); m.show(on); vis('gb3d', !on && state.layers.d3); };
-  if (lod2Mod) go(lod2Mod); else if (on) import('./lod2.js').then(go).catch(e => toast('3D-Test lädt nicht: ' + e.message));
+  let warned = false;
+  const note = msg => {
+    if (!msg) return;
+    if (LOD2TEST) { toast('3D-Test: ' + String(msg).slice(0, 120)); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('#toast').classList.remove('on'), 6000); return; }
+    if (!warned && /nicht|fehler|startet nicht/i.test(msg)) { warned = true; toast('Echte Dächer konnten nicht geladen werden.'); }
+  };
+  const go = m => { lod2Mod = m; m.setup(map, note); m.show(state.layers.d3 && state.layers.lod2); };
+  if (lod2Mod) go(lod2Mod);
+  else { toast(LIGHT ? 'Echte Dächer werden geladen – auf dem Handy kann das langsam sein, am besten am Computer nutzen.' : 'Echte Dächer werden geladen …'); import('./lod2.js').then(go).catch(() => toast('Echte Dächer konnten nicht geladen werden.')); }
 }
 const OPTS = [['gs', 'Geschosse'], ['fl', 'Flurstücksnummern'], ['hnr', 'Hausnummern'], ['selB', 'Gebäude der Auswahl rot'], ['mass', 'Zulässiges Volumen (3D)']];
 function vis(l, on) { if (map.getLayer(l)) map.setLayoutProperty(l, 'visibility', on ? 'visible' : 'none'); }
 function renderPop() {
   const L = state.layers, S = state.show;
   const rng = (id, v) => `<label class="rng">Deckkraft<input type="range" id="${id}" min="20" max="100" value="${Math.round(v * 100)}"></label>`;
-  $('#pop').innerHTML = LAY.map(([k, t, s]) => `<button type="button" class="sw" role="switch" aria-checked="${L[k]}" data-k="${k}"><span>${t}<small>${s}</small></span><i></i></button>` + (k === 'scan' && L.scan ? rng('scanop', state.scanOp) : '') + (k === 'dop' && L.dop ? rng('dopop', state.dopOp) : '')).join('')
-    + (LOD2 && L.d3 ? `<label class="rng">Test Dächer: Höhe<input type="range" id="lodz" min="-80" max="60" step="1" value="${lod2Mod ? lod2Mod.getOffset() : 0}"><b id="lodzv">${lod2Mod ? lod2Mod.getOffset() : 0} m</b></label>` : '')
+  $('#pop').innerHTML = LAY.map(([k, t, s]) => `<button type="button" class="sw" role="switch" aria-checked="${L[k]}" data-k="${k}"><span>${t}<small>${s}</small></span><i></i></button>` + (k === 'scan' && L.scan ? rng('scanop', state.scanOp) : '') + (k === 'dop' && L.dop ? rng('dopop', state.dopOp) : '')
+      + (k === 'd3' && L.d3 ? `<button type="button" class="sw sub" role="switch" aria-checked="${!!L.lod2}" data-k="lod2"><span>Echte Dächer (LoD2)<small>Langsamer – am besten am Computer</small></span><i></i></button>` : '')).join('')
+    + (LOD2TEST && L.d3 && L.lod2 ? `<label class="rng">Test Dächer: Höhe<input type="range" id="lodz" min="-80" max="60" step="1" value="${lod2Mod ? lod2Mod.getOffset() : 0}"><b id="lodzv">${lod2Mod ? lod2Mod.getOffset() : 0} m</b></label>` : '')
     + `<button type="button" class="optbtn" aria-expanded="${state.opts}">Anzeige anpassen<span>${state.opts ? '–' : '+'}</span></button>`
     + (state.opts ? `<div class="opts">${OPTS.map(([k, t]) => `<label><input type="checkbox" data-o="${k}"${S[k] ? ' checked' : ''}>${t}</label>`).join('')}</div>` : '');
   const so = $('#scanop'); if (so) so.addEventListener('input', e => { state.scanOp = e.target.value / 100; if (map.getLayer('scan')) map.setPaintProperty('scan', 'raster-opacity', state.scanOp); });
@@ -362,7 +370,8 @@ function setLayer(k) {
   if (k === 'scan') { if (on) scanUpdate(); if (map.getLayer('scan')) vis('scan', on); }
   if (k === 'dop') { vis('dop', on); vis('nu', !on); }
   if (k === 'scan' || k === 'dop') { const t = state.layers.scan || state.layers.dop; map.setPaintProperty('gb', 'fill-opacity', t ? 0.25 : 1); }
-  if (k === 'd3') { lod2Show(on); vis('gb3d', on && !LOD2); vis('gb', !on); vis('gb-line', !on); vis('sel-dash', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
+  if (k === 'lod2') lod2Show(on && state.layers.d3);
+  if (k === 'd3') { lod2Show(on && state.layers.lod2); vis('gb3d', on && !state.layers.lod2); vis('gb', !on); vis('gb-line', !on); vis('sel-dash', on); map.easeTo({ pitch: on ? 58 : 0, bearing: on ? -20 : 0, duration: 900 }); }
   applyShow(); renderPop();
 }
 $('#pop').addEventListener('click', e => e.stopPropagation());
@@ -685,6 +694,7 @@ function md(text) {
     const b = l.match(/^\s*[-•*]\s+(.*)/);
     if (b) { if (!ul) { h += '<ul>'; ul = true; } h += '<li>' + b[1] + '</li>'; return; }
     if (ul) { h += '</ul>'; ul = false; }
+    if (/^\s*\*?Grundlage:/.test(l)) { h += '<p class="src">' + l.replace(/\*/g, '').trim() + '</p>'; return; }
     if (l.trim()) h += '<p>' + l.replace(/^#+\s*/, '') + '</p>';
   });
   if (ul) h += '</ul>';
@@ -726,7 +736,11 @@ function ctxText(fs, r) {
 function history(msgs) { return msgs.filter(m => !m.err && !m.pending && m.content).map(m => ({ role: m.role, content: m.content })); }
 async function apiChat(fs, r, msgs, onEvent) {
   const resp = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ctx: ctxText(fs, r), messages: history(msgs) }) });
-  if (!resp.ok || !resp.body) { let m = 'Das hat nicht geklappt.'; try { m = (await resp.json()).error || m; } catch (e) {} throw new Error(m); }
+  if (!resp.ok || !resp.body) {
+    let j = null; try { j = await resp.json(); } catch (e) {}
+    if (resp.status === 429 && j && j.error === 'limit') { const err = new Error('limit'); err.limit = j; throw err; }
+    throw new Error((j && j.error) || 'Das hat nicht geklappt.');
+  }
   const reader = resp.body.getReader(), dec = new TextDecoder(); let buf = '';
   for (;;) {
     const { value, done } = await reader.read(); if (done) break;
@@ -734,6 +748,14 @@ async function apiChat(fs, r, msgs, onEvent) {
     while ((i = buf.indexOf('\n\n')) >= 0) { const line = buf.slice(0, i); buf = buf.slice(i + 2); if (line.startsWith('data: ')) { try { onEvent(JSON.parse(line.slice(6))); } catch (e) {} } }
   }
 }
+/* Kostenlose Fragen: 5 je 24 Stunden (der Server zählt mit, der Browser zeigt den Stand) */
+const LOADER = '<span class="pxload" role="img" aria-label="Antwort wird erstellt"><i></i><i></i><i></i><i></i><i></i></span>';
+function getQuota() { try { const q = JSON.parse(localStorage.getItem('px_quota') || 'null'); if (q && q.resetAt > Date.now()) return q; } catch (e) {} return null; }
+function setQuota(left, limit, resetAt) { try { localStorage.setItem('px_quota', JSON.stringify({ left, limit, resetAt })); } catch (e) {} }
+function blocked() { const q = getQuota(); return q && q.left <= 0 ? q : null; }
+function hms(ms) { const t = Math.max(0, Math.ceil(ms / 1000)), p = n => String(n).padStart(2, '0'); return p(Math.floor(t / 3600)) + ':' + p(Math.floor(t / 60) % 60) + ':' + p(t % 60); }
+let quotaTimer = null;
+
 function renderChat(host, fs, r, o) {
   const msgs = chatFor(fs), multi = fs.length > 1;
   const title = multi ? multiTitle(fs) : (fs[0].properties.lage || 'Flurstück ' + fs[0].properties.nr);
@@ -744,21 +766,32 @@ function renderChat(host, fs, r, o) {
   h += `<div class="msgs"><div class="msg ai"><div class="who">KI</div><div class="bd"><p>Ich kenne für ${multi ? 'diese Flurstücke' : 'dieses Grundstück'} den Bebauungsplan, den Bestand und die Umgebung. Was hast du vor?</p></div></div>`;
   h += msgs.map((m, i) => m.role === 'user'
     ? `<div class="msg me"><div class="bd">${esc(m.content)}</div></div>`
-    : `<div class="msg ai" data-i="${i}"><div class="who">KI</div><div class="bd">${m.pending && !m.content ? '<p class="think">Denkt nach …</p>' : md(m.content)}</div>${!m.pending && !m.err ? `<div class="mact"><button class="gh" type="button" data-note="${i}">Als Notiz speichern</button></div>` : ''}</div>`).join('');
+    : `<div class="msg ai" data-i="${i}"><div class="who">KI</div><div class="bd">${m.pending && !m.content ? LOADER : md(m.content)}</div>${!m.pending && !m.err ? `<div class="mact"><button class="gh" type="button" data-note="${i}">Als Notiz speichern</button></div>` : ''}</div>`).join('');
   h += `</div>`;
   if (!msgs.length) h += `<div class="quick">${QUICK.map(q => `<button type="button" class="qchip">${esc(q)}</button>`).join('')}</div>`;
-  h += `<form class="cin"><textarea rows="1" placeholder="Frag etwas zu ${what} …" aria-label="Frage"></textarea><button class="btn pri" type="submit"${state.busy ? ' disabled' : ''}>Senden</button></form>`;
-  h += `<div class="cft"><span>${state.kbOk ? '<span class="kb">Wissensbasis verbunden</span> · ' : ''}Ersteinschätzung durch KI, keine Genehmigung.</span>${hasAI ? '<button class="gh" type="button" data-tasks>Aufgaben ins Projekt</button>' : ''}</div></div>`;
+  const bl = blocked(), qq = getQuota();
+  if (bl) h += `<div class="climit"><strong>Ihre ${bl.limit || 5} kostenlosen Fragen für heute sind verbraucht.</strong><span>Neue Fragen in <b class="ctimer">${hms(bl.resetAt - Date.now())}</b></span></div>`;
+  else h += `<form class="cin"><textarea rows="1" placeholder="Frag etwas zu ${what} …" aria-label="Frage"></textarea><button class="btn pri" type="submit"${state.busy ? ' disabled' : ''}>Senden</button></form>`;
+  const leftTxt = !bl && qq && qq.left <= 2 ? `<span class="cleft">Noch ${qq.left} kostenlose Frage${qq.left === 1 ? '' : 'n'} heute</span> · ` : '';
+  h += `<div class="cft"><span>${leftTxt}Erste Einschätzung auf Basis amtlicher Daten. KI kann Fehler machen – verbindlich ist nur die Bauaufsicht.</span>${hasAI ? '<button class="gh" type="button" data-tasks>Aufgaben ins Projekt</button>' : ''}</div></div>`;
   host.innerHTML = h;
   const box = host.querySelector('.msgs'); box.scrollTop = box.scrollHeight;
-  const ta = host.querySelector('textarea'), form = host.querySelector('form');
+  const ta = host.querySelector('textarea'), form = host.querySelector('form.cin');
   const rerender = () => renderChat(host, fs, r, o);
+  clearInterval(quotaTimer);
+  if (bl) quotaTimer = setInterval(() => {
+    const el = host.querySelector('.ctimer'); if (!el || !el.isConnected) { clearInterval(quotaTimer); return; }
+    const ms = bl.resetAt - Date.now(); el.textContent = hms(ms);
+    if (ms <= 0) { clearInterval(quotaTimer); try { localStorage.removeItem('px_quota'); } catch (e) {} rerender(); }
+  }, 1000);
   const back = host.querySelector('#cback'); if (back) back.addEventListener('click', () => { state.mode = 'info'; renderPanel(fs, r); });
   host.querySelectorAll('.qchip').forEach(b => b.addEventListener('click', () => send(b.textContent)));
+  if (ta) {
   ta.addEventListener('input', () => { ta.style.height = 'auto'; ta.style.height = Math.min(140, ta.scrollHeight) + 'px'; });
   ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
   form.addEventListener('submit', e => { e.preventDefault(); send(ta.value); });
   if (!o.inPanel || state.mode === 'chat') setTimeout(() => ta.focus(), 0);
+  }
   host.querySelectorAll('[data-note]').forEach(b => b.addEventListener('click', () => {
     const p = ensureProject(fs); p.notes.push({ t: 'KI-Antwort: ' + msgs[+b.dataset.note].content, ts: Date.now() }); touch(p); toast('Als Notiz im Projekt gespeichert.'); renderTabs();
   }));
@@ -776,20 +809,23 @@ function renderChat(host, fs, r, o) {
 
   async function send(text) {
     text = String(text || '').trim(); if (!text || state.busy) return;
+    if (blocked()) { rerender(); return; }
     state.busy = true;
     msgs.push({ role: 'user', content: text, ts: Date.now() });
     const ai = { role: 'assistant', content: '', pending: true, ts: Date.now() }; msgs.push(ai);
     const idx = msgs.length - 1; rerender();
-    const paint = note => { const el = host.querySelector(`.msg.ai[data-i="${idx}"] .bd`); if (!el) return; el.innerHTML = (ai.content ? md(ai.content) : '') + (note ? `<p class="think">${esc(note)}</p>` : ''); const bx = host.querySelector('.msgs'); bx.scrollTop = bx.scrollHeight; };
+    const paint = note => { const el = host.querySelector(`.msg.ai[data-i="${idx}"] .bd`); if (!el) return; el.innerHTML = ai.content ? md(ai.content) : LOADER; const bx = host.querySelector('.msgs'); bx.scrollTop = bx.scrollHeight; };
     try {
       await apiChat(fs, r, msgs.slice(0, -1), ev => {
         if (ev.t) { ai.content += ev.t; paint(); }
-        else if (ev.tool) paint(ev.tool === 'lies_fundstelle' ? `Liest ${ev.q} …` : `Sucht in der Wissensbasis: ${ev.q} …`);
-        else if (ev.done) { if (ev.kb) state.kbOk = true; }
+        else if (ev.done) { if (ev.limit) setQuota(ev.left, ev.limit, ev.resetAt); }
         else if (ev.error) throw new Error(ev.error);
       });
       if (!ai.content) { ai.err = true; ai.content = 'Keine Antwort erhalten. Bitte noch einmal versuchen.'; }
-    } catch (e) { ai.err = true; ai.content = (ai.content ? ai.content + '\n\n' : '') + (e.message || 'Das hat nicht geklappt. Bitte noch einmal versuchen.'); }
+    } catch (e) {
+      if (e.limit) { setQuota(0, e.limit.limit, e.limit.resetAt); msgs.splice(msgs.length - 2, 2); }
+      else { ai.err = true; ai.content = (ai.content ? ai.content + '\n\n' : '') + (e.message || 'Das hat nicht geklappt. Bitte noch einmal versuchen.'); }
+    }
     ai.pending = false; state.busy = false;
     const ex = findProject(fs); if (ex) touch(ex);
     rerender();

@@ -6,26 +6,30 @@
 //   ANTHROPIC_API_KEY   Schlüssel von console.anthropic.com
 //   KB_URL              https://<projekt>.supabase.co/functions/v1/suche?key=<Schlüssel der Stufe oeffentlich>
 //   CLAUDE_MODEL        optional, Standard claude-sonnet-5-5
-//   DAILY_LIMIT         optional, Fragen pro Besucher und Tag, Standard 30
+//   DAILY_LIMIT         optional, kostenlose Fragen pro Besucher in 24 Stunden, Standard 5
+//
+// Die Regeln für die KI stehen in rules/chat/*.md (Filter) und werden hier zusammengesetzt.
+
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
 
 export const config = { maxDuration: 60 };
 
 const MODEL = process.env.CLAUDE_MODEL || 'claude-sonnet-5-5';
-const DAILY_LIMIT = Number(process.env.DAILY_LIMIT || 30);
+const DAILY_LIMIT = Number(process.env.DAILY_LIMIT || 5);
+const WINDOW = 24 * 3600 * 1000;
 
-const SYSTEM = `Du bist die Fach-KI von PlanX24 für Grundstücke in Hamburg. Du denkst wie ein erfahrener Hamburger Bauprüfer und Architekt.
-
-Regeln:
-- Antworte auf Deutsch, klar und für Laien verständlich, höchstens etwa 220 Wörter.
-- Beginne mit einer kurzen Einschätzung in fett: „Ja“, „Wahrscheinlich ja“, „Nur mit Befreiung“, „Eher nein“ oder „Unklar“, und einem Satz warum.
-- Prüfe getrennt, was für die Frage zählt: Bauplanungsrecht (Art der Nutzung, Maß der Nutzung, überbaubare Grundstücksfläche; BauGB, BauNVO, Bebauungsplan) und Bauordnungsrecht (HBauO: Abstandsflächen, Brandschutz, Stellplätze).
-- Nutze für Rechtsfragen zuerst das Werkzeug „suche_wissensbasis“ und für den Wortlaut „lies_fundstelle“. Übernimm Paragraphen und Fundstellen exakt. Es gilt nur die neue HBauO; nenne Paragraphen einfach als „§ X HBauO“.
-- Nenne Fundstellen direkt im Satz. Was nicht aus der Wissensbasis oder den Grundstücksdaten stammt, kennzeichne mit „(eigene Einschätzung)“.
-- Nutze die Grundstücksdaten unten. Erfinde keine Zahlen und keine Festsetzungen. Wenn etwas fehlt oder nur in der Planzeichnung steht, sag das und sag, was zu prüfen ist.
-- Ist das Vorhaben unklar (Größe, Lage auf dem Grundstück, Nutzung), stelle zuerst eine kurze Rückfrage statt zu raten.
-- Schließe mit „Nächste Schritte“ in 2 bis 3 Punkten, zum Beispiel welche Unterlagen nötig sind oder ob eine Bauvoranfrage sinnvoll ist.
-- Formatiere nur mit kurzen Absätzen, Aufzählungen mit „- “ und **fett**. Keine Überschriften, keine Tabellen.
-- Es ist eine Ersteinschätzung, keine Rechtsberatung und keine Genehmigung.`;
+// Regeln laden: alle .md in rules/chat außer README, sortiert nach Dateiname
+function loadRules() {
+  try {
+    const dir = join(process.cwd(), 'rules', 'chat');
+    const files = readdirSync(dir).filter(f => f.endsWith('.md') && !/^readme/i.test(f)).sort();
+    const txt = files.map(f => readFileSync(join(dir, f), 'utf8').trim()).join('\n\n');
+    if (txt) return txt;
+  } catch (e) { console.error('Regeln nicht gefunden:', e.message); }
+  return 'Du bist die Fach-KI von PlanX24 für Grundstücke in Hamburg. Antworte auf Deutsch, klar und für Laien verständlich. Erwähne nie Werkzeuge oder Datenbanken. Letzte Zeile: „Grundlage: …“ mit den Vorschriften.';
+}
+const SYSTEM = loadRules();
 
 const TOOLS = [
   {
@@ -40,13 +44,17 @@ const TOOLS = [
   }
 ];
 
-// Einfache Begrenzung pro Besucher und Tag (je Server-Instanz; für mehr Schutz später Upstash/Supabase)
+// Kostenlose Fragen: DAILY_LIMIT je Besucher in 24 Stunden ab der ersten Frage
+// (je Server-Instanz; für mehr Schutz später Supabase). Der Browser zählt zusätzlich selbst.
 const hits = new Map();
-function allowed(ip) {
-  const day = new Date().toISOString().slice(0, 10), k = ip + '|' + day;
-  const n = (hits.get(k) || 0) + 1; hits.set(k, n);
-  if (hits.size > 5000) for (const key of hits.keys()) if (!key.endsWith(day)) hits.delete(key);
-  return n <= DAILY_LIMIT;
+function quota(ip, count) {
+  const now = Date.now();
+  let q = hits.get(ip);
+  if (!q || now - q.start >= WINDOW) q = { start: now, n: 0 };
+  if (q.n >= DAILY_LIMIT) return { ok: false, left: 0, resetAt: q.start + WINDOW };
+  if (count) { q.n++; hits.set(ip, q); }
+  if (hits.size > 5000) for (const [k, v] of hits) if (now - v.start >= WINDOW) hits.delete(k);
+  return { ok: true, left: DAILY_LIMIT - q.n, resetAt: q.start + WINDOW };
 }
 
 let rpcId = 0;
@@ -114,9 +122,10 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') { res.status(405).end(); return; }
   if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'Der KI-Chat ist noch nicht eingeschaltet.' }); return; }
   const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '?').split(',')[0].trim();
-  if (!allowed(ip)) { res.status(429).json({ error: `Tageslimit erreicht (${DAILY_LIMIT} Fragen). Morgen geht es weiter.` }); return; }
-
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+  // Aufgaben ableiten zählt nicht als Frage
+  const q = quota(ip, body.mode !== 'tasks');
+  if (!q.ok) { res.status(429).json({ error: 'limit', limit: DAILY_LIMIT, resetAt: q.resetAt }); return; }
   const ctx = String(body.ctx || '').slice(0, 24000);
   const messages = clean(body.messages);
   const system = SYSTEM + '\n\nDATEN ZUM GRUNDSTÜCK\n' + ctx;
@@ -145,13 +154,12 @@ export default async function handler(req, res) {
       messages.push({ role: 'assistant', content });
       const results = [];
       for (const b of content.filter(b => b.type === 'tool_use')) {
-        send({ tool: b.name, q: b.input.frage || b.input.fundstelle || '' });
         let out; try { out = await runTool(b.name, b.input); usedKb = true; } catch (e) { out = 'Fehler: ' + (e.message || e); }
         results.push({ type: 'tool_result', tool_use_id: b.id, content: out });
       }
       messages.push({ role: 'user', content: results });
     }
-    send({ done: true, kb: usedKb });
+    send({ done: true, kb: usedKb, left: q.left, limit: DAILY_LIMIT, resetAt: q.resetAt });
   } catch (e) {
     send({ error: String(e.message || e) });
   }
