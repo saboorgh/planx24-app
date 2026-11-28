@@ -97,16 +97,18 @@ async function streamOnce(body, onText) {
       const line = evt.split('\n').find(l => l.startsWith('data: '));
       if (!line) continue;
       let d; try { d = JSON.parse(line.slice(6)); } catch { continue; }
-      if (d.type === 'content_block_start') blocks[d.index] = d.content_block.type === 'tool_use' ? { ...d.content_block, json: '' } : d.content_block.type === 'text' ? { type: 'text', text: '' } : { type: d.content_block.type, raw: d.content_block };
+      if (d.type === 'content_block_start') { const cb = d.content_block; blocks[d.index] = cb.type === 'tool_use' ? { ...cb, json: '' } : cb.type === 'text' ? { type: 'text', text: '' } : cb.type === 'thinking' ? { type: 'thinking', thinking: cb.thinking || '', signature: cb.signature || '' } : { ...cb }; }
       else if (d.type === 'content_block_delta') {
         const b = blocks[d.index];
         if (d.delta.type === 'text_delta') { b.text += d.delta.text; onText(d.delta.text); }
         else if (d.delta.type === 'input_json_delta') b.json += d.delta.partial_json;
+        else if (d.delta.type === 'thinking_delta') b.thinking += d.delta.thinking;
+        else if (d.delta.type === 'signature_delta') b.signature = (b.signature || '') + d.delta.signature;
       } else if (d.type === 'message_delta') stop = d.delta.stop_reason;
       else if (d.type === 'error') throw new Error(d.error?.message || 'Fehler');
     }
   }
-  const content = blocks.filter(Boolean).map(b => b.type === 'tool_use' ? { type: 'tool_use', id: b.id, name: b.name, input: b.json ? JSON.parse(b.json) : {} } : b.type === 'text' ? { type: 'text', text: b.text } : { type: b.type }).filter(b => b.type !== 'text' || b.text);
+  const content = blocks.filter(Boolean).map(b => b.type === 'tool_use' ? { type: 'tool_use', id: b.id, name: b.name, input: b.json ? JSON.parse(b.json) : {} } : b.type === 'text' ? { type: 'text', text: b.text } : b).filter(b => b.type !== 'text' || b.text);
   return { content, stop };
 }
 
@@ -158,7 +160,7 @@ export default async function handler(req, res) {
     for (let round = 0; round < ROUNDS; round++) {
       if (wrote) { send({ t: '\n\n' }); wrote = false; }
       const last = round === ROUNDS - 1;
-      const { content, stop } = await streamOnce({ model: MODEL, max_tokens: 1500, system, messages, tools: TOOLS, ...(last ? { tool_choice: { type: 'none' } } : {}) }, t => { wrote = true; send({ t }); });
+      const { content, stop } = await streamOnce({ model: MODEL, max_tokens: 6000, system, messages, tools: TOOLS, ...(last ? { tool_choice: { type: 'none' } } : {}) }, t => { wrote = true; send({ t }); });
       lastStop = stop; types.push(content.map(b => b.type).join('+') || 'leer');
       if (stop !== 'tool_use') break;
       messages.push({ role: 'assistant', content });
