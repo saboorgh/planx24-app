@@ -82,6 +82,7 @@ Credits/Bezahlung erst ganz am Ende.
 
 ## Offen / nächste Schritte
 - **Neuer Ansatz des Users (28.11.2026, besprochen, noch nicht gebaut):** nicht alle Pläne vorab lagerichtig machen, sondern (1) Plan-Verzeichnis vorab (Plan → Geltungsbereich, Links, Datum, Änderungen; Hamburg hat es schon), (2) beim Klick auf ein Flurstück liest ein Agent nur die betroffenen Pläne (Festsetzungen, Änderungen, Begründung, gilt es für dieses Flurstück?) und schreibt einen **Steckbrief** je Flurstück (Markdown + JSON), (3) Ergebnis wird gespeichert – nächster Klick sofort, Plan-Auslesung gilt für alle Flurstücke des Plans. Wie syte, aber schneller, weil die Suche entfällt. User will erst abwarten, nichts bauen.
+- Steckbrief-Test (28.11.2026): Backend + Notizen nur auf Branch `pilot` (`pilot/steckbrief/README.md`, `pilot/steckbrief.py`, Verzeichnisse Hamburg/Quickborn). User gibt 3 Adressen, Claude liest Rohdaten und schreibt Steckbriefe.
 - Ideen des Users vom 26.11.2026 (besprochen, noch nicht gebaut):
   - Luftbilder: Hamburg-DOP frei als WMS (`geodienste.hamburg.de/wms_dop_zeitreihe_unbelaubt` bzw. `_belaubt`, dl-de/by-2-0). Schrägluftbilder gibt es im Geoportal, ob als offener Dienst einbindbar: prüfen.
   - Denkmalschutz: `api.hamburg.de/datasets/v1/denkmalschutz` (u. a. `gebaeude`, `ensembles`, `flaechen_gartendenkmale`). Soziale Erhaltungsverordnungen: `soz_erh_vo` (`sozerhvo_inkraft`, `sozerhvo_inaufstellung`). Städtebauliche Erhaltungsverordnungen: WMS/GML vorhanden, OGC-API-Name noch suchen.
