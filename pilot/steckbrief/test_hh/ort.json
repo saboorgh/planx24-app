@@ -1,6 +1,6 @@
 {
  "adresse": "Steindamm 10, 20099 Hamburg",
- "stand": "2026-11-28 10:45",
+ "stand": "2026-11-28 10:48",
  "lon": 10.0113405,
  "lat": 53.5529937,
  "name": "10, Steindamm, St. Georg, Hamburg-Mitte, Hamburg, 20099, Deutschland",
@@ -10,5 +10,62 @@
   567000.1,
   5934265.1
  ],
- "fehler": "Land noch nicht angebunden: None"
+ "flurstueck": [
+  {
+   "oid": "DEHHALKAJ0000PwjFL",
+   "aktualit": "2017-12-27Z",
+   "idflurst": "DEHHALKAJ0000Pwj",
+   "flaeche": 390.0,
+   "flstkennz": "020118___00933______",
+   "land": "Hamburg",
+   "landschl": "02",
+   "gemarkung": "St. Georg Nord",
+   "gemaschl": "020118",
+   "flurschl": "020118___",
+   "flstnrzae": "933",
+   "regbezirk": "Hamburg",
+   "regbezschl": "020",
+   "kreis": "Hamburg",
+   "kreisschl": "02000",
+   "gemeinde": "Freie und Hansestadt Hamburg",
+   "gmdschl": "02000000",
+   "lagebeztxt": "Steindamm 10",
+   "tntxt": "Industrie Und Gewerbeflaeche/Handel und Dienstleistung;390"
+  }
+ ],
+ "plaene": [
+  {
+   "geltendes_planrecht": "StGeorg37",
+   "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg37.pdf",
+   "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/StGeorg37.pdf",
+   "feststellungsdatum": "2000-08-30"
+  },
+  {
+   "geltendes_planrecht": "BSStGeorg",
+   "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSStGeorg.pdf",
+   "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStGeorg.pdf",
+   "feststellungsdatum": "1955-01-14"
+  }
+ ],
+ "pdf": [
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg37.pdf",
+   "datei": "StGeorg37.pdf",
+   "mb": 0.7
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/StGeorg37.pdf",
+   "datei": "StGeorg37.pdf",
+   "mb": 0.6
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSStGeorg.pdf",
+   "datei": "BSStGeorg.pdf",
+   "mb": 1.4
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStGeorg.pdf",
+   "fehler": "kein PDF"
+  }
+ ]
 }

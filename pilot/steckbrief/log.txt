@@ -1,2 +1,5 @@
-{"adresse": "Steindamm 10, 20099 Hamburg", "state": null, "plaene": null, "fehler": "Land noch nicht angebunden: None"}
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStGeorg.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStGeorg.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStGeorg.pdf
+{"adresse": "Steindamm 10, 20099 Hamburg", "state": null, "plaene": [{"geltendes_planrecht": "StGeorg37", "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg37.pdf", "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/StGeorg37.pdf", "feststellungsdatum": "2000-08-30"}, {"geltendes_planrecht": "BSStGeorg", "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/p
 {"adresse": "Rathausplatz 1, 25451 Quickborn", "state": "Schleswig-Holstein", "plaene": [], "fehler": null}
