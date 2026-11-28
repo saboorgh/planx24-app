@@ -1,0 +1,5 @@
+Fehler 'ascii' codec can't encode character '\xe4' in position 59: ordinal not in range(128) https://www.quickborn.de/media/Dokumente+Quickborn/Stadtentwicklung/Bebauungspläne/B-Plan+094.pdf
+{'url': 'https://www.quickborn.de/media/Dokumente+Quickborn/Stadtentwicklung/Bebauungspläne/B-Plan+094.pdf', 'datei': 'B-Plan_094.pdf', 'fehler': 'nicht geladen'}
+Fehler 'ascii' codec can't encode character '\xe4' in position 59: ordinal not in range(128) https://www.quickborn.de/media/Dokumente+Quickborn/Stadtentwicklung/Bebauungspläne/B-Plan+095.pdf
+{'url': 'https://www.quickborn.de/media/Dokumente+Quickborn/Stadtentwicklung/Bebauungspläne/B-Plan+095.pdf', 'datei': 'B-Plan_095.pdf', 'fehler': 'nicht geladen'}
+3 Pläne im Landesdienst, 25 PDFs auf der Webseite
