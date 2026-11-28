@@ -28,7 +28,7 @@ Grundstück in Hamburg anklicken, Daten sehen und die KI fragen, was man dort ba
    | `ANTHROPIC_API_KEY` | dein Schlüssel von console.anthropic.com |
    | `KB_URL` | `https://<projekt>.supabase.co/functions/v1/suche?key=<Schlüssel>`, mit einem Schlüssel der Stufe **oeffentlich** |
    | `CLAUDE_MODEL` | optional, Standard `claude-sonnet-5-5` |
-   | `DAILY_LIMIT` | optional, Fragen pro Besucher und Tag, Standard 30 |
+   | `DAILY_LIMIT` | optional: Tageslimit kostenloser Fragen je Besucher in 24 h. Leer oder `0` = aus (bis zum Release), z. B. `5` = an |
 
 3. **Deploy** drücken. Nach jeder Änderung im Repository baut Vercel automatisch neu.
 
