@@ -97,7 +97,7 @@ async function streamOnce(body, onText) {
       const line = evt.split('\n').find(l => l.startsWith('data: '));
       if (!line) continue;
       let d; try { d = JSON.parse(line.slice(6)); } catch { continue; }
-      if (d.type === 'content_block_start') blocks[d.index] = d.content_block.type === 'tool_use' ? { ...d.content_block, json: '' } : { type: 'text', text: '' };
+      if (d.type === 'content_block_start') blocks[d.index] = d.content_block.type === 'tool_use' ? { ...d.content_block, json: '' } : d.content_block.type === 'text' ? { type: 'text', text: '' } : { type: d.content_block.type, raw: d.content_block };
       else if (d.type === 'content_block_delta') {
         const b = blocks[d.index];
         if (d.delta.type === 'text_delta') { b.text += d.delta.text; onText(d.delta.text); }
@@ -106,7 +106,7 @@ async function streamOnce(body, onText) {
       else if (d.type === 'error') throw new Error(d.error?.message || 'Fehler');
     }
   }
-  const content = blocks.filter(Boolean).map(b => b.type === 'tool_use' ? { type: 'tool_use', id: b.id, name: b.name, input: b.json ? JSON.parse(b.json) : {} } : { type: 'text', text: b.text }).filter(b => b.type !== 'text' || b.text);
+  const content = blocks.filter(Boolean).map(b => b.type === 'tool_use' ? { type: 'tool_use', id: b.id, name: b.name, input: b.json ? JSON.parse(b.json) : {} } : b.type === 'text' ? { type: 'text', text: b.text } : { type: b.type }).filter(b => b.type !== 'text' || b.text);
   return { content, stop };
 }
 
@@ -152,13 +152,14 @@ export default async function handler(req, res) {
   res.writeHead(200, { 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-cache, no-transform', Connection: 'keep-alive' });
   const send = obj => res.write('data: ' + JSON.stringify(obj) + '\n\n');
   try {
-    let usedKb = false, wrote = false;
+    let usedKb = false, wrote = false, lastStop = null, types = [];
     // Höchstens 4 Such-Runden; die letzte Runde muss antworten (tool_choice none), damit nie eine leere Antwort entsteht
     const ROUNDS = 5;
     for (let round = 0; round < ROUNDS; round++) {
       if (wrote) { send({ t: '\n\n' }); wrote = false; }
       const last = round === ROUNDS - 1;
       const { content, stop } = await streamOnce({ model: MODEL, max_tokens: 1500, system, messages, tools: TOOLS, ...(last ? { tool_choice: { type: 'none' } } : {}) }, t => { wrote = true; send({ t }); });
+      lastStop = stop; types.push(content.map(b => b.type).join('+') || 'leer');
       if (stop !== 'tool_use') break;
       messages.push({ role: 'assistant', content });
       const results = [];
@@ -168,7 +169,7 @@ export default async function handler(req, res) {
       }
       messages.push({ role: 'user', content: results });
     }
-    send({ done: true, kb: usedKb, left: q.left, limit: DAILY_LIMIT, resetAt: q.resetAt });
+    send({ done: true, stop: lastStop, runden: types, kb: usedKb, left: q.left, limit: DAILY_LIMIT, resetAt: q.resetAt });
   } catch (e) {
     send({ error: String(e.message || e) });
   }
