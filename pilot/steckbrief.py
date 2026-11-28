@@ -14,7 +14,8 @@ from pyproj import Transformer
 from shapely.geometry import Point, shape
 
 BASE = os.path.join(os.path.dirname(__file__), "steckbrief")
-UA = {"User-Agent": "PlanX24-Pilot (pilot@planx24.de)"}
+UA = {"User-Agent": "Mozilla/5.0 PlanX24-Pilot (pilot@planx24.de)", "Accept-Encoding": "gzip"}
+import gzip
 HH = "https://api.hamburg.de/datasets/v1"
 SH_PLAN = "https://service.gdi-sh.de/WFS_SH_PLANUNG"
 SH_CP = "https://service.gdi-sh.de/SH_INSPIREDOWNLOAD_AI_CP_ALKIS"
@@ -27,6 +28,7 @@ def get(url, t=120, binary=False):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=t) as r:
                 b = r.read()
+                if b[:2] == b"\x1f\x8b": b = gzip.decompress(b)
                 return b if binary else b.decode("utf-8", "ignore")
         except Exception as e:
             print("  Fehler", e, url[:140]); time.sleep(3 * (i + 1))
@@ -94,12 +96,12 @@ def wfs(url, typ, x, y, r=60):
 def schleswig_holstein(a, d, x, y):
     os.makedirs(f"{d}/festsetzungen", exist_ok=True)
     cp = wfs(SH_CP, "cp:CadastralParcel", x, y, 5)
-    if cp: open(f"{d}/flurstueck.gml", "w").write(cp); a["flurstueck_labels"] = re.findall(r"<cp:label>([^<]+)</cp:label>", cp)
+    if cp: open(f"{d}/flurstueck.gml", "w").write(cp); a["flurstueck_labels"] = re.findall(r"<(?:cp:)?label>([^<]+)<", cp)
     caps = open(os.path.join(os.path.dirname(__file__), "sh", "wfs_planung.xml"), encoding="utf-8", errors="ignore").read()
     typen = sorted(set(re.findall(r"FeatureType>\s*<[^>]*Name[^>]*>(xplan:BP_[^<]+)<", caps)))
     a["xplan_treffer"] = {}
     for t in typen:
-        g = wfs(SH_PLAN, t, x, y, 5 if t == "xplan:BP_Plan" else 80)
+        g = wfs(SH_PLAN, t, x, y, 25 if t == "xplan:BP_Plan" else 80)
         n = len(re.findall(r"<wfs:member", g or ""))
         if n:
             open(f"{d}/festsetzungen/{t.split(':')[1]}.gml", "w").write(g); a["xplan_treffer"][t] = n
@@ -123,7 +125,7 @@ for q in json.load(open(f"{BASE}/anfragen.json")):
     else:
         a.update(g); x, y = to_utm.transform(g["lon"], g["lat"]); a["utm"] = [round(x, 1), round(y, 1)]
         try:
-            if g.get("state") == "Hamburg": hamburg(a, d, x, y, g["lon"], g["lat"])
+            if g.get("state") == "Hamburg" or (g.get("ort") == "Hamburg" and ", Hamburg," in (g.get("name") or "")): hamburg(a, d, x, y, g["lon"], g["lat"])
             elif g.get("state") == "Schleswig-Holstein": schleswig_holstein(a, d, x, y)
             else: a["fehler"] = "Land noch nicht angebunden: " + str(g.get("state"))
         except Exception as e:
