@@ -1,0 +1,1627 @@
+Stadt Quickborn
+Bebauungsplan Nr. 39, 2. Änderung
+für das Gebiet „Friedhofsweg“ Straßen und Wegeparzelle (Teilflächen des
+Flurstückes 64/3 der Flur 25 sowie der Grundstücke Friedhofsweg 1, 3 und 5)
+sowie der Baugrundstücke Friedhofsweg 2, 7 und 9 sowie der Kieler Straße
+110 und 112
+
+Begründung
+
+
+
+
+   (Quelle: eigene Aufnahme)
+
+
+
+
+Auftraggeber/in
+Stadt Quickborn
+Der Bürgermeister
+Rathausplatz 1
+25451 Quickborn
+
+
+Bearbeiter/in
+                                                           Kurt-Wagener-Str. 15
+Dipl.-Ing. Wiebke Becker, Stadtplanerin                    25537 Elmshorn
+Dipl.-Geogr. Kai-Uwe Grünberg, Landschaftsplanung          Tel. 04121· 46915 - 0
+Elmshorn, den 25.09.2017                                   www.ing-reese-wulff.de
+Stadt Quickborn                                                                         B-Plan Nr. 39, 2. Änderung
+
+
+
+Inhalt                                 O:\Daten\15097\Stadtplanung\5_Genehmigung\Begruendung_Quickborn_B39Aend2_170925.docx
+
+
+1         Planungsanlass und -ziele                                                                                     3
+2         Rechtsgrundlagen                                                                                              5
+3         Plangeltungsbereich                                                                                           5
+4         Übergeordnete Planung                                                                                         7
+5         Gutachten / Fachplanungen                                                                                     9
+5.1       Verkehrslärm                                                                                                  9
+5.2       Bodenuntersuchung                                                                                            11
+5.3       Geologie                                                                                                     11
+5.4       Verkehrliche Erschließung                                                                                    14
+5.4.1     Erschließungskonzepte                                                                                        14
+5.4.2     Verkehrstechnische Untersuchung                                                                              14
+5.5       Baumkontrolluntersuchungen                                                                                   16
+6         Festsetzungen                                                                                                18
+6.1       Art der Nutzung                                                                                              18
+6.2       Maß der Nutzung / Höhe baulicher Anlagen                                                                     19
+6.3       Bauweise, überbaubare Grundstücksflächen                                                                     20
+6.4       Immissionsschutz                                                                                             22
+6.5       Grünordnung                                                                                                  22
+7         Verkehrliche Erschließung                                                                                    23
+8         Ver- und Entsorgung                                                                                          25
+9         Örtliche Bauvorschriften über Gestaltung                                                                     25
+10        Landschaftsplanerische Grundlagen                                                                            26
+10.1      Rechtlicher Hintergrund                                                                                      26
+10.2      Bestand und Bewertung von Naturhaushalt und Landschaftsbild                                                  26
+10.2.1    Schutzgut Arten und Lebensräume                                                                              26
+10.2.2    Schutzgüter Boden, Wasser und Landschaftsbild                                                                31
+10.3      Ziele und Grundsätze der Landschaftsplanung                                                                  31
+10.4      Auswirkungen des Bebauungsplanes                                                                             32
+10.5      Eingriffsregelung                                                                                            33
+11        Hinweise für die Umsetzung von Bauvorhaben                                                                   33
+12        Finanzielle Auswirkung                                                                                       34
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                                     25.09.2017                                  1
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+Abbildungsverzeichnis
+                       Ausschnitte Planzeichnung und Bebauungskonzept 1988
+                       (ohne Maßstab)                                                         3
+                       Bebauungskonzept Stand 01/2016 (ohne Maßstab)                          4
+                       Lage im Stadtgebiet (ohne Maßstab)                                     5
+                       Luftbild des Plangebietes mit Umgebung (ohne Maßstab)                  6
+                       Ausschnitt aus dem LEP (ohne Maßstab)                                  7
+                       Ausschnitt aus dem RegPl I (ohne Maßstab)                              8
+                       Ausschnitt aus dem F-Plan Quickborn (ohne Maßstab)                     9
+                       Lärmpegelbereiche                                                     10
+                       Gefährdungsklassen                                                    13
+                       Vorgesehene Entwicklung - Maximalausbau (ohne Maßstab)                15
+                       Lageplan Baumbestand (ohne Maßstab)                                   16
+                       Tomografie der Blut-Buche(ohne Maßstab)                               17
+                       Regelquerschnitte Friedhofsweg / Fuß- und Radweg (ohne Maßstab)       24
+
+
+Tabellenverzeichnis
+Tabelle 1         Biotoptypen im Plangebiet und in angrenzenden Flächen                      27
+Tabelle 2         Bestand und Bewertung der Biotoptypen im Untersuchungsraum                 29
+Tabelle 3         Schutzgut Boden                                                            31
+Tabelle 4         Schutzgut Wasser                                                           31
+Tabelle 5         Schutzgut Landschaftsbild                                                  31
+
+
+
+
+Anhang:
+   Merkblatt LBEG Niedersachsen: Konstruktive Anforderungen an Gebäude
+    (siehe Seite 13)
+   Erschließungsvarianten 1 bis 4 für die Müllentsorgung
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                     2
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+1          Planungsanlass und -ziele
+Die Ratsversammlung der Stadt Quickborn hat in ihrer Sitzung am 01.02.2016 den Aufstellungs-
+beschluss für den Bebauungsplan Nr. 39, 2. Änderung für das Gebiet „Friedhofsweg” Straßen
+und Wegeparzelle (Teilflächen des Flurstückes 64/3 der Flur 25 sowie der Grundstücke Fried-
+hofsweg 1, 3 und 5) sowie der Baugrundstücke Friedhofsweg 2, 7 und 9 sowie der Kieler Straße
+110 und 112 gefasst.
+
+Darin werden folgende Planungsziele formuliert:
+
+    Ausweisung eines Allgemeinen Wohngebietes,
+    Ausweisung einer dreigeschossigen Bauweise mit Staffelgeschoss auf der Fläche Fried-
+     hofsweg 2,
+    Städtebauliche Entwicklung der Randgrundstücke,
+    Erschließung des Plangebietes über den Friedhofsweg und
+    Erhalt der Buche an der Ellerauer Straße.
+
+Das Grundstück befindet sich im Geltungsbereich des 1988 rechtskräftig gewordenen Bebau-
+ungsplanes Nr. 39. Auf Grundlage eines städtebaulichen Konzeptes wurde seinerzeit eine hof-
+artige zweigeschossige Bebauung mit einer städtebaulichen Dominante im Kreuzungsbereich
+mit bis zu fünf Geschossen festgesetzt. Der Teilbereich der 2. Änderung wurde als Mischgebiet
+ausgewiesen, im Wesentlichen mit der Einschränkung auf Wohngebäude und Anlagen für kirch-
+liche, kulturelle, soziale, gesundheitliche und sportliche Zwecke.
+
+
+
+
+(Quelle: Stadt Quickborn)
+
+
+
+Den Anlass für den Aufstellungsbeschluss gab die Absicht des Wohnungsunternehmens Plam-
+beck, das eigene Grundstück EIIerauer Straße / Ecke Kieler Straße selber zu bebauen. Dazu
+wurde der Stadt Quickborn ein dem heutigen Nachfragemarkt angepasstes Bebauungskonzept
+vorgelegt, das von den Festsetzungen des Bebauungsplanes insbesondere hinsichtlich der Art
+der Nutzung (ausschließlich Wohnnutzung), dem Maß der Nutzung (Zahl der Vollgeschosse,
+GFZ) und der überbaubaren Grundstücksflächen abweicht (vgl. Abb. 2).
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                     3
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+
+(Quelle: WOHNUNGSUNTERNEHMEN PLAMBECK • HANSMANN HEITGERKEN ARCHITEKTEN)
+
+
+
+Geplant sind dreigeschossige Wohngebäude mit Staffelgeschoss, bestehend aus zwei Winkel-
+baukörpern mit insgesamt ca. 60 Wohnungen, die sich zwischen EIIerauer Straße, Kieler Straße
+und Friedhofsweg um einen gemeinsamen Wohnhof gruppieren. Unter den beiden Baukörpern
+und dem Wohnhof wird ein Untergeschoss angeordnet, das eine Tiefgarage, die Kellerabstell-
+räume, sowie die haustechnischen Neben- und Abstellräume aufnimmt.
+
+Vorgesehen ist derzeit, im vorderen Baukörper u.a. öffentlich finanzierte Wohnungen zu errich-
+ten. Im hinteren Baukörper sollen freifinanzierte Miet- bzw. Eigentumswohnungen entstehen.
+Dem entsprechend ist ein Energiestandard nach EnEV bzw. nach Vorgaben des Schleswig-
+Holsteinischen Wohnraumförderungsgesetzes für den öffentlich geförderten Wohnungsbau ge-
+plant. Heizung und Lüftung werden nach Erstellung eines Energiekonzeptes festgelegt.
+
+Die Baugrundstücke Kieler Straße 112, sowie Friedhofsweg 7 und 9 werden in den Geltungs-
+bereich einbezogen. Damit kann auf den beiden erstgenannten Grundstücken der bauliche Be-
+stand gesichert und der ruhende Verkehr neu geordnet werden. Für das letztgenannte Grund-
+stück bestehen städtebauliche Entwicklungspotentiale, die im Einklang mit dem Bestand und
+der südlich vorgesehenen Planung geordnet werden. Hier soll nach Auskunft des Eigentümers
+ein zweigeschossiges Wohngebäude mit 14 Wohneinheiten und Tiefgarage entstehen. Ein kon-
+kretisierendes Konzept liegt dazu derzeit noch nicht vor.
+
+Durch Einbeziehung des Baugrundstücks Kieler Straße 110 kann perspektivisch ein städtebau-
+lich vertretbarer Übergang von der Geschossbauweise zu der kleinteiligeren Bebauung realisiert
+werden.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                     4
+Stadt Quickborn                                                                     B-Plan Nr. 39, 2. Änderung
+
+
+
+2         Rechtsgrundlagen
+Der Bebauungsplan wird als Satzung aufgestellt auf den Rechtsgrundlagen:
+    Baugesetzbuch (BauGB) in der Fassung der Bekanntmachung vom 23. September 2004,
+     zuletzt geändert 20. Oktober 2015 (BGBl. I S. 1722),
+    Verordnung über die bauliche Nutzung der Grundstücke (BauNVO) in der Fassung der Be-
+     kanntmachung vom 23. Januar 1990, zuletzt geändert 11. Juni 2013 (BGBl S. 1548),
+    Landesbauordnung Schleswig-Holstein (LBO) in der Fassung der Bekanntmachung vom
+     22. Januar 2009 (GVOBl. Schl.-H. S. 6), zuletzt geändert 14.06.2016, (GVOBl Schl.-H. S.
+     369) sowie
+    Gemeindeordnung für Schleswig-Holstein in der Fassung vom 28. Februar 2003, zuletzt
+     geändert 07.07.2015 (GVOBl Schl.-H. S. 200, 203).
+
+Der Bebauungsplan Nr. 39, 2. Änderung dient der Nachverdichtung im Innenbereich der Stadt
+Quickborn. Daher wird er auf Grundlage des § 13a BauGB im beschleunigten Verfahren als
+„Bebauungsplan der Innenentwicklung“ ohne Durchführung einer Umweltprüfung aufgestellt.
+Dabei ist weder ein Umweltbericht noch eine Eingriffs-/ Ausgleichsbilanzierung erforderlich. Die
+artenschutzrechtliche Betrachtung erfolgt auf der Grundlage des § 44 Bundesnaturschutzge-
+setz.
+
+
+3         Plangeltungsbereich
+Der Plangeltungsbereich befindet sich in zentraler Lage der Stadt Quickborn und ist verkehrs-
+günstig gelegen im Kreuzungsbereich der Kieler Straße (B4) und der Ellerauer Straße (L76).
+Nahversorgungs- und Dienstleistungseinrichtungen sowie der Bahnhof sind in östlicher Rich-
+tung in rd. 700 m Entfernung über die Ellerauer Straße / Am Freibad zu erreichen.
+
+
+
+
+(Quelle: CD-ROM Top 25: Schleswig-Holstein/Hamburg Topographische Karten 1: 25 000, Landesvermessungsamt S.-H.)
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                                    25.09.2017                            5
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+Der Plangeltungsbereich umfasst
+
+    nördlich des Friedhofswegs Teilflächen der Flurstücke 64/3, 67/6, 67/18, 70/4, 83/2 und
+     85/2 sowie die Flurstücke 70/7, 70/6 und 70/9,
+    die Straßen und Wegeflächen des Friedhofswegs: Flurstücke 120/1, 72/4,70/8, 74/3, 87/1
+     und 114/30,
+    südlich des Friedhofswegs die Flurstücke 73/1, 73/2, 73/3, 72/5, 74/4, 128/4, 75/7, 75/2
+     und 75/3.
+der Flur 25, Gemarkung Quickborn.
+
+Er hat eine Größe von rd. 0,7 ha und wird begrenzt durch
+
+    Wohn- bzw. Gewerbegrundstücke und Friedhofsflächen im Norden und Osten,
+    die Kieler Straße (Bundesstraße B4) im Westen sowie,
+    die Ellerauer Straße (Landesstraße L76) im Süden.
+
+Bei den Flächen im Plangebiet handelt sich im Wesentlichen um unbebautes Brachland. Im
+nördlichen Plangebiet befindet sich ein eingeschossiges Gebäude mit Zahnarztpraxis im Erd-
+geschoss und Wohnungen im Dachgeschoss. Im nordwestlichen Plangebiet stehen zwei ein-
+bis zweigeschossige Wohngebäude. Das nördliche, im Einmündungsbereich zur Kieler Straße
+stehende, Haus wurde ursprünglich als Bäckerei genutzt.
+
+Nördlich des Friedhofswegs grenzen an der Kieler Straße weitere ein- bis zweigeschossige
+Wohn- und Geschäftsgebäude an, an der Ellerauer Straße befinden sich die Gewerbegebäude
+und Betriebsflächen der Verkehrsbetriebe Hamburg Holstein GmbH (VHH).
+
+Östlich des Plangebietes befindet sich ein sechsgeschossiges Wohngebäude mit Eigentums-
+wohnungen. Südlich der Ellerauer Straße grenzen Flächen der ev.-luth. Kirchengemeinde
+Quickborn-Hasloh mit der Marienkirche und Flächen der Ernst-Barlach-Schule an.
+
+
+
+
+(Quelle: Google Earth Pro
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                     6
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+4          Übergeordnete Planung
+Die folgenden übergeordneten Planungen sind relevant:
+    Landesentwicklungsplan Schleswig-Holstein 2010 (LEP),
+    Fortschreibung des Regionalplanes für den Planungsraum I 1998 Schleswig-Holstein Süd
+     (RegPl.),
+    Flächennutzungsplan der Stadt Quickborn.
+
+Im Landesentwicklungsplan Schleswig-Holstein 2010 (LEP) ist die Stadt Quickborn als
+Stadtrandkern I. Ordnung dargestellt. Stadtrandkerne sollen im engen räumlichen Zusammen-
+hang mit dem übergeordneten Zentralen Ort (hier: Norderstedt als Mittelzentrum im Verdich-
+tungsraum Hamburg) Versorgungsaufgaben wahrnehmen. Ihre zentralörtlichen Einrichtungen
+sollen denen vergleichbarer Zentraler Orte entsprechen und in Abstimmung mit dem überge-
+ordneten Zentrum entwickelt werden. Wohnbauliche und gewerbliche Entwicklungen sollen in
+Abstimmung mit dem Zentralen Ort erfolgen (vgl. Kap. 2.2.5 LEP).
+
+
+
+
+(Quelle: Staatskanzlei / Landesplanung)
+
+
+
+Eine Zersiedelung der Landschaft soll verhindert werden. Neue Bauflächen sollen nur in guter
+räumlicher und verkehrsmäßiger Anbindung an vorhandene, im baulichen Zusammenhang be-
+baute tragfähige Ortsteile und in Form behutsamer Siedlungsabrundungen ausgewiesen wer-
+den. Auf eine gute Einbindung der Bauflächen in die Landschaft soll geachtet werden. Zur Ver-
+ringerung der Inanspruchnahme von Grund und Boden sollen Möglichkeiten einer städtebaulich
+angemessenen Verdichtung bestehender oder geplanter Bauflächen genutzt werden. Bei der
+Stadt- und Siedlungsentwicklung, bei städtebaulichen Maßnahmen und Maßnahmen der Orts-
+entwicklung sollen die Erfordernisse eines sparsamen, umweltfreundlichen Energieverbrauchs
+besonders berücksichtigt werden.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                     7
+Stadt Quickborn                                                        B-Plan Nr. 39, 2. Änderung
+
+
+
+Energieoptimierte städtebauliche Strukturen wie kompakte Bauweise, Windschutz und Ausrich-
+tung der Gebäude zur passiven Nutzung der Solarenergie sollten ebenso Beachtung finden wie
+ein baulicher Wärmeschutz auf hohem technischem Standard. Zur Wärmeversorgung von
+Wohn- und Betriebsstätten soll verstärkt der Aufbau von Nah- und Fernwärmenetzen vorgese-
+hen werden (vgl. Kap. 2.7 LEP).
+
+Grundsätzlich kann in allen Kommunen eine bauliche Entwicklung erfolgen. Für den Umfang ist
+maßgebend, ob die Kommune Schwerpunkt der Wohnungsbauentwicklung ist und welche öko-
+logischen, städtebaulichen und infrastrukturellen sowie überörtlichen Aspekte zu beachten sind.
+Die Stadt Quickborn ist ein entsprechender Schwerpunkt, sie hat somit eine besondere Verant-
+wortung für die Deckung des regionalen Wohnungsbedarfs und soll eine Entwicklung über den
+örtlichen Bedarf hinaus ermöglichen (vgl. Kap. 2.5.2 LEP).
+
+In der Fortschreibung des Regionalplanes für den Planungsraum I Schleswig-Holstein
+Süd 1998 (RegPl) wird Quickborn ebenfalls als Stadtrandkern I. Ordnung eingestuft. Die zent-
+ralen Orte einschließlich der Stadtrandkerne sind Schwerpunkte der Siedlungsentwicklung. Sie
+sollen dieser Zielsetzung durch eine vorausschauende Bodenvorratspolitik und durch eine der
+zukünftigen Entwicklung angepasste Ausweisung an Wohnungs-, Gemeinbedarfs- und gewerb-
+lichen Bauflächen gerecht werden (vgl. Kap. 5.1 RegPl).
+
+Das Plangebiet liegt innerhalb des im RegPl. dargestellten baulich zusammenhängenden Sied-
+lungsgebietes und der Siedlungsachse Hamburg-Kaltenkirchen (vgl. Kap. 5.3 RegPl).
+
+
+
+
+(Quelle: Staatskanzlei / Landesplanung)
+
+
+
+Durch den Ausbau der Innenstadt Quickborns zu einem leistungsfähigen und attraktiven Dienst-
+leistungszentrum soll die zentralörtliche Funktion von Quickborn gestärkt werden. Möglichkeiten
+zur wohnbaulichen und gewerblichen Weiterentwicklung bestehen insbesondere am Nordrand
+der Stadt sowie im Ortsteil Quickborn-Heide; grundsätzlich ist eine bauliche Verdichtung des
+Bestandes anzustreben (vgl. Kap. 5.6.1 RegPl.).
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        25.09.2017                     8
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+Der Plangeltungsbereich ist im wirksamen Flächennutzungsplan (F-Plan) der Stadt Quickborn
+als gemischte Baufläche dargestellt. Mit der 2. Änderung des B-Plans Nr. 39 wird davon auf rd.
+0,4 ha Fläche durch die Festsetzung eines WA-Gebietes abgewichen. Dem Gebot des § 8 Abs.
+2 BauGB, B-Pläne aus dem F-Plan zu entwickeln, wird dennoch gefolgt, da das Grundkonzept
+des F-Plans durch diese geringfügige Abweichung unberührt bleibt. Die im WA-Gebiet zulässi-
+gen Nutzungen wären auch im MI-Gebiet zulässig, die Entwicklung des Plangebiets und seiner
+Umgebung entspricht im Zusammenwirken weiterhin einer gemischten Nutzung. Von einer Än-
+derung des F-Plans bzw. seiner nachträglichen Berichtigung nach § 13a Abs. 2 Nr. 2 BauGB
+ohne Beteiligungsverfahren wird daher abgesehen.
+
+
+
+
+(Quelle: Stadt Quickborn)
+
+
+
+
+5          Gutachten / Fachplanungen
+
+5.1        Verkehrslärm
+Das Plangebiet ist Verkehrslärmimmissionen ausgesetzt, die eine Überprüfung der Auswirkun-
+gen auf den Wohnungsbau erforderlich machen. Zur Einschätzung mit welchen Vorgaben für
+die Gebäudehülle die Orientierungswerte nach DIN 18005 „Schallschutz im Städtebau” einge-
+halten werden, wurde eine schalltechnische Untersuchung erarbeitet (Lairm Consult GmbH,
+15.04.2016).
+
+Dabei wurden die Belastungen aus dem Verkehrslärm berechnet. Die Straßenbelastung der
+Bundesstraße B4 (Kieler Straße) und der Landesstraße L76 (Marktstraße und Ellerauer Straße)
+wurden aus der Lärmaktionsplanung der Stadt Quickborn entnommen. Alle Belastungen wurden
+auf den Prognose-Horizont 2030/35 hochgerechnet. Außerdem wurde der Einfluss vom Flug-
+lärm durch den Flughafen Hamburg-Fuhlsbüttel auf das Plangebiet berücksichtigt.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                     9
+Stadt Quickborn                                                         B-Plan Nr. 39, 2. Änderung
+
+
+
+Der Gutachter kommt zusammengefasst zu folgenden Ergebnissen:
+
+    Die Orientierungswerte für allgemeine Wohngebiete von 55 dB(A) tags und 45 dB(A) nachts
+     und die Immissionsgrenzwerte von 59 dB(A) tags und 49 dB(A) nachts werden im gesam-
+     ten Plangeltungsbereich überschritten. Der Anhaltswert der Gesundheitsgefahr von 70
+     dB(A) tags wird ab einem Abstand von 39 m vom Knotenpunkt der Bundesstraße B4 und
+     der Landesstraße L76 eingehalten. Der Anhaltswert der Gesundheitsgefahr von 60 dB(A)
+     nachts wird ab einem Abstand von 58 m vom Knotenpunkt der Bundesstraße B4 und der
+     Landesstraße L76 eingehalten.
+    Die Umsetzung von aktivem Lärmschutz entlang der Bundesstraße B4 und der Landes-
+     straße L76 wird als nicht wirkungsvoll angesehen, da aktiver Lärmschutz zum Schutz der
+     Obergeschosse aufgrund des Abstandes zu den Straßen und der geplanten Geschossig-
+     keit der Wohngebäude eine erhebliche Höhe aufweisen müsste und dementsprechend
+     nicht wirtschaftlich wäre. Aus städtebaulicher Sicht und im Hinblick auf die Interessen der
+     Anlieger ist ein aktiver Lärmschutz nicht zu empfehlen.
+    Gesunde Wohn- und Arbeitsverhältnisse in den Erd- sowie den Obergeschossen können
+     aufgrund der Bauweise durch Grundrissgestaltung (Verlegung der schützenswerten Nut-
+     zungen auf die lärmabgewandte Seite), Abrücken der Baugrenze oder passiven Schall-
+     schutz geschaffen werden. Hierzu werden Lärmpegelbereiche gemäß DlN 4109 festge-
+     setzt.
+
+
+
+
+(Quelle: Lairm Consult GmbH)
+
+
+
+    Zum Schutz der Nachtruhe sind im gesamten Plangeltungsbereich bei Neu-‚ Um- und Aus-
+     bauten für Schlaf- und Kinderzimmer schallgedämmte Lüftungen vorzusehen, falls der not-
+     wendige hygienische Luftwechsel nicht auf andere geeignete, dem Stand der Technik ent-
+     sprechende Weise sichergestellt werden kann.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         25.09.2017                    10
+Stadt Quickborn                                                         B-Plan Nr. 39, 2. Änderung
+
+
+
+     Außenwohnanlagen mit schützenswerten Nutzungen sind innerhalb des Plangeltungsbe-
+      reiches dann zulässig, wenn der Nachweis mittels Immissionsprognose erbracht wird, dass
+      der Beurteilungspegel im Mittelpunkt des Außenwohnbereichs am Tag nicht um mehr als
+      3 dB(A) über dem Orientierungswert liegt. Dies kann z.B. im konkreten Fall auch dadurch
+      erreicht werden, dass diese baulichen Anlagen vollständig baulich umschlossen ausgeführt
+      werden.
+
+
+5.2       Bodenuntersuchung
+Für den Plangeltungsbereich zwischen Friedhofsweg und Ellerauer Straße wurde eine Bau-
+grundbeurteilung mit Gründungsempfehlung vorgenommen. Dazu wurde der Baugrund am
+26.01.2016 mittels 8 Kleinrammbohrungen mit Tiefen von t = 8,0 m unter Gelände erkundet
+(Eickhoff und Partner, 08.03.2016).
+
+Zusammenfassend kommt der Gutachter zu folgenden Ergebnissen:
+
+     Zunächst steht eine 0,6 m bis 2,1 m dicke aufgefüllte Deckschicht aus schwach humo-
+      sen/humosen Sanden und Oberboden an. Unter diesen Auffüllungen folgen bis zu den
+      Endteufen von t = 8,0 m unter Gelände ausschließlich Sande unterschiedlicher Kornzu-
+      sammensetzungen. Wasser wurde in Tiefen zwischen 1,80 m und 4,20 m unter Gelände
+      angetroffen.
+     Die Auffüllungen aus Oberboden und bereichsweise schwach humosen/humosen Sanden
+      sind als Gründungsträger nicht geeignet und dürfen nicht unterhalb von Bauwerkssohlen
+      und Verkehrsflächen verbleiben. Sie sind bis zu den tragfähigen Böden gegen schluffar-
+      men, verdichtungsfähigen Sand auszutauschen.
+     Die gewachsenen Sande sind wenig zusammendrückbar und hoch scherfest. Sie sind als
+      Gründungsträger für eine Flachgründung auf einer Sohlplatte und/oder Einzel-/ Streifenfun-
+      damenten geeignet.
+     Die Durchlässigkeiten der anstehenden Böden - Oberboden, humose Sande und
+      schlufffreie Sande - sind im Rahmen der Anforderungen nach dem Arbeitsblatt DWA-A 138
+      ausreichend und für eine Versickerung von Niederschlagswasser geeignet. Zu beachten
+      ist jedoch der Grundwasserstand.
+
+
+5.3       Geologie
+Das Bebauungsgebiet liegt innerhalb der vom Geologischen Dienst angegebenen Fläche der
+Salzstockhochlage, die mit einer potenziellen Erdfallproblematik verbunden ist. Zur besseren
+Einschätzung der geologischen Situation wurde am 10.03.2016 eine Trockenbohrung bis 28 m
+unter Gelände (u.G.) abgeteuft.
+
+Das Landesamt für Landwirtschaft, Umwelt und ländliche Räume / Geologischer Dienst stellt
+dazu in seiner Stellungnahme vom 11.07.2016 zusammengefasst folgende Ergebnisse dar:
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         25.09.2017                    11
+Stadt Quickborn                                                        B-Plan Nr. 39, 2. Änderung
+
+
+
+   Ab 27,5 m u.G. wurde Gips als Umwandlungsprodukt des Anhydrits angetroffen. Der Gips
+    besitzt eine größere Lösungsanfälligkeit im Vergleich zu Anhydrit und kann als chemisches
+    Umwandlungs- bzw. Verwitterungsprodukt bezeichnet werden. Streng genommen handelt
+    es sich mit dem Bohrergebnis um einen punktuellen Befund. Aber es kann letztlich nicht
+    ausgeschlossen werden, dass im gesamten Bereich des B-Plan-Gebietes in diesen Teufen
+    ggf. höhere Anteile bzw. mächtigere Horizonte aus lösungsfähigem Anhydrit / Gips auftre-
+    ten.
+   Auf Basis der Bohrergebnisse und im Kontext zu den sonstigen Informationen aus der Um-
+    gebung liegt ein Verdachtsmoment für eine Erdfallgefährdung im Untergrund des Plange-
+    bietes vor. Insbesondere aus der Tatsache, dass der ursprünglich anstehende Anhydrit
+    schon in Gips umgewandelt wurde, dokumentiert sich ein Erdfallrisiko im Plangebiet.
+
+Der Geologische Dienst weist daher auf folgende Aspekte hin:
+
+   Da in Schleswig-Holstein keine gültigen Anforderungen hinsichtlich der Bebauung in erd-
+    fallgefährdeten Gebieten festgelegt wurden, empfehlen wir vorsorglich auf die Definitionen
+    und konstruktiven Anforderungen für Wohngebäude in erdfallgefährdeten Gebieten (aus
+    Niedersachsen) zurück zugreifen und eine planerische und bautechnische Umsetzung in
+    Anlehnung an die dort benannten Gefährdungsklassen vorzunehmen (vgl. Abb. 9).
+   Aufgrund der nicht vollständig geklärten geologischen Situation sollte vorsorglich die tat-
+    sächliche Ausführung entsprechend den Erfordernissen des geplanten Gebäudes und die-
+    sen Anforderungen (z. B. Gefährdungsklasse 3-4) erfolgen.
+   Es sollte sichergestellt werden, dass im Untergrund des Bebauungsplangebietes keine
+    hydraulischen Einwirkungen erfolgen. Daher sollte auf eine Regenwasserversickerung o-
+    der die Installation von Brunnen im B-Plangebiet verzichtet werden.
+   Werden im Rahmen der Baugrunderkundung abgrenzbare, ggf. mit Weichschichten ver-
+    füllte, Senken erfasst, ist der Geologische Dienst zu informieren. Es wird empfohlen, dann
+    das weitere Vorgehen mit dem geologischen Dienst abzustimmen.
+   Auf eine wärmetechnische Versorgung mittels oberflächennaher Geothermie mit geschlos-
+    senen Sondensystemen sollte auf Grund der örtlichen geologischen Situation des Unter-
+    grundes verzichtet werden.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        25.09.2017                    12
+Stadt Quickborn                                   B-Plan Nr. 39, 2. Änderung
+
+
+
+
+(Quelle: LLUR - Geologischer Dienst)
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH   25.09.2017                    13
+Stadt Quickborn                                                         B-Plan Nr. 39, 2. Änderung
+
+
+
+5.4       Verkehrliche Erschließung
+
+5.4.1    Erschließungskonzepte
+Da die Erschließung der geplanten Bebauung aufgrund der Lage im Kreuzungsbereich von B 4
+und L 76 nur über den Friedhofsweg erfolgen kann, ist dessen kurzfristiger Ausbau erforderlich.
+Daher wurde der gesamte Bereich der ursprünglichen Verkehrsfläche Friedhofsweg in den Gel-
+tungsbereich einbezogen.
+
+Im Verfahren sollte geprüft werden, über welchen Weg die Andienung der Müllfahrzeuge mög-
+lich ist. Dazu wurden vier Varianten der Anbindung gegenübergestellt und bewertet (Ingenieur-
+gemeinschaft Reese + Wulff GmbH, 01.02.2016).
+
+     Variante 1: Müllabfuhr über Geh- und Radweg nach Osten bis zur Ellerauer Straße:
+      Durchmesser Wendeanlage 12 m (Wendekreis Pkw, Wendehammer Lkw), Ausbau Geh-
+      weg am Friedhof auf 4,05 m Mindestbreite (Begegnung Lkw / Fußgänger).
+     Variante 2: Müllabfuhr über Friedhofsweg / B4:
+      Durchmesser Wendeanlage 22 m (Wendekreis Lkw), Gehweg am Friedhof zur Ellerauer
+      Straße bleibt unverändert.
+     Variante 3: Müllabfuhr über Grundstücksflächen nach Süden bis zur Ellerauer Straße:
+      Durchmesser Wendeanlage 12 m (Wendekreis Pkw, Wendehammer Lkw), Fahrrecht
+      3,55 m bis Ellerauer Straße, Gehweg am Friedhof bleibt unverändert.
+     Variante 2: Müllabfuhr über Friedhofsweg / B4:
+     Variante 4: Müllabfuhr über Geh- und Radweg nach Osten bis zur Ellerauer Straße:
+      Durchmesser Wendeanlage 12 m (Wendekreis Pkw, Wendehammer Lkw), Ausbau Geh-
+      weg am Friedhof auf 5,20 m Mindestbreite (Begegnung Lkw / Radfahrer).
+
+Unter Berücksichtigung der Flächenbedarfe, der Baukosten, des erforderlichen Grunderwerbs
+und des erhaltenswerten Baumbestandes wurde die Erschließungsvariante 1 gewählt (vgl. Kap.
+7).
+
+
+5.4.2    Verkehrstechnische Untersuchung
+Ergänzend zu den Vorhaben im Plangebiet sind weitere städtebauliche Entwicklungen nördlich
+des Friedhofswegs im Gespräch. Diese Flächen müssten ebenfalls über den Friedhofsweg er-
+schlossen werden. Um die verkehrliche Machbarkeit dieser Verkehrsanbindung nachzuweisen,
+wurde eine Verkehrsuntersuchung erstellt (ARGUS Stadt- und Verkehrsplanung, 06.12.2016).
+Dabei wurde ein gegebenenfalls erforderlicher infrastruktureller Ausbauaufwand an den Kno-
+tenpunkten Kieler Straße (B4) / Ellerauer Straße (L 76), sowie Kieler Straße (B4) / Friedhofsweg
+geprüft.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         25.09.2017                    14
+Stadt Quickborn                                                        B-Plan Nr. 39, 2. Änderung
+
+
+
+
+(Quelle: ARGUS Stadt- und Verkehrsplanung)
+
+
+
+Die Gutachter kommen zu folgendem Ergebnissen:
+
+    Der Knotenpunkt Kieler Str. (B4) / Ellerauer Str. (L76) zeigt schon im Bestand zur Abend-
+     spitze Defizite bei der Abwicklung der Verkehre. Die Neuverkehre im maximalen Entwick-
+     lungsszenario (über die Anbindung Friedhofsweg/ Kieler Str.) bewirken keine signifikante
+     Mehrbelastung des Knotenpunktes zur Morgen- bzw. zur Abendspitze (innerhalb der
+     Schwankungsbreite). Zur Morgenspitze ist (unter Berücksichtigung der verkehrsabhängi-
+     gen Steuerung) eine leistungsgerechte Abwicklung der Verkehre möglich (mindestens QSV
+     „D“). Zur Abendspitze können die Verkehre am Knotenpunkt (auch bei Anpassung der Sig-
+     nalzeitprogramms) nicht leistungsgerecht abgewickelt werden (QSV „F“)
+    Zur Morgenspitze können die Prognoseverkehre am Knotenpunkt Kieler Str. (B4) / Fried-
+     hofsweg (mindestens Qualitätsstufe „D“) an der nicht-signalisierten Anbindung leistungs-
+     gerecht abgewickelt werden. Zur Abendspitze wird nur die Qualitätsstufe „E“ erreicht (hin-
+     sichtlich der genannten Gründen vertretbar).
+    Gesamtfazit: Unter Berücksichtigung der aktuellen Zählung können die Verkehre zur
+     Abendspitze am Knoten Kieler Str./ Ellerauer Weg schon im Bestand nicht leistungsgerecht
+     abgewickelt werden. Da die Neuverkehre aus dem Plangebiet nur einen sehr geringen An-
+     teil vom Bestandsverkehr (1,7 %) ausmachen, führen diese zu keiner maßgeblichen Ver-
+     änderung der Verkehrssituation (+1 Kfz / Umlauf). Gemäß Einschätzung sind aufgrund der
+     begrenzt verfügbaren Fläche im Bereich des Knotenpunkts (schmale Nebenflächen) keine
+     baulichen Maßnahmen möglich (z.B. weitere Abbiegestreifen).
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        25.09.2017                    15
+Stadt Quickborn                                                        B-Plan Nr. 39, 2. Änderung
+
+
+
+5.5       Baumkontrolluntersuchungen
+Als Bewertungsgrundlage u.a. für die Erschließungsvarianten (vgl. Kap. 5.4.1) wurde eine
+Baumkontrolluntersuchung für Laubbäume mit entsprechender Vitalität und Größe vorgenom-
+men, um daraus die erhaltenswerten Bäume zu ermitteln (Ingenieurgemeinschaft Reese + Wulff
+GmbH, 02.02.2016).
+
+Dazu wurde eine optische Baumaufnahme gemäß der Baumkontrollrichtlinien der FLL (For-
+schungsgesellschaft Landschaftsentwicklung und Landschaftsbau e.V.) durch einen entspre-
+chend zertifizierten Baumkontrolleur durchgeführt. Es wurden der aktuelle Zustand, der Erhalt
+und die Entwicklungsfähigkeit der Bäume beurteilt.
+
+Zusammenfassend wurde festgestellt, dass von den insgesamt 23 gesichteten Bäumen auf
+Grund der festgestellten Schäden ein Baum gefällt werden sollte. Weitere 9 Bäume sind auf
+Grund festgestellter Schäden nur bedingt bzw. langfristig nicht erhaltenswert. 13 Bäume sind
+erhaltenswert bzw. besonders erhaltenswert, davon befinden sich 8 Bäume außerhalb des Plan-
+gebietes (vgl. Kap. 10.2.1).
+
+
+
+
+(Quelle: Ingenieurgemeinschaft Reese+Wulff GmbH)
+
+
+
+
+Ortsbild prägende Bäume sind die Blut-Buche im südlichen Plangebiet an der Ellerauer Straße
+(Baum Nr. 16) sowie die Stein-Eiche an der Ecke Friedhofsweg / Ellerauer Straße (Baum Nr.
+12). Diese werden daher in der Planzeichnung zum Erhalt festgesetzt.
+
+Dem Ortsbild prägenden Charakter der Blut-Buche im südöstlichen Plangebiet steht ihre be-
+dingte Vitalität gegenüber. Zur Verifizierung des Erhaltungszustands wurde daher eine ergän-
+zende Baumschadensdiagnose erstellt (Baumpflege Uwe Thomsen e.K., 08.02.2016; siehe
+auch Abbildung 11). Im Ergebnis stellte der Gutachter fest, dass die Stand- und Bruchsicherheit
+des Baumes in Bezug auf die Stammschäden derzeit nicht gefährdet ist.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        25.09.2017                    16
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+Die festgestellte Holzfäule ist derzeit noch auf zwei kleine Bereiche beschränkt, die verblei-
+bende Restwandstärke ist ausreichend. Die Verkehrssicherheit ist dennoch aufgrund von Tot-
+holzbildung in der Krone beeinträchtigt.
+
+Nach Einschätzung des Gutachters kann aufgrund hoher Vitalität und des allgemein guten Ab-
+schottungsvermögens von Buchen gegenüber dem festgestellten Brandkrustenpilz längerfristig
+von einer Kompensation der Fäule ausgegangen werden. Der Erhalt des Baumes über die
+nächsten 20-30 Jahre erscheint nach gegenwärtiger Einschätzung möglich und sinnvoll. Dazu
+werden eine Kronenpflege und ein Regelkontrollintervall von einem Jahr empfohlen.
+
+
+
+
+(Quelle: Baumpflege Uwe Thomsen e.K.)
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                    17
+Stadt Quickborn                                                                   B-Plan Nr. 39, 2. Änderung
+
+
+
+6         Festsetzungen
+
+6.1       Art der Nutzung
+Die Grundstücke Friedhofsweg 7 und Kieler Straße 112 werden entsprechend dem rechtskräf-
+tigen Bebauungsplan Nr. 39 als Mischgebiet (MI) festgesetzt. Der Bereich westlich des Gebäu-
+des Friedhofsweg 7 wurde bisher als „Verkehrsflächen besonderer Zweckbestimmung“ (Parken
+und verkehrsberuhigter Bereich) festgesetzt. Der Bedarf für öffentliche Verkehrsflächen besteht
+hier nicht mehr. Daher wird hier ebenfalls als Art der Nutzung MI festgesetzt. Dieses betrifft
+einen Teilbereich der Grundstücksfläche Friedhofsweg 3 sowie das Flurstück 70/4, für das statt-
+dessen – entsprechend einer vorhandenen Baulasteintragung - ein Geh-, Fahr- und Leitungs-
+recht dargestellt wird (vgl. Kap. 7).
+
+Mischgebiete (MI) dienen gem. § 6 BauNVO dem Wohnen und der Unterbringung von Gewerbebetrieben, die
+das Wohnen nicht wesentlich stören. Dieses Kriterium erfüllen Betriebe und Anlagen, wenn für die Anwohner
+im Gebiet und in den benachbarten Quartieren ein „ungestörter Feierabend“ und eine „auskömmliche Nacht-
+ruhe“ gewährleistet sind. Neben Wohngebäuden sind hier grundsätzlich Geschäfts- und Bürogebäude, Einzel-
+handelsbetriebe, Schank- und Speisewirtschaften, Beherbergungsbetriebe, sonstige Gewerbebetriebe, Verwal-
+tungsgebäude, Anlagen für kirchliche, kulturelle, gesundheitliche und sportliche Zwecke, Gartenbaubetriebe
+oder Tankstellen zulässig. Dabei sollen gewerbliche Nutzungen und Wohnnutzungen in einem MI-Gebiet etwa
+zu gleichen Anteilen umgesetzt werden. Von der Rechtsprechung als nicht gebietsverträglich eingestuft wurden
+u.a.: Schlossereien und Schmieden, Fleischwarenfabriken, Speditions- und Fuhrunternehmen, Tischlereien,
+Bordelle. Als gebietsverträglich eingestuft wurden u.a.: Werkstättenbetriebe wie Tischlereien und Zimmereien,
+die nur innerhalb von Gebäuden produzieren, Einzelhandelsbetriebe bis 800 m² Verkaufsfläche, kleinere Auto-
+wartungs- und Reparaturdienste, sowie Anlagen zur Unterbringung von Flüchtlingen und Asylbegehrenden.
+
+
+Aus dem rechtskräftigen Bebauungsplan Nr. 39 werden abweichend zu dem o.g. pauschalen
+Nutzungskatalog der BauNVO die Einschränkungen beibehalten, dass im MI1-Gebiet an der
+Kieler Straße Gartenbaubetriebe, Tankstellen und Vergnügungsstätten nicht zulässig sind. Im
+MI2-Gebiet am Friedhofsweg sind darüber hinaus Einzelhandelsbetriebe, Schank- und Speise-
+wirtschaften sowie Betriebe des Beherbergungsgewerbes ausgeschlossen. Damit soll dem be-
+absichtigten hochwertigen Wohncharakter des Quartiers Rechnung getragen und eine Wohnsi-
+tuation geschaffen werden, die durch nutzungsbedingte Einwirkungen (insbesondere Lärmim-
+missionen) möglichst wenig beeinträchtigt wird. Gleichzeitig kann auch das potenzielle Ver-
+kehrsaufkommen auf dem Friedhofsweg minimiert werden.
+
+Aus diesen Gründen werden im gesamten Plangebiet auch Sexshops, Bordelle, bordellartige
+Betriebe, sogenannte Swinger-Clubs, gewerbliche Zimmervermietungen zum Zwecke der Vor-
+nahme sexueller Handlungen und artverwandte Gewerbebetriebe ausgeschlossen.
+
+Für den überwiegenden Bereich des Plangebietes wird abweichend zum rechtskräftigen Be-
+bauungsplan Nr. 39 als zulässige Art der Nutzung ein allgemeines Wohngebiet (WA) festge-
+setzt. Dieses entspricht den der Planung zugrunde liegenden Absichten der Eigentümer, südlich
+des Friedhofswegs zwei Wohngebäude mit zusammen 60 Wohneinheiten und nördlich des
+Friedhofswegs ein Wohngebäude für 14 Wohneinheiten zu errichten.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                                 25.09.2017                       18
+Stadt Quickborn                                                                    B-Plan Nr. 39, 2. Änderung
+
+
+
+Allgemeinde Wohngebiete (WA) dienen vorwiegend dem Wohnen, es soll nach Möglichkeit ein ungestörtes
+Wohnen gewährleistet werden. Nach § 4 BauNVO sind hier neben Wohngebäuden im Allgemeinen auch Läden,
+Schank- und Speisewirtschaften zur Versorgung des Gebietes sowie nicht störende Handwerksbetriebe allge-
+mein zulässig. Außerdem dürfen grundsätzlich Anlagen für kirchliche, kulturelle, gesundheitliche und sportliche
+Zwecke errichtet werden. Gem. § 13 BauNVO gehören zu den zulässigen Anlagen ebenfalls Räume für freie
+Berufe (z.B. Versicherungsmakler). Nur im Ausnahmefall sind in einem WA-Gebiet Beherbergungsbetriebe (z.B.
+Pension), kleinere Gewerbebetriebe, Verwaltungsgebäude, Gartenbaubetriebe oder Tankstellen zulässig. Von
+der Rechtsprechung als nicht gebietsverträglich eingestuft wurden u.a.: Wochenendhäuser, Schlossereien,
+Tischlereien, Fleischereien mit Schlachtbetrieben, Sexshops, Fuhrunternehmen, Diskotheken, KFZ-
+Reparaturen, Autohandelsbetriebe, Vergnügungsstätten. Als gebietsverträglich eingestuft wurden u.a.: laden-
+mäßig betriebene Gewerbebetriebe (z.B. Kioske, Friseure, Bäckereien, Fleischereien, Klempner) sowie Anla-
+gen zur Unterbringung von Flüchtlingen und Asylbegehrenden.
+
+
+Zur Gewährleistung eines möglichst ungestörten Wohnens werden hier analog den MI-Gebieten
+ebenfalls Betriebe des Beherbergungsgewerbes, Gartenbaubetriebe und Tankstellen nicht Be-
+standteil des Bebauungsplans. Ein weiteres Kriterium ist ihr Flächenbedarf, da in dieser zent-
+rumsnahen Lage mit dem WA-Gebiet zur Deckung des Wohnraumbedarfs beigetragen werden
+soll.
+
+
+6.2       Maß der Nutzung / Höhe baulicher Anlagen
+Das Maß der Nutzung wird im Plangebiet über die Grundflächenzahl, zusammen mit der Zahl
+der Vollgeschosse sowie der Oberkante der Gebäude geregelt.
+
+Die Grundflächenzahl (GRZ) wird im überwiegenden Plangebiet (WA1 und 2, MI2) mit GRZ
+0,4 festgesetzt. Das bedeutet, dass 40 % der Grundstücksflächen durch bauliche Anlagen über-
+deckt werden dürfen. Die GRZ entspricht damit dem maximal möglichen Ausnutzungsgrad gem.
+§ 17 BauNVO für allgemeine Wohngebiete und bleibt unterhalb des Wertes für Mischgebiete,
+der bei GRZ 0,6 liegt. Diesbezüglich werden die ursprünglichen Vorgaben des B-Plans beibe-
+halten. Für das MI1-Gebiet wird die GRZ von 0,4 auf 0,6 erhöht. Dieser Wert berücksichtigt die
+auf dem Baugrundstück bereits realisierte Bebauung und ermöglicht darüber hinaus geringfü-
+gige Erweiterungen.
+
+Eine Überschreitung der zulässigen Grundflächen um 50 % durch versiegelte Nebenanla-
+gen (z.B. Gartenhäuser, Garagen, Stellplätze, Zuwegungen und Müllstandorte) ist grundsätzlich
+zulässig, aber nur bis max. GRZ 0,8 (§ 19 Abs. 4 S. 2 BauNVO).
+
+Um Maßnahmen zu fördern, die das Regenwasser vor Ort halten und die Abflussrate reduzie-
+ren, können bei der Ermittlung der versiegelten Grundfläche die Grundflächen von nicht
+überdachten Stellplätzen, die aus wasserdurchlässigen Materialien hergestellt sind, nur anteilig
+entsprechend ihrem Abflussbeiwert mitgerechnet werden. Ebenso können Nebenanlagen, die
+mit einer extensiven Dachbegrünung mit einem mindestens 8 cm starken durchwurzelbaren
+Substrataufbau versehen sind, unberücksichtigt bleiben. Das gleiche gilt für nicht überbaute
+Tiefgaragen, die mit einem mindestens 50 cm starken durchwurzelbaren Substrataufbau verse-
+hen sind.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                                   25.09.2017                       19
+Stadt Quickborn                                                        B-Plan Nr. 39, 2. Änderung
+
+
+
+Im WA1-Gebiet südlich des Friedhofswegs wird entsprechend dem vorliegenden Bebauungs-
+konzept die Zahl der Vollgeschosse einheitlich mit maximal drei festgesetzt. Die geplante ein-
+heitlich dreigeschossige Bauweise mit Staffelgeschoss ist städtebaulich gewollt, da sie zeitge-
+mäß und städtebaulich vertretbar ist.
+
+Die ursprüngliche differenzierte Festsetzung unterschiedlicher Zahlen der Vollgeschosse, die
+zudem teilweise zwingend festgesetzt waren, definierte ein enges Korsett. Dem zufolge fand
+sich in fast zwei Jahrzehnten kein Investor, der hier entsprechende Gebäude umsetzen wollte.
+
+Im angrenzenden MI1-Gebiet wird die Zahl der Vollgeschosse nicht mehr zwingend auf zwei
+begrenzt, sondern ebenfalls auf drei Vollgeschosse als Höchstzahl festgesetzt, so dass das
+gesamte Quartier südlich des Friedhofswegs, an das östlich ein sechsgeschossiges Wohnhaus
+angrenzt, dreigeschossig bebaut werden kann. Für die Teilflächen nördlich des Friedhofswegs
+(MI2 und WA2) werden zwei Vollgeschosse als Höchstmaß festgesetzt, gleichbedeutend mit
+einer Erhöhung um ein Vollgeschoss. Damit erfolgt ein harmonischer Übergang zur umgeben-
+den ein- bis zweigeschossigen Bestandsbebauung.
+
+Die Höhe der baulichen Anlagen wird über die Oberkante Gebäude (OK) definiert. Sie beträgt
+maximal 12,0 m und bezeichnet das Maß zwischen der Geländehöhe und der obersten Außen-
+kante der Dachhaut. Diese Höhe orientiert sich an dem in der Umgebung vorgegebenen Rah-
+men und ermöglicht die geplante überwiegend dreigeschossige Wohnbebauung mit Staffelge-
+schoss.
+
+Als Bezugspunkt für die Bestimmung dieser Höhe wird die Straßenmitte vor dem jeweiligen
+Grundstück in der zum Gebäude nächstgelegenen Straße (Friedhofsweg, Ellerauer Straße, Kie-
+ler Straße) als maßgebende Geländehöhe festgesetzt.
+
+Insgesamt kann mit den Festsetzungen zum Maß der Nutzung und zur Höhe der baulichen
+Anlagen perspektivisch ein städtebaulich vertretbarer Übergang von der Geschossbauweise im
+südlichen Plangebiet und dessen östlich angrenzenden Flächen zu der kleinteiligeren Bebau-
+ung nördlich des Friedhofswegs erreicht werden. Im Plangebiet ändert sich prinzipiell die Kuba-
+tur der zulässigen Gebäude, aber nicht die Höhenentwicklung. Denn zu berücksichtigen ist in
+diesem Zusammenhang, dass im Ursprungsplan keine Festsetzungen zur Dachneigung oder
+maximalen baulichen Höhe getroffen wurden, obwohl in den 80er Jahren noch eine Bauweise
+mit ausbaufähigen Satteldächern vorherrschte, die auch bei ein oder zwei Vollgeschossen zu
+erheblichen Gebäudehöhen geführt hätte.
+
+
+6.3      Bauweise, überbaubare Grundstücksflächen
+Im Ursprungsplan wurde für das WA1-Gebiet im Wesentlichen die geschlossene Bauweise
+festgesetzt. Gemäß § 22 Abs. 3 BauNVO werden in der geschlossenen Bauweise die Gebäude
+ohne seitlichen Grenzabstand errichtet, es sei denn, dass die vorhandene Bebauung eine Ab-
+weichung erfordert. Im WA1-Gebiet ist jedoch eine Grundstücksteilung nicht vorgesehen.
+
+Für die Grundstücke Kieler Straße 110, Kieler Straße 112 (MI1) und die Grundstücke nördlich
+des Friedhofswegs galt die offene Bauweise. Diese wurde im WA2-Gebiet zudem auf Einzel-
+und Doppelhäuser beschränkt.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        25.09.2017                    20
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+Gemäß § 22 Abs. 2 BauNVO werden in der offenen Bauweise die Gebäude mit seitlichem
+Grenzabstand (gemäß Landesbauordnung - LBO mindestens 3 m) und einer Länge von jeweils
+maximal 50 m errichtet. Diese Maximallänge wird durch das Bauvorhaben im WA1-Gebiet vo-
+raussichtlich nicht eingehalten.
+
+Unter Berücksichtigung der geplanten Bauvorhaben müsste daher im WA1-Gebiet eine modifi-
+zierte offene Bauweise (abweichende Bauweise) festgesetzt werden. Die mögliche Länge der
+Gebäude wird allerdings durch die festgesetzten Baugrenzen beschränkt. Im Plangebiet wird
+daher zur Vereinheitlichung und Reduzierung der Regelungsdichte auf die Festsetzung einer
+Bauweise verzichtet, zumal für einen qualifizierten Bebauungsplan die Bauweise nicht erforder-
+lich ist.
+
+Die überbaubaren Grundstücksflächen werden durch die Festsetzung von Baugrenzen defi-
+niert, nur in diesen Bereichen dürfen Hauptgebäude errichtet werden. Die Baugrenzen dürfen
+gem. § 23 Abs. 3 BauNVO durch die Gebäude nicht überschritten werden, dabei ist ein Vortreten
+von Gebäudeteilen in geringfügigem Ausmaß möglich. Die überbaubaren Grundstücksflächen
+werden hier in Form von großzügigen Baufenstern festgesetzt, die den Gebäudebestand sowie
+den Mindestabstand gem. LBO berücksichtigen. Der tatsächlich erforderliche Grenzabstand der
+Gebäude ist im Rahmen des jeweiligen Bauantragsverfahrens zu überprüfen.
+
+Im südöstlichen Plangebiet wird die Lage der Baugrenzen bestimmt durch den zu erhaltenden
+Baum. Der Abstand von 10,0 m zum Stamm berücksichtigt den Kronenbereich zuzüglich eines
+1,5 m breiten Schutzstreifens (vgl. Kap. 6.5).
+
+Nebenanlagen sind selbstständige bauliche Anlagen, die funktional zu einer Hauptnutzung ge-
+hören und im Verhältnis dazu eine Hilfsfunktion haben. Sie sind in Baugebieten grundsätzlich
+auch außerhalb der überbaubaren Grundstücksflächen zulässig, sofern keine abweichenden
+Festsetzungen im Bebauungsplan getroffen werden. Bestimmte Nebenanlagen, z.B. Stellplätze
+und Garagen mit ihren Zufahrten, können im Bebauungsplan räumlich zugeordnet werden.
+
+Für das Plangebiet wird festgesetzt, dass außer in den überbaubaren Grundstücksflächen of-
+fene Stellplätze, Garagen und Carports nur innerhalb der festgesetzten Flächen für Nebenan-
+lagen (gekennzeichnet mit St) und Tiefgaragen mit ihren Zufahrten nur innerhalb der festge-
+setzten Flächen für Nebenanlagen (gekennzeichnet mit TGa) zulässig sind. Dieses entspricht
+den Regelungen im Ursprungsplan, wobei die Flächendarstellung in der Planzeichnung den
+Bebauungskonzepten und dem tatsächlichen Bestand angepasst wurde.
+
+Die Beschränkung der Nebenanlagen im Sinne des § 14 Abs. 1 BauNVO (z.B. Fahrrad- und
+Geräteschuppen, Gewächshäuser, Spielgeräte, Standplätze für Müllbehälter, Anlagen für die
+Kleintierhaltung) auf die überbaubaren Grundstücksflächen wird mit der 3. Änderung zur Redu-
+zierung der Regelungsdichte aufgehoben.
+
+Festsetzungen zur Stellung der baulichen Anlagen zielen auf die Ausrichtung der Längsachse
+von Gebäuden. Diese ist bei Gebäuden mit einem Satteldach mit der Firstrichtung identisch.
+Sie ergibt sich bei Gebäuden mit anderen Dächern aus dem Verhältnis der Seiten zueinander.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                    21
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+Auf die Festsetzung der Stellung der baulichen Anlagen entlang der Kieler Straße und nördlich
+des Friedhofswegs wird entgegen dem Ursprungsplan verzichtet, um dadurch die Nutzung von
+Sonnenenergie oder mindestens eine günstige Nutzung der natürlichen Erwärmung nicht unbe-
+absichtigt einzuschränken. Außerdem ist in der Umgebung des Plangebietes keine homogene
+Dachlandschaft erkennbar, die entsprechende Regelungen städtebaulich rechtfertigen ließe.
+
+
+6.4      Immissionsschutz
+Entsprechend den Ergebnissen der schalltechnischen Untersuchung (vgl. Kap. 5.1) werden im
+Bebauungsplan passive Lärmschutzmaßnahmen zum Schutz vor Verkehrslärm festgesetzt.
+Dazu werden in der Planzeichnung Lärmpegelbereiche festgesetzt. Für die geplanten Gebäude
+müssen die schalltechnischen Eigenschaften der Gesamtkonstruktion (Dach, Wand, Fens-
+ter/Türen, Lüftung) den Anforderungen des jeweiligen Lärmpegelbereiches entsprechen. Zur
+Sicherstellung der Nachtruhe sind Schlafräume und Kinderzimmer mit schallgedämmten Be-
+und Entlüftungen auszurüsten oder der notwendige hygienische Luftwechsel auf andere geeig-
+nete, dem Stand der Technik entsprechenden Weise sicherzustellen.
+
+Für Außenwohnanlagen (Terrassen, Balkone, Loggien) mit schützenswerten Nutzungen ist
+nachzuweisen, dass der Beurteilungspegel im Mittelpunkt des Außenwohnbereichs am Tag
+nicht um mehr als 3 dB(A) über dem Orientierungswert von 55 dB(A) für Allgemeine Wohnge-
+biete bzw. 60 dB(A) für Mischgebiete liegt.
+
+Ausnahmen von diesen Festsetzungen sind möglich, wenn im Rahmen des jeweiligen Bauan-
+tragsverfahrens nachgewiesen wird, dass aus der tatsächlichen Lärmbelästigung geringere An-
+forderungen an den Schallschutz resultieren.
+
+Die Ergebnisse der schalltechnischen Untersuchung wurden für die angrenzenden Grundstücke
+antizipiert und entsprechend übernommen.
+
+
+6.5      Grünordnung
+Die beiden Ortsbild prägenden Bäume (Eiche und Blut-Buche) an der Ellerauer Straße im süd-
+lichen Plangebiet und an der Ecke Friedhofsweg / Ellerauer Straße im östlichen Plangebiet wer-
+den zum Erhalt festgesetzt. Sie sind in ihrem arttypischen Habitus dauerhaft zu erhalten und
+bei Abgang gleichwertig durch einen großkronigen Laubbaum zu ersetzen. Der Wurzelschutz-
+bereich (definiert als der in der Planzeichnung festgesetzte Kronenbereich zuzüglich eines
+1,5 m breiten Schutzstreifens) dieser Bäume ist von Abgrabungen, Geländeaufhöhungen, Ver-
+siegelungen sowie Leitungen freizuhalten. Dieses gilt ebenso für die Wurzelschutzbereiche
+der drei Linden an der Ellerauer Straße, die zwar außerhalb des Plangebietes stehen, aber mit
+der Hälfte ihrer Kronen in das Plangebiet hinein ragen. Während der Baudurchführung sind in
+allen Wurzelschutzbereichen Baumschutzmaßnahmen gemäß DIN 18920 und RAS-LG 4
+durchzuführen.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                    22
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+Als Maßnahme zum Schutz, zur Pflege und zur Entwicklung von Boden, Natur und Landschaft
+wird festgesetzt, dass im Plangeltungsbereich die nicht überbauten Bereiche von Tiefgaragen
+mit einem mindestens 30 cm starken, durchwurzelbaren Substrataufbau zu versehen und zu
+begrünen sind, sofern sie nicht für Stellplätze, Wege, Terrassen und Feuerwehrzufahrten erfor-
+derlich sind.
+
+
+7        Verkehrliche Erschließung
+Die verkehrliche Erschließung des Plangebietes erfolgt ausschließlich über den Friedhofsweg.
+Grundstückszufahrten entlang der B 4 (Kieler Straße) und der L 76 (Ellerauer Straße) sind
+nicht zulässig.
+
+Die Dimensionierung der Verkehrsflächen wird nach den Grundsätzen des flächensparenden
+Umgangs mit Grund und Boden geplant. Sie sollen möglichst gering, jedoch leistungsfähig aus-
+gebaut werden. Der westliche Abschnitt Friedhofsweg wird daher mit einem Gesamtquer-
+schnitt von 5,60 m und im Mischprinzip ohne separaten Gehweg vorgesehen. Die dazu ausge-
+wiesene Verkehrsfläche greift die Lage auf, wie sie bereits im bestehenden B-Plan 39 festge-
+setzt war. Sie greift damit auch den Verlauf der historisch gewachsenen und derzeitigen Nut-
+zung des Friedhofsweges auf. Auch die Dimensionierung wurde nur leicht verändert, von ge-
+planten 5,50 m Querschnitt im B-Plan 39 auf 5,60 m Querschnitt und damit den heutigen tech-
+nischen Regeln angepasst.
+
+Die Wendeanlage des Friedhofswegs wird entsprechend dem Ursprungsplan mit einem Durch-
+messer von 12 m für Pkw festgesetzt. Sie wird darüber hinaus um eine Fläche zum Zurückset-
+zen und Wenden von Lkw (z.B. Möbelwagen) ausgestattet.
+
+Nach den Unfallverhütungsvorschriften für die Müllbeseitigung (BG-Vorschrift C27) darf mit
+Müllfahrzeugen nur rückwärts gefahren werden, wenn eine geeignete Person den Fahrer ein-
+weist. Diese Option ist für die Müllentsorgung in diesem Fall nicht immer gegeben. Vorgesehen
+ist daher, dass Müllfahrzeuge von der Kieler Straße (B 4) in das Plangebiet hinein fahren und
+es Richtung Ellerauer Straße (L 76) wieder verlassen.
+
+Im Friedhofsweg wird zu diesem Zweck im Bereich des Fuß- und Radwegs, der mit einem Ge-
+samtquerschnitt von 4,05 m ausgebaut werden soll, gleichzeitig ein Fahrrecht zugunsten des
+Entsorgungsträgers (Müllabfuhr) festgesetzt. Das Fahrrecht gilt ebenfalls für Rettungsfahr-
+zeuge, um im Havariefall einen weiteren Zugang zum Plangebiet zu erhalten. Diese Durchfahrt
+folgt dem geraden Trassenverlauf des Friedhofweges und schließt direkt an den Wendehammer
+an, der zu diesem Zweck leicht in Richtung Süden verschoben wurde. Durch diese Art der Er-
+schließung kann auf einen Wendehammer mit 22 m Durchmesser verzichtet werden.
+
+Der Trassenverlauf des Friedhofweges ist von der Einmündung bis zum Wendehammer fahr-
+dynamisch ausgeglichen und beschreibt einen ganz leichten Bogen, er gewährleistet für alle
+Anlieger eine gute Erschließung. Aufgrund der geringen Länge von ca. 90 m würde eine Ver-
+schwenkung um einzelne Anliegergrundstücke die verkehrstechnische Funktion, insbesondere
+den Anschluss an den Fahrweg für die Müllentsorgung, verschlechtern.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       25.09.2017                    23
+Stadt Quickborn                                                          B-Plan Nr. 39, 2. Änderung
+
+
+
+Wie bereits durch die frühere Planung, so ist auch heute für die Realisierung bei allen Anliegern
+Grunderwerb – überwiegend im geringfügigen Umfang - erforderlich. Es handelt sich um einen
+Erstausbau sowie um eine beitragsfähige Maßnahme.
+
+
+
+
+(Quelle: Ingenieurgemeinschaft Reese+Wulff GmbH)
+
+
+
+Der Bereich westlich des Gebäudes Friedhofsweg 7 wurde im Ursprungsplan von 1988 als „Ver-
+kehrsflächen besonderer Zweckbestimmung“ (Parken und verkehrsberuhigter Bereich) festge-
+setzt.
+
+Der Bedarf für öffentliche Verkehrsflächen besteht hier nicht mehr, da seit 1991 über dem Flur-
+stück 70/4 der Flur 25 (Friedhofsweg 5) für das nördlich angrenzende Grundstück Friedhofsweg
+5a eine Baulasteintragung vorliegt. Somit ist die Überplanung einer privaten Zufahrt zur öffent-
+lichen Straße nicht erforderlich. Die Flächen werden dem Mischgebiet zugeordnet und ein be-
+stehendes Geh-, Fahr- und Leitungsrecht nachrichtlich übernommen.
+
+Öffentliche Parkplätze werden im Bereich des Wendehammers angelegt. Die notwendigen
+privaten Stellplätze für Anlieger und Besucher sind auf den Grundstücken im Rahmen des
+jeweiligen Bauantragsverfahrens auf Grundlage der Landesbauordnung nachzuweisen.
+
+Insgesamt ist für die Geschosswohnungen im WA1 ein Stellplatzschlüssel von 1,0 Stellplätzen
+je Wohneinheit für freien Wohnungsbau und 0,7 Stellplätzen je Wohneinheit für den geförderten
+Wohnungsbau vorgesehen. Diese Stellplätze sollen nach derzeitigem Planungsstand vorrangig
+in einer Tiefgarage angeordnet werden, so dass die Grundstücksflächen hier weitgehend von
+parkenden Fahrzeugen und Versiegelungen für Stellplätze freigehalten und durchgrünt werden
+können. Ergänzend sind südlich der Wendeanlage einige oberirdische Stellplätze vorgesehen,
+um insbesondere Besuchern einfach zu erreichende Parkmöglichkeiten zu geben.
+
+Für offene Stellplätze, Garagen und Carports sowie für Tiefgaragen werden im Plangebiet
+unter Berücksichtigung der vorhandenen Bedarfe durch die Bestandsnutzungen entsprechende
+Flächen für Nebenanlagen festgesetzt (gekennzeichnet mit St bzw. TGa). Diese baulichen An-
+lagen sind außer in den überbaubaren Grundstücksflächen nur in diesen Bereichen zulässig.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         25.09.2017                     24
+Stadt Quickborn                                                        B-Plan Nr. 39, 2. Änderung
+
+
+
+8        Ver- und Entsorgung
+Das Plangebiet kann an die vorhandenen Versorgungsleitungen der Stadtwerke Quickborn
+(Trink- / Löschwasser, Strom, Gas, Telekommunikation) im Friedhofsweg angeschlossen wer-
+den.
+
+Es ist vorgesehen, das Oberflächenwasser der privaten Grundstücke und der Straßenver-
+kehrsflächen über neue Regenwasserkanäle Richtung Kieler Straße zu entsorgen. Neben
+neuen Regenwasserkanälen im Friedhofsweg ist die Schaffung von rd. 100 m³ Stauvolumen im
+Bereich Kieler Straße/Donathstraße erforderlich. Das Plangebiet liegt innerhalb der vom Geo-
+logischen Dienst angegebenen Fläche der Salzstockhochlage, es liegt ein Verdachtsmoment
+für eine Erdfallgefährdung im Untergrund vor. Daher sollte hier auf eine Regenwasserversicke-
+rung oder die Installation von Brunnen verzichtet werden (vgl. Kap. 5.3).
+
+Die Abwasserentsorgung soll ebenfalls über neue Kanäle im Friedhofsweg Richtung Kieler
+Straße erfolgen.
+
+Die Befahrbarkeit des Friedhofswegs mit Müllfahrzeugen ist gegeben, vgl. dazu Kap. 7.
+
+
+
+9        Örtliche Bauvorschriften über Gestaltung
+
+Für die Gebäude werden örtliche Bauvorschriften gem. § 84 der Landesbauordnung Schleswig-
+Holstein (LBO) erlassen, um ein möglichst einheitliches Erscheinungsbild und eine gestalteri-
+sche Einbindung in das Ortsbild zu gewährleisten. Um dabei eine möglichst hohe Flexibilität und
+genügend Spielräume für die gestalterische und funktionale Vielfalt zu ermöglichen, werden nur
+einzelne, grundlegende Festsetzungen getroffen.
+
+So ist zur Dacheindeckung der Hauptgebäude für geneigte Dächer eine Pfannendeckung in
+den Farben Anthrazit (vergleichbar RAL 7015, 7016), Grau (vergleichbar RAL 7001, 7037 oder
+7042) oder Rot bis Rotbraun (vergleichbar RAL 2001, 3000-3011, 8001-8004) zu wählen. Glän-
+zende Dacheindeckungen sind unzulässig, engobierte Dachpfannen sind zulässig. Anlagen zur
+aktiven und passiven Nutzung der Solarenergie und Dachbegrünungen sind zulässig.
+
+Für die Fassaden sind nur nicht glänzende Materialien zu verwenden. Eine Ausnahme bilden
+dabei die Fensterflächen und Anlagen zur aktiven und passiven Nutzung der Solarenergie. Für
+die Außenwände der Hauptgebäude sind Klinker bzw. Vormauerziegel oder Putzfassaden zu
+verwenden. Ausnahmsweise sind für insgesamt je 30% der Außenwandflächen als Materialien
+auch Naturholzverkleidungen, Kunstschiefer und Schiefer, Glas, unbehandelte, naturbelassene
+oder pulverbeschichtete Metallverkleidungen zulässig.
+
+Als Abgrenzung zum öffentlichen Raum sind nur Einfriedungen in Form von geschnittenen
+oder freiwachsenden Hecken zulässig. Dabei können auf den Grundstücksseiten der Hecken
+zusätzlich Zäune angeordnet werden, die die Hecken jedoch nicht überragen dürfen. Zu berück-
+sichtigen sind dabei die festgesetzten Wurzelschutzbereiche. Da durch das Anpflanzen von He-
+cken eine erhebliche Schädigung der zentralen Wurzelbereiche zu befürchten ist, sind dort nur
+berankte Zäune mit Punktfundamenten zulässig.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        25.09.2017                    25
+Stadt Quickborn                                                          B-Plan Nr. 39, 2. Änderung
+
+
+
+Darüber hinaus sind im allgemeinen Wohngebiet WA1 entlang der Straßenzüge Ellerauer
+Straße und Kieler Straße grundsätzlich keine Einfriedungen zulässig, um das Gesamtbild der
+kreuzungsbetonenden Eckbebauung hinter der vorhandenen Baumreihe weder durch Hecken
+noch durch Zäune zu beeinträchtigen. Ohne Abgrenzung zum öffentlichen Raum wird das
+Wohngrundstück optisch bis zum Gehweg erweitert. Bei Bedarf besteht die Möglichkeit, die
+Erdgeschosswohnungen durch Hecken im Terrassenbereich einzufassen.
+
+Oberirdische Stellplatzanlagen und Carports sind hinsichtlich Materialien, Farben sowie Aus-
+stattung als einheitliche Gruppe zu gestalten, die einheitliche Gestaltung ist dauerhaft zu erhal-
+ten.
+
+Werbeanlagen sind nur an der Stätte der Leistung zulässig. Flächige Werbeanlagen und
+Schriftzüge aus einzelnen Buchstaben an Gebäuden dürfen zusammen einen Anteil von 15 %
+der jeweiligen Fassadenfläche nicht überschreiten. Freistehende Werbeanlagen und Fahnen-
+masten, Werbeanlagen an Gebäuden oberhalb der Traufe sowie reflektierende Werbeanlagen
+und Werbeanlagen mit wechselndem oder bewegtem Licht sind nicht zulässig.
+
+
+10       Landschaftsplanerische Grundlagen
+
+10.1     Rechtlicher Hintergrund
+Der Bebauungsplan wird auf der Grundlage des § 13a BauGB im beschleunigten Verfahren
+aufgestellt, so dass auf die Umweltprüfung und die Erstellung eines Umweltberichtes verzichtet
+werden kann. Gemäß § 1 Abs. 6 Nr. 7 BauGB sind die Belange des Umweltschutzes einschließ-
+lich des Naturschutzes und der Landschaftspflege zu berücksichtigen und es ist zu überprüfen,
+ob bei der Umsetzung der Planung artenschutzrechtliche Belange gemäß § 44 BNatSchG (Bun-
+desnaturschutzgesetz) oder ob gesetzlich geschützte Biotope gemäß § 30 BNatSchG i.V.m. §
+21 LNatSchG (Landesnaturschutzgesetz) betroffen sind. Die hier zusammengestellten land-
+schaftsplanerischen Grundlagen bieten die zu diesen Belangen notwendigen Informationen und
+Prüfungsergebnisse.
+
+Eingriffe, die aufgrund der Aufstellung des Bebauungsplanes zu erwarten sind, gelten im Sinne
+des § 1a Abs. 3 Satz 6 BauGB als vor der planerischen Entscheidung erfolgt oder zulässig.
+Nach § 18 BNatSchG Abs. 2 ist auf Vorhaben innerhalb der im Zusammenhang bebauten Ort-
+steile (Innenbereich) nach § 34 BauGB die Eingriffsregelung nicht anzuwenden. Somit wird das
+hier geplante Vorhaben nicht als Eingriff gewertet.
+
+
+10.2     Bestand und Bewertung von Naturhaushalt und Landschaftsbild
+
+10.2.1   Schutzgut Arten und Lebensräume
+
+Biotop- und Nutzungstypen
+Nach § 1 BNatSchG sind Tiere und Pflanzen als Bestandteile des Naturhaushalts in ihrer na-
+türlichen und historisch gewachsenen Artenvielfalt zu schützen, zu pflegen, zu entwickeln und
+soweit erforderlich wiederherzustellen. Zur Erfassung der Biotop- und Nutzungstypen erfolgte
+im März 2015 eine Geländebegehung. Tabelle 1 nennt die dabei innerhalb des Plangebietes
+sowie angrenzend erfassten, vorkommenden Biotoptypen.
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                          25.09.2017                    26
+Stadt Quickborn                                                                 B-Plan Nr. 39, 2. Änderung
+
+
+Tabelle 1         Biotoptypen im Plangebiet und in angrenzenden Flächen
+
+  Biotoptyp / Lage                     Beschreibung
+
+  Laubbaum (HEy)                     = Brusthöhen-Stammdurchmesser
+
+  Friedhofsweg, zwischen Fried-        Winterlinde (Tilia cordata); ( 38 cm)
+  hof und Ellerauer Str.               (Nr. 9 im Baumbestandsplan; nicht erhaltenswert)
+
+  Friedhofsweg, zwischen Fried-        Winterlinde (Tilia cordata); ( 48 cm)
+  hof und Ellerauer Str.               (Nr. 10 im Baumbestandsplan; erhaltenswert)
+
+  Friedhofsweg, zwischen Fried-        Japanische Blütenkirsche (Prunus serrulata); ( 22 cm)
+  hof und Ellerauer Str.               (Nr. 11 im Baumbestandsplan; besonders erhaltenswert)
+
+  Ecke Ellerauer Str./ Friedhofs-      Stiel-Eiche (Quercus robur) ( 82 cm); Ortsbild prägend;
+  weg (im östlichen Plangebiet)        (Nr. 12 im Baumbestandsplan; besonders erhaltenswert)
+
+  Privatgrundstück, an der süd-        Winterlinde (Tilia cordata); ( 22, 22 cm)
+  östlichen Plangebietsgrenze          (Nr. 13 im Baumbestandsplan; bedingt erhaltenswert)
+
+  Privatgrundstück, an der süd-        Spitzahorn (Acer platanoides); ( 30 cm)
+  östlichen Plangebietsgrenze          (Nr. 14 im Baumbestandsplan; nicht erhaltenswert)
+
+  Privatgrundstück, an der süd-        Spitzahorn (Acer platanoides); ( 26 cm)
+  östlichen Plangebietsgrenze          (Nr. 15 im Baumbestandsplan; nicht erhaltenswert)
+
+  Privatgrundstück, an der süd-        Blut-Buche (Fagus sylvatica ´Atropunicea´);  120 cm, Orts-
+  östlichen Plangebietsgrenze          bild prägend; (Nr. 16 im Baumbestandsplan; bedingt erhal-
+                                       tenswert)
+
+  Baumreihe aus heimischen Laubbäumen (HRy)                   = Brusthöhen-Stammdurchmesser
+
+  Baumreihe an der Nordseite           Winterlinde (Tilia cordata); ( 38 cm)
+  des Friedhofsweges                   (Nr. 1); bedingt erhaltenswert
+                                       Spitzahorn (Acer platanoides); ( 26, 20, 20, 18 cm)
+                                       (Nr. 2); bedingt erhaltenswert
+  Nummern 1 bis 8 im Baumbe-
+                                       Spitzahorn (Acer platanoides); ( 33 cm)
+  standsplan                           (Nr. 3); erhaltenswert
+                                       Spitzahorn (Acer platanoides); ( 45, 45 cm)
+                                       (Nr. 4); erhaltenswert
+                                       Winterlinde (Tilia cordata); ( 24, 34 cm)
+                                       (Nr. 5); nicht erhaltenswert
+                                       Stiel-Eiche (Quercus robur); ( 48 cm)
+                                       (Nr. 6); besonders erhaltenswert
+                                       Winterlinde (Tilia cordata); ( 52 cm)
+                                       (Nr. 7; Kopfbaum mit massiven Einfäulungen; nicht erhaltens-
+                                       wert wg. Verkehrssicherheit; aus Artenschutzgründen (Fle-
+                                       dermäuse) besonders erhaltenswert)
+                                       Winterlinde (Tilia cordata); ( 48 cm)
+                                       (Nr. 8); erhaltenswert
+
+  Baumreihe im Südwesten des           Winterlinde (Tilia cordata); ( 35 cm)
+  Plangebietes (Ellerauer              (Nr. 17); erhaltenswert
+  Str./Kieler Str.)                    Winterlinde (Tilia cordata); ( 30 cm)
+                                       (Nr. 18); bedingt erhaltenswert
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                              25.09.2017                       27
+Stadt Quickborn                                                              B-Plan Nr. 39, 2. Änderung
+
+
+
+  Biotoptyp / Lage                  Beschreibung
+
+  Nummern 17 bis 23 im Baum-        Winterlinde (Tilia cordata); ( 30 cm)
+  bestandsplan                       (Nr. 19); erhaltenswert
+                                    Winterlinde (Tilia cordata); ( 30 cm)
+                                    (Nr. 20); erhaltenswert
+                                    Winterlinde (Tilia cordata); ( 22 cm)
+                                    (Nr. 21); erhaltenswert
+                                    Winterlinde (Tilia cordata); ( 46 cm)
+                                    (Nr. 22); erhaltenswert; Habitatbaum?
+                                    Winterlinde (Tilia cordata); ( 44 cm)
+                                    (Nr. 23); erhaltenswert; Habitatbaum?
+
+  Baumreihe aus heimischen Nadelhölzern (HRn)  = Brusthöhen-Stammdurchmesser
+
+  Im Westen des Plangebietes        9 Nadelbäume,  18 - 54 cm,
+  (Privatgrundstück Kieler
+  Straße)
+  Sonstige Ruderalfläche (RHy)
+
+  Grundstück nördlich des Fried-    Brach liegend; ruderal beeinflusst; aufkommende Verbu-
+  hofswegs                          schung
+                                    Pflanzenarten u.a.: Spitzahorn (Acer platanoides); Hasel (Co-
+                                    rylus avellana; Quecke (Elytrigia repens); Knäuelgras (Dacty-
+                                    lis glomerata), Wiesen-Fuchsschwanz (Alopecurus praten-
+                                    sis), Weidelgras (Lolium perenne), Beifuß (Artemisia vulga-
+                                    ris), Rainfarn (Tanacetum vulgare)
+
+
+  Friedhof, strukturreich (SPf)
+
+  Nördlich des Plangebietes         Friedhof mit Großgehölzen oder naturnahen Gehölzgruppen
+                                    zwischen den Gräberfeldern.
+                                    An den Friedhofsweg grenzend 3 Linden (Tilia cordata)
+                                    (Nrn. 7, 8 und 9 im Baumbestandsplan)
+
+  Garten, strukturarm (SGz)
+
+  In der Ellerauer Straße, am       Strukturarme (Haus-) Gärten mit Dominanz von Rasenflächen
+  Wohnblock                         und/oder Koniferen
+
+  Kleinflächige (Haus-) Gärten (SGo)
+
+  Im Nordwesten des Plangebie-      (Haus-)Gärten mit einfacher Struktur und geringem Laubholz-
+  tes                               anteil
+  Rasenfläche, arten- und strukturarm (SGr)
+
+  Für die Bebauung vorgesehene      Regelmäßig gemähte Rasenfläche
+  Fläche                            (zentrale „Wiese“)
+
+
+In Tabelle 2 ist die ökologische Bedeutung / Empfindlichkeit dieser Biotoptypen dargestellt.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                          25.09.2017                        28
+Stadt Quickborn                                                           B-Plan Nr. 39, 2. Änderung
+
+
+Tabelle 2         Bestand und Bewertung der Biotoptypen im Untersuchungsraum
+
+                                                             Ökologische Bedeutung /
+  Code      Biotoptyp                 Schutzstatus               Empfindlichkeit*
+
+                                                         besonders       allgemein       gering
+
+  HEy       Laubbaum                   z.T. geschützt                X
+                                      nach § 14 Abs. 1
+            Baumreihe aus heimi-
+  HRy                                   BNatSchG**                           X
+            schen Laubbäumen
+   HRn      Baumreihe aus heimi-             /                               X
+            schen Nadelhölzern
+   RHy      Sonstige Ruderalfläche           /                               X
+
+   SPf      Friedhof, strukturreich          /                               X
+
+   SGz      Garten, strukturarm              /                                              X
+
+   SGo      Kleinflächige   (Haus-)          /                                       X
+            Gärten
+   SGr      Rasenfläche,    arten-           /                                              X
+            und strukturarm
+
+* Einstufung entsprechend Runderlass des Innenministeriums und des Ministeriums für Energie-
+ wende, Landwirtschaft, Umwelt und ländliche Räume vom 09.12.2013 über das „Verhältnis der
+ naturschutzrechtlichen Eingriffsregelung zum Baurecht“
+** Die Beseitigung von ortsbildprägenden/landschaftsbestimmenden Bäumen ist ein Eingriff
+  in Natur und Landschaft (erhebliche Beeinträchtigung des Landschaftsbildes). Einzelbäume sind
+  ortsbildprägend/landschaftsbestimmend, wenn deren Entfernen als Lücke und nachhaltiger Ver-
+  lust für das Landschaftsbild empfunden würde. Entscheidend bei der Bestimmung ist die Ge-
+  samtbetrachtung der Situation – hier der Zusammenhang von Baum und städtebaulichem Um-
+  feld.
+
+
+Schutzgebiete und -objekte
+In der näheren Umgebung des Plangebietes sind keine Natura 2000- oder Naturschutzgebiete
+vorhanden. Das Plangebiet liegt weder in einem Landschaftsschutzgebiet noch in einem Was-
+serschutzgebiet.
+
+Auch sind keine Archäologischen Denkmale oder andere Kulturdenkmale vorhanden.
+
+Besonders geschützte Biotope (§21 LNatSchG) sind im Plangebiet nicht vorhanden.
+
+Ortsbild prägende Bäume sind die Blut-Buche auf der Rasenfläche an der Ellerauer Straße
+(Baum Nr. 16) sowie die Stein-Eiche an der Ecke Friedhofsweg/ Ellerauer Straße (Baum Nr.
+12), vgl. Tabellen 1 und 2.
+
+Tiere
+Allgemein ist festzustellen, dass die für die Bebauung vorgesehenen Flächen eine nur geringe
+Lebensraum- und Habitatfunktion für Tiere haben können.
+
+Die Bäume und Gärten im Plangebiet und auch im Umfeld dürften weit verbreiteten und anpas-
+sungsfähigen Tierarten Lebensraum bieten.
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        25.09.2017                        29
+Stadt Quickborn                                                         B-Plan Nr. 39, 2. Änderung
+
+
+
+Faunistische Potenzialabschätzung / artenschutzrechtliche Betrachtung
+Für das Plangebiet und seine Umgebung ist unter dem Aspekt des Artenschutzes gem.
+§ 44 BNatSchG eine Potenzialabschätzung für die Tierwelt durchzuführen. Dabei ist zu klären,
+ob gem. § 7 BNatSchG streng geschützte oder besonders geschützte Arten von der Umsetzung
+der Planung betroffen sein können.
+
+Es liegen keine Hinweise auf streng geschützte Arten vor. Allerdings sind alle einheimischen
+Vogelarten nach der EU-Vogelschutzrichtlinie geschützt.
+
+In den im Plangebiet vorkommenden Gehölzen (überwiegend Bäume) ist das Vorkommen häu-
+figer und ungefährdeter Brutvogelarten möglich. Grundsätzlich sind in diesen Gehölzstruktu-
+ren Arten zu erwarten, die als störungsunempfindlich und als relativ flexibel in Bezug auf den
+Brutplatz zu bezeichnen sind.
+
+Es ist davon auszugehen, dass Gebüsche im Plangebiet potenzielle Brutstandorte von Gehölz-
+freibrütern sind. Da im Siedlungsgebiet bereits Störungen durch Aktivitäten der Anwohner vor-
+liegen, ist lediglich von Vorkommen störungsunempfindlicher Arten der Siedlungen und Sied-
+lungsränder auszugehen. Dies können u.a. sein: Heckenbraunelle (Prunella modularis), Amsel
+(Turdus merula), Buchfink (Fringilla coelebs) und Zilpzalp (Phylloscopu collybita).
+
+Für die potenziell auftretenden Gehölzfreibrüter der besonders geschützten Arten gilt das Tö-
+tungsverbot und das Verbot der Zerstörung von Fortpflanzungs- und Ruhestätten des § 44 (1)
+Satz 1 u. 3. BNatSchG. Sollten dennoch Rodungsmaßnahmen erforderlich werden (z.B. Durch-
+brüche für Zufahrten), werden die o. g. Verbotstatbestände nicht ausgelöst, soweit die erforder-
+lichen Maßnahmen innerhalb der zulässigen Frist vom 01. Oktober bis 14. März durchgeführt
+werden. Kann der Beginn der Maßnahmen nicht innerhalb dieses Zeitraumes gelegt werden, ist
+eine vorherige Begehung durchzuführen und ggf. eine Genehmigung / Ausnahme gemäß § 45
+BNatSchG einzuholen bzw. eine Betroffenheit auszuschließen.
+
+Es ist davon auszugehen, dass für die Brutvögel im Plangebiet keine zusätzlichen Beeinträch-
+tigungen durch die geplante Nutzung entstehen. Der Erhaltungszustand der lokalen Populatio-
+nen verschlechtert sich durch die mit der Planung vorbereiteten Baumaßnahmen nicht.
+
+Auch alle europäischen Fledermausarten wurden in Anhang II bzw. IV der Richtlinie
+92/43/EWG aufgenommen und sind damit streng geschützt. Für sie gelten die artenschutzrecht-
+lichen Verbotstatbestände des § 44 (1), Satz 1 bis 3 BNatSchG (Tötungsverbot, Störungsverbot,
+Verbot der Beschädigung und Zerstörung von Fortpflanzungs- und Ruhestätten).
+
+Habitatbäume für Fledermäuse könnten sein: Eine Winterlinde am Friedhofsweg (auf dem
+Friedhof; abgängig; Baum Nr. 7) sowie zwei Winterlinden an der Ecke Ellerauer Str./Kieler Str.
+(Kopfbäume; Nrn. 22 und 23). Diese Bäume könnten potenziell auftretenden Fledermausarten
+als Sommerquartier dienen. Sie stehen außerhalb der für die Überbauung vorgesehenen Flä-
+chen.
+
+Fazit: Dem Schutzgut Arten und Lebensräume insgesamt ist im Plangebiet, eine allgemeine
+bis geringe Empfindlichkeit gegenüber der angestrebten Planung zuzuordnen. Die Fauna als
+Teil des Schutzgutes Arten und Lebensräume besitzt eine allgemeine bis geringe Empfindlich-
+keit gegenüber planerischen Veränderungen im betrachteten Bereich.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         25.09.2017                    30
+Stadt Quickborn                                                               B-Plan Nr. 39, 2. Änderung
+
+
+
+10.2.2 Schutzgüter Boden, Wasser und Landschaftsbild
+Der Zustand der Schutzgüter Boden, Wasser und Landschaftsbild / Ortsbild, wird in den folgen-
+den Tabellen beschrieben und bewertet.
+
+
+  Tabelle 3       Schutzgut Boden
+  Bestand/            Deckschicht aus schwach humosen/humosen Sanden und Oberboden.
+  Vorbelastun-        Unter den Auffüllungen lagern bis zur Bohrtiefe von 8,0 m unter Gelände aus-
+  gen                 schließlich Sande unterschiedlicher Kornzusammensetzungen.*
+                      Keine Eintragungen zu Altstandorten, Altablagerungen oder schädlichen Bo-
+                      denverunreinigungen vorliegend.**
+                      *    Ing.-Büro Eickhoff und Partner: Baugrundbeurteilung, März 2016
+                      **   Untere Bodenschutzbehörde des Kreises Pinneberg
+
+  Bewertung           Allgemeine Bedeutung / Empfindlichkeit
+
+
+
+  Tabelle 4       Schutzgut Wasser
+  Bestand/            Grundwasser:
+  Vorbelastun-
+                      Grundwasser wurde im Rahmen der Untersuchung in Tiefen zwischen1,82 m
+  gen
+                      und 4,07 m unter Gelände angetroffen.*
+                      Die anstehenden Böden - Oberboden, humose Sande und schlufffreie Sande
+                      sind durchlässig und für eine Versickerung von Niederschlagswasser geeignet
+                      Oberflächengewässer sind nicht vorhanden
+                      *    Ing.-Büro Eickhoff und Partner: Baugrundbeurteilung, März 2016
+
+  Bewertung           Allgemeine Bedeutung / Empfindlichkeit
+
+  Tabelle 5       Schutzgut Landschaftsbild
+  Bestand/         Optischer Eindruck:
+  Vorbelastun-     Freie Grünfläche (Rasen/Wiese) mit bildprägendem Baum im SO.
+  gen
+                   Zur Ellerauer Str./ Kieler Str. hin durch kleinere Bäume abgegrenzt, jedoch offen
+                   einsehbar.
+                   Im Übrigen von Siedlungsflächen benachbart (Wohnblock, Wohnhäuser, Ge-
+                   werbe)
+                   Lärm:
+                   Erhebliche Beeinträchtigungen durch Verkehrslärm (L76/Ellerauer Str. und
+                   B4/Kieler Str.)*
+
+                  *        Schalltechnische Untersuchung, LAiRM CONSULT GmbH, April 2016
+
+                   Geringe Naturnähe und Vielfalt
+  Bewertung        Allgemeine bis geringe Bedeutung / Empfindlichkeit
+
+
+
+
+10.3     Ziele und Grundsätze der Landschaftsplanung
+Im Landschaftsplan der Stadt Quickborn (1999) wird das Plangebiet als „Grünfläche“/“ge-
+mischte Baufläche“ dargestellt. Der Plan nennt „generelle Anforderungen an die Gestaltung
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                              25.09.2017                     31
+Stadt Quickborn                                                       B-Plan Nr. 39, 2. Änderung
+
+
+
+neuer Bauflächen“. Die Anforderungen beziehen sich auf die Schonung von Ressourcen und
+der Schutzgüter. Bezogen auf das Plangebiet lassen sich die Anforderungen konkretisieren und
+als Grundsätze formulieren, die in das Bebauungskonzept und in die Festsetzungen des B-
+Planes einfließen:
+
+Arten- und Lebensräume
+   Erhaltung von Bäumen
+Boden
+   Minimierung des Versiegelungsgrades
+   Vermeidung von Stoffeinträgen
+   Minimierung von Bodenabtrag
+Wasser
+   Minimierung des Versiegelungsgrades
+   Verwendung wassergebundener Decken
+   Begrünung und Bepflanzung
+Klima und Luft
+   Pflanzung von Bäumen / Strauch- und Gebüsch- Anpflanzungen
+Landschaftsbild/ Erholung
+   Begrünung der Bauflächen
+   Erhaltung der vorhandenen Bäume
+   Lärmschutz
+   Verbesserung der Aufenthaltsqualität durch Begrünungsmaßnahmen innerhalb des Plan-
+    geltungsbereichs.
+
+10.4     Auswirkungen des Bebauungsplanes
+Mit dem Bebauungsplan Nr. 39, 2. Änderung werden im Geltungsbereich folgende Veränderun-
+gen vorbereitet:
+
+   Überbaubare Grundstücksflächen (südlich Friedhofsweg 2 dreigeschossige Wohngebäude
+    mit Staffelgeschoss, gruppiert um einen gemeinsamen Wohnhof; nördlich Friedhofsweg
+    zweigeschossiges Mehrfamilienhaus)
+   Ausbau der Straße Friedhofsweg.
+
+Bei der Durchführung der geplanten Vorhaben sind Veränderungen unumgänglich. Dies sind im
+Einzelnen:
+   Änderung der Nutzung
+   Bodenabtrag und Versiegelung
+   Beeinträchtigung bzw. Verlust von Bäumen im Friedhofsweg
+
+Die faunistische Potenzialanalyse und artenschutzrechtliche Betrachtung (s.o. Schutzgut Arten
+und Lebensräume) kommt aufgrund der bestehenden Habitatstruktur, der zu erwartenden Ar-
+tenvorkommen und der bestehenden Ausweichmöglichkeiten zu folgendem Ergebnis: Es kann
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                      25.09.2017                     32
+Stadt Quickborn                                                        B-Plan Nr. 39, 2. Änderung
+
+
+
+davon ausgegangen werden, dass durch die Umsetzung der Planung keine artenschutzrecht-
+lichen Verbotstatbestände ausgelöst werden.
+
+
+10.5     Eingriffsregelung
+Nach § 18 BNatSchG Abs. 2 ist auf Vorhaben innerhalb der im Zusammenhang bebauten Ort-
+steile (Innenbereich) nach § 34 BauGB die Eingriffsregelung nicht anzuwenden.
+
+Somit wird das hier geplante Vorhaben nicht als Eingriff gewertet.
+
+
+11       Hinweise für die Umsetzung von Bauvorhaben
+Gem. § 39 (5) 2 BNatSchG (Allgemeiner Schutz wild lebender Tiere und Pflanzen) ist es
+u.a. verboten, Hecken, lebende Zäune, Gebüsche und andere Gehölze in der Zeit vom 01. März
+bis zum 30. September abzuschneiden oder auf den Stock zu setzen; zulässig sind schonende
+Form- und Pflegeschnitte zur Beseitigung des Zuwachses der Pflanzen oder zur Gesunderhal-
+tung von Bäumen.
+
+Wenn während der Erdarbeiten Archäologische Kulturdenkmale (Funde oder dingliche Zeug-
+nisse wie Veränderungen und Verfärbungen in der natürlichen Bodenbeschaffenheit) entdeckt
+werden, ist die obere Denkmalschutzbehörde gem. § 15 DSchG unverzüglich zu benachrichti-
+gen und die Fundstelle bis zum Eintreffen der Fachbehörde zu sichern. Verantwortlich hier sind
+gem. § 14 DSchG der Grundstückseigentümer und der Leiter der Arbeiten. Die Verpflichteten
+haben das Kulturdenkmal und die Fundstätte in unverändertem Zustand zu erhalten, soweit es
+ohne erhebliche Nachteile oder Aufwendungen von Kosten geschehen kann.
+
+Die überplante Fläche befindet sich in einem archäologischen Interessensgebiet. Bei der
+überplanten Fläche handelt es sich daher gem. § 12 (2) 6 DSchG um Stellen, von denen be-
+kannt ist oder den Umständen nach zu vermuten ist, dass sich dort Kulturdenkmale befinden.
+Erdarbeiten in diesen Bereichen bedürfen demnach der Genehmigung des Archäologischen
+Landesamtes, der Beginn der Erdarbeiten ist 14 Tage zuvor mitzuteilen. Denkmale sind gem.
+§ 8 (1) DSchG unabhängig davon, ob sie in der Denkmalliste erfasst sind, gesetzlich geschützt.
+
+Auffälligkeiten im Boden hinsichtlich schädlicher Bodenveränderungen, Altlablagerungen
+und/oder Altstandorte während der Bauausführung sind dem Fachdienst Umwelt – Boden-
+schutz – zu melden und Maßnahmen abzustimmen. Auffälliger und verunreinigter Bodenaushub
+ist bis zum Entscheid über die fachgerechte Entsorgung oder die Möglichkeit zur Verwendung
+auf dem Grundstück gesondert zu lagern. Der Bodenaushub ist vor Einträgen durch Nieder-
+schlag und gegen Austräge in den Untergrund z. B. durch Folien oder Container zu schützen.
+Die fachgerechte Entsorgung ist mit der zuständigen Abfallbehörde abzustimmen.
+
+Da Tiefgaragen geplant sind, wird das oberflächennah anstehende Auffüllmaterial aus bautech-
+nischen Notwendigkeiten von Grundstück entfernt. Nach dem Bodenschutzrecht ist keine Un-
+tersuchungsanforderung gegeben. Die Klärung der Entsorgungs-/ Verwertungswege des ab-
+zufahrenden Materials durch entsprechende Bodenuntersuchungen ist durch den Vorhaben-
+träger durchzuführen und mit der unteren Bodenschutzbehörde des Kreises abzustimmen.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        25.09.2017                    33
+Stadt Quickborn                                                    B-Plan Nr. 39, 2. Änderung
+
+
+
+Quickborn gehört gem. Anlage zur Kampfmittelverordnung vom 07.05.2012 nicht zu den Ge-
+meinden mit bekannten Bombenabwürfen. Daher handelt es sich bei dem Plangebiet um keine
+Kampfmittelverdachtsfläche. Zufallsfunde von Munition sind jedoch nicht gänzlich auszu-
+schließen.
+
+Das Bebauungsgebiet liegt innerhalb der vom Geologischen Dienst angegebenen Fläche der
+Salzstockhochlage, die mit einer potenziellen Erdfallproblematik verbunden ist. Entspre-
+chende konstruktive Maßnahmen an den Wohngebäuden werden empfohlen. Auf eine Regen-
+wasserversickerung oder die Installation von Brunnen sowie eine wärmetechnische Versorgung
+mittels oberflächennaher Geothermie mit geschlossenen Sondensystemen ist zu verzichten.
+Werden im Rahmen der Baugrunderkundung abgrenzbare, ggf. mit Weichschichten verfüllte,
+Senken erfasst, ist der Geologische Dienst zu informieren.
+
+
+12       Finanzielle Auswirkung
+Die Stadt hat bereits aus dem bestehenden Bebauungsplan Nr. 39 eine Verpflichtung zum Aus-
+bau des Friedhofswegs. Aus dieser Bebauungsplanänderung ergeben sich somit keine finanzi-
+ellen Auswirkungen.
+
+
+
+
+Diese Begründung wurde in der Sitzung der Ratsversammlung Quickborn am 25.09.2017
+gebilligt.
+
+
+
+
+                                                    gez. Köppl
+
+Quickborn, den 07.11.2017                         Bürgermeister          L.S
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                    25.09.2017                    34
+

@@ -1,0 +1,10 @@
+                     Maßgeblicher      erforderliches bewertetes Schalldämmmaß der
+                                                                  1)
+Lärmpegelbereich   Außenlärmpegel La               Außenbauteile R´w,res
+                                                                              2)
+ nach DIN 4109                            Wohnräume               Büroräume
+                         dB(A)
+                                                          [dB]
+       IV               66 - 70                40                      35
+        V               71 - 75                45                      40
+

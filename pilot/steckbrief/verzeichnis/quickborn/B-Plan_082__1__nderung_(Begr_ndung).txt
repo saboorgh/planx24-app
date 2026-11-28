@@ -1,0 +1,1888 @@
+Stadt Quickborn
+Bebauungsplan Nr. 82, 1. Änderung
+für das Gebiet „östlich Pinneberger Straße / nördlich Ahrenskamp“
+
+
+
+
+Begründung
+
+
+
+
+    (Quelle: eigene Aufnahme)
+
+
+
+
+Auftraggeber/in
+Stadt Quickborn
+Der Bürgermeister
+Rathausplatz 1
+25451 Quickborn
+
+
+Bearbeiter/in
+                                                           Kurt-Wagener-Str. 15
+Dipl.-Ing. Wiebke Becker, Stadtplanerin                    25537 Elmshorn
+M.Sc. Anna Rauscher, Landschaftsplanung                    Tel. 04121· 46915 - 0
+Elmshorn, den 26.09.2019                                   www.ing-reese-wulff.de
+Stadt Quickborn                                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+Inhalt                                 O:\Daten\17074\Stadtplanung\5_Genehmigung\Begruendung_Quickborn_B82Aend1_190926.docx
+
+
+1         Planungsanlass und -ziele                                                                                     3
+2         Rechtsgrundlagen                                                                                              6
+3         Bestand                                                                                                       6
+3.1       Plangeltungsbereich                                                                                           6
+3.2       Datengrundlagen                                                                                               8
+4         Übergeordnete Planung                                                                                         9
+5         Gutachten / Fachplanungen                                                                                    11
+5.1       Lärmimmissionen                                                                                              11
+5.2       Bodenuntersuchung                                                                                            14
+5.3       Altstandorte / Altablagerungen                                                                               16
+5.4       Geologie                                                                                                     18
+5.5       Wasserwirtschaftliches Konzept                                                                               21
+5.6       Baumkontrolluntersuchungen                                                                                   21
+6         Festsetzungen                                                                                                22
+6.1       Art der Nutzung                                                                                              22
+6.2       Maß der Nutzung / Höhe baulicher Anlagen                                                                     24
+6.3       Bauweise, überbaubare Grundstücksflächen                                                                     25
+6.4       Immissionsschutz / Altlasten                                                                                 27
+6.5       Grünordnung                                                                                                  29
+7         Verkehrliche Erschließung                                                                                    29
+8         Ver- und Entsorgung                                                                                          30
+9         Örtliche Bauvorschriften über Gestaltung                                                                     31
+10        Landschaftsplanerische Grundlagen                                                                            32
+10.1      Rechtlicher Hintergrund                                                                                      32
+10.2      Bestand und Bewertung von Naturhaushalt und Landschaftsbild                                                  32
+10.2.1    Schutzgebiete und -objekte                                                                                   32
+10.2.2    Schutzgut Arten und Lebensräume                                                                              32
+10.2.3    Schutzgüter Boden, Wasser und Landschaftsbild                                                                36
+10.3      Ziele und Grundsätze der Landschaftsplanung                                                                  38
+10.4      Auswirkungen des Bebauungsplanes                                                                             38
+10.5      Eingriffsregelung                                                                                            39
+10.6      Pflanzhinweise                                                                                               39
+11        Hinweise für die Umsetzung von Bauvorhaben                                                                   39
+12        Kosten                                                                                                       40
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                                     26.09.2019                                  1
+Stadt Quickborn                                                   B-Plan Nr. 82, 1. Änderung
+
+
+
+Abbildungsverzeichnis
+                   Ausschnitte Planzeichnung und Bebauungskonzept 1992
+                   (ohne Maßstab)                                                         3
+                   Bebauungskonzept Stand 24.01.2018 (ohne Maßstab)                       4
+                   Massenmodelle Stand 21.02.2018 (ohne Maßstab)                          5
+                   Preußische Landesaufnahmen 1877-1879 und 1902-1932
+                   (ohne Maßstab)                                                         5
+                   Lage im Stadtgebiet (ohne Maßstab)                                     6
+                   Luftbild des Plangebietes mit Umgebung (ohne Maßstab)                  7
+                   Ausschnitt aus dem LEP (ohne Maßstab)                                  9
+                   Ausschnitt aus dem RegPl I (ohne Maßstab)                             10
+                   Ausschnitt aus dem F-Plan Quickborn (ohne Maßstab)                    11
+                   Lärmkartierung Straßenlärm - 24 Stunden-Pegel LDEN                    11
+                   Zuordnung der Gebäudenummerierung                                     13
+                   Lärmkarte Verkehrslärm in der Nacht, 2. OG                            14
+                   Bohrkern BS 01                                                        15
+                   Ausschnitt Lageplan Probenahmen                                       16
+                   Gefährdungsklassen                                                    20
+                   Lageplan Baumbestand (ohne Maßstab)                                   22
+
+
+Tabellenverzeichnis
+Tabelle 1         Datengrundlagen                                                         8
+Tabelle 2         Biotoptypen im Plangebiet und in angrenzenden Flächen                  33
+Tabelle 3         Bestand und Bewertung der Biotoptypen im Untersuchungsraum             33
+Tabelle 4         Schutzgut Boden                                                        36
+Tabelle 5         Schutzgut Wasser                                                       37
+Tabelle 6         Schutzgut Landschaftsbild                                              37
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                   26.09.2019                     2
+Stadt Quickborn                                                      B-Plan Nr. 82, 1. Änderung
+
+
+
+1          Planungsanlass und -ziele
+Die Nachfrage nach Wohnflächen ist in Quickborn ungebrochen hoch, regionale Effekte durch
+die äußerst angespannte Nachfragesituation am Hamburger Immobilienmarkt sind deutlich
+spürbar. Überlastungstendenzen mit dem Effekt stark steigender Immobilienpreise sollen unter
+anderem durch die moderate Schaffung von neuer Wohnbebauung entgegengewirkt werden.
+Dies soll insbesondere durch die Mobilisierung von Entwicklungspotenzialen der Nachverdich-
+tung erreicht werden. Durch die zentrumsnahe Lage des Plangebietes empfiehlt sich eine ver-
+dichtete Wohnnutzung.
+
+Die Ratsversammlung der Stadt Quickborn hat vor diesem Hintergrund in ihrer Sitzung am
+27.11.2017 den Aufstellungsbeschluss für die 1. Änderung des Bebauungsplans Nr. 82 „östlich
+Pinneberger Straße/nördlich Ahrenskamp“, für das Gebiet zwischen Pinneberger Straße, Kieler
+Straße und Ahrenskamp gefasst.
+
+Darin werden folgende Planungsziele formuliert:
+
+    Nutzung der Nachverdichtungspotenziale durch Anpassung bestehenden Planrechts,
+    Realisierung von Wohnbebauung in Mehrfamilienhausbebauung.
+
+Das Plangebiet befindet sich im Geltungsbereich des 1992 rechtskräftig gewordenen Bebau-
+ungsplanes Nr. 82. Diese Angebotsplanung wurde in den letzten 25 Jahren insbesondere auf-
+grund hemmender Eigentumsverhältnisse nicht umgesetzt, vor allem die rückwärtigen Grund-
+stücksbereiche werden bis heute vorwiegend als Gartenland genutzt.
+
+
+
+
+(Quelle: Stadt Quickborn)
+                   Ausschnitte Planzeichnung und Bebauungskonzept 1992 (ohne Maßstab)
+
+Den Anlass für den Aufstellungsbeschluss gab die Absicht eines Vorhabenträgers, die rückwär-
+tigen Grundstücksflächen zu bebauen. Da der Vorhabenträger die überwiegenden Grund-
+stücksflächen erworben hat, kann eine geordnete Entwicklung nun eingeleitet werden. Dazu
+wurde der Stadt Quickborn ein dem heutigen Nachfragemarkt angepasstes Bebauungskonzept
+vorgelegt, das von den Festsetzungen des Bebauungsplanes insbesondere hinsichtlich der Be-
+bauungsstruktur und der Erschließungsstraße abweicht (vgl. Abb. 2 und 3).
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                      26.09.2019                     3
+Stadt Quickborn                                                      B-Plan Nr. 82, 1. Änderung
+
+
+
+
+(Quelle: Feldsien Architekten BDA PartGmbB)
+                  Bebauungskonzept Stand 24.01.2018 (ohne Maßstab)
+
+
+
+
+(Quelle: Feldsien Architekten BDA PartGmbB)
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                     26.09.2019                      4
+Stadt Quickborn                                                          B-Plan Nr. 82, 1. Änderung
+
+
+                  Massenmodelle Stand 21.02.2018 (ohne Maßstab)
+
+Planerisches Ziel der Bebauungsplanänderung ist die Ausschöpfung von Nachverdichtungspo-
+tenzialen im Geltungsbereich durch Anpassung bestehenden Planrechts an aktuelle Wohn-
+raumbedürfnisse. Geplant sind vier Baukörper in Form von Mehrfamilienhausbebauung mit je-
+weils zwei Vollgeschossen zzgl. Staffelgeschoss.
+
+Unter den Baukörpern werden zwei Tiefgaragen für die Bewohner angeordnet, ergänzende Be-
+sucherstellplätze sind oberirdisch vorgesehen. Nach jetzigem Planungsstand werden ca. 23
+Wohneinheiten realisiert, sie werden frei finanziert.
+
+Die Konzeption berücksichtigt, dass sich ein Baugrundstück nicht im Eigentum des Vorhaben-
+trägers befindet. Dieses Grundstück wird auch durch die (private) Erschließungsstraße ange-
+bunden und kann zeitlich unabhängig entwickelt werden.
+
+Die bisher im Bebauungsplan für den Änderungsbereich vorgesehene öffentliche Erschlie-
+ßungsstraße zur Anbindung der hinteren Grundstücksteile wurde ebenfalls nicht umgesetzt. Die
+Stadt Quickborn kann die Erschließungsleistung absehbar selber nicht erbringen. Deshalb wird
+eine Vereinbarung mit dem Grundeigentümer darüber geschlossen, dass dieser die Erschlie-
+ßung in angepasster Form übernimmt. Sie soll als private Erschließung hergerichtet werden.
+
+Die Bestandsgrundstücke Pinneberger Straße 1 bis 11a werden in den Geltungsbereich einbe-
+zogen. Es handelt sich um einen historischen Straßenzug, der Ende des 19. Jahrhunderts /
+Anfang des 20. Jahrhunderts entstanden ist. Die Straßenrandbebauung ist zum Teil noch im
+ursprünglichen Zustand erhalten und soll durch die Planung gesichert werden. Ziel ist darüber
+hinaus die Reparatur des Ortsbildes im südlichen Änderungsbereich, indem eine Neubebauung
+planungsrechtlich vorbereitet wird, die sich hinsichtlich Lage und Größe der Bebauung der
+Nachbarbebauung anpasst.
+
+
+
+
+(Quelle: Digitaler Atlas Nord, GeoBasis DE / LVermGeo SH, BKG))
+                  Preußische Landesaufnahmen 1877-1879 und 1902-1932 (ohne Maßstab)
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                          26.09.2019                     5
+Stadt Quickborn                                                                     B-Plan Nr. 82, 1. Änderung
+
+
+
+2         Rechtsgrundlagen
+Der Bebauungsplan wird als Satzung aufgestellt auf den Rechtsgrundlagen:
+     Baugesetzbuch (BauGB) in der Fassung der Bekanntmachung vom 23. September 2004,
+      zuletzt geändert 20. Oktober 2015 (BGBl. I S. 1722),
+     Verordnung über die bauliche Nutzung der Grundstücke (BauNVO) in der Fassung der Be-
+      kanntmachung vom 23. Januar 1990, zuletzt geändert 11. Juni 2013 (BGBl S. 1548),
+     Landesbauordnung Schleswig-Holstein (LBO) in der Fassung der Bekanntmachung vom
+      22. Januar 2009 (GVOBl. Schl.-H. S. 6), zuletzt geändert 14.06.2016, (GVOBl Schl.-H. S.
+      369) sowie
+     Gemeindeordnung für Schleswig-Holstein in der Fassung vom 28. Februar 2003, zuletzt
+      geändert 07.07.2015 (GVOBl Schl.-H. S. 200, 203).
+
+Der Bebauungsplan Nr. 82, 1. Änderung dient der Nachverdichtung im Innenbereich der Stadt
+Quickborn. Daher wird er auf Grundlage des § 13a BauGB im beschleunigten Verfahren als
+„Bebauungsplan der Innenentwicklung“ ohne Durchführung einer Umweltprüfung aufgestellt.
+Dabei ist weder ein Umweltbericht noch eine Eingriffs-/ Ausgleichsbilanzierung erforderlich. Die
+artenschutzrechtliche Betrachtung erfolgt auf der Grundlage des § 44 Bundesnaturschutzge-
+setz.
+
+
+3         Bestand
+
+3.1       Plangeltungsbereich
+Der Plangeltungsbereich befindet sich in zentraler Lage der Stadt Quickborn und ist verkehrs-
+günstig gelegen im Nahbereich der Kreuzung Kieler Straße (B4) / Pinneberger Straße. Nahver-
+sorgungs- und Dienstleistungseinrichtungen sind zum Teil vor Ort bzw. in unmittelbarer Nach-
+barschaft vorhanden. Weitere Einrichtungen sowie der Bahnhof sind in östlicher Richtung in rd.
+400 – 800 m Entfernung über die Bahnhofstraße zu erreichen.
+
+
+
+
+(Quelle: CD-ROM Top 25: Schleswig-Holstein/Hamburg Topographische Karten 1: 25 000, Landesvermessungsamt S.-H.)
+                  Lage im Stadtgebiet (ohne Maßstab)
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                                    26.09.2019                            6
+Stadt Quickborn                                                       B-Plan Nr. 82, 1. Änderung
+
+
+
+Der Plangeltungsbereich umfasst die Flurstücke 83/101, 83/102, 897, 863, 863, 83/104, 83/105,
+898, 899, 869, 870, 83/53, 872, 871, 901, 900, 889, 888, 874, 873 und 240/83 der Flur 24,
+Gemarkung Quickborn.
+
+Er hat eine Größe von rd. 1,03 ha und wird begrenzt durch
+
+    Wohn- bzw. Gewerbegrundstücke im Westen (Pinneberger Straße) ,
+    Wohn- bzw. Gewerbegrundstücke im Norden und Osten (Kieler Straße - Bundesstraße B4)
+     sowie,
+    Wohngrundstücke im Süden (Ahrenskamp).
+
+Das Plangebiet ist sowohl entlang der Pinneberger Straße als auch auf den nördlich angren-
+zenden Grundstücken der Kieler Straße durch eine funktionierende Nutzungsmischung aus
+Wohnen und nicht wesentlich störendem Gewerbe gekennzeichnet. Im Plangebiet befinden sich
+neben den Wohnnutzungen eine physiotherapeutische Praxis und die Johanniter Unfallhilfe
+e.V., auf der gegenüber liegenden Straßenseite befinden sich an der Pinneberger Straße u.a.
+die Stadtwerke Quickborn. An der Südseite der Kieler Straße sind zahlreiche gewerbliche Nut-
+zungen anzutreffen, u.a. Fahrschule, Lieferservice, Bäckerei, Tankstelle, Restaurant.
+
+Die Struktur in dieser historisch gewachsenen Gemengelage entspricht einem Mischgebiet. Die
+rückwärtigen Flächen im Plangebiet sind derzeit als Gartenland genutzt. Die vorhandene Be-
+bauung ist überwiegend zweigeschossig.
+
+
+
+
+(Quelle: Google Earth Pro © 2009 GeoBasis DE/BKG)
+                  Luftbild des Plangebietes mit Umgebung (ohne Maßstab)
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                      26.09.2019                      7
+Stadt Quickborn                                                       B-Plan Nr. 82, 1. Änderung
+
+
+
+3.2      Datengrundlagen
+Die Datengrundlagen sind in Tabelle 1 zusammengestellt.
+
+Tabelle 1         Datengrundlagen
+
+ Daten                           Grundlage                     Quelle / Bezug
+ Formelle Planungen              Flächennutzungsplan           Stadt Quickborn (Inkraftset-
+                                                               zung: 18.04.2001)
+                                 Bebauungsplan Nr. 82          Stadt Quickborn (Inkraftset-
+                                                               zung: 21.05.1992)
+ Informelle Planungen            Bebauungskonzept              Feldsien Architekten BDA
+                                                               PartGmbB 24.01.2018
+ Geltungsbereich                 Aufstellungsbeschluss         Ratsversammlung 27.11.2017
+ Übergeordnete Planungen         Landesentwicklungsplan        Landesentwicklungsplan
+                                                               Schleswig-Holstein 2010
+                                                               (LEP)
+                                 Regionalplan                  Regionalplan für den Pla-
+                                                               nungsraum I Schleswig-Hol-
+                                                               stein Süd (RegPlan I)
+                                 Landschaftsplan Quickborn     Stadt Quickborn, 1999
+ Umweltdaten
+ Boden/Grundwasser               Baugrund / Grundwasserstand   Baugrund Kordinand,
+                                                               15.03.2018
+ Altlasten                       Historische Erkundung         Büro für Geologie und Um-
+                                                               welt, 19.12.2018
+ Altstandorte                    3 Untersuchungen              Büro für Geologie und Um-
+                                                               welt, 19.12.2018 / 05.06.2019
+ Kanalsituation (RW,SW)          Kanalkataster                 Stadt Quickborn
+                                 Hydraulische Berechnungen     Ingenieurgemeinschaft Reese
+                                 Pinneberger Straße            + Wulff GmbH, 18.05.2018
+                                 Wasserwirtschaftliches        Ingenieurgemeinschaft Reese
+                                 Konzept                       + Wulff GmbH, 25.05.2018
+ Klima / Luft / Mensch (Emission, Immission)
+ Lärm                            Lärmkartierung zur Umset-     LLUR, 18.09.2017
+                                 zung der Umgebungslärm-
+                                 richtlinie 2002/49/EG
+                                 Lärmaktionsplanung (2013)     Stadt Quickborn, 30.01.2017
+                                 Schallgutachten               dBCon 13.07.2018 und Er-
+                                                               gänzung 18.09.2019
+ Landschaftsbild                 Ortsbegehung                  Ingenieurgemeinschaft Reese
+                                                               + Wulff GmbH, 2018
+ Flora / Fauna                   Ortsbegehung                  Ingenieurgemeinschaft Reese
+                                                               + Wulff GmbH, 2018
+ Geobasis Daten
+ Liegenschaftskataster           ALKIS                         Stadt Quickborn, 08.03.2018
+ Topographische Bestandsauf-     Lage- und Höhenplan /         Vermessungsbüro Felshart
+ nahme                           Vermessung                    21.09.2017
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       26.09.2019                      8
+Stadt Quickborn                                                       B-Plan Nr. 82, 1. Änderung
+
+
+
+4          Übergeordnete Planung
+Die folgenden übergeordneten Planungen sind relevant:
+    Landesentwicklungsplan Schleswig-Holstein 2010 (LEP),
+    Fortschreibung des Regionalplanes für den Planungsraum I 1998 Schleswig-Holstein Süd
+     (RegPl.),
+    Flächennutzungsplan der Stadt Quickborn.
+
+Im Landesentwicklungsplan Schleswig-Holstein 2010 (LEP) ist die Stadt Quickborn als
+Stadtrandkern I. Ordnung dargestellt. Stadtrandkerne sollen im engen räumlichen Zusammen-
+hang mit dem übergeordneten Zentralen Ort (hier: Norderstedt als Mittelzentrum im Verdich-
+tungsraum Hamburg) Versorgungsaufgaben wahrnehmen. Ihre zentralörtlichen Einrichtungen
+sollen denen vergleichbarer Zentraler Orte entsprechen und in Abstimmung mit dem überge-
+ordneten Zentrum entwickelt werden. Wohnbauliche und gewerbliche Entwicklungen sollen in
+Abstimmung mit dem Zentralen Ort erfolgen (vgl. Kap. 2.2.5 LEP).
+
+
+
+
+(Quelle: Staatskanzlei / Landesplanung)
+                   Ausschnitt aus dem LEP (ohne Maßstab)
+
+Eine Zersiedelung der Landschaft soll verhindert werden. Neue Bauflächen sollen nur in guter
+räumlicher und verkehrsmäßiger Anbindung an vorhandene, im baulichen Zusammenhang be-
+baute tragfähige Ortsteile und in Form behutsamer Siedlungsabrundungen ausgewiesen wer-
+den. Auf eine gute Einbindung der Bauflächen in die Landschaft soll geachtet werden. Zur Ver-
+ringerung der Inanspruchnahme von Grund und Boden sollen Möglichkeiten einer städtebaulich
+angemessenen Verdichtung bestehender oder geplanter Bauflächen genutzt werden. Bei der
+Stadt- und Siedlungsentwicklung, bei städtebaulichen Maßnahmen und Maßnahmen der Orts-
+entwicklung sollen die Erfordernisse eines sparsamen, umweltfreundlichen Energieverbrauchs
+besonders berücksichtigt werden.
+
+Energieoptimierte städtebauliche Strukturen wie kompakte Bauweise, Windschutz und Ausrich-
+tung der Gebäude zur passiven Nutzung der Solarenergie sollten ebenso Beachtung finden wie
+ein baulicher Wärmeschutz auf hohem technischem Standard.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                      26.09.2019                      9
+Stadt Quickborn                                                        B-Plan Nr. 82, 1. Änderung
+
+
+
+Zur Wärmeversorgung von Wohn- und Betriebsstätten soll verstärkt der Aufbau von Nah- und
+Fernwärmenetzen vorgesehen werden (vgl. Kap. 2.7 LEP).
+
+Grundsätzlich kann in allen Kommunen eine bauliche Entwicklung erfolgen. Für den Umfang ist
+maßgebend, ob die Kommune Schwerpunkt der Wohnungsbauentwicklung ist und welche öko-
+logischen, städtebaulichen und infrastrukturellen sowie überörtlichen Aspekte zu beachten sind.
+Die Stadt Quickborn ist ein entsprechender Schwerpunkt, sie hat somit eine besondere Verant-
+wortung für die Deckung des regionalen Wohnungsbedarfs und soll eine Entwicklung über den
+örtlichen Bedarf hinaus ermöglichen (vgl. Kap. 2.5.2 LEP).
+
+In der Fortschreibung des Regionalplanes für den Planungsraum I Schleswig-Holstein
+Süd 1998 (RegPl) wird Quickborn ebenfalls als Stadtrandkern I. Ordnung eingestuft. Die zent-
+ralen Orte einschließlich der Stadtrandkerne sind Schwerpunkte der Siedlungsentwicklung. Sie
+sollen dieser Zielsetzung durch eine vorausschauende Bodenvorratspolitik und durch eine der
+zukünftigen Entwicklung angepasste Ausweisung an Wohnungs-, Gemeinbedarfs- und gewerb-
+lichen Bauflächen gerecht werden (vgl. Kap. 5.1 RegPl).
+
+Das Plangebiet liegt innerhalb des im RegPl. dargestellten baulich zusammenhängenden Sied-
+lungsgebietes und der Siedlungsachse Hamburg-Kaltenkirchen (vgl. Kap. 5.3 RegPl).
+
+
+
+
+(Quelle: Staatskanzlei / Landesplanung)
+                   Ausschnitt aus dem RegPl I (ohne Maßstab)
+
+Durch den Ausbau der Innenstadt Quickborns zu einem leistungsfähigen und attraktiven Dienst-
+leistungszentrum soll die zentralörtliche Funktion von Quickborn gestärkt werden. Möglichkeiten
+zur wohnbaulichen und gewerblichen Weiterentwicklung bestehen insbesondere am Nordrand
+der Stadt sowie im Ortsteil Quickborn-Heide; grundsätzlich ist eine bauliche Verdichtung des
+Bestandes anzustreben (vgl. Kap. 5.6.1 RegPl.).
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        26.09.2019                    10
+Stadt Quickborn                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+Der Plangeltungsbereich ist im wirksamen Flächennutzungsplan (F-Plan) der Stadt Quickborn
+entlang der Pinneberger Straße und der Kieler Straße als gemischte Baufläche sowie im rück-
+wärtigen Bereich als Wohnbaufläche dargestellt. Dem Gebot des § 8 Abs. 2 BauGB, B-Pläne
+aus dem F-Plan zu entwickeln, wird insofern gefolgt.
+
+
+
+
+(Quelle: Stadt Quickborn)
+                   Ausschnitt aus dem F-Plan Quickborn (ohne Maßstab)
+
+
+5          Gutachten / Fachplanungen
+
+5.1        Lärmimmissionen
+Wie aus der Lärmkartierung zur Umsetzung der Umgebungslärmrichtlinie 2002/49/EG des
+LLUR hervorgeht, ist das nördliche Plangebiet Verkehrslärmimmissionen von der Kieler Straße
+ausgesetzt, die eine Überprüfung der Auswirkungen auf den Wohnungsbau erforderlich ma-
+chen.
+
+
+
+
+(Quelle: www.umweltdaten.landsh.de)
+                   Lärmkartierung Straßenlärm - 24 Stunden-Pegel LDEN
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       26.09.2019                      11
+Stadt Quickborn                                                      B-Plan Nr. 82, 1. Änderung
+
+
+
+Neben dem auf das Plangebiet einwirkenden Verkehrslärm ist außerdem zu überprüfen, ob ne-
+gative Auswirkungen durch den zukünftigen Verkehr aus dem Plangebiet auf die angrenzende
+Wohnbebauung zu befürchten sind und inwiefern potenzieller Gewerbelärm im Plangebiet und
+auf den umgebenden Grundstücken das Plangebiet beeinträchtigt.
+
+Dazu wurde eine schalltechnische Untersuchung erarbeitet (dBCon, 13.07.2018 und Ergänzung
+18.09.2019). Der Gutachter kommt zusammengefasst zu folgenden Ergebnissen:
+
+   Zur Abschätzung der Auswirkungen des Mehrverkehrs durch die geplante Wohnbebauung
+    sowie den Umbau des Einmündungsbereich zur Planstraße auf die Nachbarbebauung wur-
+    den zwei Varianten (Prognose-0-Fall und Prognose Planfall) untersucht und verglichen.
+    Diese Ergebnisse zeigen, dass im Prognose-0-Fall (2035) an der vorhandenen Bebauung
+    im Nahbereich der Einmündung Beurteilungspegel von 58 dB(A) tags und 51 dB(A) nachts
+    ermittelt wurden. Im Prognose-Planfall erhöhen sich die Beurteilungspegel um bis zu 4,6
+    dB(A). Die Orientierungswerte der DIN 18005 bzw. die Immissionsgrenzwerte der 16. BIm-
+    SchV für Misch- und Wohngebiete werden weder im Prognose-0-Fall noch im Prognose-
+    Planfall überschritten. Die Schwelle der Zumutbarkeit von 70 dB(A) tags bzw. von 60 dB(A)
+    nachts wird ebenfalls an keinem der Immissionsorte erreicht.
+   Hinsichtlich des Gewerbelärms wurde zu den einzelnen Geschossebenen festgestellt,
+    dass die Orientierungswerte für WA- und MI-Gebiete weitgehend eingehalten werden. Le-
+    diglich im nordöstlichen Plangebiet werden sie in der Nachtzeit überschritten. Dabei sind
+    überwiegend Flächen außerhalb der Baugrenzen betroffen:
+                             Orientierungswerte              Orientierungswerte
+                             für MI-Gebiete                  für WA-Gebiete
+      Erdgeschoss            werden an allen geplanten Ge-   werden an allen geplanten Ge-
+      tags (6 - 22 Uhr)      bäuden und Außenwohnberei-      bäuden und Außenwohnberei-
+                             chen eingehalten.               chen eingehalten.
+      1. Obergeschoss        werden an allen geplanten Ge-   werden an allen geplanten Ge-
+      tags (6 - 22 Uhr)      bäuden und Außenwohnberei-      bäuden und Außenwohnberei-
+                             chen eingehalten.               chen eingehalten.
+      2. Obergeschoss        werden an allen geplanten Ge-   werden an allen geplanten Ge-
+      tags (6 - 22 Uhr)      bäuden und Außenwohnberei-      bäuden und Außenwohnberei-
+                             chen eingehalten.               chen eingehalten.
+      Erdgeschoss            werden innerhalb der Baugren-   werden an allen geplanten Ge-
+      nachts (22 - 6 Uhr)    zen eingehalten und nur im      bäuden eingehalten.
+                             Nordosten (außerhalb der Bau-
+                             grenzen) überschritten.
+      1. Obergeschoss        werden auf den nördlichen Be-   werden an der Nordostseite
+      nachts (22 - 6 Uhr)    standsgrundstücken      über-   des Plangebäudes 2 über-
+                             schritten.                      schritten.
+      2. Obergeschoss        werden auf den nördlichen Be-   werden an der Nordostseite
+      nachts (22 - 6 Uhr)    standsgrundstücken      über-   des Plangebäudes 2 über-
+                             schritten.                      schritten.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                      26.09.2019                    12
+Stadt Quickborn                                                     B-Plan Nr. 82, 1. Änderung
+
+
+
+    Hinsichtlich des Verkehrslärms wurde zu den einzelnen Geschossebenen festgestellt,
+     dass die Orientierungswerte für WA- und MI-Gebiete teilweise überschritten werden:
+                             Orientierungswerte            Orientierungswerte
+                             für MI-Gebiete                für WA-Gebiete
+       Erdgeschoss           werden an allen geplanten Ge- werden an allen geplanten Ge-
+       tags (6 - 22 Uhr)     bäuden und Außenwohnberei- bäuden und Außenwohnberei-
+                             chen eingehalten.             chen eingehalten.
+       1. Obergeschoss       werden an allen geplanten Ge- werden an allen geplanten Ge-
+       tags (6 - 22 Uhr)     bäuden und Außenwohnberei- bäuden und Außenwohnberei-
+                             chen eingehalten.             chen eingehalten.
+       2. Obergeschoss       werden auf den nördlichen Be- werden an der Nordostfassade
+       tags (6 - 22 Uhr)     standsgrundstücken      über- des Plangebäudes 2 und an
+                             schritten.                    den Südfassaden der Plange-
+                                                           bäude 3 und 4 überschritten.
+       Erdgeschoss           werden auf den nördlichen Be- werden an der Nordseite des
+       nachts (22 - 6 Uhr)   standsgrundstücken und ent- Plangebäudes 2, sowie an der
+                             lang der Pinneberger Straße Ostseite der Plangebäude 2, 3
+                             überschritten.                und 4 überschritten.
+       1. Obergeschoss       werden auf den nördlichen Be- werden an der Nordseite des
+       nachts (22 - 6 Uhr)   standsgrundstücken und ent- Plangebäudes 2, sowie an der
+                             lang der Pinneberger Straße Ostseite der Plangebäude 2, 3
+                             überschritten.                und 4 überschritten.
+       2. Obergeschoss       werden auf den nördlichen Be- werden an der Nord- und der
+       nachts (22 - 6 Uhr)   standsgrundstücken und ent- Ostfassade der Plangebäude
+                             lang der Pinneberger Straße 2, 3 und 4, sowie der Nordwest-
+                             überschritten.                fassade des Plangebäudes 1
+                                                           überschritten.
+
+
+
+
+(Quelle: dBCon)
+                  Zuordnung der Gebäudenummerierung
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                     26.09.2019                    13
+Stadt Quickborn                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+
+(Quelle: dBCon)
+                  Lärmkarte Verkehrslärm in der Nacht, 2. OG
+
+     durch den Verkehrslärm werden sowohl im Tages- als auch im Nachtzeitraum höhere Be-
+      urteilungspegel erreicht als durch den Gewerbelärm. Die Dimensionierung von Lärmschutz
+      ist demnach auf Grundlage des Verkehrslärmes vorzunehmen. Aufgrund der Geringfügig-
+      keit der Überschreitungen steht aktiver Lärmschutz außerhalb des wirtschaftlich Vertretba-
+      ren, es werden daher folgende passive Lärmschutzmaßnahmen empfohlen:
+         Festsetzung von Lärmpegelbereichen und Nachtzonen in der Planzeichnung.
+         Passiver Schallschutz durch baurechtliche Anforderungen an die Schalldämmung der
+          Außenbauteile nach DIN 4109. Aufgrund der Anforderungen an die Bauausführung
+          (Wärmeschutz) erfüllen Standardfenster und Fassaden bereits die geforderten Schall-
+          dämmungen der Lärmpegelbereiche I und II. Insofern ist es ausreichend, die schalltech-
+          nischen Nachweise nur für den Lärmpegelbereich III zu fordern.
+         Ergänzender passiver Schallschutz durch schallgedämmte aktive Lüftungseinrichtun-
+          gen für Schlafräume an definierten Fassaden der Plangebäude, sofern diese Fenster
+          aufweisen.
+         Anordnung von Außenwohnbereichen auf belasteten Flächen nur im Lärmschatten der
+          maßgeblichen Straßen.
+
+5.2        Bodenuntersuchung
+Für den Plangeltungsbereich wurde eine Baugrundbeurteilung mit Gründungsempfehlung vor-
+genommen. Dazu wurde der Baugrund mittels 6 Kleinrammbohrungen mit Tiefen von 10 – 18 m
+unter Gelände erkundet (baugrund Kordinand, 15.03.2018).
+
+Nach der derzeit vorliegenden Baugrundbeurteilung lässt sich der Bodenaufbau von der Gelän-
+deoberfläche zur Tiefe wie folgt gliedern:
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         26.09.2019                    14
+Stadt Quickborn                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+
+(Quelle: baugrund Kordinand)
+                  Bohrkern BS 01
+
+
+        Deckschicht/ Auffüllung:
+         überwiegend bestehend aus einer Mutterbodenschicht bzw. humosen Sanden, örtlich
+         (BS8) fehlt der humose Anteil. Unterfläche zwischen 0,5 bis 0,7 [m u. Gel.].
+        Geschiebelehm:
+         bestehend aus schwach tonigen, schluffigen Sanden mit kiesigen Anteilen bis hin zu
+         Steinen. Die Geschiebelehmschicht steht in weich/steifer bis steifer Konsistenz an. In
+         die Schicht sind Sande eingelagert, die örtlich auch die Ober- oder Untergrenze bilden.
+         Die Unterfläche wurde zwischen 1,2 (BS1) und 2,5 (BS2) m u. Gel. erkundet.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         26.09.2019                    15
+Stadt Quickborn                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+         Geschiebemergel:
+          In den allen Aufschlüssen aber zunächst in unterschiedlichen Tiefen und Verteilungen
+          erkundet. Dieser aus schluffigem Sand mit schwachen Ton- und Kiesanteilen mit Stei-
+          nen bestehende gewachsene Geschiebeboden weist halbfeste Konsistenzen auf. Er
+          steht im oberflächennahen Bereich nur in geringen Mächtigkeiten an. Darunter folgen
+          dann teilweise Sande und auf Beckensedimenten basierende Einlagerungen (Becken-
+          Schluff und -Ton) großer Mächtigkeiten bis in Tiefen zwischen 9,5 (BS7, Südostecke)
+          und 11,2 (BS4, Mitte) [m u. Gel.]. Ab diesen Tiefen wurde mit Ausnahme von BS8, die
+          aufgrund mangelnden Bohrfortschritts abgebrochen werden musste, durchgehen Ge-
+          schiebemergel habfester Konsistenz erkundet. Dieser reicht nach dem tiefsten Auf-
+          schluss BS1 mindestens bis in 18 m u. Gel. an. Die eingelagerten Beckensedimente
+          stehen ebenfalls durchgehend in halbfester Konsistenz an. Diese Schicht ist insgesamt
+          eiszeitlich vorbelastet.
+         Wasser wurde im Baufeld in unterschiedlichen Tiefen angetroffen. So wurden Wasser-
+          stände zwischen 0,2 m (BS1, Nordecke) und 0,97 m (BS4, Mitte) eingemessen. Mit Blick
+          auf die bindigen Schichten ist davon auszugehen, dass niederschlagsbedingt Stau- und
+          Schichtenwasser bis nahe Geländenähe ansteigt. Die Analytik des Wassers liegt noch
+          nicht vor.
+
+5.3        Altstandorte / Altablagerungen
+Gemäß seiner Stellungnahme vom 03.07.2018 liegen dem Kreis Pinneberg / Untere Boden-
+schutzbehörde Informationen über eine Altablagerung und drei Altstandorte im Plangeltungsbe-
+reich vor. Daher wurden in Abstimmung mit der Unteren Bodenschutzbehörde eine Historische
+Erkundung und drei orientierende Untergrunduntersuchungen durchgeführt (Büro für Geologie
+und Umwelt, 19.12.2018 und 05.06.2019).
+
+
+
+
+(Quelle: Büro für Geologie und Umwelt)
+                   Ausschnitt Lageplan Probenahmen
+
+Die Gutachter kommen zusammenfassend zu folgenden Bewertungen:
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         26.09.2019                    16
+Stadt Quickborn                                                       B-Plan Nr. 82, 1. Änderung
+
+
+
+Historische Erkundung zur Altablagerung:
+       der Verdacht einer Altablagerung im Plangebiet wurde nicht bestätigt, auf eine Gefähr-
+        dungsbeurteilung kann verzichtet werden. In den Altunterlagen wurden nur Hinweise auf
+        Ablagerungen südlich des Plangebietes, die dort zwischen 1930 und 1940 aufgebracht
+        worden sein sollen, gefunden. Zu diesem Zeitpunkt waren einige der Grundstücke im
+        Plangebiet nachweislich bereits mit Gebäuden, die aktuell noch vorhanden sind, bebaut.
+        In den Baugrundsondierungen aus März 2018 wurden nur geringmächtige Auffüllungen
+        bis zu max. 0,7 m erbohrt.
+
+Orientierende Untersuchungen an drei Altstandorten:
+
+    Alle Altstandorte zum Wirkungspfad Boden – Grundwasser:
+       Eine Gefährdung des Grundwassers besteht nicht, da große Bereiche des Grundstü-
+        ckes versiegelt sind durchgehend bindige, wasserstauende Böden mit größeren Mäch-
+        tigkeiten bis zur maximalen Sondierendteufe von 18 m vorliegen.
+    Altstandort Pinneberger Straße 7-7B:
+       Wirkungspfad Boden – Mensch, direkter Kontakt: Eine Gefährdung der menschlichen
+        Gesundheit durch Bodenbelastungen auf den unversiegelten Außenflächen des Grund-
+        stückes kann bei der aktuellen Nutzung ausgeschlossen werden.
+    Altstandort Pinneberger Straße 9B:
+       Wirkungspfad Boden – Mensch, direkter Kontakt: Eine Gefährdung der menschlichen
+        Gesundheit durch Bodenbelastungen auf den unversiegelten Außenflächen des Grund-
+        stückes Pinneberger Straße 9B kann aufgrund der vorliegenden Ergebnisse aus der
+        Oberbodenuntersuchung bei der aktuellen Nutzung sowie des hohen Anteils der Ober-
+        flächenversiegelung und der in Summe nur rund 170 m² großen beiden Freiﬂächen, aus
+        der die untersuchten Oberbodenmischproben stammen, u. E. ausgeschlossen werden.
+       Wirkungspfad Boden – Nutzpflanze: Eine Gefährdung durch den Schadstoffübergang
+        Boden - Nutzpflanze kann u. E. aufgrund der vorliegenden Ergebnisse aus der Oberbo-
+        denuntersuchung, auch unter Berücksichtigung der o. g. gemittelten BaP-Gehalte für
+        den Wirkungspfad Boden - Mensch ausgeschlossen werden.
+    Altstandort Pinneberger Straße 11 / 11A:
+       Wirkungspfad Boden – Mensch, direkter Kontakt: Eine Gefährdung der menschlichen
+        Gesundheit durch Bodenbelastungen auf den unversiegelten Außenflächen (betrifft Be-
+        probungsflächen 4 und 5) des Grundstückes Pinneberger Straße 11A (Flurstück 83/102)
+        kann aufgrund der vorliegenden Ergebnisse aus der Oberbodenuntersuchung bei der
+        aktuellen Nutzung (Wohnen) nicht ausgeschlossen werden.
+       Wirkungspfad Boden – Nutzpflanze: Eine Gefährdung durch den Schadstoffübergang
+        Boden - Nutzpflanze kann aufgrund der vorliegenden Ergebnisse nicht ausgeschlossen
+        werden (betrifft Beprobungsflächen 4 und 5; Beprobungstiefe jeweils 0,0 m - 0,3 m u.
+        GOK)
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       26.09.2019                    17
+Stadt Quickborn                                                        B-Plan Nr. 82, 1. Änderung
+
+
+
+      Konsequenzen für die Bauleitplanung
+         Aufgrund der erhöhten Benzo(a)pyrengehalte der Beprobungsflächen 4 und 5, die in
+          dem Tiefenbereich von 0,0 m — 0,35 m u. GOK den heranzuziehenden Prüfwert von
+          1 mg/kg TS überschreiten, empfehlen wir, diese unversiegelten Außenflächen in dem
+          Bebauungsplan Nr. 82, 1. Änderung, zu kennzeichnen (z. B.: „Flächen, deren Böden
+          erheblich mit umweltgefährdenden Stoffen belastet sind“). Um eine Gefährdung der
+          menschlichen Gesundheit sowie die Kennzeichnung der o. g. Beprobungsflächen 4 und
+          5 im Zuge des Bauleitverfahrens zu vermeiden, empfehlen wir einen Austausch des
+          Mutterbodens (bis 0,35 m u. GOK). Wir empfehlen, weiterhin zu prüfen, ob der Grund-
+          eigentümer u. U. den Lieferanten des Mutterbodens (der aufgrund seines BaP- bzw.
+          PAK-Gehaltes als LAGA Z2- bzw. LAGA >Z2-Boden einzustufen ist) in Regress nehmen
+          und einen Bodenaustausch verlangen kann.
+
+Im Bebauungsplan werden die Flächen, deren Böden erheblich mit umweltgefährdenden Stof-
+fen belastet sind, entsprechend gekennzeichnet.
+
+5.4        Geologie
+Das Bebauungsgebiet liegt innerhalb einer vom Landesamt für Landwirtschaft, Umwelt und
+ländliche Räume / Geologischer Dienst angegebenen Fläche der Salzstockhochlage, die mit
+einer potenziellen Erdfallproblematik verbunden ist.
+
+Das LLUR / Geologischer Dienst führte dazu in einer Stellungnahme vom 08.12.2017 u.a. aus:
+
+„Als Alternative zu den umfangreichen und kostenintensiven Untersuchungsmaßnahmen zur
+Ermittlung der Höhe der Erdfallgefährdung ist ein vorsorglich höherer Gründungsaufwand und
+statisch-konstruktiver Aufwand in Betracht zu ziehen. Der Statiker sollte für die 4 Wohngebäude
+mit Geschossen einen bautechnischen Vorschlag erarbeiten. Für die Annahmen und Berech-
+nungen ist mindestens der Erdfall in Quickborn Marienhöhe anzusetzen. Aus statistischen Er-
+wägungen zu Erdfällen in Deutschland sind beispielsweise im Sulfatkarst Hessens repräsenta-
+tive Erdfalldimensionen von 1 m – 4 m Durchmesser und 1 m – 4 m Tiefe plausibel, größere
+Dimensionen jedoch nicht vollständig ausgeschlossen.
+
+Ebenso können Hohlräume innerhalb der Deckschichten und innerhalb des Sulfatgesteins auf-
+treten, die im Vorfeld eines Erdfallereignisses entstanden sind, einen Einfluss auf die Bau-
+maßnahme haben. Das Infoblatt vom Landesamt für Bergbau, Energie und Geologie (LBEG)
+Niedersachsen gilt für das Land Niedersachsen und bietet zur Orientierung weiterführende
+Hinweise.
+Laut Aussage des LBEG sind die darin beschriebenen statisch - konstruktiven Anforderungen
+auf einen Bemessungserdfall von 5 m Durchmesser ausgelegt. Wir empfehlen, dass der Bau-
+herr der zuständigen Genehmigungsbehörde konkrete Vorschläge zu statisch - konstruktiven
+Maßnahmen unterbreiten sollte. Diese sind von einem behördlicherseits beauftragten Prüfstati-
+ker zu bestätigen.“
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        26.09.2019                    18
+Stadt Quickborn                                                        B-Plan Nr. 82, 1. Änderung
+
+
+
+Der Geologische Dienst wies bei einer benachbarten Fläche auf folgende Aspekte hin:
+
+   Da in Schleswig-Holstein keine gültigen Anforderungen hinsichtlich der Bebauung in erd-
+    fallgefährdeten Gebieten festgelegt wurden, empfehlen wir vorsorglich auf die Definitionen
+    und konstruktiven Anforderungen für Wohngebäude in erdfallgefährdeten Gebieten (aus
+    Niedersachsen) zurückzugreifen und eine planerische und bautechnische Umsetzung in
+    Anlehnung an die dort benannten Gefährdungsklassen vorzunehmen (vgl. Abb. 14).
+   Aufgrund der nicht vollständig geklärten geologischen Situation sollte vorsorglich die tat-
+    sächliche Ausführung entsprechend den Erfordernissen des geplanten Gebäudes und die-
+    sen Anforderungen (z. B. Gefährdungsklasse 3-4) erfolgen.
+   Es sollte sichergestellt werden, dass im Untergrund des Bebauungsplangebietes keine
+    hydraulischen Einwirkungen erfolgen. Daher sollte auf eine Regenwasserversickerung o-
+    der die Installation von Brunnen im B-Plangebiet verzichtet werden.
+   Werden im Rahmen der Baugrunderkundung abgrenzbare, ggf. mit Weichschichten ver-
+    füllte, Senken erfasst, ist der Geologische Dienst zu informieren. Es wird empfohlen, dann
+    das weitere Vorgehen mit dem geologischen Dienst abzustimmen.
+   Auf eine wärmetechnische Versorgung mittels oberflächennaher Geothermie mit geschlos-
+    senen Sondensystemen sollte auf Grund der örtlichen geologischen Situation des Unter-
+    grundes verzichtet werden.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        26.09.2019                    19
+Stadt Quickborn                                   B-Plan Nr. 82, 1. Änderung
+
+
+
+
+(Quelle: LLUR - Geologischer Dienst)
+                   Gefährdungsklassen
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH   26.09.2019                    20
+Stadt Quickborn                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+5.5      Wasserwirtschaftliches Konzept
+Auf Basis der Baugrunduntersuchung und der Vorgaben aus der Geologie wird als Grundlage
+für den Bebauungsplan ein wasserwirtschaftliches Konzept zur Entsorgung des Oberflächen-
+wassers und Dimensionierung von ausreichendem Stauvolumen in der Planstraße A (Stauka-
+nal) erstellt (Ingenieurgemeinschaft Reese + Wulff GmbH, 25.05.2018).
+
+In diesem Zusammenhang wurde auch die Kapazität des vorhandenen Regenwasserkanals in
+der Pinneberger Straße überprüft, dabei ergab die Hydraulische Berechnung für den Bestand
+hydraulische Überlastungen. Rechnerisch tritt an vielen Schächten Überstau auf, d.h. das Re-
+genwasser kann nicht mehr abfließen und verbleibt auf der Fahrbahn bzw. in tiefer liegenden
+Bereichen an der Oberfläche.
+
+Daher wurde für das geplante WA-Gebiet ein Drosselabfluss ermittelt, der möglichst geringe
+Auswirkungen auf die bestehende Auslastung des Regenwasserkanals hat. Der zulässige Dros-
+selabfluss wurde mit Q max = 6 l/s festgelegt. Dies erfordert eine Regenwasserrückhaltung in-
+nerhalb der Planstraße A mit einem Speichervolumen vom rd. 45 m³. Dies kann z. B. durch
+einen Staukanal DN 1.000 mit 60 m Länge innerhalb der Planstraße realisiert werden. Die ge-
+naue Dimensionierung und Positionierung erfolgt im Rahmen der Objektplanung.
+
+
+5.6      Baumkontrolluntersuchungen
+Als Bewertungsgrundlage für den Bebauungsplan wurde eine Baumbestandserfassung vor-
+genommen, um daraus die erhaltenswerten Bäume zu ermitteln (Ingenieurgemeinschaft Reese
++ Wulff GmbH, 20.02.2018).
+
+Dazu wurde eine optische Baumaufnahme gemäß der Baumkontrollrichtlinien der FLL (For-
+schungsgesellschaft Landschaftsentwicklung und Landschaftsbau e.V.) durch einen entspre-
+chend zertifizierten Baumkontrolleur durchgeführt. Dabei wurden ersichtliche Baumschäden er-
+fasst, die Vitalität der Bäume auf Grundlage der im Winter ersichtlichen arttypischen Jahresaus-
+triebe beurteilt und eine Bewertung des Baumbestandes nach Schadeinstufung gem. GALK
+2002 („Empfehlung zur Beurteilung von Bäumen in der Stadt“) durchgeführt. Auf Grundlage der
+erfassten Daten und unter Berücksichtigung der Baumart und des Baumalters wurden der Zu-
+stand und die Entwicklungsfähigkeit der einzelnen Bäume abgeleitet.
+
+Insgesamt wurden 8 vorhandene Bäume untersucht, davon befinden sich zwei im Plangebiet,
+vier auf der Plangebiets- bzw. Grundstücksgrenze und ein Baum außerhalb des Plangebietes.
+
+Zusammenfassend wurde im Wesentlichen festgestellt, dass kein Baum als besonders erhal-
+tenswert im Sinne der o.g. Schadstufen einzuordnen ist. Die Bestandsbäume sind weder orts-
+oder landschaftsbildprägend noch besitzen sie einen übergeordneten gesetzlichen Schutz
+(z. B. als Naturdenkmal oder Habitatbaum).
+
+Zwei Bäume sind erhaltenswert, davon befindet sich einer im Plangebiet und einer außerhalb.
+Von den übrigen sechs Bäumen sind vier bedingt erhaltenswert und zwei absterbend oder nicht
+erhaltenswert. Von Seiten des Gutachters ist der verbindliche Erhalt der Bestandsbäume durch
+eine Festsetzung im B-Plan nicht erforderlich.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         26.09.2019                    21
+Stadt Quickborn                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+
+(Quelle: Ingenieurgemeinschaft Reese+Wulff GmbH)
+                  Lageplan Baumbestand (ohne Maßstab)
+
+Zur Verifizierung des Erhaltungszustands des Grenzbaumes im nördlichen Plangebiet (Nr. 08
+der Baumbestandserfassung) wurde eine weitergehende Untersuchung durch einen Sach-
+verständigen erstellt (Gartenbau-Ingenieur Uwe Thomsen, 20.03.2018). Abweichend zu der o.g.
+Baumbestandserfassung stuft der Gutachter diese Hainbuche trotz vorhandener Starkastwun-
+den und Wassertaschen als erhaltenswürdig und auch längerfristig erhaltensfähig ein. Jedoch
+wird dringend die Durchführung einer ganzheitlichen Kronenpflege und Entfernung des Efeube-
+wuchses innerhalb von 6 Monaten empfohlen, um Fehlentwicklungen zu bereinigen und die
+weitere Entwicklung des Baumes zu fördern.
+
+
+6         Festsetzungen
+
+6.1       Art der Nutzung
+Die vorhandenen Grundstücke Pinneberger Straße Nr. 1 – 11 werden entsprechend dem
+rechtskräftigen Bebauungsplan Nr. 82 als Mischgebiet (MI) festgesetzt, das in gleicher Entfer-
+nung zur Pinneberger Straße liegende Bestandsgrundstück Nr. 11a wird in das MI-Gebiet ein-
+bezogen. Der Bereich westlich des Gebäudes Pinneberger Straße Nr. 1 wurde bisher als öf-
+fentliche Verkehrsfläche (Parken) festgesetzt. Dieser Bedarf besteht hier nicht mehr, daher wird
+dieser Teilbereich ebenfalls in das MI-Gebiet einbezogen.
+
+Aus dem rechtskräftigen Bebauungsplan Nr. 82 werden abweichend zu dem o.g. pauschalen
+Nutzungskatalog der BauNVO die Einschränkungen beibehalten, dass in den MI-Gebieten
+„sonstige Gewerbebetriebe“ nur ausnahmsweise und Vergnügungsstätten nicht zulässig sind.
+Außerdem werden darüber hinaus Gartenbaubetriebe und Tankstellen ausgeschlossen.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        26.09.2019                     22
+Stadt Quickborn                                                                    B-Plan Nr. 82, 1. Änderung
+
+
+
+Zur näheren Erläuterung:
+
+Mischgebiete (MI) dienen gem. § 6 BauNVO dem Wohnen und der Unterbringung von Gewerbebetrieben, die
+das Wohnen nicht wesentlich stören. Dieses Kriterium erfüllen Betriebe und Anlagen, wenn für die Anwohner
+im Gebiet und in den benachbarten Quartieren ein „ungestörter Feierabend“ und eine „auskömmliche Nacht-
+ruhe“ gewährleistet sind. Neben Wohngebäuden sind hier grundsätzlich Geschäfts- und Bürogebäude, Einzel-
+handelsbetriebe, Schank- und Speisewirtschaften, Beherbergungsbetriebe, sonstige Gewerbebetriebe, Verwal-
+tungsgebäude, Anlagen für kirchliche, kulturelle, gesundheitliche und sportliche Zwecke, Gartenbaubetriebe
+oder Tankstellen zulässig. Dabei sollen gewerbliche Nutzungen und Wohnnutzungen in einem MI-Gebiet etwa
+zu gleichen Anteilen umgesetzt werden. Von der Rechtsprechung als nicht gebietsverträglich eingestuft wurden
+u.a.: Schlossereien und Schmieden, Fleischwarenfabriken, Speditions- und Fuhrunternehmen, Tischlereien,
+Bordelle. Als gebietsverträglich eingestuft wurden u.a.: Werkstättenbetriebe wie Tischlereien und Zimmereien,
+die nur innerhalb von Gebäuden produzieren, Einzelhandelsbetriebe bis 800 m² Verkaufsfläche, kleinere Auto-
+wartungs- und Reparaturdienste, sowie Anlagen zur Unterbringung von Flüchtlingen und Asylbegehrenden.
+
+
+Der östliche Plangeltungsbereich ist im Ursprungsplan als allgemeines Wohngebiet (WA-
+Gebiet) und als reines Wohngebiet (WR-Gebiet) festgesetzt. WR-Gebiete dienen nahezu aus-
+schließlich dem Wohnen, sie sind aufgrund dieser eingeschränkten Zweckbestimmung und dem
+damit einher gehenden sehr hohen Schutzmaßstab prädestiniert für die Planung von Einfamili-
+enhausgebieten. Ihre Ausweisung ist regelmäßig nur dann angezeigt, wenn ein besonderes
+Maß an Wohnruhe gewährleistet werden soll. Unter Berücksichtigung der städtebaulichen Ge-
+samtsituation und Nutzungsstruktur, sowie der zentralen Lage im Stadtgebiet ist diese Zielstel-
+lung hier nicht gegeben. Mit der 1. Änderung wird daher diese Differenzierung aufgehoben und
+die Art der Nutzung auf die Festsetzung als WA-Gebiet beschränkt. Dabei wird der Ausschluss
+von „sonstigen Gewerbebetrieben“, Gartenbaubetrieben und Tankstellen ebenfalls für das WA-
+Gebiet übernommen (Vergnügungsstätten sind hier grundsätzlich nicht zulässig).
+
+Zur näheren Erläuterung:
+
+Allgemeinde Wohngebiete (WA) dienen vorwiegend dem Wohnen, es soll nach Möglichkeit ein ungestörtes
+Wohnen gewährleistet werden. Nach § 4 BauNVO sind hier neben Wohngebäuden im Allgemeinen auch Läden,
+Schank- und Speisewirtschaften zur Versorgung des Gebietes sowie nicht störende Handwerksbetriebe allge-
+mein zulässig. Außerdem dürfen grundsätzlich Anlagen für kirchliche, kulturelle, gesundheitliche und sportliche
+Zwecke errichtet werden. Gem. § 13 BauNVO gehören zu den zulässigen Anlagen ebenfalls Räume für freie
+Berufe (z.B. Versicherungsmakler). Nur im Ausnahmefall sind in einem WA-Gebiet Beherbergungsbetriebe (z.B.
+Pension), kleinere Gewerbebetriebe, Verwaltungsgebäude, Gartenbaubetriebe oder Tankstellen zulässig. Von
+der Rechtsprechung als nicht gebietsverträglich eingestuft wurden u.a.: Wochenendhäuser, Schlossereien,
+Tischlereien, Fleischereien mit Schlachtbetrieben, Sexshops, Fuhrunternehmen, Diskotheken, KFZ-
+Reparaturen, Autohandelsbetriebe, Vergnügungsstätten. Als gebietsverträglich eingestuft wurden u.a.: laden-
+mäßig betriebene Gewerbebetriebe (z.B. Kioske, Friseure, Bäckereien, Fleischereien, Klempner) sowie Anla-
+gen zur Unterbringung von Flüchtlingen und Asylbegehrenden.
+
+
+Mit der Einschränkung der zulässigen Nutzungen soll dem historischen Charakter des Quartiers
+Rechnung getragen und eine Wohnsituation geschaffen werden, die durch nutzungsbedingte
+Einwirkungen (insbesondere Lärmimmissionen) möglichst wenig beeinträchtigt wird. Ein weite-
+res Kriterium ist ihr Flächenbedarf, da in dieser zentrumsnahen Lage mit dem Plangebiet zur
+Deckung des Wohnraumbedarfs beigetragen werden soll.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                                   26.09.2019                       23
+Stadt Quickborn                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+Aus diesen Gründen werden im gesamten Plangebiet auch Sexshops, Bordelle, bordellartige
+Betriebe, sogenannte Swinger-Clubs, gewerbliche Zimmervermietungen zum Zwecke der Vor-
+nahme sexueller Handlungen und artverwandte Gewerbebetriebe ausgeschlossen.
+
+
+6.2      Maß der Nutzung / Höhe baulicher Anlagen
+Das Maß der Nutzung wird im Plangebiet über die Grundflächenzahl, zusammen mit der Zahl
+der Vollgeschosse sowie der Oberkante der Gebäude geregelt.
+
+Die Grundflächenzahl (GRZ) im WA-Gebiet wird von 0,25 auf 0,4 erhöht, da in diesem Bereich
+eine gegenüber der früheren Planung verdichtete Bebauung ermöglicht werden soll. Die fest-
+gesetzten Grundflächenzahlen bedeuten, dass 25 bzw. 40 % der Grundstücksflächen durch
+bauliche Anlagen überdeckt werden dürfen.
+
+Die GRZ wurde in den MI-Gebieten im rechtskräftigen B-Plan mit 0,35 festgesetzt. Seinerzeit
+galt die BauNVO 1977/1986, danach wurden bei der Berechnung der Grundfläche weder Flä-
+chen für Nebenanlagen noch Stellplätze und Garagen angerechnet. Die entstandene Versiege-
+lung durch die Hauptgebäude bewegt sich mit rd. 11 – 33 % überwiegend in diesem vorgege-
+benen Rahmen, auf einem Grundstück werden rd. 40 % erreicht. Unter Berücksichtigung der
+weiteren Versiegelungen durch Nebengebäude, Hofflächen, Stellplätze usw. besteht auf den
+Bestandsgrundstücken ein Versiegelungsgrad von bis zu rd. 100%.
+
+Die GRZ wird unter Berücksichtigung der Bestandssituation auch im MI-Gebieten auf 0,4 erhöht.
+Außerdem wird gem. § 19 Abs. 4 BauNVO eine Überschreitung der zulässigen Grundfläche
+durch die Grundflächen der in § 19 Abs. 4 Satz 1 BauNVO genannten Anlagen bis zu einer GRZ
+von 0,8 zugelassen. So kann unter Berücksichtigung dieser in der BauNVO genannten Ober-
+grenze der Bestand weitgehend berücksichtigt werden. Bei Veränderungen der baulichen An-
+lagen sind ggf. entsprechende Entsiegelungen vorzunehmen bzw. wasserdurchlässigen Mate-
+rialien oder Dachbegrünung zu verwenden (s.u.).
+
+Das Maß der Nutzung im Plangebiet entspricht dem maximal möglichen Ausnutzungsgrad gem.
+§ 17 BauNVO für allgemeine Wohngebiete und bleibt unterhalb des Wertes für Mischgebiete,
+der bei GRZ 0,6 liegt.
+
+Eine Überschreitung der zulässigen Grundflächen um 50 % durch versiegelte Nebenanla-
+gen (z.B. Gartenhäuser, Garagen, Stellplätze, Zuwegungen und Müllstandorte) ist grundsätzlich
+zulässig, aber nur bis max. GRZ 0,8 (§ 19 Abs. 4 S. 2 BauNVO).
+
+Um Maßnahmen zu fördern, die das Regenwasser vor Ort halten und die Abflussrate reduzie-
+ren, können bei der Ermittlung der versiegelten Grundfläche die Grundflächen von nicht
+überdachten Stellplätzen, die aus wasserdurchlässigen Materialien hergestellt sind, nur anteilig
+entsprechend ihrem Abflussbeiwert mitgerechnet werden. Ebenso können Nebenanlagen, die
+mit einer extensiven Dachbegrünung mit einem mindestens 8 cm starken durchwurzelbaren
+Substrataufbau versehen sind, unberücksichtigt bleiben. Das gleiche gilt für nicht überbaute
+Tiefgaragen, die mit einem mindestens 50 cm starken durchwurzelbaren Substrataufbau verse-
+hen sind.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         26.09.2019                    24
+Stadt Quickborn                                                                B-Plan Nr. 82, 1. Änderung
+
+
+
+Im Plangebiet wird die Zahl der Vollgeschosse einheitlich mit maximal zwei festgesetzt, hier
+erfolgt keine Änderung gegenüber dem Ursprungsplan. Die noch nicht konkretisierte Neube-
+bauung im MI-Gebiet nördlich des Kreuzungsbereichs Pinneberger Straße / Planstraße A (Pin-
+neberger Straße Nr. 9b) soll sich hinsichtlich der Lage und Kubatur an den angrenzenden Be-
+standsgebäuden orientieren und zweigeschossig erfolgen. Im WA-Gebiet sind zweigeschossige
+Wohngebäude zuzüglich Staffelgeschoss vorgesehen.
+
+Zur näheren Erläuterung:
+
+Gem. § 2 Abs. 8 der Landesbauordnung (LBO) sind oberirdische Geschosse Vollgeschosse, wenn sie über
+mindestens drei Viertel ihrer Grundfläche eine Höhe von mindestens 2,30 m haben. Um ein Staffelgeschoss
+handelt es sich bei einem obersten Geschoss, wenn es gegenüber mindestens einer Außenwand des Gebäu-
+des zurückgesetzt ist und über weniger als drei Viertel der Grundfläche des darunter liegenden Geschosses
+eine Höhe von mindestens 2,30 m hat.
+
+
+Die Höhe der baulichen Anlagen wird über die Oberkante Gebäude (OK) definiert. Sie be-
+zeichnet das Maß zwischen der Geländehöhe und der obersten Außenkante der Dachhaut. Die
+OK beträgt in den MI-Gebieten maximal 12,0 m und im WA-Gebiet maximal 11,50 m. Diese
+Höhen orientieren sich an dem im Plangebiet und in der Umgebung vorgegebenen Rahmen und
+ermöglichen die geplante zweigeschossige Wohnbebauung mit Staffelgeschoss.
+
+Als Bezugspunkt für die Bestimmung dieser Höhe wird für die MI-Gebiete die Straßenmitte
+mittig vor dem jeweiligen Grundstück in der Pinneberger Straße festgesetzt. Da im WA-Gebiet
+noch keine Straßenverkehrsfläche vorhanden ist, wird hier als maßgebende Geländehöhe ein
+Höhenbezugspunkt in der Planzeichnung festgesetzt. Dieser befindet sich an der Grenze zwi-
+schen den Flurstücken 899 und 900 und hat entsprechend dem Lage- und Höhenplan eine
+Höhe von 21,17 m über NN. Die im WA-Gebiet entsprechend erreichbare maximale Gebäude-
+höhe von 32,67 m über NN fügt sich in das Gesamtbild der Bestandsgebäude, die an der Pin-
+neberger Straße Firsthöhen von bis zu 32,22 m über NN und am südlich angrenzenden Ahrens-
+kamp bis zu 34,97 m über NN aufweisen.
+
+Insgesamt kann mit den Festsetzungen zum Maß der Nutzung und zur Höhe der baulichen
+Anlagen perspektivisch ein städtebaulich geschlossenes Erscheinungsbild im Plangebiet und
+dessen angrenzenden Bereichen erzielt werden.
+
+
+6.3       Bauweise, überbaubare Grundstücksflächen
+Im Ursprungsplan wurde für das Plangebiet die offene Bauweise festgesetzt. Diese wurde auf
+Einzel- und Doppelhäuser beschränkt. Auf diese Differenzierung wird im Plangebiet verzichtet.
+Gemäß § 22 Abs. 2 BauNVO werden in der offenen Bauweise die Gebäude mit seitlichem
+Grenzabstand (gemäß Landesbauordnung - LBO mindestens 3 m) und einer Länge von jeweils
+maximal 50 m errichtet.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                               26.09.2019                     25
+Stadt Quickborn                                                                   B-Plan Nr. 82, 1. Änderung
+
+
+
+
+Zur näheren Erläuterung:
+
+Ein Einzelhaus ist ein allseitig freistehender Baukörper mit Abstand zu den seitlichen und rückwärtigen Grund-
+stücksgrenzen und einer maximalen Länge von 50 m. Die Anzahl der Hauseingänge, Geschosse oder Woh-
+nungen ist unerheblich. Mehrere aneinandergebaute Wohngebäude mit getrennten Eingängen (umgangs-
+sprachlich als Doppelhaushälften- oder Reihenhausscheiben bezeichnet) bilden insgesamt ein Einzelhaus,
+wenn sie auf einem gemeinsamen Grundstück stehen. Ein Doppelhaus entsteht, wenn zwei Gebäude auf be-
+nachbarten Grundstücken durch Aneinanderbauen an der gemeinsamen Grundstücksgrenze zu einer Einheit
+zusammengefügt werden, die wechselseitig verträglich und aufeinander abgestimmt sind.
+
+
+Die überbaubaren Grundstücksflächen werden durch die Festsetzung von Baugrenzen defi-
+niert, nur in diesen Bereichen dürfen Hauptgebäude errichtet werden. Die Baugrenzen dürfen
+gem. § 23 Abs. 3 BauNVO durch die Gebäude nicht überschritten werden, dabei ist ein Vortreten
+von Gebäudeteilen in geringfügigem Ausmaß möglich.
+
+Die überbaubaren Grundstücksflächen werden hier in Form von Baufenstern festgesetzt, die
+den Gebäudebestand in den MI-Gebieten berücksichtigen und sich im WA-Gebiet an dem städ-
+tebaulichen Konzept des Vorhabenträgers orientieren.
+
+In den MI-Gebieten wird der Mindestabstand gem. LBO von 3,0 m an den seitlichen Grenzen
+zum Teil unterschritten, Dieses entspricht dem tatsächlichen Bestand und soll auch zukünftig
+für ggf. erforderliche Neu- oder Ersatzbauten möglich sein. Der tatsächlich erforderliche Grenz-
+abstand der Gebäude ist im Rahmen des jeweiligen Bauantragsverfahrens zu überprüfen.
+
+Nebenanlagen sind selbstständige bauliche Anlagen, die funktional zu einer Hauptnutzung ge-
+hören und im Verhältnis dazu eine Hilfsfunktion haben. Sie sind in Baugebieten grundsätzlich
+auch außerhalb der überbaubaren Grundstücksflächen zulässig, sofern keine abweichenden
+Festsetzungen im Bebauungsplan getroffen werden. Bestimmte Nebenanlagen, z.B. Stellplätze
+und Garagen mit ihren Zufahrten, können im Bebauungsplan räumlich zugeordnet werden.
+
+Für das Plangebiet wird festgesetzt, dass außer in den überbaubaren Grundstücksflächen of-
+fene Stellplätze, Garagen und Carports sowie Tiefgaragen nur innerhalb der festgesetzten Flä-
+chen für Nebenanlagen zulässig sind. Dieses entspricht den Regelungen im Ursprungsplan,
+wobei die Flächendarstellung in der Planzeichnung dem Bebauungskonzept und dem tatsäch-
+lichen Bestand angepasst wurde. Tiefgaragenzufahrten sind auch außerhalb der überbaubaren
+Grundstücksflächen zulässig. Hinsichtlich der Lage und Größe der Stellplätze und Tiefgaragen
+können im Bedarfsfall geringfügige Abweichungen zugelassen werden, wenn dadurch die Wur-
+zelbereiche (= Kronenbereich + 1,5 m Schutzstreifen) der zum Erhalt festgesetzten Bäume nicht
+beeinträchtigt werden.
+
+Festsetzungen zur Stellung der baulichen Anlagen zielen auf die Ausrichtung der Längsachse
+von Gebäuden. Diese ist bei Gebäuden mit einem Satteldach mit der Firstrichtung identisch.
+Sie ergibt sich bei Gebäuden mit anderen Dächern aus dem Verhältnis der Seiten zueinander.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                                  26.09.2019                       26
+Stadt Quickborn                                                        B-Plan Nr. 82, 1. Änderung
+
+
+
+Auf die Festsetzung der Stellung der baulichen Anlagen wird entgegen dem Ursprungsplan ver-
+zichtet, um dadurch die Nutzung von Sonnenenergie oder mindestens eine günstige Nutzung
+der natürlichen Erwärmung nicht unbeabsichtigt einzuschränken. Außerdem ist in der Umge-
+bung des Plangebietes keine homogene Dachlandschaft erkennbar, die entsprechende Rege-
+lungen städtebaulich rechtfertigen ließe.
+
+
+6.4       Immissionsschutz / Altlasten
+Entsprechend den Ergebnissen der schalltechnischen Untersuchung (vgl. Kap. 5.1) werden im
+Bebauungsplan folgende passive Lärmschutzmaßnahmen zum Schutz vor Verkehrslärm fest-
+gesetzt:
+
+Die Außenbauteile der Gebäude (Wände, Dachschrägen, Fenster, Rolladenkästen, Lüftungs-
+einrichtungen) sind im Lärmpegelbereich III entsprechend den Anforderungen nach DIN 4109-
+1:2016-07 (Ausgabe Juli 2016), Tabelle 7 auszuführen. Diese Maßnahmen dienen dem Schutz
+von Aufenthaltsräumen in Wohnungen und von Büroräumen, um gesunde Wohn- und Ar-
+beitsverhältnisse zu gewährleisten. Für Flächen bzw. Gebäudefassaden mit dem Lärmpegelbe-
+reich I und II sind keine Lärmschutzmaßnahmen erforderlich (vgl. Festsetzung Nr. 3.1).
+
+Zur Gewährleistung einer auskömmlichen Nachtruhe sind außerdem in den Nachtzonen 2 und
+3 (Teilflächen im MI- und WA-Gebiet) Maßnahmen an Außenflächen von zum Schlafen ge-
+nutzten Räumen erforderlich. Wenn für diese Räume Fenster eingebaut werden, sind zusätz-
+lich schallgedämmte Lüftungseinrichtungen vorzusehen. Bei Gebäuden in der Nachtzone 2
+kann auf Lüftungseinrichtungen verzichtet werden, sofern die Schlafräume an der dem schall-
+technisch maßgeblichen Straßenverlauf abgewandten Außenfassade liegen. Die Lüftungsein-
+richtungen sind außerdem für definierte Fassadenseiten im WA-Gebiet und grundsätzlich für
+die Nachtzone 1 nicht erforderlich (vgl. Festsetzung Nr. 3.2).
+
+Da die Lärmimmissionen im Wesentlichen von den umgebenden Straßen kommen, sind in den
+MI-Gebieten die sogenannten Außenwohnbereiche (Balkone, Terrassen, Loggien) im Lärm-
+pegelbereich III im Lärmschatten zur Pinneberger Straße zulässig. Dieses sind die südöstlichen
+Gebäudefassaden, die durch das jeweilige Hauptgebäude abgeschirmt sind. Im WA-Gebiet sind
+Außenwohnbereiche im Lärmpegelbereich II nur im Lärmschatten zur Kieler Straße, d.h. an den
+südwestlichen Gebäudefassaden, zulässig (vgl. Festsetzung Nr. 3.3).
+
+Ausnahmen von diesen Festsetzungen sind möglich, wenn im Rahmen des jeweiligen Bauan-
+tragsverfahrens nachgewiesen wird, dass aus der tatsächlichen Lärmbelästigung geringere An-
+forderungen an den Schallschutz resultieren.
+
+Im Bebauungsplan werden hinsichtlich der Konfliktlage zum Gewerbelärm keine weiteren Fest-
+setzungen zum Immissionsschutz getroffen:
+
+     Da die Plangebietsflächen in Innenstadtlage soweit wie möglich zur Nachverdichtung ge-
+      nutzt werden sollen, lässt sich grundsätzlich eine Nachbarschaft zu vorhandenen Immissi-
+      onsquellen nicht vermeiden.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        26.09.2019                    27
+Stadt Quickborn                                                       B-Plan Nr. 82, 1. Änderung
+
+
+
+   Ein aktiver Lärmschutz in Form einer Lärmschutzwand an der nördlichen Plangebiets-
+    grenze Lärmschutzanlage ist städtebaulich nicht gewollt, da sie eine optische Trennungs-
+    wirkung zwischen dem Neubaugebiet und dem vorhandenen Stadtgebiet ausübt. Außer-
+    dem ist bei der geplanten Höhe der neuen Gebäude von einer unzumutbaren Gesamthöhe
+    der Anlage auszugehen.
+   In begründeten Einzelfällen sind Überschreitungen der Orientierungs- bzw. Immissions-
+    richtwerte möglich, so lange die Schwelle zur Gesundheitsgefahr nicht überschritten wird.
+    Diese liegt bei 70 dB(A) tags und 60 dB(A) nachts und wird in diesem Fall bei weitem nicht
+    erreicht. Begründeten Einzelfällen liegen u.a. vor, wenn durch gewachsene Strukturen
+    und/oder Ortsüblichkeit der Nutzungen stärkere Immissionen hervorgerufen werden oder
+    die höheren Vorbelastungen sozial akzeptiert werden. Eine entsprechende Gemengelage
+    liegt mit der Bebauung und Nutzungsstruktur an der Kieler Straße vor.
+   Auf einen höheren Abstand der nördlichen Baugrenzen im WA-Gebiet zur Tankstelle wird
+    aus städtebaulichen Gründen abgesehen, da sich das vorgesehene Bebauungskonzept
+    mit zweigeschossiger Bebauung dann nicht mehr realisieren lässt. Die erforderlichen Ab-
+    standsflächen nach der Landesbauordnung sind bereits ausgeschöpft.
+    Hinweis: Die möglichen Lärmbeeinträchtigungen zur Nachtzeit im WA-Gebiet sind nach
+    einer städtebaulichen Abwägung durch die Stadt Quickborn hinzunehmen und stellen keine
+    erhebliche Belastung dar.
+   Die störende Wirkung von Lärmimmissionen wird individuell unterschiedlich wahrgenom-
+    men. Grundlegend ist davon auszugehen, dass die Merkbarkeitsschwelle für die Erhöhung
+    des Lärms bei 1-3 dB(A) liegt. Diese Schwelle wird eingehalten.
+   Nach ständiger Rechtsprechung sind die Anforderungen an die erforderliche Wohn- bzw.
+    Schlafruhe im Gebäude bei Innenpegeln von 40 dB(A) am Tag und 30 dB(A) in der Nacht
+    noch gewahrt. Für leicht gekippte Fenster wird eine Abschirmwirkung von bis zu 15 dB(A)
+    angesetzt, insofern kann der zumutbare Nachtwert bei dem ermittelten Außenpegel von
+    nachts max. 43 dB(A) durch Eigenmaßnahmen eingehalten werden.
+
+Bestehende gewerbliche Nutzungen wurden in der schalltechnischen Untersuchung berück-
+sichtigt und müssen aufgrund des Bestandsschutzes die o.g. Lärmschutzmaßnahmen nicht ex-
+plizit nachweisen. Sollten in den bereits weitgehend bebauten MI-Gebiete jedoch Grundstücke
+neu bebaut werden oder vorhandene Gebäude umgenutzt werden, ist § 15 Abs. 1 BauNVO zu
+beachten, wonach die in den Baugebieten zulässigen bauliche und sonstige Anlagen im Einzel-
+fall unzulässig sind, wenn von ihnen Belästigungen oder Störungen ausgehen können, die nach
+der Eigenart des Baugebiets im Baugebiet selbst oder in dessen Umgebung unzumutbar sind,
+oder wenn sie solchen Belästigungen oder Störungen ausgesetzt werden.
+
+Entsprechend der Ergebnisse der orientierenden Untersuchung zu Altstandorten (vgl. Kap 5.3)
+werden im südlichen Plangebiet die Flächen, deren Böden erheblich mit umweltgefährdenden
+Stoffen belastet sind, gekennzeichnet. Hier sind nach bodenrechtlichen Vorgaben Maßnahmen
+zur Sicherstellung gesunder Wohn- und Arbeitsverhältnisse durch den Grundstückseigentümer
+notwendig. Diese sind vor Beginn von Erdarbeiten mit der unteren Bodenschutzbehörde abzu-
+stimmen.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       26.09.2019                    28
+Stadt Quickborn                                                       B-Plan Nr. 82, 1. Änderung
+
+
+
+Durch die Beauftragung einer fachlichen Begleitung ist die erfolgreiche Umsetzung der Sanie-
+rungs-/, Sicherungsmaßnahmen für die Wirkungspfade Boden-Mensch und Boden-Nutzpflanze
+sicherzustellen und in einer Dokumentation gegenüber der unteren Bodenschutzbehörde nach-
+zuweisen.
+
+
+6.5      Grünordnung
+Die Bestandsbäume an der Pinneberger Straße (Linde) und auf der östlichen Plangebiets-
+grenze (Hainbuche) werden zum Erhalt festgesetzt. Sie sind in ihrem arttypischen Habitus dau-
+erhaft zu erhalten und bei Abgang gleichwertig durch einen großkronigen Laubbaum zu erset-
+zen.
+
+Der Wurzelschutzbereich (Kronenbereich zuzüglich eines 1,5 m breiten Schutzstreifens) der
+Linde und der Hainbuche sind von Abgrabungen, Geländeaufhöhungen, Versiegelungen sowie
+Leitungen freizuhalten. Eine Ausnahme bildet der geringfügig über die festgesetzte Grünfläche
+hinausragende Wurzelschutzbereich der Linde im Einmündungsbereich der Planstraße A; in
+einem 1,5 m breiten Streifen der privaten Straßenverkehrsfläche neben der privaten Grünfläche
+dürfen keine Leitungen verlegt werden, ein wurzelfreundlicher Aufbau ist herzustellen.. Ebenso
+sind die Wurzelschutzbereiche der zwei weiteren Bäume auf den östlich angrenzenden Grund-
+stücksflächen, die zwar außerhalb des Plangebietes stehen, aber mit ihren Kronen in das Plan-
+gebiet hinein ragen, von Abgrabungen, Geländeaufhöhungen, Versiegelungen sowie Leitungen
+freizuhalten. Während der Baudurchführung sind in allen Wurzelschutzbereichen Baumschutz-
+maßnahmen gemäß DIN 18920 und RAS-LP 4 durchzuführen.
+
+Als Eingrünung der geplanten Wendeanlage in der Planstraße A wird eine Baumneupflanzung
+in der Planzeichnung festgesetzt. Hier ist ein großkroniger Laubbaum mit einer offenen Vege-
+tationsfläche von mind. 28 m² und einem durchwurzelbaren Volumen von mind. 12 m³ zu pflan-
+zen und dauerhaft zu erhalten (Arten gemäß Pflanzempfehlung, vgl. Kap. 10.6).
+
+Die private Grünfläche, die zum Schutz der zu erhaltenden Linde dient, ist als Rasenflächen
+zu pflegen und zu erhalten.
+
+Als Maßnahme zum Schutz, zur Pflege und zur Entwicklung von Boden, Natur und Landschaft
+wird festgesetzt, dass im Plangeltungsbereich die nicht überbauten Bereiche von Tiefgaragen
+mit einem mindestens 30 cm starken, durchwurzelbaren Substrataufbau zu versehen und zu
+begrünen sind, sofern sie nicht für Stellplätze, Wege, Terrassen und Feuerwehrzufahrten erfor-
+derlich sind.
+
+
+7        Verkehrliche Erschließung
+Die verkehrliche Erschließung des Plangebietes erfolgt über die Pinneberger Straße, bei der es
+sich um eine Tempo-30 Zone handelt. Das WA-Gebiet wird über die Planstraße A an die Pin-
+neberger Straße angebunden, sie ist als Privatweg vorgesehen.
+
+Deren Einmündung entspricht dem Ursprungsplan, jedoch wird die Planstraße A dem gegen-
+über verkürzt und erhält eine größere Wendeanlage. Diese ist mit einem Durchmesser von
+22,0 m für die Befahrbarkeit mit Müllfahrzeugen ausgelegt. Die Dimensionierung der Planstraße
+A wird nach den Grundsätzen des flächensparenden Umgangs mit Grund und Boden geplant.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       26.09.2019                    29
+Stadt Quickborn                                                         B-Plan Nr. 82, 1. Änderung
+
+
+
+Sie soll möglichst gering, jedoch leistungsfähig ausgebaut werden. Sie erhält einen Gesamt-
+querschnitt von 5,60 m und ist im Mischprinzip ohne separaten Gehweg vorgesehen.
+
+Auf Höhe der nördlich angrenzenden Bestandsbebauung erfolgt eine Einengung der Fahrbahn
+auf 3,50 m. Diese dient gleichzeitig der Reduzierung der Fahrgeschwindigkeit.
+
+Im Bereich der Planstraße A sind Grundstückszufahrten für die Grundstücke Pinneberger
+Straße 9a und 11a vorhanden. Entsprechende dingliche Sicherungen dieser Rechte erfolgen
+über privatrechtliche Vereinbarungen zwischen dem Vorhabenträger und den Anliegern.
+
+Grundsätzlich sind auf Grundlage der Landesbauordnung die notwendigen Stellplätze für An-
+lieger und Besucher auf den Grundstücken im Rahmen des jeweiligen Bauantragsverfahrens
+nachzuweisen. Diese Stellplätze sollen nach derzeitigem Planungsstand vorrangig in zwei Tief-
+garage unterhalb der Baukörper angeordnet werden, so dass die Grundstücksflächen weitge-
+hend von parkenden Fahrzeugen und Versiegelungen für Stellplätze freigehalten und durch-
+grünt werden können.
+
+Ergänzend sind im Bereich der Wendeanlage Flächen für 5-6 Besucherstellplätze berücksich-
+tigt, um hier einfach zu erreichende Parkmöglichkeiten zu geben. (Einer dieser Stellplätze ent-
+fällt ggf. zugunsten einer Tiefgaragenzufahrt zum Flurstück 83/105). Je ein weiterer Besucher-
+stellplatz kann im Straßenraum vor und hinter der Straßeneinengung angeordnet werden. Ein
+weiterer Stellplatz befindet sich südlich der Einengung, hierzu wurde im Rahmen der Bebauung
+des Flurstücks 83/102 eine entsprechende Baulast eingetragen.
+
+Insgesamt können für die Neubebauung 8-9 Besucherstellplätze in der Planstraße A vorgese-
+hen werden. Lage und Ausgestaltung der Stellplätze und des Privatwegs werden in der nach-
+folgenden Erschließungsplanung präzisiert.
+
+Für offene Stellplätze, Garagen und Carports sowie für Tiefgaragen werden im Plangebiet unter
+Berücksichtigung der vorhandenen Bestandsnutzungen entsprechende Flächen für Nebenan-
+lagen festgesetzt. Diese baulichen Anlagen sind außer in den überbaubaren Grundstücksflä-
+chen nur in diesen Bereichen zulässig.
+
+Das Plangebiet ist über die HVV-Buslinien 294 und 594 an das ÖPNV-Netz der Metropolregion
+Hamburg angeschlossen. Die dem Plangebiet nächstgelegene Haltestelle ist Quickborn, Kirche
+in einer Distanz von ca. 150 m (Luftlinie bis Mitte Plangebiet). Die genannten Buslinien knüpfen
+in ihrem weiteren Verlauf an diverse weitere HVV-Bahn- und –Buslinien an.
+
+
+8        Ver- und Entsorgung
+Die Grundstücke in den MI-Gebieten sind voll erschlossen. Das WA-Gebiet kann an die vorhan-
+denen Versorgungsleitungen der Stadtwerke Quickborn (Trink- / Löschwasser, Strom, Gas,
+Telekommunikation) in der Pinneberger Straße angeschlossen werden.
+
+Das Plangebiet liegt innerhalb der vom Geologischen Dienst angegebenen Fläche der Salz-
+stockhochlage, es liegt ein Verdachtsmoment für eine Erdfallgefährdung im Untergrund vor.
+Nach Auskunft des LLUR sollte daher hier auf eine Regenwasserversickerung oder die Instal-
+lation von Brunnen verzichtet werden (vgl. Kap. 5.3).
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         26.09.2019                    30
+Stadt Quickborn                                                          B-Plan Nr. 82, 1. Änderung
+
+
+
+Festgesetzt wird daher, dass das auf den versiegelten Grundstücksflächen und den Dachflä-
+chen anfallende Oberflächenwasser der Regenwasserkanalisation in der Pinneberger Straße
+zuzuleiten ist. Dabei ist das im WA-Gebiet anfallende Oberflächenwasser gedrosselt in die Vor-
+flut zu leiten. Eine Versickerung im Plangebiet ist grundsätzlich unzulässig.
+
+Die Dimensionierung von ausreichendem Stauvolumen in der Planstraße A (Staukanal) erfolgt
+im Rahmen eines wasserwirtschaftlichen Konzeptes, vgl. Kap. 5.4.
+
+Die Abwasserentsorgung soll ebenfalls über neue Leitungen im Privatweg Richtung Pinne-
+berger Straße erfolgen. Die vorhandenen Schmutzwasserkanäle sind ausreichend dimensio-
+niert, um die zusätzlichen Abflüsse aufzunehmen.
+
+Die Befahrbarkeit der Planstraße A mit Müllfahrzeugen ist gegeben, vgl. dazu Kap. 7.
+
+
+9        Örtliche Bauvorschriften über Gestaltung
+Für die Gebäude werden örtliche Bauvorschriften gem. § 84 der Landesbauordnung Schleswig-
+Holstein (LBO) erlassen, um ein möglichst einheitliches Erscheinungsbild und eine gestalteri-
+sche Einbindung in das Ortsbild zu gewährleisten. Um dabei eine möglichst hohe Flexibilität und
+genügend Spielräume für die gestalterische und funktionale Vielfalt zu ermöglichen, werden nur
+einzelne, grundlegende Festsetzungen getroffen.
+
+Entsprechend dem Ursprungsplan sind in den MI-Gebieten für die Hauptgebäude nur
+symmetrische Dächer mit einer Dachneigung von 35° - 45° zulässig. Dacherker und Gauben
+dürfen zusammen maximal die Hälfte der Dachlänge je Seite einnehmen. Ausnahmsweise sind
+auf einer Grundfläche von 20 % der Gesamtgebäudefläche für Gebäudeteile (z.B. Wintergärten,
+Windfänge, Eingangsüberdachungen) andere Dachneigungen zulässig.
+
+Zur Dacheindeckung der Hauptgebäude ist für geneigte Dächer eine Pfannendeckung in den
+Farben Rot bis Rotbraun (vergleichbar RAL 2001, 3000-3011, 8001-8004) zu wählen. Glän-
+zende Dacheindeckungen sind unzulässig, engobierte Dachpfannen sind zulässig. Anlagen zur
+aktiven und passiven Nutzung der Solarenergie und Dachbegrünungen sind zulässig.
+
+Für die Fassaden sind nur nicht glänzende Materialien zu verwenden. Eine Ausnahme bilden
+dabei die Fensterflächen und Anlagen zur aktiven und passiven Nutzung der Solarenergie. Für
+die Außenwände der Hauptgebäude sind Klinker bzw. Vormauerziegel oder Putzfassaden zu
+verwenden. Ausnahmsweise sind für insgesamt je 30% der Außenwandflächen als Materialien
+auch Naturholzverkleidungen, Kunstschiefer und Schiefer, Glas, unbehandelte, naturbelassene
+oder pulverbeschichtete Metallverkleidungen zulässig.
+
+Oberirdische Stellplatzanlagen und Carports sind hinsichtlich Materialien, Farben sowie Aus-
+stattung als einheitliche Gruppe zu gestalten, die einheitliche Gestaltung ist dauerhaft zu erhal-
+ten und Müllstandorte sind mit einem festen Sichtschutz sowie zusätzlicher Bepflanzung zu um-
+geben.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                          26.09.2019                    31
+Stadt Quickborn                                                       B-Plan Nr. 82, 1. Änderung
+
+
+
+Werbeanlagen sind nur an der Stätte der Leistung zulässig. Flächige Werbeanlagen und
+Schriftzüge aus einzelnen Buchstaben an Gebäuden dürfen zusammen einen Anteil von 15 %
+der jeweiligen Fassadenfläche nicht überschreiten. Freistehende Werbeanlagen und Fahnen-
+masten, Werbeanlagen an Gebäuden oberhalb der Traufe sowie reflektierende Werbeanlagen
+und Werbeanlagen mit wechselndem oder bewegtem Licht sind nicht zulässig.
+
+
+10       Landschaftsplanerische Grundlagen
+
+10.1     Rechtlicher Hintergrund
+Der Bebauungsplan wird auf der Grundlage des § 13a BauGB im beschleunigten Verfahren
+aufgestellt, so dass auf die Umweltprüfung und die Erstellung eines Umweltberichtes verzichtet
+werden kann. Gemäß § 1 Abs. 6 Nr. 7 BauGB sind die Belange des Umweltschutzes einschließ-
+lich des Naturschutzes und der Landschaftspflege zu berücksichtigen und es ist zu überprüfen,
+ob bei der Umsetzung der Planung artenschutzrechtliche Belange gemäß § 44 BNatSchG (Bun-
+desnaturschutzgesetz) oder ob gesetzlich geschützte Biotope gemäß § 30 BNatSchG i.V.m.
+§ 21 LNatSchG (Landesnaturschutzgesetz) betroffen sind. Die hier zusammengestellten land-
+schaftsplanerischen Grundlagen bieten die zu diesen Belangen notwendigen Informationen und
+Prüfungsergebnisse.
+
+Eingriffe, die aufgrund der Aufstellung des Bebauungsplanes zu erwarten sind, gelten im Sinne
+des § 1a Abs. 3 Satz 6 BauGB als vor der planerischen Entscheidung erfolgt oder zulässig.
+Nach § 18 BNatSchG Abs. 2 ist auf Vorhaben innerhalb der im Zusammenhang bebauten Ort-
+steile (Innenbereich) nach § 34 BauGB die Eingriffsregelung nicht anzuwenden. Somit wird das
+hier geplante Vorhaben nicht als Eingriff gewertet.
+
+
+10.2     Bestand und Bewertung von Naturhaushalt und Landschaftsbild
+
+10.2.1 Schutzgebiete und -objekte
+In der näheren Umgebung des Plangebietes sind keine Natura 2000- oder Naturschutzgebiete
+vorhanden. Das Plangebiet liegt weder in einem Landschaftsschutzgebiet noch in einem Was-
+serschutzgebiet.
+
+Auch sind keine Archäologischen Denkmale oder andere Kulturdenkmale vorhanden.
+
+Besonders geschützte Biotope (§21 LNatSchG) sind innerhalb des Plangebietes nicht vorhan-
+den.
+
+
+10.2.2   Schutzgut Arten und Lebensräume
+
+Biotop- und Nutzungstypen
+Nach § 1 BNatSchG sind Tiere und Pflanzen als Bestandteile des Naturhaushalts in ihrer na-
+türlichen und historisch gewachsenen Artenvielfalt zu schützen, zu pflegen, zu entwickeln und
+soweit erforderlich wiederherzustellen. Zur Erfassung der Biotop- und Nutzungstypen erfolgte
+im März 2018 eine Geländebegehung. Tabelle 2 nennt die dabei innerhalb des Plangebietes
+sowie angrenzend erfassten Biotoptypen.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                       26.09.2019                    32
+Stadt Quickborn                                                           B-Plan Nr. 82, 1. Änderung
+
+
+Tabelle 2         Biotoptypen im Plangebiet und in angrenzenden Flächen
+
+  Biotoptyp / Lage                   Beschreibung
+
+  Laubbaum (HEy)                   = Brusthöhen-Stammdurchmesser
+  An der Pinneberger Str., im        Winter-Linde (Tilia cordata); ( 83 cm)
+  Vorgarten der Hausnummer 11        (Nr. 1 im Baumbestandsplan; erhaltenswert)
+  Zentral im Plangebiet gelegen      Weide (Salix spec.); ( 80 cm)
+                                     (Nr. 2 im Baumbestandsplan; nicht erhaltenswert)
+  Auf der östlichen Grenze des       Hänge-Birke (Bezula pendula); ( 50 cm)
+  Plangebiets                        (Nr. 3 im Baumbestandsplan; nicht erhaltenswert)
+  Außerhalb des Plangebiets an       Hänge-Birke (Bezula pendula); ( 50 cm)
+  der östlichen Grenze               (Nr. 4 im Baumbestandsplan; bedingt erhaltenswert)
+  Außerhalb des Plangebiets an       Hänge-Birke (Bezula pendula); ( 40 cm)
+  der östlichen Grenze               (Nr. 5 im Baumbestandsplan; bedingt erhaltenswert)
+  Außerhalb des Plangebiets an       Gemeine Buche (Fagus sylvatica); ( 50 cm)
+  der östlichen Grenze               (Nr. 6 im Baumbestandsplan; erhaltenswert)
+  An der östlichen Grenze des        Sal-Weide (Salix caprea); ( 15 cm)
+  Plangebiets                        (Nr. 7 im Baumbestandsplan; nicht erhaltenswert)
+  Auf der östlichen Grenze des       Hainbuche (Carpinus betulus); ( 70 cm),
+  Plangebiets - Grenzbaum            (Nr. 8 im Baumbestandsplan; bedingt erhaltenswert)
+  Garten, strukturarm (SGz)
+  Rückwärtig gelegene Gärten         Strukturarme (Haus-) Gärten mit Dominanz von Rasenflä-
+  der Häuser an der Pinneberger      chen und/oder Koniferen, vereinzelten Gehölzstrukturen und
+  Str. und Kieler Str.               Abgrenzungen aus Laubholz- oder Thuja-Hecken. Vereinzelt
+                                     kleinere und größere Gartenteiche
+  Rasenfläche, arten- und strukturarm (SGr)
+  Für die Bebauung vorgesehene       Regelmäßig gemähte Rasenfläche
+  Fläche
+
+In Tabelle 3 ist die ökologische Bedeutung / Empfindlichkeit dieser Biotoptypen dargestellt.
+
+Tabelle 3         Bestand und Bewertung der Biotoptypen im Untersuchungsraum
+
+                                                               Ökologische Bedeutung /
+  Code      Biotoptyp                Schutzstatus                  Empfindlichkeit*
+
+                                                         besonders       allgemein        gering
+
+  HEy       Laubbaum                         /                       X
+
+   SGz      Garten, strukturarm              /                                              X
+
+   SGr      Rasenfläche,    arten-           /                                              X
+            und strukturarm
+
+* Einstufung entsprechend Runderlass des Innenministeriums und des Ministeriums für Energie-
+ wende, Landwirtschaft, Umwelt und ländliche Räume vom 09.12.2013 über das „Verhältnis der
+ naturschutzrechtlichen Eingriffsregelung zum Baurecht“
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                          26.09.2019                       33
+Stadt Quickborn                                                          B-Plan Nr. 82, 1. Änderung
+
+
+
+Tiere: Faunistische Potenzialabschätzung und artenschutzrechtliche Betrachtung
+Allgemein ist festzustellen, dass die für die Bebauung vorgesehenen Flächen eine nur geringe
+Lebensraum- und Habitatfunktion für Tiere haben können.
+
+Die Bäume und Gärten im Plangebiet und auch im Umfeld dürften weit verbreiteten und anpas-
+sungsfähigen Tierarten Lebensraum bieten.
+
+Für das Plangebiet und seine Umgebung ist unter dem Aspekt des Artenschutzes gem.
+§ 44 BNatSchG eine Potenzialabschätzung für die Tierwelt durchzuführen. Dabei ist zu klären,
+ob gem. § 7 BNatSchG streng geschützte oder besonders geschützte Arten von der Umsetzung
+der Planung betroffen sein können.
+
+Vögel
+
+Es liegen keine Hinweise auf streng geschützte Arten vor. Allerdings sind alle einheimischen
+Vogelarten nach der EU-Vogelschutzrichtlinie geschützt.
+
+In den im Plangebiet vorkommenden Gehölzen (Bäume, Hecken, Gebüsche) ist das Vorkom-
+men häufiger und ungefährdeter Brutvogelarten möglich. Grundsätzlich sind in diesen Gehölz-
+strukturen Arten zu erwarten, die als störungsunempfindlich und als relativ flexibel in Bezug auf
+den Brutplatz zu bezeichnen sind.
+
+Es ist davon auszugehen, dass die Bäume, Hecken und Gebüsche im Plangebiet potenzielle
+Brutstandorte von Gehölzfreibrütern sind. Hierzu zählen z.B. Buchfink (Fringilla coelebs),
+Schwanzmeise (Aegithalos caudatus), Heckenbraunelle (Prunella modularis), Zaunkönig (Tro-
+glodytes troglodytes), Singdrossel (Turdus philomelos), Gartengrasmücke (Sylvia borin) und
+Zilpzalp (Phylloscopus collybita).
+
+Die Bäume im Plangebiet stellen potenzielle Brutstandorte der Gehölzhöhlenbrüter einschließ-
+lich der Nischenbrüter dar. Von den Arten dieser Gilde können z.B. vertreten sein: Garten-
+baumläufer (Certhia brachydactyla), Feldsperling (Passer montanus), Gartenrotschwanz (Phoe-
+nicurus phoenicurus), Blaumeise (Parus caeruleus), Kohlmeise (Parus major).
+Die Verbotstatbestände des § 44 (1) Satz 1 bis 3 (Tötungsverbot, Störungsverbot, Verbot der
+Beschädigung und Zerstörung von Fortpflanzungs- und Ruhestätten) werden nicht ausgelöst,
+solange Maßnahmen wie z.B. Fällungen und Rodungen von Gehölzen innerhalb der zulässigen
+Frist vom 01. Oktober bis Ende Februar durchgeführt werden. Kann der Beginn der Maßnahmen
+nicht innerhalb dieses Zeitraumes gelegt werden, ist eine vorherige Begehung durchzuführen
+und ggf. eine Genehmigung / Ausnahme gemäß § 45 BNatSchG einzuholen bzw. eine Betrof-
+fenheit auszuschließen.
+
+Es ist davon auszugehen, dass für die Brutvögel im Plangebiet keine zusätzlichen Beeinträch-
+tigungen durch die geplante Nutzung entstehen. Es sei darauf hingewiesen, dass sowohl in
+Bezug auf Brutplätze als auch in Bezug auf das Nahrungsangebot in der Umgebung des Plan-
+gebietes Ausweichmöglichkeiten für die potenziellen Brutvögel vorhanden sind.
+
+Der Erhaltungszustand der lokalen Populationen verschlechtert sich durch die mit der Planung
+vorbereiteten Baumaßnahmen nicht.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                         26.09.2019                     34
+Stadt Quickborn                                                        B-Plan Nr. 82, 1. Änderung
+
+
+
+Fledermäuse
+
+Auch alle europäischen Fledermausarten wurden in Anhang II bzw. IV der Richtlinie
+92/43/EWG aufgenommen und sind damit streng geschützt. Für sie gelten die artenschutzrecht-
+lichen Verbotstatbestände des § 44 (1), Satz 1 bis 3 BNatSchG (Tötungsverbot, Störungsverbot,
+Verbot der Beschädigung und Zerstörung von Fortpflanzungs- und Ruhestätten).
+
+Aufgrund der Lage des Plangebiets im direkten Siedlungsbereich ist das Vorkommen von sied-
+lungstypischen, relativ häufigen Fledermausarten zu erwarten wie
+
+       Großer Abendsegler (Nyctalus noctula)
+       Zwergfledermaus (Pipistrellus pipistrellus)
+       Breitflügelfledermaus (Eptesicus serotinus)
+       Braunes Langohr (Plecotus auritus).
+Mögliche Sommerquartiere von Fledermäusen sind insbesondere ältere Bäume (mit einem
+Brusthöhen-Durchmesser ab etwa 50 cm) wie u.a. Winter-Linde an der Pinneberger Str., die
+zentral im Plangebiet gelegene Weide, zwei der Hänge-Birken sowie die Gemeine Buche an
+der westlichen Grenze des Plangebiets (vgl. Tab. 1). Diese Bäume sollen jedoch von der Pla-
+nung unberührt bleiben. Jüngere Gehölze weisen kaum Höhlen, Risse, Rindenspalten u. ä. auf,
+die von Fledermäusen genutzt werden könnten. In den älteren Bäumen können sich solche
+Tagesquartiere z.B. der Arten Großer Abendsegler und Braunes Langohr befinden.
+Gebäude (Mauerspalten, Verkleidungen, Fensterläden, große Dachstühle) kommen als Quar-
+tiersstandort von Breitflügelfledermaus und Zwergfledermaus in Betracht. Hier besteht Potenzial
+sowohl an Wohnhäusern als auch an anderen Nutzgebäuden im Plangebiet.
+
+Wochenstuben werden bevorzugt in älteren Baumbeständen von größeren Wäldern angelegt
+und können somit für das Plangebiet ausgeschlossen werden. Zwergfledermaus und Breitflü-
+gelfledermaus legen jedoch Wochenstuben im Dachbereich von Gebäuden (Dachböden; Spal-
+tenquartiere) an. In den Gebäuden im Plangebiet besteht also auch ein Potenzial für Wochen-
+stuben.
+
+Das Vorkommen von Winterquartieren ist an frostfreie, dunkle und feuchte Plätze (Höhlen, Fels-
+und Gebäudespalten, sehr große Baumhöhlen) gebunden. Im Plangebiet können entspre-
+chende Baum- und Höhlenquartiere ausgeschlossen werden. Als Winterquartiere geeignet
+könnten die Gebäude im Plangebiet sein. Hier ist nicht auszuschließen, dass z.B. Großer
+Abendsegler, Zwergfledermaus oder Breitflügelfledermaus Winterquartiere haben.
+
+Damit keine Konflikte mit den Verboten des § 44 BNatSchG auftreten, sind die Bäume vor einer
+möglichen Fällung oder Rohdung und Gebäude bei möglichen Rück- oder Umbauten auf mög-
+liche Quartiere zu untersuchen. Sollten Quartiere festgestellt werden, sind in Abstimmung mit
+der unteren Naturschutzbehörde Regelungen zur Vermeidung und Verminderung von Beein-
+trächtigungen zu treffen (Bauzeitregelung).
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                        26.09.2019                    35
+Stadt Quickborn                                                          B-Plan Nr. 82, 1. Änderung
+
+
+
+Fazit: Dem Schutzgut Arten und Lebensräume insgesamt ist im Plangebiet eine allgemeine
+Empfindlichkeit gegenüber der angestrebten Planung zuzuordnen. Die Fauna als Teil des
+Schutzgutes Arten und Lebensräume besitzt eine allgemeine Empfindlichkeit gegenüber plane-
+rischen Veränderungen im betrachteten Bereich.
+
+
+10.2.3 Schutzgüter Boden, Wasser und Landschaftsbild
+Der Zustand der Schutzgüter Boden, Wasser und Landschaftsbild / Ortsbild, wird in den folgen-
+den Tabellen beschrieben und bewertet.
+
+
+  Tabelle 4       Schutzgut Boden
+  Bestand/            Deckschicht/ Auffüllung überwiegend bestehend aus einer Mutterboden-
+  Vorbelastun-        schicht bzw. humosen Sanden, bis in eine Tiefe von 0,5 bis 0,7 [m u. Gel.].
+  gen                 Darunter lagert Geschiebelehm aus schwach tonigen, schluffigen Sanden mit
+                      kiesigen Anteilen bis hin zu Steinen. In die Schicht sind Sande eingelagert,
+                      die örtlich auch die Ober- oder Untergrenze bilden. Die Unterfläche wurde
+                      zwischen 1,2 (BS1) und 2,5 (BS2) m u. Gel. erkundet.
+                      In allen Aufschlüssen wurde Geschiebemergel zunächst in unterschiedlichen
+                      Tiefen und Verteilungen erkundet. Dieser aus schluffigem Sand mit schwa-
+                      chen Ton- und Kiesanteilen mit Steinen bestehende gewachsene Geschie-
+                      beboden weist halbfeste Konsistenzen auf. Er steht im oberflächennahen Be-
+                      reich nur in geringen Mächtigkeiten an. Darunter folgen dann teilweise Sande
+                      und auf Beckensedimenten basierende Einlagerungen (Becken-Schluff und -
+                      Ton) großer Mächtigkeiten bis in Tiefen zwischen 9,5 (BS7, Südostecke) und
+                      11,2 (BS4, Mitte) [m u. Gel.]. Ab diesen Tiefen wurde durchgehend Geschie-
+                      bemergel habfester konsistenz erkundet. Dieser reicht nach dem tiefsten Auf-
+                      schluss BS1 mindestens bis in 18 m u. Gel. an. Die eingelagerten Beckensedi-
+                      mente stehen ebenfalls durchgehend in halbfester Konsistenz an. Diese
+                      Schicht ist insgesamt eiszeitlich vorbelastet.*
+
+
+                      Altstandorte / Altablagerungen:
+                      Im Rahmen von Untersuchungen zu Altstandorten und Altablagerungen wur-
+                      den ergänzend zu den Kleinrammbohrungen Bodenproben aus den unbefes-
+                      tigten Bereichen der betroffenen Grundstücke entnommen. Zusammenfas-
+                      send stellt der Gutachter fest, dass die Analytik der Boden- und Wasserpro-
+                      ben sowie die Recherche der Bauakten eine Belastung von Böden durch er-
+                      höhte Benzo(a)pyrengehalte im südlichen Plangebiet ergeben (vgl. Kap.
+                      5.3)**.
+
+                     * Baugrund Kordinand, 15.03.2018
+                     **Büro für Geologie und Umwelt
+  Bewertung           Allgemeine Bedeutung / Empfindlichkeit
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                          26.09.2019                    36
+Stadt Quickborn                                                              B-Plan Nr. 82, 1. Änderung
+
+
+
+
+  Tabelle 5       Schutzgut Wasser
+  Bestand/            Oberflächengewässer sind nur in Form von Gartenteichen vorhanden.
+  Vorbelastun-
+                      Grundwasser:
+  gen
+                      Wasser wurde im Baufeld in unterschiedlichen Tiefen angetroffen. So wurden
+                      Wasserstände zwischen 0,2 m (BS1, Nordecke) und 0,97 m (BS4, Mitte) ein-
+                      gemessen. Mit Blick auf die bindigen Schichten ist davon auszugehen, dass
+                      niederschlagsbedingt Stau- und Schichtenwasser bis nahe Geländenähe an-
+                      steigt. Die Analytik des Wassers liegt noch nicht vor. *
+                      Im Rahmen von Untersuchungen zu Altstandorten und Altablagerungen wur-
+                      den festgestellt, dass eine Gefährdung des Grundwassers (Wirkungspfad Bo-
+                      den – Grundwasser) nicht besteht, da große Bereiche des Grundstückes ver-
+                      siegelt sind durchgehend bindige, wasserstauende Böden mit größeren Mäch-
+                      tigkeiten bis zur maximalen Sondierend-teufe von 18 m vorliegen.(vgl. Kap.
+                      5.3)**.
+
+                      * Baugrund Kordinand,, 15.03..2018
+                      **Büro für Geologie und Umwelt
+  Bewertung           Allgemeine Bedeutung / Empfindlichkeit
+
+
+  Tabelle 6       Schutzgut Landschaftsbild
+  Bestand/         Optischer Eindruck:
+  Vorbelastun-     Das Ortsbild im Plangebiet wird durch Wohnbebauung mit angrenzenden Gärten
+  gen
+                   dominiert. Es steht demnach die Siedlungsnutzung im Vordergrund. Natürliche
+                   Elemente wie die Bäume im Plangebiet sowie der Baumbestand des südlich an-
+                   grenzenden Wohngebiets werten das Landschaftsbild hinsichtlich seiner Vielfalt
+                   und Natürlichkeit auf.
+                   Lärm:
+                   Beeinträchtigungen durch Verkehrslärm (B4/Kieler Str. und Pinneberger Str.)
+                   und Gewerbelärm*
+
+                  *        Schalltechnische Untersuchung, dBCon 27.02.2018
+
+                   Allgemeine Naturnähe und Vielfalt
+  Bewertung        Allgemeine Bedeutung / Empfindlichkeit
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                             26.09.2019                     37
+Stadt Quickborn                                                       B-Plan Nr. 82, 1. Änderung
+
+
+
+10.3     Ziele und Grundsätze der Landschaftsplanung
+Im Landschaftsplan der Stadt Quickborn (1999) wird das Plangebiet als „Wohnbaufläche“ dar-
+gestellt. Der Plan nennt „generelle Anforderungen an die Gestaltung neuer Bauflächen“. Die
+Anforderungen beziehen sich auf die Schonung von Ressourcen und der Schutzgüter. Bezogen
+auf das Plangebiet lassen sich die Anforderungen konkretisieren und als Grundsätze formulie-
+ren, die in das Bebauungskonzept und in die Festsetzungen des B-Planes einfließen:
+
+Arten- und Lebensräume
+   Erhaltung von Bäumen
+Boden
+   Minimierung des Versiegelungsgrades
+   Vermeidung von Stoffeinträgen
+   Minimierung von Bodenabtrag
+Wasser
+   Minimierung des Versiegelungsgrades
+   Verwendung wassergebundener Decken
+   Begrünung und Bepflanzung
+Klima und Luft
+   Verwendung Klima schonender Versiegelungsformen (offenporige Pflaster)
+   Pflanzung von Bäumen / Strauch- und Gebüsch- Anpflanzungen
+
+Landschaftsbild/ Erholung
+   Begrünung der Bauflächen
+   Erhaltung der vorhandenen Bäume
+
+10.4     Auswirkungen des Bebauungsplanes
+Mit dem Bebauungsplan Nr. 82, 1. Änderung werden im Geltungsbereich folgende Veränderun-
+gen vorbereitet:
+
+   überbaubare Grundstücksflächen (ca. 4 Mehrfamilienhäuser, Stellplätze)
+   Bau einer Planstraße
+   Bau von Tiefgaragen
+
+Bei der Durchführung der geplanten Vorhaben sind Veränderungen unumgänglich. Dies sind im
+Einzelnen:
+   Änderung der Nutzung
+   Bodenabtrag und Versiegelung
+   Rodung von Gehölzen
+
+Die faunistische Potenzialanalyse und artenschutzrechtliche Betrachtung (s.o. Schutzgut Arten
+und Lebensräume) kommt aufgrund der bestehenden Habitatstruktur, der zu erwartenden Ar-
+tenvorkommen und der bestehenden Ausweichmöglichkeiten zu folgendem Ergebnis: Es kann
+davon ausgegangen werden, dass durch die Umsetzung der Planung keine artenschutzrecht-
+lichen Verbotstatbestände ausgelöst werden.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                      26.09.2019                     38
+Stadt Quickborn                                                          B-Plan Nr. 82, 1. Änderung
+
+
+
+10.5     Eingriffsregelung
+Nach § 18 BNatSchG Abs. 2 ist auf Vorhaben innerhalb der im Zusammenhang bebauten Ort-
+steile (Innenbereich) nach § 34 BauGB die Eingriffsregelung nicht anzuwenden.
+
+Somit wird das hier geplante Vorhaben nicht als Eingriff gewertet.
+
+
+10.6     Pflanzhinweise
+Folgende großkronige Laubbäume (Mindestpflanzqualität: 3 x verpflanzt, Mindeststammumfang
+18-20 cm) sind für die Neuanpflanzung an der Planstraße geeignet:
+
+         Ulmen                        Ulmus (nur Resista-Ulmen)
+         Stiel-Eiche                  (Quercus robur)
+         Tilia cordata                (Winter-Linde)
+         Acer pseudoplatanus          (Berg-Ahorn)
+
+11       Hinweise für die Umsetzung von Bauvorhaben
+Im Plangebiet sind Vorkommen europäisch geschützter Arten (Vögel und Fledermäuse) nicht
+auszuschließen. Zur Vermeidung von Verstößen gegen die Verbote des § 44 Abs. 1 BNatSchG
+sind Gehölzarbeiten wie z.B. Rodungen nicht zwischen dem 01. März und dem 30. September
+eines Jahre zulässig. Abweichungen hiervon bedürfen einer ökologischen Baubegleitung. Vor
+Gebäuderück- oder Umbauten sind weitere Ermittlungen bezüglich des Vorkommens gebäude-
+nutzender Brutvogel- und Fledermausarten über eine ökologische Baubegleitung notwendig.
+Ggf. sind erforderliche Vermeidungs- und vorgezogene Ausgleichsmaßnehmen durchzuführen.
+
+Wenn während der Erdarbeiten Kulturdenkmale (Funde und/oder dingliche Zeugnisse wie Ver-
+änderungen und Verfärbungen in der natürlichen Bodenbeschaffenheit) entdeckt werden, ist die
+Obere Denkmalschutzbehörde gem. § 15 Denkmalschutzgesetz (DSchG) unverzüglich zu be-
+nachrichtigen und die Fundstelle bis zum Eintreffen der Fachbehörde zu sichern. Verantwortlich
+hier sind gem. § 14 DSchG Grundstückseigentümer und der/die LeiterIn der Arbeiten. Die Ver-
+pflichteten haben das Kulturdenkmal und die Fundstätte in unverändertem Zustand zu erhalten,
+soweit es ohne erhebliche Nachteile oder Aufwendungen von Kosten geschehen kann. Diese
+Verpflichtung erlischt spätestens nach Ablauf von vier Wochen seit der Mitteilung.
+
+Die überplante Fläche befindet sich in einem archäologischen Interessensgebiet. Bei der
+überplanten Fläche handelt es sich daher gem. § 12 (2) 6 DSchG um Stellen, von denen be-
+kannt ist oder den Umständen nach zu vermuten ist, dass sich dort Kulturdenkmale befinden.
+Erdarbeiten in diesen Bereichen bedürfen demnach der Genehmigung des Archäologischen
+Landesamtes. Denkmale sind gem. § 8 (1) DSchG unabhängig davon, ob sie in der Denkmal-
+liste erfasst sind, gesetzlich geschützt. Auf der überplanten Fläche wurden am 07.02.2018 in
+Absprache mit dem Bauträger vom Archäologischen Landesamt Voruntersuchungen ohne
+Nachweis von erhaltenen archäologischen Befunden durchgeführt. Von dort bestehen bezüg-
+lich der Planumsetzung daher keine Bedenken, die Flächen sind gem. Stellungnahme vom
+14.02.2018 zur Bebauung freigegeben.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                          26.09.2019                    39
+Stadt Quickborn                                                      B-Plan Nr. 82, 1. Änderung
+
+
+
+Auffälligkeiten im Boden hinsichtlich schädlicher Bodenveränderungen, Altlablagerungen
+und/oder Altstandorte während der Bauausführung sind dem Fachdienst Umwelt – Boden-
+schutz – zu melden und Maßnahmen abzustimmen. Auffälliger und verunreinigter Bodenaushub
+ist bis zum Entscheid über die fachgerechte Entsorgung oder die Möglichkeit zur Verwendung
+auf dem Grundstück gesondert zu lagern. Der Bodenaushub ist vor Einträgen durch Nieder-
+schlag und gegen Austräge in den Untergrund z. B. durch Folien oder Container zu schützen.
+Die fachgerechte Entsorgung ist mit der zuständigen Abfallbehörde abzustimmen.
+
+Aufgrund der Belastung der Böden mit erhöhten Benzo(a)pyrengehalten im südlichen Plange-
+biet, sind bei einer Umnutzung der gekennzeichnet Flächen vor Beginn von Erdarbeiten durch
+den Grundstückseigentümer ggf. erforderliche Maßnahmen zur Sicherstellung gesunder Wohn-
+und Arbeitsverhältnisse mit der Unteren Bodenbehörde abzustimmen.
+
+Da Tiefgaragen geplant sind, wird das oberflächennah anstehende Auffüllmaterial aus bautech-
+nischen Notwendigkeiten von Grundstück entfernt. Nach dem Bodenschutzrecht ist keine Un-
+tersuchungsanforderung gegeben. Die Klärung der Entsorgungs-/ Verwertungswege des ab-
+zufahrenden Materials durch entsprechende Bodenuntersuchungen ist durch den Vorhaben-
+träger durchzuführen und mit der unteren Bodenschutzbehörde des Kreises abzustimmen.
+
+Quickborn gehört gem. Anlage zur Kampfmittelverordnung vom 07.05.2012 nicht zu den Ge-
+meinden mit bekannten Bombenabwürfen. Daher handelt es sich bei dem Plangebiet um keine
+Kampfmittelverdachtsfläche. Zufallsfunde von Munition sind jedoch nicht gänzlich auszu-
+schließen.
+
+Das Bebauungsgebiet liegt innerhalb der vom Geologischen Dienst angegebenen Fläche der
+Salzstockhochlage, die mit einer potenziellen Erdfallproblematik verbunden ist. Entspre-
+chende konstruktive Maßnahmen an den Wohngebäuden werden empfohlen. Auf eine Regen-
+wasserversickerung oder die Installation von Brunnen sowie eine wärmetechnische Versorgung
+mittels oberflächennaher Geothermie mit geschlossenen Sondensystemen ist zu verzichten.
+Werden im Rahmen der Baugrunderkundung abgrenzbare, ggf. mit Weichschichten verfüllte,
+Senken erfasst, ist der Geologische Dienst zu informieren.
+
+
+12       Kosten
+Die Planungskosten sowie die infolge der Aufstellung des Bebauungsplanes Nr. 82, 1. Ände-
+rung entstehen Kosten für die Herstellung der privaten Erschließung werden von den Antrag-
+stellern bzw. Vorhabenträgern getragen.
+
+Durch die Aufstellung der 1. Änderung des Bebauungsplanes Nr. 82 und die zu erwartende
+Anzahl der Wohneinheiten, welche nach gültigem Planrecht bereits möglich ist, können keine
+Folgekosten z. B. für die Schaffung von zusätzlichen Kita-Plätzen angerechnet werden. Eine
+Regelung über die Übernahme von Kosten oder sonstigen Aufwendungen, die der Gemeinde
+als Folge der geplanten städtebaulichen Maßnahme im Sinne des § 11 Abs. 1 Nr. 3 BauGB
+entstanden könnten, ist daher nicht Bestandteil des städtebaulichen Vertrages.
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH                      26.09.2019                    40
+Stadt Quickborn                                                   B-Plan Nr. 82, 1. Änderung
+
+
+
+
+Diese Begründung wurde in der Sitzung der Ratsversammlung Quickborn am ……………….
+gebilligt.
+
+
+
+
+Quickborn, den .............................      ......................................................
+                                                              Der Bürgermeister
+
+
+
+
+Ingenieurgemeinschaft Reese + Wulff GmbH               26.09.2019                                   41
+
