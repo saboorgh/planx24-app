@@ -818,7 +818,7 @@ function renderChat(host, fs, r, o) {
     try {
       await apiChat(fs, r, msgs.slice(0, -1), ev => {
         if (ev.t) { ai.content += ev.t; paint(); }
-        else if (ev.done) { if (ev.limit) setQuota(ev.left, ev.limit, ev.resetAt); }
+        else if (ev.done) { if (ev.limit) setQuota(ev.left, ev.limit, ev.resetAt); else { try { localStorage.removeItem('px_quota'); } catch (e) {} } }
         else if (ev.error) throw new Error(ev.error);
       });
       if (!ai.content) { ai.err = true; ai.content = 'Keine Antwort erhalten. Bitte noch einmal versuchen.'; }

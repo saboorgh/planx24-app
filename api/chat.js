@@ -6,7 +6,8 @@
 //   ANTHROPIC_API_KEY   Schlüssel von console.anthropic.com
 //   KB_URL              https://<projekt>.supabase.co/functions/v1/suche?key=<Schlüssel der Stufe oeffentlich>
 //   CLAUDE_MODEL        optional, Standard claude-sonnet-5-5
-//   DAILY_LIMIT         optional, kostenlose Fragen pro Besucher in 24 Stunden, Standard 5
+//   DAILY_LIMIT         Schalter für das Tageslimit: leer oder 0 = AUS (unbegrenzt, bis zum Release),
+//                       z. B. 5 = 5 kostenlose Fragen je Besucher in 24 Stunden
 //
 // Die Regeln für die KI stehen in rules/chat/*.md (Filter) und werden hier zusammengesetzt.
 
@@ -16,7 +17,7 @@ import { join } from 'node:path';
 export const config = { maxDuration: 60 };
 
 const MODEL = process.env.CLAUDE_MODEL || 'claude-sonnet-5-5';
-const DAILY_LIMIT = Number(process.env.DAILY_LIMIT || 5);
+const DAILY_LIMIT = Number(process.env.DAILY_LIMIT || 0); // 0 = Limit aus
 const WINDOW = 24 * 3600 * 1000;
 
 // Regeln laden: alle .md in rules/chat außer README, sortiert nach Dateiname
@@ -48,6 +49,7 @@ const TOOLS = [
 // (je Server-Instanz; für mehr Schutz später Supabase). Der Browser zählt zusätzlich selbst.
 const hits = new Map();
 function quota(ip, count) {
+  if (!DAILY_LIMIT) return { ok: true, left: null, resetAt: null };
   const now = Date.now();
   let q = hits.get(ip);
   if (!q || now - q.start >= WINDOW) q = { start: now, n: 0 };
