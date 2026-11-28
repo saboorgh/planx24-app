@@ -144,7 +144,7 @@ export default async function handler(req, res) {
   if (body.mode === 'tasks') {
     try {
       let text = '';
-      await streamOnce({ model: MODEL, max_tokens: 600, system, messages }, t => { text += t; });
+      await streamOnce({ model: MODEL, max_tokens: 3000, system, messages }, t => { text += t; });
       const m = text.match(/\[[\s\S]*\]/);
       res.status(200).json({ tasks: m ? JSON.parse(m[0]).filter(x => typeof x === 'string').slice(0, 8) : [] });
     } catch (e) { res.status(502).json({ error: String(e.message || e) }); }
