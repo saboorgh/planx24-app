@@ -100,7 +100,8 @@ def hh_items(coll, bbox):
 
 def pdf_holen(url, ziel):
     os.makedirs(ziel, exist_ok=True)
-    name = re.sub(r"[^A-Za-z0-9_.()-]+", "_", urllib.parse.unquote(url.rsplit("/", 1)[-1]))[:120]
+    teil = "begruendung_" if "/bplan_begr/" in url else ("plan_" if "/bplan/" in url else "")
+    name = teil + re.sub(r"[^A-Za-z0-9_.()-]+", "_", urllib.parse.unquote(url.rsplit("/", 1)[-1]))[:120]
     if not name.lower().endswith(".pdf"): name += ".pdf"
     b = get(url, 300, binary=True)
     if not b or b[:4] != b"%PDF": return {"url": url, "fehler": "kein PDF"}
