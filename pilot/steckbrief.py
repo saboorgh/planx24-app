@@ -26,6 +26,7 @@ to_wgs = Transformer.from_crs(25832, 4326, always_xy=True)
 def get(url, t=120, binary=False):
     for i in range(3):
         try:
+            url = urllib.parse.quote(url, safe=':/?&=%+(),')
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=t) as r:
                 b = r.read()
                 if b[:2] == b"\x1f\x8b": b = gzip.decompress(b)

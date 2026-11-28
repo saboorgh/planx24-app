@@ -6,6 +6,7 @@ OUT = os.path.join(os.path.dirname(__file__), "steckbrief", "verzeichnis", "quic
 UA = {"User-Agent": "Mozilla/5.0 PlanX24-Pilot (pilot@planx24.de)", "Accept-Encoding": "gzip"}
 def get(u, t=180):
     try:
+        u = urllib.parse.quote(u, safe=':/?&=%+()')
         with urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t) as r:
             b = r.read(); return gzip.decompress(b) if b[:2] == b"\x1f\x8b" else b
     except Exception as e:
