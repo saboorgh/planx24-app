@@ -1,4 +1,5 @@
 [
- {"id": "test_hh", "adresse": "Steindamm 10, 20099 Hamburg"},
- {"id": "test_quickborn", "adresse": "Rathausplatz 1, 25451 Quickborn"}
+ {"id": "a1_goerlitzer9", "adresse": "Görlitzer Straße 9"},
+ {"id": "a2_stillerweg1", "adresse": "Stiller Weg 1"},
+ {"id": "a3_ozieckie43", "adresse": "Ozieckie Straße 43"}
 ]

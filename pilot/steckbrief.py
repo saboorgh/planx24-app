@@ -45,6 +45,49 @@ def geocode(adr):
     return {"lon": float(d["lon"]), "lat": float(d["lat"]), "name": d.get("display_name"), "state": d.get("address", {}).get("state"), "ort": d.get("address", {}).get("town") or d.get("address", {}).get("city")}
 
 
+def _norm(t):
+    t = t.lower().replace("ß", "ss").replace("ä", "ae").replace("ö", "oe").replace("ü", "ue")
+    return re.sub(r"(strasse|str\.?)$", "str", re.sub(r"[^a-z0-9 ]", "", t.replace("-", " "))).strip()
+
+
+_HH_STR, _QB_STR = None, None
+def strassen_hh():
+    global _HH_STR
+    if _HH_STR is None:
+        t = get("https://planx24-app.vercel.app/data/strassen.json") or "{}"
+        names = set()
+        def walk(o):
+            if isinstance(o, str) and re.search(r"[A-Za-zÄÖÜäöüß]{3}", o) and len(o) < 60: names.add(o)
+            elif isinstance(o, list): [walk(i) for i in o]
+            elif isinstance(o, dict): [walk(v) for v in o.values()]
+        walk(json.loads(t).get("s", []))
+        _HH_STR = sorted(names)
+    return _HH_STR
+
+
+def strassen_quickborn():
+    global _QB_STR
+    if _QB_STR is None:
+        q = '[out:json];area["name"="Quickborn"]["boundary"="administrative"]->.a;way(area.a)["highway"]["name"];out tags;'
+        t = get("https://overpass-api.de/api/interpreter?data=" + urllib.parse.quote(q)) or '{"elements":[]}'
+        _QB_STR = sorted({e["tags"]["name"] for e in json.loads(t)["elements"]})
+    return _QB_STR
+
+
+def aufloesen(text):
+    """Freitext (auch mit Hörfehlern) -> Liste möglicher Adressen mit Ort, beste zuerst."""
+    import difflib
+    m = re.match(r"\s*(.+?)\s+(?:nr\.?|nummer)?\s*(\d+\s*[a-zA-Z]?)\s*(?:,\s*(.*))?$", text, re.I)
+    str_, nr, ort = (m.group(1), m.group(2).replace(" ", ""), m.group(3)) if m else (text, "", None)
+    kand = []
+    for stadt, liste in [("Hamburg", strassen_hh()), ("Quickborn", strassen_quickborn())]:
+        if ort and stadt.lower() not in ort.lower(): continue
+        normd = {_norm(n): n for n in liste}
+        for k in difflib.get_close_matches(_norm(str_), list(normd), n=3, cutoff=0.6):
+            kand.append({"strasse": normd[k], "nr": nr, "ort": stadt, "aehnlich": round(difflib.SequenceMatcher(None, _norm(str_), k).ratio(), 2)})
+    return sorted(kand, key=lambda k: -k["aehnlich"])
+
+
 def hh_items(coll, bbox):
     feats, url = [], f"{HH}/{coll}/items?f=json&limit=1000&bbox={bbox}"
     while url:
@@ -121,7 +164,13 @@ def schleswig_holstein(a, d, x, y):
 for q in json.load(open(f"{BASE}/anfragen.json")):
     d = f"{BASE}/{q['id']}"; os.makedirs(d, exist_ok=True)
     a = {"adresse": q["adresse"], "stand": time.strftime("%Y-%m-%d %H:%M")}
-    g = geocode(q["adresse"])
+    kand = aufloesen(q["adresse"]) if not re.search(r"\d{5}", q["adresse"]) else []
+    a["kandidaten"] = kand
+    g = None
+    for k in kand[:4]:
+        g = geocode(f"{k['strasse']} {k['nr']}, {k['ort']}")
+        if g: a["aufgeloest"] = k; break
+    if not g: g = geocode(q["adresse"])
     if not g: a["fehler"] = "Adresse nicht gefunden"
     else:
         a.update(g); x, y = to_utm.transform(g["lon"], g["lat"]); a["utm"] = [round(x, 1), round(y, 1)]
