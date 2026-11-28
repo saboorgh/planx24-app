@@ -1,5 +1,18 @@
-  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStGeorg.pdf
-  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStGeorg.pdf
-  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStGeorg.pdf
-{"adresse": "Steindamm 10, 20099 Hamburg", "state": null, "plaene": [{"geltendes_planrecht": "StGeorg37", "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg37.pdf", "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/StGeorg37.pdf", "feststellungsdatum": "2000-08-30"}, {"geltendes_planrecht": "BSStGeorg", "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/p
-{"adresse": "Rathausplatz 1, 25451 Quickborn", "state": "Schleswig-Holstein", "plaene": [], "fehler": null}
+  Fehler HTTP Error 406: Not Acceptable https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Barea%5B%22name%22%3D%22Quickborn%22%5D%5B%22boundary%22%3D%22administrative%
+  Fehler HTTP Error 406: Not Acceptable https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Barea%5B%22name%22%3D%22Quickborn%22%5D%5B%22boundary%22%3D%22administrative%
+  Fehler HTTP Error 406: Not Acceptable https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Barea%5B%22name%22%3D%22Quickborn%22%5D%5B%22boundary%22%3D%22administrative%
+{"adresse": "Görlitzer Straße 9", "state": null, "plaene": [{"geltendes_planrecht": "Jenfeld6", "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Jenfeld6.pdf", "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/Jenfeld6.pdf", "feststellungsdatum": "1967-11-21"}], "fehler": null}
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld(2Aend).pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld(2Aend).pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld(2Aend).pdf
+{"adresse": "Stiller Weg 1", "state": null, "plaene": [{"geltendes_planrecht": "BSBahrenfeld", "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSBahrenfeld.pdf", "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld.pdf", "feststellungsdatum": "1955-01-14"}, {"geltendes_planrecht": "BSBahrenfeld(2Aend)", "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungspla
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-LangenfeldeAenderung.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-LangenfeldeAenderung.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-LangenfeldeAenderung.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-Langenfelde.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-Langenfelde.pdf
+  Fehler HTTP Error 404: Not Found https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-Langenfelde.pdf
+{"adresse": "Ozieckie Straße 43", "state": null, "plaene": [{"geltendes_planrecht": "BSStellingen-LangenfeldeAenderung", "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSStellingen-LangenfeldeAenderung.pdf", "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-LangenfeldeAenderung.pdf", "feststellungsdatum": "1960-11-22"}, {"geltendes_planrecht": "BSStellingen-Langenfelde", "planrech

@@ -1,0 +1,82 @@
+{
+ "adresse": "Görlitzer Straße 9",
+ "stand": "2026-11-28 11:16",
+ "kandidaten": [
+  {
+   "strasse": "Görlitzer Straße",
+   "nr": "9",
+   "ort": "Hamburg",
+   "aehnlich": 1.0
+  },
+  {
+   "strasse": "Glatzer Straße",
+   "nr": "9",
+   "ort": "Hamburg",
+   "aehnlich": 0.8
+  },
+  {
+   "strasse": "Steglitzer Straße",
+   "nr": "9",
+   "ort": "Hamburg",
+   "aehnlich": 0.79
+  }
+ ],
+ "aufgeloest": {
+  "strasse": "Görlitzer Straße",
+  "nr": "9",
+  "ort": "Hamburg",
+  "aehnlich": 1.0
+ },
+ "lon": 10.1387248,
+ "lat": 53.5725109,
+ "name": "9, Görlitzer Straße, Jenfeld, Wandsbek, Hamburg, 22045, Deutschland",
+ "state": null,
+ "ort": "Hamburg",
+ "utm": [
+  575404.1,
+  5936563.7
+ ],
+ "flurstueck": [
+  {
+   "oid": "DEHHALKA70000d8kFL",
+   "aktualit": "2023-10-06Z",
+   "idflurst": "DEHHALKA70000d8k",
+   "flaeche": 979.0,
+   "flstkennz": "020550___01177______",
+   "land": "Hamburg",
+   "landschl": "02",
+   "gemarkung": "Jenfeld",
+   "gemaschl": "020550",
+   "flurschl": "020550___",
+   "flstnrzae": "1177",
+   "regbezirk": "Hamburg",
+   "regbezschl": "020",
+   "kreis": "Hamburg",
+   "kreisschl": "02000",
+   "gemeinde": "Freie und Hansestadt Hamburg",
+   "gmdschl": "02000000",
+   "lagebeztxt": "Görlitzer Straße 9, 9a, 9b",
+   "tntxt": "Wohnbauflaeche;979"
+  }
+ ],
+ "plaene": [
+  {
+   "geltendes_planrecht": "Jenfeld6",
+   "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Jenfeld6.pdf",
+   "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/Jenfeld6.pdf",
+   "feststellungsdatum": "1967-11-21"
+  }
+ ],
+ "pdf": [
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Jenfeld6.pdf",
+   "datei": "Jenfeld6.pdf",
+   "mb": 1.1
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/Jenfeld6.pdf",
+   "datei": "Jenfeld6.pdf",
+   "mb": 0.2
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "adresse": "Stiller Weg 1",
+ "stand": "2026-11-28 11:20",
+ "kandidaten": [
+  {
+   "strasse": "Stiller Weg",
+   "nr": "1",
+   "ort": "Hamburg",
+   "aehnlich": 1.0
+  },
+  {
+   "strasse": "Steiler Weg",
+   "nr": "1",
+   "ort": "Hamburg",
+   "aehnlich": 0.91
+  },
+  {
+   "strasse": "Stillhorner Weg",
+   "nr": "1",
+   "ort": "Hamburg",
+   "aehnlich": 0.85
+  }
+ ],
+ "aufgeloest": {
+  "strasse": "Stiller Weg",
+  "nr": "1",
+  "ort": "Hamburg",
+  "aehnlich": 1.0
+ },
+ "lon": 9.87179,
+ "lat": 53.5714571,
+ "name": "1, Stiller Weg, Bahrenfeld, Altona, Hamburg, 22607, Deutschland",
+ "state": null,
+ "ort": "Hamburg",
+ "utm": [
+  557730.1,
+  5936196.9
+ ],
+ "flurstueck": [
+  {
+   "oid": "DEHHALKAP0000HXdFL",
+   "aktualit": "2021-09-03Z",
+   "idflurst": "DEHHALKAP0000HXd",
+   "flaeche": 381.0,
+   "flstkennz": "020208___00254______",
+   "land": "Hamburg",
+   "landschl": "02",
+   "gemarkung": "Groß-Flottbek",
+   "gemaschl": "020208",
+   "flurschl": "020208___",
+   "flstnrzae": "254",
+   "regbezirk": "Hamburg",
+   "regbezschl": "020",
+   "kreis": "Hamburg",
+   "kreisschl": "02000",
+   "gemeinde": "Freie und Hansestadt Hamburg",
+   "gmdschl": "02000000",
+   "lagebeztxt": "Stiller Weg 1",
+   "tntxt": "Wohnbauflaeche;381"
+  }
+ ],
+ "plaene": [
+  {
+   "geltendes_planrecht": "BSBahrenfeld",
+   "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSBahrenfeld.pdf",
+   "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld.pdf",
+   "feststellungsdatum": "1955-01-14"
+  },
+  {
+   "geltendes_planrecht": "BSBahrenfeld(2Aend)",
+   "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSBahrenfeld(2Aend).pdf",
+   "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld(2Aend).pdf",
+   "feststellungsdatum": "1960-09-13"
+  }
+ ],
+ "pdf": [
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSBahrenfeld.pdf",
+   "datei": "BSBahrenfeld.pdf",
+   "mb": 3.3
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld.pdf",
+   "fehler": "kein PDF"
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSBahrenfeld(2Aend).pdf",
+   "datei": "BSBahrenfeld(2Aend).pdf",
+   "mb": 0.7
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSBahrenfeld(2Aend).pdf",
+   "fehler": "kein PDF"
+  }
+ ]
+}

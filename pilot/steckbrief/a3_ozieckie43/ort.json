@@ -1,0 +1,96 @@
+{
+ "adresse": "Ozieckie Straße 43",
+ "stand": "2026-11-28 11:24",
+ "kandidaten": [
+  {
+   "strasse": "Wieckstraße",
+   "nr": "43",
+   "ort": "Hamburg",
+   "aehnlich": 0.7
+  },
+  {
+   "strasse": "Poeckstraße",
+   "nr": "43",
+   "ort": "Hamburg",
+   "aehnlich": 0.7
+  },
+  {
+   "strasse": "Wölckenstraße",
+   "nr": "43",
+   "ort": "Hamburg",
+   "aehnlich": 0.7
+  }
+ ],
+ "aufgeloest": {
+  "strasse": "Wieckstraße",
+  "nr": "43",
+  "ort": "Hamburg",
+  "aehnlich": 0.7
+ },
+ "lon": 9.9432402,
+ "lat": 53.5836899,
+ "name": "Wieckstraße, Stellingen, Eimsbüttel, Hamburg, 22527, Deutschland",
+ "state": null,
+ "ort": "Hamburg",
+ "utm": [
+  562443.4,
+  5937618.1
+ ],
+ "flurstueck": [
+  {
+   "oid": "DEHHALKAV00008n3FL",
+   "aktualit": "2019-03-18Z",
+   "idflurst": "DEHHALKAV00008n3",
+   "flaeche": 4988.0,
+   "flstkennz": "020304___01382______",
+   "land": "Hamburg",
+   "landschl": "02",
+   "gemarkung": "Stellingen",
+   "gemaschl": "020304",
+   "flurschl": "020304___",
+   "flstnrzae": "1382",
+   "regbezirk": "Hamburg",
+   "regbezschl": "020",
+   "kreis": "Hamburg",
+   "kreisschl": "02000",
+   "gemeinde": "Freie und Hansestadt Hamburg",
+   "gmdschl": "02000000",
+   "lagebeztxt": "Wieckstraße",
+   "tntxt": "Strassenverkehr;4988"
+  }
+ ],
+ "plaene": [
+  {
+   "geltendes_planrecht": "BSStellingen-LangenfeldeAenderung",
+   "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSStellingen-LangenfeldeAenderung.pdf",
+   "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-LangenfeldeAenderung.pdf",
+   "feststellungsdatum": "1960-11-22"
+  },
+  {
+   "geltendes_planrecht": "BSStellingen-Langenfelde",
+   "planrecht": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSStellingen-Langenfelde.pdf",
+   "begruendung": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-Langenfelde.pdf",
+   "feststellungsdatum": "1955-01-14"
+  }
+ ],
+ "pdf": [
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSStellingen-LangenfeldeAenderung.pdf",
+   "datei": "BSStellingen-LangenfeldeAenderung.pdf",
+   "mb": 0.6
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-LangenfeldeAenderung.pdf",
+   "fehler": "kein PDF"
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSStellingen-Langenfelde.pdf",
+   "datei": "BSStellingen-Langenfelde.pdf",
+   "mb": 2.8
+  },
+  {
+   "url": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan_begr/BSStellingen-Langenfelde.pdf",
+   "fehler": "kein PDF"
+  }
+ ]
+}
