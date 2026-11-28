@@ -153,9 +153,12 @@ export default async function handler(req, res) {
   const send = obj => res.write('data: ' + JSON.stringify(obj) + '\n\n');
   try {
     let usedKb = false, wrote = false;
-    for (let round = 0; round < 5; round++) {
+    // Höchstens 4 Such-Runden; die letzte Runde muss antworten (tool_choice none), damit nie eine leere Antwort entsteht
+    const ROUNDS = 5;
+    for (let round = 0; round < ROUNDS; round++) {
       if (wrote) { send({ t: '\n\n' }); wrote = false; }
-      const { content, stop } = await streamOnce({ model: MODEL, max_tokens: 1500, system, messages, tools: TOOLS }, t => { wrote = true; send({ t }); });
+      const last = round === ROUNDS - 1;
+      const { content, stop } = await streamOnce({ model: MODEL, max_tokens: 1500, system, messages, tools: TOOLS, ...(last ? { tool_choice: { type: 'none' } } : {}) }, t => { wrote = true; send({ t }); });
       if (stop !== 'tool_use') break;
       messages.push({ role: 'assistant', content });
       const results = [];

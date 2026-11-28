@@ -747,7 +747,7 @@ async function apiChat(fs, r, msgs, onEvent) {
   for (;;) {
     const { value, done } = await reader.read(); if (done) break;
     buf += dec.decode(value, { stream: true }); let i;
-    while ((i = buf.indexOf('\n\n')) >= 0) { const line = buf.slice(0, i); buf = buf.slice(i + 2); if (line.startsWith('data: ')) { try { onEvent(JSON.parse(line.slice(6))); } catch (e) {} } }
+    while ((i = buf.indexOf('\n\n')) >= 0) { const line = buf.slice(0, i); buf = buf.slice(i + 2); if (line.startsWith('data: ')) { let ev = null; try { ev = JSON.parse(line.slice(6)); } catch (e) {} if (ev) onEvent(ev); } }
   }
 }
 /* Kostenlose Fragen: 5 je 24 Stunden (der Server zählt mit, der Browser zeigt den Stand) */
