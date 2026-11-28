@@ -1,0 +1,65 @@
+Lade alle Pläne …
+{
+ "stand": "2026-11-28",
+ "anzahl": 3049,
+ "arten": {
+  "Bebauungsplan": 2202,
+  "Durchführungsplan": 290,
+  "Teilbebauungsplan": 461,
+  "Baustufenplan": 96
+ },
+ "jahrzehnte": {
+  "1940er": 2,
+  "1950er": 575,
+  "1960er": 854,
+  "1970er": 409,
+  "1980er": 287,
+  "1990er": 212,
+  "2000er": 254,
+  "2010er": 313,
+  "2020er": 143
+ }
+}
+Kachel A_StGeorg_Steindamm
+   TB453 4.1 1 
+   StGeorg37 0.7 3 
+   StGeorg35 1.3 2 
+   BSStGeorg 1.4 1 
+   StGeorg21 1.1 2 
+   StGeorg16 1.1 2 
+   StGeorg19 1.2 2 
+   D275 6.1 1 
+   D123 4.8 2 
+   D51B 5.8 2 
+   StGeorg24 1.2 3 
+   TB179 3.3 1 
+   StGeorg20 1.7 2 
+   StGeorg26 4.4 3 
+   StGeorg25 1.3 3 
+   StGeorg22 1.9 2 
+   D317-1 4.0 2 
+Kachel B_Eimsbuettel_Osterstrasse
+   D132 4.6 1 
+   BSEimsbuettel-Hoheluft-West 1.8 1 
+   Eimsbuettel3 1.2 2 
+   D31A 1.4 1 
+   Eimsbuettel5 1.2 2 
+   TB432-1 5.0 1 
+   Eimsbuettel18 1.2 2 
+   D19A 4.5 2 
+   D4A 18.6 2 
+   Eimsbuettel19 0.7 2 
+   D139 5.1 1 
+   TB471 2.3 1 
+   TB466 22.8 4 
+Kachel C_Farmsen
+   Farmsen-Berne19 4.5 5 
+   Farmsen-Berne2 7.6 4 
+   Farmsen-Berne25 0.7 2 
+   Farmsen-Berne19(1Aend) 0.7 2 
+   BSFarmsen 2.3 1 
+   Farmsen-Berne2(1Aend) 1.1 2 
+   TB517 14.7 2 
+   Farmsen-Berne17 0.4 2 
+   Farmsen-Berne16 1.4 3 
+fertig

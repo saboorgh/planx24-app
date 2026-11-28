@@ -1,0 +1,164 @@
+{
+ "utm_bbox": [
+  566858,
+  5934184,
+  567358,
+  5934684
+ ],
+ "wgs_bbox": "10.009179,53.552283,10.016833,53.556713",
+ "plaene": [
+  {
+   "name": "TB453",
+   "art": "Teilbebauungsplan",
+   "datum": "1960-09-06",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/TB453.pdf",
+   "pdf_mb": 4.1,
+   "seiten": 1,
+   "seite1": "Creator:         Acrobat 5.0 Image Conversion Plug-in for Windows\nProducer:        Acrobat 5.0 Image Conversion Plug-in for Windows\nCreationDate:    Thu Apr 29 11:34:02 2004 UTC\nModDate:         Fri Jun  4 07:45:11 2021 UTC\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           1\nEncrypted:       yes (print:yes copy:no change:no addNotes:no algorithm:RC4)\nPage    1 size:  2702.16 x 1955.52 pts\nPage    1 rot:   0\nFile size:       4086281 bytes\nOptimized:       yes\nPDF version:     1.4\n"
+  },
+  {
+   "name": "StGeorg37",
+   "art": "Bebauungsplan",
+   "datum": "2000-08-30",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg37.pdf",
+   "pdf_mb": 0.7,
+   "seiten": 3,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           3\nEncrypted:       no\nPage    1 size:  841.92 x 595.2 pts (A4)\nPage    1 rot:   270\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nPage    3 size:  771.12 x 552.96 pts\nPage    3 rot:   0\nFile size:       718435 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "StGeorg35",
+   "art": "Bebauungsplan",
+   "datum": "2004-09-04",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg35.pdf",
+   "pdf_mb": 1.3,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  2355.6 x 1655.44 pts\nPage    1 rot:   0\nPage    2 size:  1229.94 x 512.308 pts\nPage    2 rot:   90\nFile size:       1289349 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "BSStGeorg",
+   "art": "Baustufenplan",
+   "datum": "1955-01-14",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSStGeorg.pdf",
+   "pdf_mb": 1.4,
+   "seiten": 1,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           1\nEncrypted:       no\nPage    1 size:  2268.72 x 2016 pts\nPage    1 rot:   0\nFile size:       1397757 bytes\nOptimized:       yes\nPDF version:     1.4\n"
+  },
+  {
+   "name": "StGeorg21",
+   "art": "Bebauungsplan",
+   "datum": "1976-11-02",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg21.pdf",
+   "pdf_mb": 1.1,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  1794.24 x 1375.92 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nFile size:       1147323 bytes\nOptimized:       yes\nPDF version:     1.5\n"
+  },
+  {
+   "name": "StGeorg16",
+   "art": "Bebauungsplan",
+   "datum": "1973-10-22",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg16.pdf",
+   "pdf_mb": 1.1,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  1866.24 x 1481.04 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nFile size:       1076948 bytes\nOptimized:       yes\nPDF version:     1.5\n"
+  },
+  {
+   "name": "StGeorg19",
+   "art": "Bebauungsplan",
+   "datum": "1984-10-10",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg19.pdf",
+   "pdf_mb": 1.2,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  1942.56 x 1370.16 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nFile size:       1212610 bytes\nOptimized:       yes\nPDF version:     1.5\n"
+  },
+  {
+   "name": "D275",
+   "art": "Durchführungsplan",
+   "datum": "1955-06-21",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/D275.pdf",
+   "pdf_mb": 6.1,
+   "seiten": 1,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           1\nEncrypted:       no\nPage    1 size:  2507.49 x 2187.56 pts\nPage    1 rot:   0\nFile size:       6060808 bytes\nOptimized:       yes\nPDF version:     1.3\n"
+  },
+  {
+   "name": "D123",
+   "art": "Durchführungsplan",
+   "datum": "1958-07-08",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/D123.pdf",
+   "pdf_mb": 4.8,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  2129.76 x 1643.04 pts\nPage    1 rot:   0\nPage    2 size:  595.2 x 841.68 pts (A4)\nPage    2 rot:   0\nFile size:       4813033 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "D51B",
+   "art": "Durchführungsplan",
+   "datum": "1961-06-18",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/D51B.pdf",
+   "pdf_mb": 5.8,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  2188.08 x 1748.16 pts\nPage    1 rot:   0\nPage    2 size:  595.2 x 841.68 pts (A4)\nPage    2 rot:   0\nFile size:       5833358 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "StGeorg24",
+   "art": "Bebauungsplan",
+   "datum": "1980-01-15",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg24.pdf",
+   "pdf_mb": 1.2,
+   "seiten": 3,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           3\nEncrypted:       no\nPage    1 size:  1823.04 x 1380.24 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nPage    3 size:  841.92 x 595.2 pts (A4)\nPage    3 rot:   270\nFile size:       1215480 bytes\nOptimized:       yes\nPDF version:     1.5\n"
+  },
+  {
+   "name": "TB179",
+   "art": "Teilbebauungsplan",
+   "datum": "1955-05-06",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/TB179.pdf",
+   "pdf_mb": 3.3,
+   "seiten": 1,
+   "seite1": "Creator:         Acrobat 5.0 Image Conversion Plug-in for Windows\nProducer:        Acrobat 5.0 Image Conversion Plug-in for Windows\nCreationDate:    Thu Apr 29 11:35:40 2004 UTC\nModDate:         Fri Jun  4 07:44:49 2021 UTC\nCustom Metadata: no\nMetadata Stream: yes\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           1\nEncrypted:       yes (print:yes copy:no change:no addNotes:no algorithm:RC4)\nPage    1 size:  1792.8 x 1779.12 pts\nPage    1 rot:   0\nFile size:       3278386 bytes\nOptimized:       yes\nPDF version:     1.4\n"
+  },
+  {
+   "name": "StGeorg20",
+   "art": "Bebauungsplan",
+   "datum": "1977-07-06",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg20.pdf",
+   "pdf_mb": 1.7,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  1792.08 x 1383.84 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nFile size:       1677916 bytes\nOptimized:       yes\nPDF version:     1.5\n"
+  },
+  {
+   "name": "StGeorg26",
+   "art": "Bebauungsplan",
+   "datum": "1984-06-27",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg26.pdf",
+   "pdf_mb": 4.4,
+   "seiten": 3,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           3\nEncrypted:       no\nPage    1 size:  3062.88 x 2268.72 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nPage    3 size:  841.92 x 595.2 pts (A4)\nPage    3 rot:   270\nFile size:       4426907 bytes\nOptimized:       yes\nPDF version:     1.5\n"
+  },
+  {
+   "name": "StGeorg25",
+   "art": "Bebauungsplan",
+   "datum": "1980-11-14",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg25.pdf",
+   "pdf_mb": 1.3,
+   "seiten": 3,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           3\nEncrypted:       no\nPage    1 size:  1787.76 x 1350 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nPage    3 size:  841.92 x 595.2 pts (A4)\nPage    3 rot:   270\nFile size:       1260615 bytes\nOptimized:       yes\nPDF version:     1.5\n"
+  },
+  {
+   "name": "StGeorg22",
+   "art": "Bebauungsplan",
+   "datum": "1977-11-09",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/StGeorg22.pdf",
+   "pdf_mb": 1.9,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  2237.76 x 1650.24 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nFile size:       1863490 bytes\nOptimized:       yes\nPDF version:     1.5\n"
+  },
+  {
+   "name": "D317-1",
+   "art": "Durchführungsplan",
+   "datum": "1961-02-14",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/D317-1.pdf",
+   "pdf_mb": 4.0,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  1620.42 x 1000.58 pts\nPage    1 rot:   0\nPage    2 size:  595.2 x 841.68 pts (A4)\nPage    2 rot:   0\nFile size:       4031388 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  }
+ ]
+}

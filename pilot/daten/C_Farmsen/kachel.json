@@ -1,0 +1,92 @@
+{
+ "utm_bbox": [
+  573433,
+  5939512,
+  573933,
+  5940012
+ ],
+ "wgs_bbox": "10.109658,53.599287,10.117331,53.603710",
+ "plaene": [
+  {
+   "name": "Farmsen-Berne19",
+   "art": "Bebauungsplan",
+   "datum": "1979-07-03",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Farmsen-Berne19.pdf",
+   "pdf_mb": 4.5,
+   "seiten": 5,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            AcroForm\nJavaScript:      no\nPages:           5\nEncrypted:       no\nPage    1 size:  2381.04 x 3494.88 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nPage    3 size:  841.92 x 595.2 pts (A4)\nPage    3 rot:   270\nFile size:       4489924 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "Farmsen-Berne2",
+   "art": "Bebauungsplan",
+   "datum": "1965-07-02",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Farmsen-Berne2.pdf",
+   "pdf_mb": 7.6,
+   "seiten": 4,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           4\nEncrypted:       no\nPage    1 size:  2324.88 x 3425.04 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nPage    3 size:  1679.77 x 1186.54 pts\nPage    3 rot:   0\nFile size:       7628581 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "Farmsen-Berne25",
+   "art": "Bebauungsplan",
+   "datum": "1985-07-08",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Farmsen-Berne25.pdf",
+   "pdf_mb": 0.7,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  2410.56 x 1859.04 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nFile size:       707503 bytes\nOptimized:       yes\nPDF version:     1.4\n"
+  },
+  {
+   "name": "Farmsen-Berne19(1Aend)",
+   "art": "Bebauungsplan",
+   "datum": "2010-02-12",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Farmsen-Berne19(1Aend).pdf",
+   "pdf_mb": 0.7,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  563.748 x 841.89 pts\nPage    1 rot:   90\nPage    2 size:  595.276 x 594.583 pts\nPage    2 rot:   0\nFile size:       651281 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "BSFarmsen",
+   "art": "Baustufenplan",
+   "datum": "1955-05-20",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/BSFarmsen.pdf",
+   "pdf_mb": 2.3,
+   "seiten": 1,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           1\nEncrypted:       no\nPage    1 size:  2685.6 x 3275.28 pts\nPage    1 rot:   0\nFile size:       2343459 bytes\nOptimized:       yes\nPDF version:     1.4\n"
+  },
+  {
+   "name": "Farmsen-Berne2(1Aend)",
+   "art": "Bebauungsplan",
+   "datum": "2010-12-27",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Farmsen-Berne2(1Aend).pdf",
+   "pdf_mb": 1.1,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  1679.77 x 1186.54 pts\nPage    1 rot:   0\nPage    2 size:  571.42 x 588.426 pts\nPage    2 rot:   0\nFile size:       1148541 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "TB517",
+   "art": "Teilbebauungsplan",
+   "datum": "1959-04-03",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/TB517.pdf",
+   "pdf_mb": 14.7,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  5458.33 x 6001.21 pts\nPage    1 rot:   0\nPage    2 size:  1926.72 x 3769.21 pts\nPage    2 rot:   0\nFile size:       14675693 bytes\nOptimized:       yes\nPDF version:     1.6\n"
+  },
+  {
+   "name": "Farmsen-Berne17",
+   "art": "Bebauungsplan",
+   "datum": "1973-10-09",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Farmsen-Berne17.pdf",
+   "pdf_mb": 0.4,
+   "seiten": 2,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage    1 size:  2409.12 x 1828.08 pts\nPage    1 rot:   0\nPage    2 size:  841.92 x 595.2 pts (A4)\nPage    2 rot:   270\nFile size:       448375 bytes\nOptimized:       yes\nPDF version:     1.4\n"
+  },
+  {
+   "name": "Farmsen-Berne16",
+   "art": "Bebauungsplan",
+   "datum": "2002-03-19",
+   "pdf": "https://www.daten-hamburg.de/infrastruktur_bauen_wohnen/bebauungsplaene/pdfs/bplan/Farmsen-Berne16.pdf",
+   "pdf_mb": 1.4,
+   "seiten": 3,
+   "seite1": "Custom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           3\nEncrypted:       no\nPage    1 size:  1374.41 x 1809.45 pts\nPage    1 rot:   0\nPage    2 size:  595 x 842 pts (A4)\nPage    2 rot:   0\nPage    3 size:  595 x 842 pts (A4)\nPage    3 rot:   0\nFile size:       1446712 bytes\nOptimized:       yes\nPDF version:     1.4\n"
+  }
+ ]
+}

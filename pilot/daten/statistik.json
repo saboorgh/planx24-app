@@ -1,0 +1,77 @@
+{
+ "stand": "2026-11-28",
+ "anzahl": 3049,
+ "arten": {
+  "Bebauungsplan": 2202,
+  "Durchführungsplan": 290,
+  "Teilbebauungsplan": 461,
+  "Baustufenplan": 96
+ },
+ "jahrzehnte": {
+  "1940er": 2,
+  "1950er": 575,
+  "1960er": 854,
+  "1970er": 409,
+  "1980er": 287,
+  "1990er": 212,
+  "2000er": 254,
+  "2010er": 313,
+  "2020er": 143
+ },
+ "kacheln": {
+  "A_StGeorg_Steindamm": {
+   "plaene": 17,
+   "namen": [
+    "TB453",
+    "StGeorg37",
+    "StGeorg35",
+    "BSStGeorg",
+    "StGeorg21",
+    "StGeorg16",
+    "StGeorg19",
+    "D275",
+    "D123",
+    "D51B",
+    "StGeorg24",
+    "TB179",
+    "StGeorg20",
+    "StGeorg26",
+    "StGeorg25",
+    "StGeorg22",
+    "D317-1"
+   ]
+  },
+  "B_Eimsbuettel_Osterstrasse": {
+   "plaene": 13,
+   "namen": [
+    "D132",
+    "BSEimsbuettel-Hoheluft-West",
+    "Eimsbuettel3",
+    "D31A",
+    "Eimsbuettel5",
+    "TB432-1",
+    "Eimsbuettel18",
+    "D19A",
+    "D4A",
+    "Eimsbuettel19",
+    "D139",
+    "TB471",
+    "TB466"
+   ]
+  },
+  "C_Farmsen": {
+   "plaene": 9,
+   "namen": [
+    "Farmsen-Berne19",
+    "Farmsen-Berne2",
+    "Farmsen-Berne25",
+    "Farmsen-Berne19(1Aend)",
+    "BSFarmsen",
+    "Farmsen-Berne2(1Aend)",
+    "TB517",
+    "Farmsen-Berne17",
+    "Farmsen-Berne16"
+   ]
+  }
+ }
+}
