@@ -5,6 +5,7 @@
 // Umgebungsvariablen (in Vercel eintragen, nie ins Repository):
 //   ANTHROPIC_API_KEY   Schlüssel von console.anthropic.com
 //   KB_URL              https://<projekt>.supabase.co/functions/v1/suche?key=<Schlüssel der Stufe oeffentlich>
+//   KI_CHAT             Schalter: "aus" = KI-Chat ausgeschaltet (App zeigt Hinweis), sonst an
 //   CLAUDE_MODEL        optional, Standard claude-sonnet-5-5
 //   DAILY_LIMIT         Schalter für das Tageslimit: leer oder 0 = AUS (unbegrenzt, bis zum Release),
 //                       z. B. 5 = 5 kostenlose Fragen je Besucher in 24 Stunden
@@ -121,8 +122,11 @@ function clean(messages) {
 }
 
 export default async function handler(req, res) {
+  // Schalter: KI_CHAT=aus in Vercel schaltet den Chat ab; GET liefert den Stand für die App
+  const on = !!process.env.ANTHROPIC_API_KEY && String(process.env.KI_CHAT || '').toLowerCase() !== 'aus';
+  if (req.method === 'GET') { res.setHeader('Cache-Control', 'no-store'); res.status(200).json({ an: on }); return; }
   if (req.method !== 'POST') { res.status(405).end(); return; }
-  if (!process.env.ANTHROPIC_API_KEY) { res.status(503).json({ error: 'Der KI-Chat ist noch nicht eingeschaltet.' }); return; }
+  if (!on) { res.status(503).json({ error: 'Der KI-Chat ist zurzeit ausgeschaltet.' }); return; }
   const ip = String(req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '?').split(',')[0].trim();
   const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
   // Aufgaben ableiten zählt nicht als Frage

@@ -60,7 +60,9 @@ try { P = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { P =
 Object.entries(P).forEach(([k, p]) => { p.id = k; if (!p.nrs) p.nrs = [p.nr]; const m = { entwurf: 'neu', pruefung: 'arbeit', voranfrage: 'arbeit', eingereicht: 'erledigt', abgelegt: 'erledigt' }; if (m[p.status]) p.status = m[p.status]; });
 function save() { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} }
 
-const state = { base: 'map', tabs: [], active: 'map', selIds: [], add: false, hover: null, selB: [], layers: { scan: false, bp: false, brw: false, d3: false, dop: false, lod2: false }, scanOp: 0.85, dopOp: 1, opts: false, show: { gs: true, fl: true, hnr: true, selB: true, mass: false }, mode: 'info', chats: {}, busy: false, sub: {} };
+const state = { base: 'map', tabs: [], active: 'map', selIds: [], add: false, hover: null, selB: [], layers: { scan: false, bp: false, brw: false, d3: false, dop: false, lod2: false }, scanOp: 0.85, dopOp: 1, opts: false, show: { gs: true, fl: true, hnr: true, selB: true, mass: false }, mode: 'info', chats: {}, busy: false, sub: {}, chatOn: null };
+// KI-Chat an/aus (Schalter KI_CHAT in Vercel) – einmal beim Start abfragen
+fetch('/api/chat', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(j => { state.chatOn = j ? !!j.an : null; }).catch(() => {});
 let map = null, byNr = {};
 const F = { fl: fcol(), gb: fcol(), nu: fcol(), bg: fcol(), bgr: fcol(), bpl: fcol(), brw: fcol(), adr: fcol() };
 function fcol() { return { type: 'FeatureCollection', features: [] }; }
@@ -483,7 +485,7 @@ function renderPanel(fs, r) {
   } else if (r.mixed) {
     h += `<section><h3>Unterschiedliche Festsetzungen</h3><dl class="kv">${fs.map((f, i) => `<dt>Flst. ${esc(f.properties.nr)}</dt><dd>${esc(festShort(r.per[i].fest))}</dd>`).join('')}</dl></section>`;
   } else if (!r.street) h += `<p class="note warn">Für ${multi ? 'diese Flurstücke' : 'dieses Flurstück'} liegen keine digitalen Festsetzungen vor.</p>`;
-  if (!r.street) h += `<button class="btn pri" type="button" id="chatb">${ICON_CHAT}Frag zu ${multi ? 'diesen Grundstücken' : 'diesem Grundstück'}</button><div class="pact"><button class="btn" type="button" id="mk">${ex ? 'Projekt öffnen' : 'Als Projekt anlegen'}</button><button class="btn" type="button" id="addm" aria-pressed="${state.add}">${state.add ? 'Fertig' : '+ Flurstück'}</button></div>`;
+  if (!r.street) h += (state.chatOn === false ? `<button class="btn pri" type="button" disabled title="Der KI-Chat ist zurzeit ausgeschaltet">${ICON_CHAT}KI-Chat zurzeit ausgeschaltet</button>` : `<button class="btn pri" type="button" id="chatb">${ICON_CHAT}Frag zu ${multi ? 'diesen Grundstücken' : 'diesem Grundstück'}</button>`) + `<div class="pact"><button class="btn" type="button" id="mk">${ex ? 'Projekt öffnen' : 'Als Projekt anlegen'}</button><button class="btn" type="button" id="addm" aria-pressed="${state.add}">${state.add ? 'Fertig' : '+ Flurstück'}</button></div>`;
   h += state.add ? `<p class="note">Klicke weitere Flurstücke auf der Karte an. Ein zweiter Klick nimmt sie wieder heraus.</p>` : `<p class="foot">Mehrere Flurstücke: „+ Flurstück“ oder Umschalt + Klick.</p>`;
   h += `<p class="foot">Erste Einschätzung aus amtlichen Daten. Ersetzt keine Prüfung durch die Bauaufsicht.</p></div>`;
   const panel = $('#panel'); panel.innerHTML = h; panel.classList.remove('hidden');
