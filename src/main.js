@@ -713,6 +713,66 @@ function neighbors(fs, r) {
   const cnt = {}; nb.forEach(b => { const g = b.properties.gs || '?'; cnt[g] = (cnt[g] || 0) + 1; });
   return `${nb.length} Gebäude; Geschosse: ${Object.entries(cnt).map(([g, n]) => n + '× ' + g).join(', ')}; Funktionen: ${[...new Set(nb.map(b => b.properties.fn))].slice(0, 5).join(', ')}`;
 }
+
+/* Geometrie für die KI: Abstände in Metern (lokal genähert über KX/KY) */
+const toM = p => [p[0] * KX, p[1] * KY];
+function dPtSeg(p, a, b) { const dx = b[0] - a[0], dy = b[1] - a[1], L = dx * dx + dy * dy; let t = L ? ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / L : 0; t = Math.max(0, Math.min(1, t)); const x = a[0] + t * dx - p[0], y = a[1] + t * dy - p[1]; return Math.hypot(x, y); }
+function ringsM(mp) { return mp.flatMap(poly => poly.map(r => r.map(toM))); }
+function edges(rings) { const e = []; rings.forEach(r => { for (let i = 1; i < r.length; i++) e.push([r[i - 1], r[i]]); }); return e; }
+function dEdges(ptsA, edB) { let m = Infinity; for (const p of ptsA) for (const [a, b] of edB) m = Math.min(m, dPtSeg(p, a, b)); return m; }
+function dPolyEdges(rA, edB) { const ptsA = rA.flat(); const edA = edges(rA); const ptsB = edB.flatMap(e => [e[0]]); return Math.min(dEdges(ptsA, edB), dEdges(ptsB, edA)); }
+// BauNVO-Fassung aus dem Datum; maßgeblich ist die Fassung bei der öffentlichen Auslegung (liegt meist Monate vor der Feststellung)
+function baunvoSicher(d) {
+  const v = baunvo(d); if (!v || v === 'vor der BauNVO') return v;
+  const grenzen = ['1962-08-01', '1969-01-01', '1977-10-01', '1990-01-27', '2017-05-13', '2021-06-23'];
+  const t = Date.parse(d); const knapp = grenzen.some(g => { const x = Date.parse(g); return t >= x && t - x < 365 * 864e5; });
+  return v + (knapp ? ' (Plan kurz nach einer Änderung der BauNVO festgestellt – maßgeblich ist die Fassung bei Auslegung, ggf. die ältere; prüfen)' : '');
+}
+function geoKontext(fs) {
+  const L = [], own = new Set(fs.map(f => f.k));
+  const plotRings = fs.flatMap(f => ringsM(f.geometry.coordinates));
+  const plotEdges = edges(plotRings);
+  // Grenzabschnitte den Nachbarn zuordnen (Punkt 1 m außerhalb der Kantenmitte)
+  const groups = new Map();
+  plotEdges.forEach(([a, b]) => {
+    const len = Math.hypot(b[0] - a[0], b[1] - a[1]); if (len < 0.5) return;
+    const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2, nx = -(b[1] - a[1]) / len, ny = (b[0] - a[0]) / len;
+    let nb = null;
+    for (const s of [1, -1]) { const q = [(mx + s * nx * 1.2) / KX, (my + s * ny * 1.2) / KY]; if (fs.some(f => inPoly(q, f.geometry.coordinates))) continue; nb = F.fl.features.find(f => !own.has(f.k) && q[0] >= f.bb[0] && q[0] <= f.bb[2] && q[1] >= f.bb[1] && q[1] <= f.bb[3] && inPoly(q, f.geometry.coordinates)) || 'außen'; break; }
+    if (!nb) return;
+    const key = nb === 'außen' ? 'außen' : nb.k;
+    if (!groups.has(key)) groups.set(key, { nb, edges: [], len: 0 });
+    const g = groups.get(key); g.edges.push([a, b]); g.len += len;
+  });
+  const label = g => { if (g.nb === 'außen') return 'Grenze (Nachbar nicht geladen)'; const p = g.nb.properties; const str = /Strassenverkehr|Weg|Platz/.test(p.tn); const nm = (p.lage || '').split(';')[0].trim(); return str ? `Straßenseite${nm ? ' (' + nm + ')' : ''}` : /Gewaesser/.test(p.tn) ? 'Gewässer' : `Nachbar Flst. ${p.nr}${nm ? ' (' + nm + ')' : ''}`; };
+  const G = [...groups.values()].filter(g => g.len >= 2).sort((a, b) => b.len - a.len);
+  const adr = F.adr.features;
+  const bld = fs.flatMap(f => F.gb.features.filter(b => b.properties.keep && inPoly(b.c, f.geometry.coordinates)));
+  L.push('GEBÄUDE AUF DEM GRUNDSTÜCK UND ABSTÄNDE (aus ALKIS berechnet, Genauigkeit ca. ±0,5 m; Höhe nur geschätzt: Geschosse × 3 m, ohne Dach)');
+  if (!bld.length) L.push('- keine Gebäude');
+  bld.slice(0, 8).forEach((b, i) => {
+    const r = ringsM(b.geometry.coordinates), gs = b.properties.gs;
+    const hn = adr.filter(a => inPoly(a.geometry.coordinates, b.geometry.coordinates)).map(a => a.properties.h).filter(Boolean);
+    const H = gs ? gs * 3 : null, need = H ? Math.max(2.5, 0.4 * H) : null;
+    const parts = G.map(g => { const d = dPolyEdges(r, g.edges); const stv = /^Straßenseite/.test(label(g)); return `${label(g)}: ${d < 0.3 ? 'steht an der Grenze' : 'ca. ' + fmt(d, 1) + ' m'}${need && !stv && d >= 0.3 ? (d >= need ? ' (reicht für ca. ' + fmt(need, 1) + ' m)' : ' (knapp/zu wenig für ca. ' + fmt(need, 1) + ' m)') : ''}`; });
+    L.push(`- Gebäude ${i + 1}${hn.length ? ' (Nr. ' + hn.join(', ') + ')' : ''}: ${b.properties.fn || 'Gebäude'}, ${gs ? gs + ' Geschosse' : 'Geschosse unbekannt'}, Grundfläche ca. ${fmt(b.area)} m²${H ? ', Höhe geschätzt ca. ' + H + ' m → Abstandsfläche ca. ' + fmt(need, 1) + ' m (0,4 H, mind. 2,50 m)' : ''}`);
+    if (parts.length) L.push('  Abstand zu: ' + parts.join(' | '));
+    const bg = F.bgr.features.filter(l => lines(l.geometry).some(Ln => lineHitsPoly(Ln, b.geometry.coordinates)));
+    if (bg.length) L.push('  Eine Baugrenze/Baulinie schneidet dieses Gebäude (Gebäude teilweise außerhalb des Baufensters oder Baulinie an der Fassade).');
+  });
+  // Grenzbebauung (für § 6 Abs. 8 HBauO)
+  const grenz = bld.filter(b => G.some(g => !/^Straßenseite/.test(label(g)) && dPolyEdges(ringsM(b.geometry.coordinates), g.edges) < 0.3));
+  if (grenz.length) L.push(`- An einer Nachbargrenze stehen: ${grenz.map(b => (b.properties.fn || 'Gebäude') + ' (' + fmt(b.area) + ' m²)').join(', ')}`);
+  // Nachbargebäude an jeder Nachbargrenze
+  L.push('NACHBARN');
+  G.filter(g => g.nb !== 'außen' && !/^Straßenseite|Gewässer/.test(label(g))).slice(0, 6).forEach(g => {
+    const nbB = F.gb.features.filter(b => b.properties.keep && inPoly(b.c, g.nb.geometry.coordinates));
+    if (!nbB.length) { L.push(`- ${label(g)}: Grenzlänge ca. ${fmt(g.len)} m, unbebaut`); return; }
+    const near = nbB.map(b => ({ b, d: dPolyEdges(ringsM(b.geometry.coordinates), g.edges) })).sort((x, y) => x.d - y.d)[0];
+    L.push(`- ${label(g)}: Grenzlänge ca. ${fmt(g.len)} m; nächstes Gebäude ${near.b.properties.fn || ''}, ${near.b.properties.gs ? near.b.properties.gs + ' Geschosse' : 'Geschosse unbekannt'}, ${near.d < 0.3 ? 'steht an der Grenze (Grenzbebauung/geschlossen)' : 'ca. ' + fmt(near.d, 1) + ' m von der Grenze'}`);
+  });
+  return L.join('\n');
+}
 function ctxText(fs, r) {
   const f0 = fs[0].properties, ex = findProject(fs), L = [];
   L.push('GRUNDSTÜCK');
@@ -725,14 +785,16 @@ function ctxText(fs, r) {
     const q = r.per[i].fest;
     if (!q) { L.push(`- Flst. ${f.properties.nr}: keine digitale Festsetzung gefunden`); return; }
     const cl = clauses(q.txt), bs = /^BS/.test(q.plan);
-    L.push(`- Flst. ${f.properties.nr}: ${planName(q.plan)}, festgestellt ${dDE(q.d)}${bs ? ' (Baustufenplan, Maß nach Baupolizeiverordnung 1938)' : ' (vermutlich ' + baunvo(q.d) + ')'}; Art: ${nice(q.art) || '–'}; Vollgeschosse: ${q.Z || '–'}; GRZ: ${q.GRZ || '–'}; GFZ: ${q.GFZ || '–'}${q.GF ? '; GF: ' + q.GF + ' m²' : ''}; Bauweise: ${nice(q.bw) || '–'}${cl.length ? '\n  Textliche Festsetzungen: ' + cl.map(([n, x]) => n + ': ' + x).join(' | ') : ''}`);
+    L.push(`- Flst. ${f.properties.nr}: ${planName(q.plan)}, festgestellt ${dDE(q.d)}${bs ? ' (Baustufenplan, Maß nach Baupolizeiverordnung 1938)' : '; maßgebliche BauNVO: ' + baunvoSicher(q.d)}; Art: ${nice(q.art) || '–'}; Vollgeschosse: ${q.Z || '–'}; GRZ: ${q.GRZ || '–'}; GFZ: ${q.GFZ || '–'}${q.GF ? '; GF: ' + q.GF + ' m²' : ''}; Bauweise: ${nice(q.bw) || '–'}${cl.length ? '\n  Textliche Festsetzungen: ' + cl.map(([n, x]) => n + ': ' + x).join(' | ') : ''}`);
   });
   L.push(`- Baugrenze oder Baulinie berührt das Grundstück: ${r.bgrHit ? 'ja (genauer Verlauf nur in der Planzeichnung)' : 'keine erfasst'}`);
+  if (fs.some((f, i) => r.per[i].fest && !r.per[i].fest.GRZ && !r.per[i].fest.Z && !r.per[i].fest.GFZ)) L.push('- Maß der Nutzung (Geschosse, GRZ, GFZ) fehlt in den digitalen Plandaten – steht dann in der Planzeichnung (Scan) bzw. im Plantext. Das klar so sagen, nicht raten.');
+  try { L.push(geoKontext(fs)); } catch (e) { L.push('ABSTÄNDE: konnten nicht berechnet werden'); }
   if (r.gfZul !== null) L.push(`- Rechnerisch zulässige Geschossfläche: ${fmt(r.gfZul)} m²; Bestand ca. ${fmt(r.gfIst)} m²`);
   if (r.brw) L.push(`BODENRICHTWERT: ${brwTxt(r.brw)} (normierter Wert für Mehrfamilienhäuser, Stichtag ${r.brw.st})`);
   const nb = neighbors(fs, r); if (nb) L.push(`UMGEBUNG (Gebäude im Umkreis von 80 m, ohne eigene): ${nb}`);
   if (ex && Object.keys(ex.f).length) L.push('ANGABEN DES NUTZERS: ' + FIELDS.filter(fd => ex.f[fd.k] !== undefined).map(fd => fd.l + ': ' + ex.f[fd.k] + (fd.u ? ' ' + fd.u : '')).join('; '));
-  L.push('NICHT GEPRÜFT (Daten noch nicht angebunden): Erhaltungsverordnungen, Denkmalschutz, Baulasten, Pläne im Verfahren, Altlasten, genaue Abstandsflächen.');
+  L.push('NICHT GEPRÜFT (Daten noch nicht angebunden): Erhaltungsverordnungen, Denkmalschutz, Baulasten, Pläne im Verfahren, Altlasten, genaue Gebäudehöhen (nur aus Geschosszahl geschätzt).');
   return L.join('\n');
 }
 function history(msgs) { return msgs.filter(m => !m.err && !m.pending && m.content).map(m => ({ role: m.role, content: m.content })); }

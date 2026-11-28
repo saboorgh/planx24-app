@@ -71,10 +71,10 @@ async function kbCall(name, args) {
   if (!r.ok || !j) return 'Die Wissensbasis hat nicht geantwortet.';
   if (j.error) return 'Fehler der Wissensbasis: ' + (j.error.message || '');
   const text = (j.result?.content || []).map(c => c.text || '').join('\n');
-  return text.split('\n\n---\n\n').filter(b => !/\|\s*INTERN/.test(b)).join('\n\n---\n\n').slice(0, 9000);
+  return text.split('\n\n---\n\n').filter(b => !/\|\s*INTERN/.test(b)).join('\n\n---\n\n').slice(0, 6000);
 }
 async function runTool(name, input) {
-  if (name === 'suche_wissensbasis') return kbCall('suche', { frage: String(input.frage || ''), anzahl: Math.min(Number(input.anzahl) || 6, 10) });
+  if (name === 'suche_wissensbasis') return kbCall('suche', { frage: String(input.frage || ''), anzahl: Math.min(Number(input.anzahl) || 4, 6) });
   if (name === 'lies_fundstelle') return kbCall('lies_fundstelle', { fundstelle: String(input.fundstelle || '') });
   return 'Unbekanntes Werkzeug.';
 }
@@ -136,7 +136,8 @@ export default async function handler(req, res) {
   if (!q.ok) { res.status(429).json({ error: 'limit', limit: DAILY_LIMIT, resetAt: q.resetAt }); return; }
   const ctx = String(body.ctx || '').slice(0, 24000);
   const messages = clean(body.messages);
-  const system = SYSTEM + '\n\nDATEN ZUM GRUNDSTÜCK\n' + ctx;
+  // Regeln werden zwischengespeichert (Prompt-Caching): spätere Fragen zahlen dafür nur ~10 %
+  const system = [{ type: 'text', text: SYSTEM, cache_control: { type: 'ephemeral' } }, { type: 'text', text: 'DATEN ZUM GRUNDSTÜCK\n' + ctx }];
   if (body.mode === 'tasks') messages.push({ role: 'user', content: 'Leite aus unserem Gespräch 3 bis 6 konkrete nächste Schritte für den Bauherrn ab, jeweils höchstens 12 Wörter, auf Deutsch. Antworte nur mit einem JSON-Array aus Strings.' });
   if (!messages.length || messages[messages.length - 1].role !== 'user') { res.status(400).json({ error: 'Keine Frage.' }); return; }
 
