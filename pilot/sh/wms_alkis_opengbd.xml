@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WMS_Capabilities version="1.3.0" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sld="http://www.opengis.net/sld" xsi:schemaLocation="http://www.opengis.net/wms https://dienste.gdi-sh.de/inspire_schemas_ii/schema/ogc/wms/1.3.0/capabilities_1_3_0.xsd http://www.opengis.net/sld https://dienste.gdi-sh.de/inspire_schemas_ii/schema/ogc/sld/1.1.0/sld_capabilities.xsd" updateSequence="2025-12-11">
+	<Service>
+		<Name>WMS</Name>
+		<Title>AdV-ALKIS-WMS-SH</Title>
+		<Abstract>Flächendeckende Beschreibung der Angaben zu den Layern "Flurstücke", "Gebäude" sowie zu den Gruppierungen "Tatsächliche Nutzung" und "Gesetzliche Festlegungen" gemäß der entsprechenden Objektbereiche im ALKIS-Objektartenkatalog. Die Gruppierung "Weiteres" ist optional und enthält die Objektbereiche "Bauwerke und Einrichtungen" sowie "Relief". Alle ALKIS-Objekte des Grunddatenbestandes (ausser Grenzpunkte und Netzpunkte) sind Pflichtinhalte. Alle weiteren ALKIS-Objekte können optional geführt werden. Die Präsentation der ALKIS-Daten erfolgt grundsätzlich nach dem ALKIS-Signaturenkatalog für AdV-Standardausgaben. Soweit im Signaturenkatalog festgelegt, stehen für alle Layer Darstellungen in Farbe zur Verfügung. Für "Flurstücke" und "Gebäude" werden zusätzlich Darstellungen in Grausstufen (entsprechend Signaturenkatalog) und in Gelb (keine Flächendarstellung, nur Konturen) angeboten. Durch das Aktualitätsdatum im SH-MIS (https://sh-mis.gdi-sh.de) zum entsprechenden Dienst/Datensatz wird die letztmalige physische Bearbeitung/Veränderung an den zugrundeliegenden Daten ausgewiesen. Grundsätzlich handelt es sich aber um einen tagesaktuellen Dienst/Datensatz.</Abstract>
+		<KeywordList>
+			<Keyword>LVermGeo SH</Keyword>
+			<Keyword>WMS</Keyword>
+			<Keyword>AdV</Keyword>
+			<Keyword>ALKIS</Keyword>
+			<Keyword>Landesamt für Vermessung und Geoinformation Schleswig-Holstein (LVermGeo SH)</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://www.schleswig-holstein.de/DE/Landesregierung/LVERMGEOSH/lvermgeosh_node.html"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson>Landesamt für Vermessung und Geoinformation Schleswig-Holstein</ContactPerson>
+				<ContactOrganization>Landesamt für Vermessung und Geoinformation Schleswig-Holstein (LVermGeo SH)</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition>Servicestelle Geoserver</ContactPosition>
+			<ContactAddress>
+				<AddressType>postal</AddressType>
+				<Address>Mercatorstraße 1</Address>
+				<City>Kiel</City>
+				<StateOrProvince>SH</StateOrProvince>
+				<PostCode>24106</PostCode>
+				<Country>Deutschland</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+49 431 383 2019</ContactVoiceTelephone>
+			<ContactFacsimileTelephone>+49 431 988 624 2019</ContactFacsimileTelephone>
+			<ContactElectronicMailAddress>Geoserver@LVermGeo.landsh.de</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>Die Geobasisinformationen sind nach Urheberrechtsgesetz (Datenbankhersteller) und nach dem Gesetz über die Landesvermessung und das Liegenschaftskataster (Vermessungs- und Katastergesetz - VermKatG -) geschützt. Eine Nutzung in Form von Umarbeitung, Vervielfältigung, Digitalisierung, Weitergabe, Veröffentlichung, Präsentation im Internet oder auf sonstige Weise, ist nur mit schriftlicher Einwilligung des LVermGeo SH zulässig. Zuwiderhandlungen sind nach dem VermKatG des Landes Schleswig-Holsteins mit Bußgeld sowie nach Paragraph 106 ff. UrhG mit Strafe bedroht. Es gelten die AGNB des LVermGeo SH. Ein flächendeckendes Herunterladen (Caching/Download/Speichern) der zugrunde liegenden Geobasisinformationen oder ein permanentes Einbinden des Dienstes in Webanwendungen ist nicht zulässig. Anfragen für kommerzielle Nutzungen richten Sie bitte an das LVermGeo SH (Vertriebskontakt).</Fees>
+		<AccessConstraints>Bitte beachten Sie die entsprechenden Nutzungsbedingungen (Fees).</AccessConstraints>
+		<MaxWidth>20000</MaxWidth>
+		<MaxHeight>20000</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/WMS_SH_ALKIS_OpenGBD?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/png</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/gif</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/WMS_SH_ALKIS_OpenGBD?"/>
+						</Get>
+						<Post>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/WMS_SH_ALKIS_OpenGBD"/>
+						</Post>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>text/xml</Format>
+				<Format>text/xml;subtype=gml/3.1.1</Format>
+				<Format>text/xml;subtype=gml/3.2.1</Format>
+				<Format>text/html</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/WMS_SH_ALKIS_OpenGBD?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+			<sld:DescribeLayer xmlns:sld="http://www.opengis.net/sld">
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/WMS_SH_ALKIS_OpenGBD?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</sld:DescribeLayer>
+		</Request>
+		<Exception>
+			<Format>XML</Format>
+			<Format>INIMAGE</Format>
+			<Format>BLANK</Format>
+		</Exception>
+		<sld:UserDefinedSymbolization xmlns:sld="http://www.opengis.net/sld" SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0" InlineFeature="0" RemoteWCS="0"/>
+		<Layer queryable="0">
+			<Title>ALKIS-SH</Title>
+			<Abstract></Abstract>
+			<CRS>EPSG:25832</CRS>
+			<CRS>EPSG:25833</CRS>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:4647</CRS>
+			<CRS>EPSG:3034</CRS>
+			<CRS>EPSG:3035</CRS>
+			<CRS>EPSG:3044</CRS>
+			<CRS>EPSG:3045</CRS>
+			<CRS>EPSG:3857</CRS>
+			<CRS>EPSG:31467</CRS>
+			<CRS>EPSG:31468</CRS>
+			<CRS>EPSG:31469</CRS>
+			<CRS>EPSG:900913</CRS>
+			<CRS>EPSG:31463</CRS>
+			<CRS>EPSG:31464</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>7.10546146556158</westBoundLongitude>
+				<eastBoundLongitude>12.1558495597564</eastBoundLongitude>
+				<southBoundLatitude>53.2116187545512</southBoundLatitude>
+				<northBoundLatitude>55.3915745425417</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox CRS="EPSG:25832" minx="380000" miny="5900000" maxx="700000" maxy="6140000" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:25833" minx="-20012.6368149151" miny="5900026.81890321" maxx="319747.676354421" maxy="6166764.24642716" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:3034" minx="2931996.64795426" miny="3819480.82648573" maxx="3168501.77726412" maxy="4132412.74909572" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:3035" minx="3346655.32614506" miny="4134213.7590269" maxx="3591097.95870914" maxy="4457748.72005022" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:3044" minx="5900000" miny="380000" maxx="6140000" maxy="700000" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:3045" minx="5900026.81890321" miny="-20012.6368149151" maxx="6166764.24642716" maxy="319747.676354421" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:31463" minx="3380021.35043151" miny="5901918.63241384" maxx="3700151.37572827" maxy="6142018.93985475" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:31464" minx="4179842.4382964" miny="5897729.40921801" maxx="4509983.30859338" maxy="6151288.68276564" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:31467" minx="5901918.63241384" miny="3380021.35043151" maxx="6142018.93985475" maxy="3700151.37572827" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:31468" minx="5897729.40921801" miny="4179842.4382964" maxx="6151288.68276564" maxy="4509983.30859338" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:31469" minx="5901941.21688103" miny="4979913.62623545" maxx="6168782.74038923" maxy="5319811.46971513" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:3857" minx="790976.352197542" miny="7022237.99544713" maxx="1353182.98315172" maxy="7438236.65389562" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:4258" minx="53.2116187545512" miny="7.10546146556158" maxx="55.3915745425417" maxy="12.1558495597564" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:4326" minx="53.2116187545512" miny="7.10546146556158" maxx="55.3915745425417" maxy="12.1558495597564" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:4647" minx="32380000" miny="5900000" maxx="32700000" maxy="6140000" resx="1" resy="1"/>
+			<BoundingBox CRS="EPSG:900913" minx="790976.352197542" miny="7022237.99544713" maxx="1353182.98315172" maxy="7438236.65389562" resx="1" resy="1"/>
+			<Layer queryable="1">
+				<Name>adv_alkis_tatsaechliche_nutzung</Name>
+				<Title>Tatsaechliche Nutzung</Title>
+				<Abstract>Die Gruppierung „Tatsaechliche Nutzung“ beinhaltet den gleichlautenden Objektbereich und enthaelt die Informationen der Objektartengruppen „Siedlung“, „Verkehr“, „Vegetation“ und „Gewaesser“. Alle Objektbereiche definieren die lueckenlose, ueberschneidungsfreie und flaechendeckende Beschreibung der Erdoberflaeche.</Abstract>
+				<Style>
+					<Name>Farbe</Name>
+					<Title>farbig</Title>
+					<Abstract>Farbdarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="571" height="1630">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-18_ALKIS-WMS-Legende_TN_farbe.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>SW</Name>
+					<Title>grau</Title>
+					<Abstract>Graustufendarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="571" height="1408">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-18_ALKIS-WMS-Legende_TN_sw.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>Gelb</Name>
+					<Title>tranzparent</Title>
+					<Abstract>Transparenzdarstellung für Luftbilder/WebAtlasDE Überlagerung</Abstract>
+					<LegendURL width="71" height="319">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/ALKIS-WMS-keineLegende.png"/>
+					</LegendURL>
+				</Style>
+				<MinScaleDenominator>0</MinScaleDenominator>
+				<MaxScaleDenominator>5000</MaxScaleDenominator>
+				<Layer queryable="1">
+					<Name>adv_alkis_siedlung</Name>
+					<Title>Siedlung</Title>
+					<Abstract>Beschreibung der durch menschliche Ansiedlung gepraegten bebauten und unbebauten Flaechen gemaess ALKIS-Objektartenkatalog (Mindestumfang: Grunddatenbestand). Visualisierung in Farbdarstellung grundsaetzlich gemaess Signaturenkatalog.</Abstract>
+					<Style>
+						<Name>DA</Name>
+						<Title>DANord</Title>
+						<Abstract>Flurstücksumringe zur Überlagerung mit Luftbildinformationen</Abstract>
+					</Style>
+					<Style>
+						<Name>basemapde</Name>
+						<Title>basemapde</Title>
+						<Abstract>Flurstücksumringe zur Überlagerung mit basemapde</Abstract>
+					</Style>
+					<MinScaleDenominator>0</MinScaleDenominator>
+					<MaxScaleDenominator>5000</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>adv_alkis_vegetation</Name>
+					<Title>Vegetation</Title>
+					<Abstract>Beschreibung land- und forstwirtschaftlich genutzter Flaechen oder Flaechen mit fehlendem bzw. natuerlichem Bewuchs ausserhalb von Siedlungen gemaess ALKIS-Objektartenkatalog (Mindestumfang: Grunddatenbestand). Visualisierung in Farbdarstellung grundsaetzlich gemaess Signaturenkatalog.</Abstract>
+					<MinScaleDenominator>0</MinScaleDenominator>
+					<MaxScaleDenominator>5000</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>adv_alkis_gewaesser</Name>
+					<Title>Gewaesser</Title>
+					<Abstract>Beschreibung wasserbedeckter Flaechen gemaess ALKIS-Objektartenkatalog (Mindestumfang: Grunddatenbestand). Visualisierung in Farbdarstellung grundsaetzlich gemaess Signaturenkatalog.</Abstract>
+					<MinScaleDenominator>0</MinScaleDenominator>
+					<MaxScaleDenominator>5000</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>adv_alkis_verkehr</Name>
+					<Title>Verkehr</Title>
+					<Abstract>Beschreibung der dem Verkehr dienenden bebauten und nicht bebauten Flaechen gemaess ALKIS-Objektartenkatalog (Mindestumfang: Grunddatenbestand). Visualisierung in Farbdarstellung grundsaetzlich gemaess Signaturenkatalog.</Abstract>
+					<Style>
+						<Name>DA</Name>
+						<Title>DANord</Title>
+						<Abstract>Flurstücksumringe zur Überlagerung mit Luftbildinformationen</Abstract>
+					</Style>
+					<Style>
+						<Name>basemapde</Name>
+						<Title>basemapde</Title>
+						<Abstract>Flurstücksumringe zur Überlagerung mit basemapde</Abstract>
+					</Style>
+					<MinScaleDenominator>0</MinScaleDenominator>
+					<MaxScaleDenominator>5000</MaxScaleDenominator>
+				</Layer>
+			</Layer>
+			<Layer queryable="1">
+				<Name>adv_alkis_gesetzl_festlegungen</Name>
+				<Title>Gesetzliche Festlegungen</Title>
+				<Abstract>Die Gruppierung „Gesetzliche Festlegungen“ beinhaltet den Objektbereich „Gesetzliche Festlegungen, Gebietseinheiten, Kataloge“ und enthaelt verpflichtend die Objektartengruppe „Öffentlich-rechtliche und sonstige Festlegungen“. Die Fuehrung der Objektartengruppe „Bodenschaetzung, Bewertung“ ist optional.</Abstract>
+				<Style>
+					<Name>Farbe</Name>
+					<Title>farbig</Title>
+					<Abstract>Farbdarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="533" height="749">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-18_ALKIS-WMS-Legende_GesetzlicheFestlegungen_farbe.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>SW</Name>
+					<Title>grau</Title>
+					<Abstract>Graustufendarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="522" height="634">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-18_ALKIS-WMS-Legende_GesetzlicheFestlegungen_sw.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>Gelb</Name>
+					<Title>tranzparent</Title>
+					<Abstract>Transparenzdarstellung für Luftbilder/WebAtlasDE Überlagerung</Abstract>
+					<LegendURL width="71" height="319">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/ALKIS-WMS-keineLegende.png"/>
+					</LegendURL>
+				</Style>
+				<MinScaleDenominator>0</MinScaleDenominator>
+				<MaxScaleDenominator>5000</MaxScaleDenominator>
+				<Layer queryable="1">
+					<Name>adv_alkis_oeff_rechtl_sonst_festl</Name>
+					<Title>Oeffentlich-rechtliche und sonstige Festlegungen</Title>
+					<Abstract>Beschreibung der oeffentlich-rechtlichen und sonstigen Festlegungen gemaess ALKIS-Objektartenkatalog (Mindestumfang: Grunddatenbestand). Visualisierung in Farbdarstellung grundsaetzlich gemaess Signaturenkatalog.</Abstract>
+					<MinScaleDenominator>0</MinScaleDenominator>
+					<MaxScaleDenominator>5000</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>adv_alkis_bodensch</Name>
+					<Title>Bodenschaetzung</Title>
+					<Abstract>Beschreibung der Bodenschaetzungsdaten gemaess ALKIS-Objektartenkatalog. Visualisierung in Farbdarstellung grundsaetzlich gemaess Signaturenkatalog.</Abstract>
+					<MinScaleDenominator>0</MinScaleDenominator>
+					<MaxScaleDenominator>5000</MaxScaleDenominator>
+				</Layer>
+			</Layer>
+			<Layer queryable="1">
+				<Name>adv_alkis_weiteres</Name>
+				<Title>Weiteres</Title>
+				<Abstract>Die Gruppierung "Weiteres" beinhaltet Daten der Objektartenbereiche „Bauwerke, Einrichtungen und sonstige Angaben“ sowie „Relief“ entsprechend dem ALKIS-Objektartenkatalog.</Abstract>
+				<Style>
+					<Name>Farbe</Name>
+					<Title>farbig</Title>
+					<Abstract>Farbdarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="531" height="769">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-08-28_ALKIS-WMS-Legende_Bauwerke-Einrichtungen_farbe.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>SW</Name>
+					<Title>grau</Title>
+					<Abstract>Graustufendarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="531" height="769">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-11_ALKIS-WMS-Legende_Bauwerke-Einrichtungen_sw.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>Gelb</Name>
+					<Title>tranzparent</Title>
+					<Abstract>Transparenzdarstellung für Luftbilder/WebAtlasDE Überlagerung</Abstract>
+					<LegendURL width="71" height="319">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/ALKIS-WMS-keineLegende.png"/>
+					</LegendURL>
+				</Style>
+				<MinScaleDenominator>0</MinScaleDenominator>
+				<MaxScaleDenominator>5000</MaxScaleDenominator>
+				<Layer queryable="1">
+					<Name>adv_alkis_relief</Name>
+					<Title>Relief</Title>
+					<Abstract>Beschreibung des Reliefs gemaess ALKIS-Objektartenkatalog (optional). Visualisierung in Farbdarstellung grundsaetzlich gemaess Signaturenkatalog.</Abstract>
+					<MinScaleDenominator>0</MinScaleDenominator>
+					<MaxScaleDenominator>5000</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>adv_alkis_bauw_einricht</Name>
+					<Title>Bauwerke und Einrichtungen</Title>
+					<Abstract>Beschreibung der Bauwerke, Einrichtungen und sonstige Angaben gemaess ALKIS-Objektartenkatalog (optional). Visualisierung in Farbdarstellung grundsaetzlich gemaess Signaturenkatalog.</Abstract>
+					<Style>
+						<Name>DA</Name>
+						<Title>DANord</Title>
+						<Abstract>Flurstücksumringe zur Überlagerung mit Luftbildinformationen</Abstract>
+					</Style>
+					<Style>
+						<Name>basemapde</Name>
+						<Title>basemapde</Title>
+						<Abstract>Flurstücksumringe zur Überlagerung mit basemapde</Abstract>
+					</Style>
+					<MinScaleDenominator>0</MinScaleDenominator>
+					<MaxScaleDenominator>2000</MaxScaleDenominator>
+				</Layer>
+			</Layer>
+			<Layer queryable="1">
+				<Name>adv_alkis_gebaeude</Name>
+				<Title>Gebaeude</Title>
+				<Abstract>Beschreibung der Gebaeude gemaess ALKIS-Objektartenkatalog (Mindestumfang: Grunddatenbestand). Visualisierung grundsaetzlich gemaess Signaturenatalog. Bei Auswertung des styles-Parameters werden drei Darstellungsvarianten angeboten: default palette_rgb fuer Farbdarstellung, palette_grau fuer Graudarstellung und gelb zur Ueberlagerung mit anderen Informationen. In der Gelb-Darstellung werden keine Flaechen sondern nur Konturen dargestellt.</Abstract>
+				<Style>
+					<Name>Farbe</Name>
+					<Title>farbig</Title>
+					<Abstract>Farbdarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="594" height="766">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-03_ALKIS-WMS-Legende_Gebaeude_farbe.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>SW</Name>
+					<Title>grau</Title>
+					<Abstract>Graustufendarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="594" height="746">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-15_ALKIS-WMS-Legende_Gebaeude_sw.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>Gelb</Name>
+					<Title>tranzparent</Title>
+					<Abstract>Transparenzdarstellung für Luftbilder/WebAtlasDE Überlagerung</Abstract>
+					<LegendURL width="71" height="319">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/ALKIS-WMS-keineLegende.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>Gebaeudeveraenderungen</Name>
+					<Title>Gebaeudeveraenderungen</Title>
+					<Abstract>Farbdarstellung nach GeoInfoDok inkl. veraenderter Gebaeude (rot) seit der GID7 Umstellung am 13.11.2023</Abstract>
+					<LegendURL width="594" height="766">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-03_ALKIS-WMS-Legende_Gebaeude_farbe.png"/>
+					</LegendURL>
+				</Style>
+				<MinScaleDenominator>0</MinScaleDenominator>
+				<MaxScaleDenominator>2000</MaxScaleDenominator>
+			</Layer>
+			<Layer queryable="1">
+				<Name>adv_alkis_flurstuecke</Name>
+				<Title>Flurstuecke</Title>
+				<Abstract>Flaechendeckende Beschreibung der Flurstuecke gemaess ALKIS-Objektartenkatalog (Mindestumfang: grundsaetzlich Grunddatenbestand). Visualisierung grundsaetzlich gemaess Signaturenatalog. Bei Auswertung des styles-Parameters werden drei Darstellungsvarianten angeboten: default palette_rgb fuer Farbdarstellung, palette_grau fuer Graudarstellung und gelb zur Ueberlagerung mit anderen Informationen. In der Gelb-Darstellung werden keine Flaechen sondern nur Konturen dargestellt.</Abstract>
+				<Style>
+					<Name>Farbe</Name>
+					<Title>farbig</Title>
+					<Abstract>Farbdarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="521" height="602">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-04_ALKIS-WMS-Legende_Flurstueck-Grenzen_Bezeichnungen_farbe.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>SW</Name>
+					<Title>grau</Title>
+					<Abstract>Graustufendarstellung nach GeoInfoDok</Abstract>
+					<LegendURL width="521" height="602">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-11_ALKIS-WMS-Legende_Flurstueck-Grenzen_Bezeichnungen_sw.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>Gelb</Name>
+					<Title>tranzparent</Title>
+					<Abstract>Transparenzdarstellung für Luftbilder/WebAtlasDE Überlagerung</Abstract>
+					<LegendURL width="71" height="319">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/ALKIS-WMS-keineLegende.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>DA</Name>
+					<Title>DANord</Title>
+					<Abstract>Flurstücksumringe zur Überlagerung mit Luftbildinformationen</Abstract>
+					<LegendURL width="71" height="319">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/ALKIS-WMS-keineLegende.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>basemapde</Name>
+					<Title>basemapde</Title>
+					<Abstract>Flurstücksumringe zur Überlagerung mit basemapde</Abstract>
+					<LegendURL width="71" height="319">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/ALKIS-WMS-keineLegende.png"/>
+					</LegendURL>
+				</Style>
+				<Style>
+					<Name>Flurstuecksveraenderungen</Name>
+					<Title>Flurstuecksveraenderungen</Title>
+					<Abstract>Farbdarstellung nach GeoInfoDok inkl. veraenderter Flurstuecke (rot) seit dem 01.10.2023</Abstract>
+					<LegendURL width="521" height="602">
+						<Format>image/png</Format>
+						<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://dienste.gdi-sh.de/external-resources/alkis/wms/adv/2015-09-04_ALKIS-WMS-Legende_Flurstueck-Grenzen_Bezeichnungen_farbe.png"/>
+					</LegendURL>
+				</Style>
+				<MinScaleDenominator>0</MinScaleDenominator>
+				<MaxScaleDenominator>2000</MaxScaleDenominator>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

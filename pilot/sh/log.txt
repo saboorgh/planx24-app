@@ -1,0 +1,9 @@
+wfs_lu 200 95773
+wfs_planung 200 451353
+wms_planung 200 1188493
+inspire_lu_blp 200 673569
+inspire_lu_xplan 404 25
+inspire_cp 200 24483
+inspire_bu 200 24610
+wms_alkis_opengbd 200 25350
+0 PDFs

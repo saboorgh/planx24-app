@@ -1,0 +1,96 @@
+{
+ "wfs_lu": {
+  "status": 200,
+  "bytes": 95773
+ },
+ "wfs_planung": {
+  "status": 200,
+  "bytes": 451353
+ },
+ "wms_planung": {
+  "status": 200,
+  "bytes": 1188493
+ },
+ "inspire_lu_blp": {
+  "status": 200,
+  "bytes": 673569
+ },
+ "inspire_lu_xplan": {
+  "status": 404,
+  "bytes": 25
+ },
+ "inspire_cp": {
+  "status": 200,
+  "bytes": 24483
+ },
+ "inspire_bu": {
+  "status": 200,
+  "bytes": 24610
+ },
+ "wms_alkis_opengbd": {
+  "status": 200,
+  "bytes": 25350
+ },
+ "quickborn_seiten": [
+  "https://quickborn.de/",
+  "https://quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen.html",
+  "https://quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen/Bauen.html",
+  "https://quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen/Wohnberechtigungsschein.html",
+  "https://quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen/Wohngeld.html",
+  "https://quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen/Wohnraumförderung.html",
+  "https://quickborn.de/Stadtentwicklung.html",
+  "https://quickborn.de/Stadtentwicklung/Bebauungspl%C3%A4ne.html",
+  "https://quickborn.de/Stadtentwicklung/Bebauungspläne.html",
+  "https://quickborn.de/Stadtentwicklung/Bewegte+Stadt.html",
+  "https://quickborn.de/Stadtentwicklung/Liegenschaften_+Gebäudemanagement.html",
+  "https://quickborn.de/Stadtentwicklung/Liegenschaften_+Gebäudemanagement/Dietrich-Bonhoeffer-Gymnasium+(Sanierung).html",
+  "https://quickborn.de/Stadtentwicklung/Liegenschaften_+Gebäudemanagement/Heizungsanlage+Himmelmoorhäuser.html",
+  "https://quickborn.de/Stadtentwicklung/Liegenschaften_+Gebäudemanagement/Neubau+Feuerwache+Ost.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Dritter+Ort.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Masterplan.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Nahversorgungsstandort+Güttloh+I.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Nahversorgungszentrum+Ulzburger+Landstraße.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Parkquartier+Marktstraße.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Polizeiwache+Marktstraße.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Wohngebiet+nordöstlich+Theodor-Storm-Str_.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Wohnquartier+Kampstraße.html",
+  "https://quickborn.de/Stadtentwicklung/Stadtplanung/Wohnquartier+Kieler+Straße.html",
+  "https://quickborn.de/Stadtentwicklung/Öffentlichkeitsbeteiligung.html",
+  "https://www.quickborn.de/",
+  "https://www.quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen.html",
+  "https://www.quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen/Bauen.html",
+  "https://www.quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen/Wohnberechtigungsschein.html",
+  "https://www.quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen/Wohngeld.html",
+  "https://www.quickborn.de/Leben+in+Quickborn/Wohnen+und+Bauen/Wohnraumförderung.html",
+  "https://www.quickborn.de/Stadtentwicklung.html",
+  "https://www.quickborn.de/Stadtentwicklung/Bebauungspl%C3%A4ne.html",
+  "https://www.quickborn.de/Stadtentwicklung/Bebauungspläne.html",
+  "https://www.quickborn.de/Stadtentwicklung/Bewegte+Stadt.html",
+  "https://www.quickborn.de/Stadtentwicklung/Einzelhandelskonzept.html",
+  "https://www.quickborn.de/Stadtentwicklung/Flächennutzungsplan.html",
+  "https://www.quickborn.de/Stadtentwicklung/Liegenschaften_+Gebäudemanagement.html",
+  "https://www.quickborn.de/Stadtentwicklung/Liegenschaften_+Gebäudemanagement/Dietrich-Bonhoeffer-Gymnasium+(Sanierung).html",
+  "https://www.quickborn.de/Stadtentwicklung/Liegenschaften_+Gebäudemanagement/Heizungsanlage+Himmelmoorhäuser.html",
+  "https://www.quickborn.de/Stadtentwicklung/Liegenschaften_+Gebäudemanagement/Neubau+Feuerwache+Ost.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Dritter+Ort.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Masterplan.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Nahversorgungsstandort+Güttloh+I.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Nahversorgungszentrum+Ulzburger+Landstraße.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Parkquartier+Marktstraße.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Polizeiwache+Marktstraße.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Wohngebiet+nordöstlich+Theodor-Storm-Str_.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Wohnquartier+Kampstraße.html",
+  "https://www.quickborn.de/Stadtentwicklung/Stadtplanung/Wohnquartier+Kieler+Straße.html",
+  "https://www.quickborn.de/Stadtentwicklung/Verkehrsplanung.html",
+  "https://www.quickborn.de/Stadtentwicklung/Verkehrsplanung/Bahnsteigzugang+Tanneneck.html",
+  "https://www.quickborn.de/Stadtentwicklung/Verkehrsplanung/Bike+Ride_+Park+Ride+Quickborn-Süd.html",
+  "https://www.quickborn.de/Stadtentwicklung/Verkehrsplanung/Radverkehrskonzept.html",
+  "https://www.quickborn.de/Stadtentwicklung/Verkehrsplanung/Verkehrstechnische+Untersuchung+L76.html",
+  "https://www.quickborn.de/Stadtentwicklung/Wirtschaftsförderung.html",
+  "https://www.quickborn.de/Stadtentwicklung/Wohnungsmarkt.html",
+  "https://www.quickborn.de/Stadtentwicklung/Öffentlichkeitsbeteiligung.html"
+ ],
+ "quickborn_pdfs": []
+}
