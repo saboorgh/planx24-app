@@ -1,0 +1,14 @@
+{
+ "adresse": "Steindamm 10, 20099 Hamburg",
+ "stand": "2026-11-28 10:45",
+ "lon": 10.0113405,
+ "lat": 53.5529937,
+ "name": "10, Steindamm, St. Georg, Hamburg-Mitte, Hamburg, 20099, Deutschland",
+ "state": null,
+ "ort": "Hamburg",
+ "utm": [
+  567000.1,
+  5934265.1
+ ],
+ "fehler": "Land noch nicht angebunden: None"
+}

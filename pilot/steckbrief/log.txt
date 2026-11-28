@@ -1,0 +1,2 @@
+{"adresse": "Steindamm 10, 20099 Hamburg", "state": null, "plaene": null, "fehler": "Land noch nicht angebunden: None"}
+{"adresse": "Rathausplatz 1, 25451 Quickborn", "state": "Schleswig-Holstein", "plaene": [], "fehler": null}
