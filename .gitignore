@@ -4,3 +4,4 @@ dist
 .env.*
 .vercel
 public/data/
+pilot/daten/*/ergebnis/*.png
